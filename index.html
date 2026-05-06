@@ -430,30 +430,72 @@ section{padding:100px 0}
 
 /* TESTIMONIOS */
 .testimonios{background:var(--negro)}
+.rating-summary{
+  display:inline-flex;
+  align-items:center;
+  gap:14px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:50px;
+  padding:14px 24px;
+  margin:24px auto 0;
+}
+.rating-score{
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900;
+  font-size:32px;
+  color:var(--rojo);
+  line-height:1;
+}
+.rating-meta{display:flex;flex-direction:column;gap:4px;text-align:left}
+.rating-stars{display:flex;gap:2px}
+.rating-text{font-size:12px;color:var(--texto2);letter-spacing:.5px}
 .tests-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  grid-template-columns:repeat(3,1fr);
   gap:24px;
 }
 .test-card{
   background:var(--card);
   border:1px solid var(--border2);
-  padding:32px 28px;
+  border-top:2px solid var(--rojo);
+  padding:30px 26px;
   border-radius:8px;
   transition:all .3s;
+  display:flex;
+  flex-direction:column;
 }
-.test-card:hover{border-color:var(--rojo)}
+.test-card:hover{border-color:var(--rojo);transform:translateY(-4px)}
+.test-card:hover{border-top-color:var(--rojo)}
 .stars{display:flex;gap:3px;margin-bottom:14px}
 .test-card p{
-  font-style:italic;
-  color:var(--texto2);
+  color:#fff;
   margin-bottom:18px;
   font-size:15px;
+  line-height:1.6;
+  flex:1;
 }
+.test-card p::before{content:'"';color:var(--rojo);font-size:20px;font-weight:700;margin-right:2px}
+.test-card p::after{content:'"';color:var(--rojo);font-size:20px;font-weight:700;margin-left:2px}
+.test-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:auto;padding-top:16px;border-top:1px solid var(--border2)}
+.test-verified{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  background:rgba(52,168,83,.1);
+  border:1px solid rgba(52,168,83,.4);
+  color:#34a853;
+  padding:5px 10px;
+  border-radius:4px;
+  font-size:11.5px;
+  font-weight:600;
+  letter-spacing:.3px;
+}
+.test-verified svg{width:12px;height:12px;stroke:#34a853;fill:none;stroke-width:3}
 .test-author{
   font-family:'Barlow Condensed',sans-serif;
   font-weight:700;
-  font-size:17px;
+  font-size:15px;
   color:var(--rojo);
   letter-spacing:1px;
   text-transform:uppercase;
@@ -770,8 +812,10 @@ footer{background:var(--negro);padding:50px 0 26px;border-top:3px solid var(--ro
   .hero{min-height:auto;padding:60px 0}
   .stats{gap:18px}
   .stat-item{font-size:15px}
+  .tests-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media (max-width:600px){
+  .tests-grid{grid-template-columns:1fr}
   .topbar{display:none}
   .container{padding:0 18px}
   .nav-inner{padding:14px 18px}
@@ -1062,43 +1106,115 @@ footer{background:var(--negro);padding:50px 0 26px;border-top:3px solid var(--ro
 <section class="testimonios">
   <div class="container">
     <div class="section-head">
-      <div class="section-tag">Nuestros clientes</div>
+      <div class="section-tag">Reseñas verificadas</div>
       <h2 class="section-title">Lo que dicen de nosotros</h2>
+      <p class="section-sub">Reseñas reales de clientes verificadas en Google.</p>
+      <div class="rating-summary">
+        <div class="rating-score">4.6</div>
+        <div class="rating-meta">
+          <div class="rating-stars">
+            <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div class="rating-text">4.6 / 5 · Basado en reseñas de Google</div>
+        </div>
+      </div>
     </div>
     <div class="tests-grid">
+
       <div class="test-card">
         <div class="stars">
-          <svg viewBox="0 0 24 24" style="width:13px;height:13px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" style="width:13px;height:13px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" style="width:13px;height:13px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" style="width:13px;height:13px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" style="width:13px;height:13px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         </div>
-        <p>"Transferencia resuelta en 24 horas. Sin ir a la DGT ni una sola vez. Excelente."</p>
-        <div class="test-author">— Roberto M., Las Rozas</div>
+        <p>Rápidos, eficaces y amables. Fui a hacer el cambio de nombre de un vehículo y el cambio fue instantáneo en la DGT.</p>
+        <div class="test-foot">
+          <span class="test-author">Cliente de Gestram</span>
+          <span class="test-verified"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Verificado por Google</span>
+        </div>
       </div>
+
       <div class="test-card">
         <div class="stars">
-          <svg viewBox="0 0 24 24" style="width:13px;height:13px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" style="width:13px;height:13px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" style="width:13px;height:13px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" style="width:13px;height:13px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" style="width:13px;height:13px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         </div>
-        <p>"Tramitaron mi Plan Moves sin complicaciones. Recuperé 5.000€ de subvención. Muy recomendables."</p>
-        <div class="test-author">— Carmen L., Madrid</div>
+        <p>Muy profesionales, amables y rápidos. Sin duda, muy recomendable.</p>
+        <div class="test-foot">
+          <span class="test-author">Cliente de Gestram</span>
+          <span class="test-verified"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Verificado por Google</span>
+        </div>
       </div>
+
       <div class="test-card">
         <div class="stars">
-          <svg viewBox="0 0 24 24" style="width:13px;height:13px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" style="width:13px;height:13px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" style="width:13px;height:13px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" style="width:13px;height:13px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" style="width:13px;height:13px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         </div>
-        <p>"Llevo 5 años usando Gestram para todas las tarjetas de transporte de mi empresa. Servicio impecable y rápido."</p>
-        <div class="test-author">— Transportes García, Madrid</div>
+        <p>Muy buenos profesionales, te facilitan todos los trámites y gestiones. Realmente rápidos, repetiré.</p>
+        <div class="test-foot">
+          <span class="test-author">Cliente de Gestram</span>
+          <span class="test-verified"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Verificado por Google</span>
+        </div>
       </div>
+
+      <div class="test-card">
+        <div class="stars">
+          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p>Unos cracks! Resumo: vendo moto el lunes, llamo a las 9:30am, presupuesto en el acto y para el mediodía ya tenía todo resuelto. Muchas gracias, seguiré haciendo todos mis trámites con vosotros.</p>
+        <div class="test-foot">
+          <span class="test-author">Cliente de Gestram</span>
+          <span class="test-verified"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Verificado por Google</span>
+        </div>
+      </div>
+
+      <div class="test-card">
+        <div class="stars">
+          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p>Muy profesionales y rápidos en las gestiones.</p>
+        <div class="test-foot">
+          <span class="test-author">Cliente de Gestram</span>
+          <span class="test-verified"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Verificado por Google</span>
+        </div>
+      </div>
+
+      <div class="test-card">
+        <div class="stars">
+          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p>Amables, profesionales y rápidos. Excelente atención. Recomendables.</p>
+        <div class="test-foot">
+          <span class="test-author">Cliente de Gestram</span>
+          <span class="test-verified"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Verificado por Google</span>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
