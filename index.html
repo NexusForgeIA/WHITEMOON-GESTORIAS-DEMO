@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Gestoría Gestram · Trámites DGT en Madrid y Las Rozas · Transferencias y Transportes</title>
-<meta name="description" content="Gestoría Gestram, especialistas en trámites de tráfico y transportes en Madrid y Las Rozas. Transferencias, Plan Moves, tarjetas de transporte y VTC. Gestión online en 24-48h.">
-<meta name="keywords" content="gestoría tráfico Madrid, gestoría Las Rozas, transferencia vehículo, Plan Moves 2025, tarjeta de transporte, VTC, inscripción patinete DGT, trámites DGT">
+<title>Gestoría Gestram · Líderes en Transferencias en Madrid · Trámites DGT y Transportes</title>
+<meta name="description" content="Gestoría Gestram, líderes en transferencias de vehículos en Madrid y Las Rozas. Más de 5.000 trámites gestionados. Plan Moves, tarjetas de transporte, VTC y patinetes. Gestión online en 24-48h.">
+<meta name="keywords" content="gestoría tráfico Madrid, transferencia vehículo Madrid, líderes transferencias, gestoría Las Rozas, Plan Moves 2025, tarjeta de transporte, VTC, inscripción patinete DGT, VMP">
 <meta name="author" content="Gestoría Gestram">
-<meta property="og:title" content="Gestoría Gestram · Trámites DGT Madrid y Las Rozas">
-<meta property="og:description" content="Especialistas en trámites de tráfico y transportes. Transferencias, Plan Moves, tarjetas de transporte. Gestión online en 24-48h.">
+<meta property="og:title" content="Gestoría Gestram · Líderes en transferencias en Madrid">
+<meta property="og:description" content="Líderes en transferencias de vehículos en Madrid. +15 años · +5.000 trámites. Plan Moves, transporte, VTC y patinetes. Online en 24-48h.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_ES">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,22 +32,12 @@
     "addressCountry": "ES"
   },
   "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-      "opens": "09:00",
-      "closes": "14:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-      "opens": "16:00",
-      "closes": "19:00"
-    }
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"14:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"16:00","closes":"19:00"}
   ],
   "priceRange": "€€",
   "areaServed": ["Madrid","Las Rozas"],
-  "description": "Gestoría especialista en trámites de tráfico y transportes en Madrid y Las Rozas."
+  "description": "Gestoría líder en transferencias de vehículos en Madrid y Las Rozas. Especialistas en trámites DGT, transportes, Plan Moves y patinetes."
 }
 </script>
 <style>
@@ -78,6 +68,7 @@ h1,h2,h3,h4{font-family:'Barlow Condensed',sans-serif;line-height:1.1;letter-spa
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 .container{max-width:1280px;margin:0 auto;padding:0 24px}
+.ico{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;vertical-align:middle}
 
 /* TOPBAR */
 .topbar{
@@ -94,7 +85,7 @@ img{max-width:100%;display:block}
   align-items:center;
   gap:16px;
 }
-.topbar-inner > *{display:flex;align-items:center;gap:6px}
+.topbar-inner > *{display:flex;align-items:center;gap:8px}
 .topbar-inner > *:nth-child(2){justify-self:center}
 .topbar-inner > *:nth-child(3){justify-self:end}
 .topbar a{color:#fff}
@@ -138,11 +129,13 @@ img{max-width:100%;display:block}
   font-weight:500;
   font-size:14px;
   transition:color .2s;
-  position:relative;
 }
 .nav-links a:hover{color:var(--rojo2)}
 .btn{
-  display:inline-block;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
   padding:12px 24px;
   border-radius:4px;
   font-weight:600;
@@ -153,16 +146,9 @@ img{max-width:100%;display:block}
   text-align:center;
   font-family:inherit;
 }
-.btn-rojo{
-  background:var(--rojo);
-  color:#fff;
-}
+.btn-rojo{background:var(--rojo);color:#fff}
 .btn-rojo:hover{background:var(--rojo2);transform:translateY(-2px);box-shadow:0 8px 20px rgba(204,0,0,.4)}
-.btn-outline{
-  background:transparent;
-  color:#fff;
-  border:1.5px solid #fff;
-}
+.btn-outline{background:transparent;color:#fff;border:1.5px solid #fff}
 .btn-outline:hover{background:#fff;color:var(--negro)}
 .nav-toggle{
   display:none;
@@ -184,12 +170,12 @@ img{max-width:100%;display:block}
   background-position:center;
   padding:80px 0;
 }
-.hero-content{max-width:780px}
+.hero-content{max-width:820px}
 .badge{
   display:inline-flex;
   align-items:center;
-  gap:8px;
-  padding:8px 16px;
+  gap:10px;
+  padding:10px 18px;
   background:rgba(204,0,0,.15);
   border:1px solid var(--border);
   border-radius:50px;
@@ -210,7 +196,6 @@ img{max-width:100%;display:block}
   color:var(--texto2);
   margin-bottom:36px;
   max-width:620px;
-  line-height:1.6;
 }
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px}
 .stats{
@@ -305,7 +290,19 @@ section{padding:100px 0}
   filter:brightness(.7);
 }
 .servicio-body{padding:28px}
-.servicio-icon{font-size:34px;margin-bottom:12px;display:block}
+.servicio-icon{
+  width:54px;
+  height:54px;
+  background:var(--rojo-dim);
+  border:1px solid var(--border);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:14px;
+  color:var(--rojo);
+}
+.servicio-icon svg{width:26px;height:26px}
 .servicio-card h3{
   font-size:24px;
   font-weight:800;
@@ -313,6 +310,22 @@ section{padding:100px 0}
   text-transform:uppercase;
 }
 .servicio-card p{color:var(--texto2);font-size:15px;margin-bottom:14px}
+.servicio-card.featured{border-color:var(--rojo)}
+.servicio-tag-lider{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  background:var(--rojo);
+  color:#fff;
+  padding:5px 12px;
+  border-radius:4px;
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:700;
+  font-size:12px;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  margin-bottom:14px;
+}
 .servicio-docs{
   background:var(--rojo-dim);
   border-left:3px solid var(--rojo);
@@ -323,9 +336,9 @@ section{padding:100px 0}
   margin-top:16px;
 }
 .servicio-docs strong{color:#fff;display:block;margin-bottom:6px;font-size:13px;letter-spacing:1px;text-transform:uppercase}
-.servicio-list{list-style:none;margin-top:14px}
+.servicio-list{list-style:none;margin-top:8px}
 .servicio-list li{
-  padding:6px 0 6px 24px;
+  padding:6px 0 6px 22px;
   position:relative;
   color:var(--texto2);
   font-size:14px;
@@ -337,23 +350,40 @@ section{padding:100px 0}
   color:var(--rojo);
   font-weight:700;
 }
+.servicio-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:14px;
+}
+.meta-chip{
+  background:rgba(255,255,255,.04);
+  border:1px solid var(--border2);
+  color:var(--texto2);
+  font-size:12px;
+  padding:6px 12px;
+  border-radius:4px;
+  font-weight:500;
+}
+.meta-chip strong{color:var(--rojo);font-weight:700;margin-right:4px}
 
 /* VALORES */
 .valores{background:var(--negro)}
 .valores-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:30px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:26px;
 }
 .valor-card{
   text-align:center;
-  padding:42px 28px;
+  padding:42px 26px;
   background:var(--card);
   border:1px solid var(--border2);
   border-radius:8px;
   transition:all .3s;
 }
 .valor-card:hover{border-color:var(--rojo);transform:translateY(-6px)}
+.valor-card.featured{border-color:var(--rojo);background:linear-gradient(180deg,rgba(204,0,0,.05),var(--card))}
 .valor-icon{
   width:72px;
   height:72px;
@@ -367,7 +397,7 @@ section{padding:100px 0}
 }
 .valor-icon svg{width:34px;height:34px;stroke:var(--rojo);fill:none;stroke-width:2}
 .valor-card h3{
-  font-size:24px;
+  font-size:22px;
   font-weight:800;
   margin-bottom:14px;
   text-transform:uppercase;
@@ -380,7 +410,6 @@ section{padding:100px 0}
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:24px;
-  position:relative;
 }
 .paso{
   text-align:center;
@@ -388,7 +417,6 @@ section{padding:100px 0}
   background:var(--card);
   border:1px solid var(--border2);
   border-radius:8px;
-  position:relative;
 }
 .paso-num{
   font-family:'Barlow Condensed',sans-serif;
@@ -398,12 +426,7 @@ section{padding:100px 0}
   line-height:1;
   margin-bottom:14px;
 }
-.paso h3{
-  font-size:19px;
-  font-weight:700;
-  text-transform:uppercase;
-  color:#fff;
-}
+.paso h3{font-size:19px;font-weight:700;text-transform:uppercase}
 
 /* TESTIMONIOS */
 .testimonios{background:var(--negro)}
@@ -420,7 +443,7 @@ section{padding:100px 0}
   transition:all .3s;
 }
 .test-card:hover{border-color:var(--rojo)}
-.stars{color:#ffb700;font-size:18px;margin-bottom:14px;letter-spacing:2px}
+.stars{display:flex;gap:3px;margin-bottom:14px}
 .test-card p{
   font-style:italic;
   color:var(--texto2);
@@ -444,7 +467,6 @@ section{padding:100px 0}
   gap:48px;
   align-items:start;
 }
-.contacto-info{padding:0}
 .contacto-info h3{
   font-size:28px;
   font-weight:800;
@@ -469,8 +491,9 @@ section{padding:100px 0}
   align-items:center;
   justify-content:center;
   flex-shrink:0;
-  font-size:18px;
+  color:var(--rojo);
 }
+.contacto-item-icon svg{width:18px;height:18px}
 .contacto-item-text strong{
   display:block;
   font-family:'Barlow Condensed',sans-serif;
@@ -513,11 +536,7 @@ footer{background:var(--negro);padding:50px 0 26px;border-top:3px solid var(--ro
 .footer-links{display:flex;gap:26px;flex-wrap:wrap;list-style:none}
 .footer-links a{color:var(--texto2);font-size:14px;transition:color .2s}
 .footer-links a:hover{color:var(--rojo2)}
-.footer-bottom{
-  text-align:center;
-  color:var(--muted);
-  font-size:13px;
-}
+.footer-bottom{text-align:center;color:var(--muted);font-size:13px}
 .footer-bottom a{color:var(--rojo2)}
 
 /* CHATBOT */
@@ -559,13 +578,15 @@ footer{background:var(--negro);padding:50px 0 26px;border-top:3px solid var(--ro
   z-index:997;
   box-shadow:0 6px 20px rgba(0,0,0,.4);
   animation:tipFade 6s ease-out;
+  display:flex;
+  align-items:center;
+  gap:8px;
 }
 @keyframes tipFade{
   0%,80%{opacity:1;transform:translateX(0)}
   100%{opacity:0;transform:translateX(20px);visibility:hidden}
 }
 .chat-tooltip.hidden{display:none}
-
 .chat-modal{
   position:fixed;
   bottom:110px;
@@ -587,7 +608,6 @@ footer{background:var(--negro);padding:50px 0 26px;border-top:3px solid var(--ro
   background:var(--negro);
   color:#fff;
   padding:18px 20px;
-  position:relative;
   border-bottom:3px solid var(--rojo);
 }
 .chat-header-row{display:flex;justify-content:space-between;align-items:center}
@@ -597,7 +617,6 @@ footer{background:var(--negro);padding:50px 0 26px;border-top:3px solid var(--ro
   font-size:18px;
   letter-spacing:1px;
   text-transform:uppercase;
-  margin:0;
 }
 .chat-status{
   display:flex;
@@ -621,7 +640,6 @@ footer{background:var(--negro);padding:50px 0 26px;border-top:3px solid var(--ro
   color:#fff;
   font-size:22px;
   cursor:pointer;
-  line-height:1;
 }
 .chat-body{
   flex:1;
@@ -639,6 +657,9 @@ footer{background:var(--negro);padding:50px 0 26px;border-top:3px solid var(--ro
   line-height:1.5;
   white-space:pre-wrap;
   animation:msgIn .3s ease-out;
+  display:flex;
+  gap:8px;
+  align-items:flex-start;
 }
 @keyframes msgIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 .chat-msg.bot{
@@ -653,6 +674,9 @@ footer{background:var(--negro);padding:50px 0 26px;border-top:3px solid var(--ro
   align-self:flex-end;
   border-bottom-right-radius:2px;
 }
+.chat-msg .ico{flex-shrink:0;margin-top:2px;color:var(--rojo)}
+.chat-msg.user .ico{color:#fff}
+.chat-msg-text{flex:1}
 .chat-quick{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
 .chat-quick button{
   background:transparent;
@@ -664,6 +688,9 @@ footer{background:var(--negro);padding:50px 0 26px;border-top:3px solid var(--ro
   cursor:pointer;
   font-family:inherit;
   transition:all .2s;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
 }
 .chat-quick button:hover{background:var(--rojo);color:#fff}
 .chat-input-row{
@@ -775,9 +802,9 @@ footer{background:var(--negro);padding:50px 0 26px;border-top:3px solid var(--ro
 <!-- TOPBAR -->
 <div class="topbar">
   <div class="container topbar-inner">
-    <span>📍 C/ Londres 31, Las Rozas</span>
-    <span>📞 <a href="tel:+34914457393">914 457 393</a> · <a href="tel:+34914457391">914 457 391</a></span>
-    <span>✉️ <a href="mailto:gestram@gestram.info">gestram@gestram.info</a></span>
+    <span><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> C/ Londres 31, Las Rozas</span>
+    <span><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.4 1.17 2 2 0 012.37 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg> <a href="tel:+34914457393">914 457 393</a> · <a href="tel:+34914457391">914 457 391</a></span>
+    <span><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> <a href="mailto:gestram@gestram.info">gestram@gestram.info</a></span>
   </div>
 </div>
 
@@ -803,7 +830,10 @@ footer{background:var(--negro);padding:50px 0 26px;border-top:3px solid var(--ro
 <!-- HERO -->
 <header class="hero" id="inicio">
   <div class="container hero-content">
-    <div class="badge">✓ Gestoría oficial DGT · Madrid y Las Rozas</div>
+    <div class="badge">
+      <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--rojo);fill:none;stroke-width:1.8"><polyline points="8 21 12 17 16 21"/><path d="M9 7H5a2 2 0 00-2 2v1a4 4 0 004 4h1m6-7h4a2 2 0 012 2v1a4 4 0 01-4 4h-1"/><path d="M12 17V7M9 7h6"/></svg>
+      Líderes en transferencias de vehículos en Madrid · +15 años · +5.000 trámites
+    </div>
     <h1>TRÁMITES DE TRÁFICO<br><span class="rojo">SIN COLAS</span><br>SIN ESPERAS</h1>
     <p class="sub">Gestión profesional de transferencias, matriculaciones, tarjetas de transporte y todos los trámites de la DGT. Online y presencial.</p>
     <div class="hero-cta">
@@ -836,12 +866,17 @@ footer{background:var(--negro);padding:50px 0 26px;border-top:3px solid var(--ro
 
     <!-- TAB 1 TRÁFICO -->
     <div class="tab-content active" id="tab-trafico">
-      <div class="servicio-card">
+
+      <div class="servicio-card featured">
         <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=500&q=80" alt="Transferencia de vehículo" loading="lazy" class="servicio-img" onerror="this.style.display='none'">
         <div class="servicio-body">
-          <span class="servicio-icon">🚗</span>
+          <span class="servicio-tag-lider">
+            <svg viewBox="0 0 24 24" style="width:13px;height:13px;stroke:#fff;fill:none;stroke-width:2"><polyline points="8 21 12 17 16 21"/><path d="M9 7H5a2 2 0 00-2 2v1a4 4 0 004 4h1m6-7h4a2 2 0 012 2v1a4 4 0 01-4 4h-1"/><path d="M12 17V7M9 7h6"/></svg>
+            Líderes en Madrid
+          </span>
+          <div class="servicio-icon"><svg viewBox="0 0 24 24" style="stroke:currentColor;fill:none;stroke-width:1.6"><path d="M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v9a2 2 0 01-2 2h-2"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></div>
           <h3>Transferencia de vehículos</h3>
-          <p>Gestionamos el cambio de titularidad de tu vehículo ante la DGT. Documentación completa, gestión online y entrega del permiso de circulación en el menor tiempo posible.</p>
+          <p>Somos la gestoría líder en transferencias de vehículos en Madrid. Gestionamos el cambio de titularidad de forma rápida y segura, sin que tengas que desplazarte a la DGT. Documentación online, resolución en 24-48h y seguimiento personalizado de cada expediente.</p>
           <div class="servicio-docs">
             <strong>Documentos necesarios</strong>
             DNI comprador/vendedor, permiso de circulación, ficha técnica y justificante del pago del impuesto municipal.
@@ -852,25 +887,54 @@ footer{background:var(--negro);padding:50px 0 26px;border-top:3px solid var(--ro
       <div class="servicio-card">
         <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=500&q=80" alt="Matriculación coche eléctrico" loading="lazy" class="servicio-img" onerror="this.style.display='none'">
         <div class="servicio-body">
-          <span class="servicio-icon">🔋</span>
+          <div class="servicio-icon"><svg viewBox="0 0 24 24" style="stroke:currentColor;fill:none;stroke-width:1.6"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
           <h3>Matriculación coches eléctricos</h3>
           <p>Especialistas en la matriculación de vehículos eléctricos e híbridos. Tramitamos el alta en la DGT, placas, y toda la documentación específica para este tipo de vehículos.</p>
         </div>
       </div>
 
-      <div class="servicio-card">
+      <div class="servicio-card" style="grid-column:1/-1">
         <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=80" alt="Patinete eléctrico VMP" loading="lazy" class="servicio-img" onerror="this.style.display='none'">
         <div class="servicio-body">
-          <span class="servicio-icon">🛴</span>
-          <h3>Inscripción patinetes DGT</h3>
-          <p>Inscripción obligatoria de VMP (Vehículos de Movilidad Personal) en el Registro de la DGT. Evita multas y circula con total seguridad legal.</p>
+          <div class="servicio-icon"><svg viewBox="0 0 24 24" style="stroke:currentColor;fill:none;stroke-width:1.6"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M15 6h2a2 2 0 012 2v9.5M8.5 17.5h6M15 6l-3 11.5"/></svg></div>
+          <h3>Inscripción de Patinetes y VMP en la DGT</h3>
+          <p>La inscripción de Vehículos de Movilidad Personal (VMP) en el Registro de la DGT es <strong style="color:#fff">OBLIGATORIA desde el 22 de enero de 2024</strong>. Circular sin inscripción puede suponer multas de hasta 500€.</p>
+
+          <div class="servicio-docs">
+            <strong>Trámites que gestionamos</strong>
+            <ul class="servicio-list">
+              <li>Inscripción inicial en el Registro VMP</li>
+              <li>Asignación de número de identificación</li>
+              <li>Tramitación del certificado de conformidad</li>
+              <li>Cambio de titular por compraventa</li>
+              <li>Baja definitiva del patinete</li>
+              <li>Duplicado de documentación</li>
+            </ul>
+          </div>
+
+          <div class="servicio-docs">
+            <strong>Documentación necesaria</strong>
+            <ul class="servicio-list">
+              <li>DNI del propietario</li>
+              <li>Factura de compra o contrato de compraventa</li>
+              <li>Manual del fabricante o ficha técnica</li>
+              <li>Certificado de conformidad (si lo tiene)</li>
+            </ul>
+          </div>
+
+          <div class="servicio-meta">
+            <span class="meta-chip"><strong>Plazo:</strong>48-72h</span>
+            <span class="meta-chip"><strong>Desde:</strong>50€</span>
+          </div>
+
+          <p style="margin-top:14px;font-size:14px"><strong style="color:#fff">Modelos más frecuentes que gestionamos:</strong> Xiaomi, Cecotec, Segway, Ninebot, Pure Electric, Hiboy y cualquier marca.</p>
         </div>
       </div>
 
       <div class="servicio-card">
         <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=500&q=80" alt="Duplicados y cambios" loading="lazy" class="servicio-img" onerror="this.style.display='none'">
         <div class="servicio-body">
-          <span class="servicio-icon">📋</span>
+          <div class="servicio-icon"><svg viewBox="0 0 24 24" style="stroke:currentColor;fill:none;stroke-width:1.6"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
           <h3>Duplicados y cambios</h3>
           <p>Resolvemos cualquier trámite secundario ante la DGT con la misma agilidad que un trámite principal.</p>
           <ul class="servicio-list">
@@ -888,7 +952,7 @@ footer{background:var(--negro);padding:50px 0 26px;border-top:3px solid var(--ro
       <div class="servicio-card">
         <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=500&q=80" alt="Tarjetas de transporte" loading="lazy" class="servicio-img" onerror="this.style.display='none'">
         <div class="servicio-body">
-          <span class="servicio-icon">🚛</span>
+          <div class="servicio-icon"><svg viewBox="0 0 24 24" style="stroke:currentColor;fill:none;stroke-width:1.6"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
           <h3>Tarjetas de transporte</h3>
           <p>Gestión completa de tarjetas de transporte: altas, visados, renovaciones y autorizaciones para vehículos de transporte público y privado.</p>
         </div>
@@ -897,7 +961,7 @@ footer{background:var(--negro);padding:50px 0 26px;border-top:3px solid var(--ro
       <div class="servicio-card">
         <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=500&q=80" alt="Permiso conductor VTC" loading="lazy" class="servicio-img" onerror="this.style.display='none'">
         <div class="servicio-body">
-          <span class="servicio-icon">🚕</span>
+          <div class="servicio-icon"><svg viewBox="0 0 24 24" style="stroke:currentColor;fill:none;stroke-width:1.6"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg></div>
           <h3>Permiso conductor VTC</h3>
           <p>Obtención y renovación del permiso de conductor de Vehículo de Turismo con Conductor (VTC). Tramitación ante la Comunidad de Madrid.</p>
         </div>
@@ -906,7 +970,7 @@ footer{background:var(--negro);padding:50px 0 26px;border-top:3px solid var(--ro
       <div class="servicio-card">
         <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=500&q=80" alt="Autorizaciones de transporte" loading="lazy" class="servicio-img" onerror="this.style.display='none'">
         <div class="servicio-body">
-          <span class="servicio-icon">🚌</span>
+          <div class="servicio-icon"><svg viewBox="0 0 24 24" style="stroke:currentColor;fill:none;stroke-width:1.6"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
           <h3>Autorizaciones de transporte</h3>
           <p>Autorizaciones de transporte de viajeros y mercancías. Gestión de concesiones y licencias de actividad para empresas.</p>
         </div>
@@ -918,12 +982,12 @@ footer{background:var(--negro);padding:50px 0 26px;border-top:3px solid var(--ro
       <div class="servicio-card" id="moves" style="grid-column:1/-1">
         <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=1200&q=80" alt="Plan Moves III" loading="lazy" class="servicio-img" onerror="this.style.display='none'">
         <div class="servicio-body">
-          <span class="servicio-icon">♻️</span>
+          <div class="servicio-icon"><svg viewBox="0 0 24 24" style="stroke:currentColor;fill:none;stroke-width:1.6"><polyline points="1 4 1 10 7 10"/><polyline points="23 20 23 14 17 14"/><path d="M20.49 9A9 9 0 005.64 5.64L1 10M23 14l-4.64 4.36A9 9 0 013.51 15"/></svg></div>
           <h3>Plan Moves 2025</h3>
           <p>Gestión completa de las ayudas del Plan Moves III para la compra de vehículos eléctricos e híbridos. Tramitamos la subvención con la documentación de tu compra. <strong style="color:#fff">Hasta 7.000€ de ayuda.</strong></p>
           <div class="servicio-docs">
             <strong>Requisitos Plan Moves</strong>
-            <ul class="servicio-list" style="margin-top:8px">
+            <ul class="servicio-list">
               <li>Vehículo eléctrico o híbrido enchufable</li>
               <li>Precio máximo según categoría</li>
               <li>Achatarramiento de vehículo antiguo (opcional)</li>
@@ -945,6 +1009,13 @@ footer{background:var(--negro);padding:50px 0 26px;border-top:3px solid var(--ro
       <p class="section-sub">Llevamos más de 15 años haciendo lo complicado fácil para nuestros clientes.</p>
     </div>
     <div class="valores-grid">
+      <div class="valor-card featured">
+        <div class="valor-icon">
+          <svg viewBox="0 0 24 24"><polyline points="8 21 12 17 16 21"/><path d="M9 7H5a2 2 0 00-2 2v1a4 4 0 004 4h1m6-7h4a2 2 0 012 2v1a4 4 0 01-4 4h-1"/><path d="M12 17V7M9 7h6"/></svg>
+        </div>
+        <h3>Líderes en transferencias en Madrid</h3>
+        <p>Somos la gestoría de referencia en transferencias de vehículos en Madrid y Las Rozas. Más de 5.000 transferencias gestionadas con éxito. Conocemos cada detalle del proceso y resolvemos cualquier incidencia con la DGT.</p>
+      </div>
       <div class="valor-card">
         <div class="valor-icon">
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg>
@@ -996,17 +1067,35 @@ footer{background:var(--negro);padding:50px 0 26px;border-top:3px solid var(--ro
     </div>
     <div class="tests-grid">
       <div class="test-card">
-        <div class="stars">★★★★★</div>
+        <div class="stars">
+          <svg viewBox="0 0 24 24" style="width:13px;height:13px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" style="width:13px;height:13px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" style="width:13px;height:13px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" style="width:13px;height:13px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" style="width:13px;height:13px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
         <p>"Transferencia resuelta en 24 horas. Sin ir a la DGT ni una sola vez. Excelente."</p>
         <div class="test-author">— Roberto M., Las Rozas</div>
       </div>
       <div class="test-card">
-        <div class="stars">★★★★★</div>
+        <div class="stars">
+          <svg viewBox="0 0 24 24" style="width:13px;height:13px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" style="width:13px;height:13px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" style="width:13px;height:13px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" style="width:13px;height:13px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" style="width:13px;height:13px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
         <p>"Tramitaron mi Plan Moves sin complicaciones. Recuperé 5.000€ de subvención. Muy recomendables."</p>
         <div class="test-author">— Carmen L., Madrid</div>
       </div>
       <div class="test-card">
-        <div class="stars">★★★★★</div>
+        <div class="stars">
+          <svg viewBox="0 0 24 24" style="width:13px;height:13px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" style="width:13px;height:13px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" style="width:13px;height:13px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" style="width:13px;height:13px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" style="width:13px;height:13px;fill:#cc0000"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
         <p>"Llevo 5 años usando Gestram para todas las tarjetas de transporte de mi empresa. Servicio impecable y rápido."</p>
         <div class="test-author">— Transportes García, Madrid</div>
       </div>
@@ -1026,14 +1115,14 @@ footer{background:var(--negro);padding:50px 0 26px;border-top:3px solid var(--ro
       <div class="contacto-info">
         <h3>Datos de contacto</h3>
         <div class="contacto-item">
-          <div class="contacto-item-icon">📍</div>
+          <div class="contacto-item-icon"><svg viewBox="0 0 24 24" style="stroke:currentColor;fill:none;stroke-width:1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
           <div class="contacto-item-text">
             <strong>Dirección</strong>
             <span>C/ Londres, 31 Oficina K<br>Acceso por C/ Bruselas 7<br>28232 Las Rozas, Madrid</span>
           </div>
         </div>
         <div class="contacto-item">
-          <div class="contacto-item-icon">📞</div>
+          <div class="contacto-item-icon"><svg viewBox="0 0 24 24" style="stroke:currentColor;fill:none;stroke-width:1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.4 1.17 2 2 0 012.37 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg></div>
           <div class="contacto-item-text">
             <strong>Teléfonos</strong>
             <a href="tel:+34914457393">914 457 393</a><br>
@@ -1041,14 +1130,14 @@ footer{background:var(--negro);padding:50px 0 26px;border-top:3px solid var(--ro
           </div>
         </div>
         <div class="contacto-item">
-          <div class="contacto-item-icon">✉️</div>
+          <div class="contacto-item-icon"><svg viewBox="0 0 24 24" style="stroke:currentColor;fill:none;stroke-width:1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
           <div class="contacto-item-text">
             <strong>Email</strong>
             <a href="mailto:gestram@gestram.info">gestram@gestram.info</a>
           </div>
         </div>
         <div class="contacto-item">
-          <div class="contacto-item-icon">🕐</div>
+          <div class="contacto-item-icon"><svg viewBox="0 0 24 24" style="stroke:currentColor;fill:none;stroke-width:1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
           <div class="contacto-item-text">
             <strong>Horario</strong>
             <span>Lun-Vie 9:00-14:00<br>Lun-Vie 16:00-19:00</span>
@@ -1079,7 +1168,10 @@ footer{background:var(--negro);padding:50px 0 26px;border-top:3px solid var(--ro
 </footer>
 
 <!-- CHATBOT -->
-<div class="chat-tooltip" id="chatTip">🚗 ¿Necesitas un trámite de tráfico?</div>
+<div class="chat-tooltip" id="chatTip">
+  <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--rojo);fill:none;stroke-width:1.6"><path d="M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v9a2 2 0 01-2 2h-2"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
+  ¿Necesitas un trámite de tráfico?
+</div>
 <button class="chat-fab" id="chatFab" aria-label="Abrir chat">
   <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
 </button>
@@ -1104,7 +1196,21 @@ footer{background:var(--negro);padding:50px 0 26px;border-top:3px solid var(--ro
 </div>
 
 <script>
-/* ===== TABS ===== */
+/* ========= SVG ICON LIBRARY ========= */
+const ICO = {
+  car:'<svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.6"><path d="M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v9a2 2 0 01-2 2h-2"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>',
+  bolt:'<svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.6"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>',
+  scooter:'<svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.6"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M15 6h2a2 2 0 012 2v9.5M8.5 17.5h6M15 6l-3 11.5"/></svg>',
+  truck:'<svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.6"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>',
+  taxi:'<svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.6"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>',
+  recycle:'<svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.6"><polyline points="1 4 1 10 7 10"/><polyline points="23 20 23 14 17 14"/><path d="M20.49 9A9 9 0 005.64 5.64L1 10M23 14l-4.64 4.36A9 9 0 013.51 15"/></svg>',
+  doc:'<svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.6"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>',
+  trophy:'<svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.6"><polyline points="8 21 12 17 16 21"/><path d="M9 7H5a2 2 0 00-2 2v1a4 4 0 004 4h1m6-7h4a2 2 0 012 2v1a4 4 0 01-4 4h-1"/><path d="M12 17V7M9 7h6"/></svg>',
+  swap:'<svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.6"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 014-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>',
+  bolt2:'<svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>'
+};
+
+/* ========= TABS ========= */
 document.querySelectorAll('.tab-btn').forEach(btn=>{
   btn.addEventListener('click',()=>{
     const tab=btn.dataset.tab;
@@ -1115,12 +1221,12 @@ document.querySelectorAll('.tab-btn').forEach(btn=>{
   });
 });
 
-/* ===== NAV LINKS CLOSE ON CLICK ===== */
+/* ========= NAV ========= */
 document.querySelectorAll('#navLinks a').forEach(a=>{
   a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open'));
 });
 
-/* ===== CHATBOT ===== */
+/* ========= CHATBOT ========= */
 const fab=document.getElementById('chatFab');
 const modal=document.getElementById('chatModal');
 const closeBtn=document.getElementById('chatClose');
@@ -1134,15 +1240,11 @@ const WA_NUMBER='34914457393';
 let chatStep=0;
 let captura={nombre:'',telefono:'',tramite:'',detalle:''};
 let opened=false;
+let awaitingDescription=false;
 
 function setCaptureMode(on){
-  if(on){
-    fab.style.display='none';
-    closeBtn.style.display='none';
-  }else{
-    fab.style.display='flex';
-    closeBtn.style.display='block';
-  }
+  if(on){fab.style.display='none';closeBtn.style.display='none';}
+  else{fab.style.display='flex';closeBtn.style.display='block';}
 }
 
 function openChat(){
@@ -1151,13 +1253,13 @@ function openChat(){
   if(!opened){
     opened=true;
     setTimeout(()=>{
-      addBot('¡Hola! 🚗 Bienvenido/a a Gestoría Gestram.\n¿Qué trámite de tráfico necesitas gestionar?',[
-        {label:'🔄 Transferencia de vehículo',action:()=>flowTransfer()},
-        {label:'🔋 Coche eléctrico / Plan Moves',action:()=>flowMoves()},
-        {label:'🚛 Tarjeta de transporte',action:()=>flowTransporte()},
-        {label:'🛴 Patinete / VMP',action:()=>flowPatinete()},
-        {label:'📋 Otro trámite DGT',action:()=>flowOtro()}
-      ]);
+      addBot('¡Hola! Bienvenido/a a Gestoría Gestram.\n¿Qué trámite de tráfico necesitas gestionar?',[
+        {ico:ICO.swap,label:'Transferencia de vehículo',action:()=>flowTransfer()},
+        {ico:ICO.bolt,label:'Coche eléctrico / Plan Moves',action:()=>flowMoves()},
+        {ico:ICO.truck,label:'Tarjeta de transporte',action:()=>flowTransporte()},
+        {ico:ICO.scooter,label:'Patinete / VMP',action:()=>flowPatinete()},
+        {ico:ICO.doc,label:'Otro trámite DGT',action:()=>flowOtro()}
+      ],ICO.car);
     },1500);
   }
 }
@@ -1170,14 +1272,17 @@ function closeChat(){
 fab.addEventListener('click',openChat);
 closeBtn.addEventListener('click',closeChat);
 
-function addMsg(text,who){
+function addMsg(text,who,icon){
   const d=document.createElement('div');
   d.className='chat-msg '+who;
-  d.textContent=text;
+  const iconHtml=icon?`<span class="ico">${icon}</span>`:'';
+  d.innerHTML=iconHtml+'<span class="chat-msg-text"></span>';
+  d.querySelector('.chat-msg-text').textContent=text;
   body.appendChild(d);
   body.scrollTop=body.scrollHeight;
 }
-function addBot(text,quick){
+
+function addBot(text,quick,icon){
   const t=document.createElement('div');
   t.className='chat-typing';
   t.innerHTML='<span></span><span></span><span></span>';
@@ -1185,15 +1290,17 @@ function addBot(text,quick){
   body.scrollTop=body.scrollHeight;
   setTimeout(()=>{
     t.remove();
-    addMsg(text,'bot');
+    addMsg(text,'bot',icon);
     if(quick&&quick.length){
       const q=document.createElement('div');
       q.className='chat-quick';
       quick.forEach(opt=>{
         const b=document.createElement('button');
-        b.textContent=opt.label;
+        const ic=opt.ico?`<span class="ico" style="color:inherit">${opt.ico}</span>`:'';
+        b.innerHTML=ic+'<span></span>';
+        b.querySelector('span:last-child').textContent=opt.label;
         b.onclick=()=>{
-          addMsg(opt.label,'user');
+          addMsg(opt.label,'user',opt.ico);
           q.remove();
           setTimeout(opt.action,400);
         };
@@ -1205,14 +1312,14 @@ function addBot(text,quick){
   },800);
 }
 
-/* ====== FLUJOS ====== */
+/* ========= FLUJOS ========= */
 function flowTransfer(){
   captura.tramite='Transferencia de vehículo';
-  addBot('La transferencia es uno de nuestros trámites más habituales 🚗\n\n¿Estás comprando o vendiendo el vehículo?',[
+  addBot('La transferencia es uno de nuestros trámites más habituales — somos líderes en transferencias en Madrid.\n\n¿Estás comprando o vendiendo el vehículo?',[
     {label:'Comprando',action:()=>{captura.detalle='Comprando';askDocsTransfer();}},
     {label:'Vendiendo',action:()=>{captura.detalle='Vendiendo';askDocsTransfer();}},
     {label:'Los dos',action:()=>{captura.detalle='Comprador y vendedor';askDocsTransfer();}}
-  ]);
+  ],ICO.swap);
 }
 function askDocsTransfer(){
   addBot('¿Tienes toda la documentación preparada?',[
@@ -1222,24 +1329,24 @@ function askDocsTransfer(){
   ]);
 }
 function showDocsTransfer(){
-  addBot('Para una transferencia necesitas:\n\n📄 DNI de comprador y vendedor\n📋 Permiso de circulación original\n🔧 Ficha técnica del vehículo\n🧾 Justificante pago impuesto municipal\n\n¿Tienes estos documentos?',[
+  addBot('Para una transferencia necesitas:\n\n• DNI de comprador y vendedor\n• Permiso de circulación original\n• Ficha técnica del vehículo\n• Justificante pago impuesto municipal\n\n¿Tienes estos documentos?',[
     {label:'Sí, los tengo todos',action:()=>startCapture()},
     {label:'Aún me falta alguno',action:()=>{captura.detalle+=' · Falta documentación';startCapture();}}
-  ]);
+  ],ICO.doc);
 }
 
 function flowMoves(){
   captura.tramite='Plan Moves / Coche eléctrico';
-  addBot('El Plan Moves 2025 ofrece hasta 7.000€ de ayuda ♻️\n\n¿Ya compraste el vehículo o estás pensando en comprarlo?',[
+  addBot('El Plan Moves 2025 ofrece hasta 7.000€ de ayuda.\n\n¿Ya compraste el vehículo o estás pensando en comprarlo?',[
     {label:'Ya lo compré',action:()=>movesType()},
     {label:'Pensando en comprar',action:()=>{captura.detalle='Asesoramiento previo a compra';askMovesContact();}}
-  ]);
+  ],ICO.recycle);
 }
 function movesType(){
   addBot('Perfecto, podemos tramitar la ayuda.\n¿El vehículo es eléctrico puro o híbrido enchufable?',[
     {label:'Eléctrico puro',action:()=>{captura.detalle='Eléctrico puro';movesAcha();}},
     {label:'Híbrido enchufable',action:()=>{captura.detalle='Híbrido enchufable';movesAcha();}}
-  ]);
+  ],ICO.bolt);
 }
 function movesAcha(){
   addBot('¿Vas a achatarrar un vehículo antiguo?',[
@@ -1254,13 +1361,13 @@ function askMovesContact(){
 
 function flowTransporte(){
   captura.tramite='Tarjeta de transporte';
-  addBot('Gestionamos todo tipo de tarjetas de transporte 🚛\n\n¿Qué necesitas?',[
+  addBot('Gestionamos todo tipo de tarjetas de transporte.\n\n¿Qué necesitas?',[
     {label:'Alta nueva tarjeta',action:()=>{captura.detalle='Alta nueva tarjeta';startCapture();}},
     {label:'Visado / Renovación',action:()=>{captura.detalle='Visado / Renovación';askVisadoFecha();}},
     {label:'Autorización especial',action:()=>{captura.detalle='Autorización especial';startCapture();}},
     {label:'Permiso conductor VTC',action:()=>{captura.detalle='Permiso VTC';startCapture();}},
     {label:'No sé exactamente',action:()=>{captura.detalle='Consulta general transporte';startCapture();}}
-  ]);
+  ],ICO.truck);
 }
 function askVisadoFecha(){
   addBot('¿Cuándo caduca tu tarjeta? Si está próxima o ya caducada le damos prioridad.',[
@@ -1272,10 +1379,10 @@ function askVisadoFecha(){
 
 function flowPatinete(){
   captura.tramite='Inscripción patinete VMP';
-  addBot('La inscripción de patinetes en la DGT es OBLIGATORIA desde 2024 🛴\n\nSin inscripción puedes recibir multas de hasta 500€.\n¿Ya tienes el patinete o estás pensando en comprarlo?',[
+  addBot('La inscripción de patinetes en la DGT es OBLIGATORIA desde 2024.\n\nSin inscripción puedes recibir multas de hasta 500€.\n¿Ya tienes el patinete o estás pensando en comprarlo?',[
     {label:'Ya tengo patinete',action:()=>{captura.detalle='Patinete adquirido';startCapture();}},
     {label:'Pensando comprar',action:()=>{captura.detalle='Asesoramiento patinete';startCapture();}}
-  ]);
+  ],ICO.scooter);
 }
 
 function flowOtro(){
@@ -1284,12 +1391,11 @@ function flowOtro(){
   awaitingDescription=true;
 }
 
-/* ====== CAPTURA ====== */
-let awaitingDescription=false;
+/* ========= CAPTURA ========= */
 function startCapture(){
   chatStep=1;
   setCaptureMode(true);
-  addBot('Para llamarte y darte presupuesto sin compromiso, ¿me facilitas tu *nombre*?');
+  addBot('Para llamarte y darte presupuesto sin compromiso, ¿me facilitas tu nombre?');
 }
 
 function handleInput(text){
@@ -1304,22 +1410,16 @@ function handleInput(text){
     return;
   }
 
-  if(chatStep===0){
-    routeKeyword(text.toLowerCase());
-    return;
-  }
+  if(chatStep===0){routeKeyword(text.toLowerCase());return;}
   if(chatStep===1){
     captura.nombre=text;
     chatStep=2;
-    addBot('Gracias '+text.split(' ')[0]+' 👋\n\n¿Me das un *teléfono* de contacto? (9 dígitos)');
+    addBot('Gracias '+text.split(' ')[0]+'.\n\n¿Me das un teléfono de contacto? (9 dígitos)');
     return;
   }
   if(chatStep===2){
     const tel=text.replace(/\D/g,'');
-    if(tel.length<9){
-      addBot('El teléfono debe tener 9 dígitos. ¿Puedes revisarlo?');
-      return;
-    }
+    if(tel.length<9){addBot('El teléfono debe tener 9 dígitos. ¿Puedes revisarlo?');return;}
     captura.telefono=tel;
     chatStep=3;
     finishCapture();
@@ -1328,10 +1428,10 @@ function handleInput(text){
 }
 
 function finishCapture(){
-  const msg=`🚗 *CONSULTA — Gestoría Gestram*\n\n👤 *Nombre:* ${captura.nombre}\n📞 *Tel:* +34${captura.telefono}\n📋 *Trámite:* ${captura.tramite}\n📝 *Detalle:* ${captura.detalle||'-'}\n\n_Vía chatbot WhiteMoon · whitemoon.es_`;
+  const msg=`*CONSULTA — Gestoría Gestram*\n\n*Nombre:* ${captura.nombre}\n*Tel:* +34${captura.telefono}\n*Trámite:* ${captura.tramite}\n*Detalle:* ${captura.detalle||'-'}\n\n_Vía chatbot WhiteMoon · whitemoon.es_`;
   const url='https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(msg);
-  addBot('¡Perfecto! ✅\n\nTe contactaremos lo antes posible en horario de oficina (Lun-Vie 9-14h y 16-19h).\n\nSi prefieres, puedes enviarnos directamente la consulta por WhatsApp:',[
-    {label:'📲 Enviar por WhatsApp',action:()=>{window.open(url,'_blank');resetChat();}},
+  addBot('¡Perfecto!\n\nTe contactaremos lo antes posible en horario de oficina (Lun-Vie 9-14h y 16-19h).\n\nSi prefieres, puedes enviarnos directamente la consulta por WhatsApp:',[
+    {label:'Enviar por WhatsApp',action:()=>{window.open(url,'_blank');resetChat();}},
     {label:'Cerrar chat',action:()=>resetChat()}
   ]);
 }
@@ -1343,7 +1443,7 @@ function resetChat(){
   setTimeout(()=>modal.classList.remove('open'),300);
 }
 
-/* ====== KEYWORD ROUTER ====== */
+/* ========= KEYWORD ROUTER ========= */
 function routeKeyword(t){
   const has=arr=>arr.some(k=>t.includes(k));
   if(has(['transferencia','comprar','vender','vehiculo','vehículo','cambio titular','segunda mano'])) return flowTransfer();
@@ -1351,52 +1451,42 @@ function routeKeyword(t){
   if(has(['tarjeta','transporte','camion','camión','furgoneta','taxi','vtc','visado','renovar','alta'])) return flowTransporte();
   if(has(['patinete','vmp','scooter','movilidad','inscripcion','inscripción','registro','multa'])) return flowPatinete();
   if(has(['precio','cuanto','cuánto','cuesta','honorarios','coste'])){
-    addBot('Nuestros honorarios son muy competitivos 💰\n\n• Transferencia: desde 80€ (más tasas DGT)\n• Inscripción patinete: desde 50€\n• Plan Moves: desde 100€ de gestión\n\nConsulta gratuita sin compromiso.\n¿Le llamamos para presupuesto exacto?',[
+    addBot('Nuestros honorarios son muy competitivos.\n\n• Transferencia: desde 80€ (más tasas DGT)\n• Inscripción patinete: desde 50€\n• Plan Moves: desde 100€ de gestión\n\nConsulta gratuita sin compromiso.\n¿Le llamamos para presupuesto exacto?',[
       {label:'Sí, llamadme',action:()=>{captura.tramite='Solicitud de presupuesto';startCapture();}},
       {label:'Más información',action:()=>flowOtro()}
     ]);
     return;
   }
   if(has(['urgente','urgencia','plazo','caducado','caducada','multa'])){
-    addBot('Entendemos la urgencia ⚡\nAtendemos trámites urgentes con prioridad.\n¿Me facilita su teléfono para llamarle en los próximos minutos?');
+    addBot('Entendemos la urgencia.\nAtendemos trámites urgentes con prioridad.\n¿Me facilita su teléfono para llamarle en los próximos minutos?',null,ICO.bolt2);
     captura.tramite='URGENTE - Trámite';
     captura.detalle='Solicitud urgente';
     startCapture();
     return;
   }
   if(has(['online','distancia','enviar','email','whatsapp'])){
-    addBot('Trabajamos 100% online 💻\n\nPuedes enviarnos toda la documentación por email o WhatsApp y nosotros lo gestionamos todo sin que te muevas.',[
+    addBot('Trabajamos 100% online.\n\nPuedes enviarnos toda la documentación por email o WhatsApp y nosotros lo gestionamos todo sin que te muevas.',[
       {label:'Quiero contactar',action:()=>{captura.tramite='Consulta online';startCapture();}}
     ]);
     return;
   }
   if(has(['donde','dónde','ubicacion','ubicación','oficina','direccion','dirección'])){
-    addBot('Nuestra oficina está en 📍\nC/ Londres 31, Oficina K\n(Acceso por C/ Bruselas 7)\n28232 Las Rozas, Madrid\n\nTambién atendemos online por email y WhatsApp.',[
+    addBot('Nuestra oficina está en:\nC/ Londres 31, Oficina K\n(Acceso por C/ Bruselas 7)\n28232 Las Rozas, Madrid\n\nTambién atendemos online por email y WhatsApp.',[
       {label:'Quiero hacer una consulta',action:()=>flowOtro()}
     ]);
     return;
   }
-  addBot('Puedo ayudarte con cualquier trámite de tráfico o transporte 🚗\n¿Qué necesitas gestionar?',[
-    {label:'🔄 Transferencia',action:()=>flowTransfer()},
-    {label:'🔋 Plan Moves',action:()=>flowMoves()},
-    {label:'🚛 Tarjeta transporte',action:()=>flowTransporte()},
-    {label:'🛴 Patinete VMP',action:()=>flowPatinete()},
-    {label:'📋 Otro trámite',action:()=>flowOtro()}
+  addBot('Puedo ayudarte con cualquier trámite de tráfico o transporte.\n¿Qué necesitas gestionar?',[
+    {ico:ICO.swap,label:'Transferencia',action:()=>flowTransfer()},
+    {ico:ICO.bolt,label:'Plan Moves',action:()=>flowMoves()},
+    {ico:ICO.truck,label:'Tarjeta transporte',action:()=>flowTransporte()},
+    {ico:ICO.scooter,label:'Patinete VMP',action:()=>flowPatinete()},
+    {ico:ICO.doc,label:'Otro trámite',action:()=>flowOtro()}
   ]);
 }
 
-sendBtn.addEventListener('click',()=>{
-  const v=input.value;
-  input.value='';
-  handleInput(v);
-});
-input.addEventListener('keydown',e=>{
-  if(e.key==='Enter'){
-    const v=input.value;
-    input.value='';
-    handleInput(v);
-  }
-});
+sendBtn.addEventListener('click',()=>{const v=input.value;input.value='';handleInput(v);});
+input.addEventListener('keydown',e=>{if(e.key==='Enter'){const v=input.value;input.value='';handleInput(v);}});
 </script>
 
 </body>
