@@ -2397,10 +2397,12 @@ setTimeout(()=>tip.classList.add('hidden'),6000);
 
 const WA_NUMBER='34914457393';
 let chatStep=0;
-let captura={nombre:'',telefono:'',tramite:'',detalle:''};
+let captura={nombre:'',telefono:'',tramite:'',detalle:'',vehiculo:''};
 let opened=false;
 let awaitingDescription=false;
 let awaitingItp=false;
+let awaitingVehicle=false;
+let vehicleMode='';
 let itpData=null;
 
 function setCaptureMode(on){
@@ -2495,16 +2497,21 @@ function flowTransfer(){
 }
 function askDocsTransfer(){
   addBot('¿Tienes toda la documentación preparada?',[
-    {label:'Sí tengo todo',action:()=>startCapture()},
+    {label:'Sí tengo todo',action:()=>askVehicleTransfer()},
     {label:'Me falta algo',action:()=>showDocsTransfer()},
     {label:'No sé qué necesito',action:()=>showDocsTransfer()}
   ]);
 }
 function showDocsTransfer(){
   addBot('Para una transferencia necesitas:\n\n• DNI de comprador y vendedor\n• Permiso de circulación original\n• Ficha técnica del vehículo\n• Justificante pago impuesto municipal\n\n¿Tienes estos documentos?',[
-    {label:'Sí, los tengo todos',action:()=>startCapture()},
-    {label:'Aún me falta alguno',action:()=>{captura.detalle+=' · Falta documentación';startCapture();}}
+    {label:'Sí, los tengo todos',action:()=>askVehicleTransfer()},
+    {label:'Aún me falta alguno',action:()=>{captura.detalle+=' · Falta documentación';askVehicleTransfer();}}
   ],ICO.doc);
+}
+function askVehicleTransfer(){
+  awaitingVehicle=true;
+  vehicleMode='transfer';
+  addBot('¿Qué vehículo vas a transferir?\nMarca, modelo y año aproximado.');
 }
 
 function flowMoves(){
@@ -2582,6 +2589,20 @@ function handleInput(text){
     return;
   }
 
+  if(awaitingVehicle){
+    captura.vehiculo=text;
+    awaitingVehicle=false;
+    if(vehicleMode==='itp'){
+      awaitingItp=true;
+      vehicleMode='';
+      addBot('Perfecto. ¿Cuál es el precio del contrato de compraventa? (escribe solo el número en €)');
+    }else if(vehicleMode==='transfer'){
+      vehicleMode='';
+      startCapture();
+    }
+    return;
+  }
+
   if(awaitingItp){
     const val=parseFloat(text.replace(/[^\d.,]/g,'').replace(',','.'));
     if(!val||val<=0){addBot('Necesito un importe en euros mayor que 0. ¿Puedes indicar el valor del contrato? (ej: 8500)');return;}
@@ -2611,9 +2632,11 @@ function finishCapture(){
   const fmt=formatEUR;
   let msg;
   if(itpData&&itpData.ccaa){
-    msg=`🧮 *CÁLCULO ITP — Gestoría Gestram*\n\n👤 *Nombre:* ${captura.nombre}\n📞 *Tel:* +34${captura.telefono}\n🗺 *Comunidad:* ${itpData.ccaa}\n📊 *ITP aplicado:* ${itpData.percentLabel}%\n💰 *Valor contrato:* ${fmt(itpData.valor)}\n📋 *ITP estimado:* ${fmt(itpData.itp)}\n💼 *Gestram (tasas incl.):* ${fmt(itpData.honorarios)}\n💵 *Total estimado:* ${fmt(itpData.total)}\n\n⚠ Pendiente verificar valor fiscal con tablas de Hacienda ${itpData.ccaa}\n\n_Vía chatbot Gestram · gestram.es_`;
+    const veh=captura.vehiculo||'No indicado';
+    msg=`🧮 *CÁLCULO ITP — Gestoría Gestram*\n\n👤 *Nombre:* ${captura.nombre}\n📞 *Tel:* +34${captura.telefono}\n🚗 *Vehículo:* ${veh}\n🗺 *Comunidad:* ${itpData.ccaa}\n📊 *ITP aplicado:* ${itpData.percentLabel}%\n💰 *Valor contrato:* ${fmt(itpData.valor)}\n📋 *ITP estimado:* ${fmt(itpData.itp)}\n💼 *Gestram (tasas incl.):* ${fmt(itpData.honorarios)}\n💵 *Total estimado:* ${fmt(itpData.total)}\n\n⚠ Verificar valor fiscal en tablas BOE/Hacienda para ${veh}\n\n_Vía chatbot Gestram · gestram.es_`;
   }else{
-    msg=`*CONSULTA — Gestoría Gestram*\n\n*Nombre:* ${captura.nombre}\n*Tel:* +34${captura.telefono}\n*Trámite:* ${captura.tramite}\n*Detalle:* ${captura.detalle||'-'}\n\n_Vía chatbot WhiteMoon · whitemoon.es_`;
+    const vehLine=captura.vehiculo?`\n*Vehículo:* ${captura.vehiculo}`:'';
+    msg=`*CONSULTA — Gestoría Gestram*\n\n*Nombre:* ${captura.nombre}\n*Tel:* +34${captura.telefono}\n*Trámite:* ${captura.tramite}${vehLine}\n*Detalle:* ${captura.detalle||'-'}\n\n_Vía chatbot WhiteMoon · whitemoon.es_`;
   }
   const url='https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(msg);
 
@@ -2628,6 +2651,7 @@ function finishCapture(){
       '<div style="display:flex;gap:8px"><span style="color:#86efac;min-width:80px;font-size:12px">Trámite</span><span style="color:#fff;font-weight:600">'+escapeHtml(captura.tramite)+'</span></div>'+
       '<div style="display:flex;gap:8px"><span style="color:#86efac;min-width:80px;font-size:12px">Nombre</span><span style="color:#fff;font-weight:600">'+escapeHtml(captura.nombre)+'</span></div>'+
       '<div style="display:flex;gap:8px"><span style="color:#86efac;min-width:80px;font-size:12px">Teléfono</span><span style="color:#fff;font-weight:600">+34 '+escapeHtml(captura.telefono)+'</span></div>'+
+      (captura.vehiculo?'<div style="display:flex;gap:8px"><span style="color:#86efac;min-width:80px;font-size:12px">Vehículo</span><span style="color:#fff;font-weight:600">'+escapeHtml(captura.vehiculo)+'</span></div>':'')+
     '</div>'+
     '<div style="background:rgba(34,197,94,.1);border-radius:8px;padding:10px;font-size:13px;color:#86efac;line-height:1.6;text-align:center">'+
       (itpData&&itpData.ccaa
@@ -2668,8 +2692,10 @@ function escapeHtml(s){
 function resetChat(){
   setCaptureMode(false);
   chatStep=0;
-  captura={nombre:'',telefono:'',tramite:'',detalle:''};
+  captura={nombre:'',telefono:'',tramite:'',detalle:'',vehiculo:''};
   awaitingItp=false;
+  awaitingVehicle=false;
+  vehicleMode='';
   itpData=null;
   setTimeout(()=>modal.classList.remove('open'),300);
 }
@@ -2697,9 +2723,13 @@ const ITP_CCAA={
 };
 
 function startItpCalc(){
-  awaitingItp=true;
   captura.tramite='Transferencia · Cálculo ITP';
-  addBot('Te calculo el coste total ahora mismo 🧮\n\n¿Cuál es el precio del contrato de compraventa del vehículo? (en €)');
+  awaitingVehicle=true;
+  vehicleMode='itp';
+  addBot('Te calculo el coste total de la transferencia 🧮');
+  setTimeout(()=>{
+    addBot('Para que el gestor pueda verificar el valor fiscal exacto en las tablas oficiales, ¿me indicas la marca, modelo y año del vehículo?\n\nEjemplo: "Toyota Corolla 2019" o matrícula si la tienes a mano.');
+  },800);
 }
 
 function formatEUR(num){
