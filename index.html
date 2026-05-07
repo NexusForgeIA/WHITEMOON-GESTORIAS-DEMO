@@ -2630,13 +2630,40 @@ function handleInput(text){
 
 function finishCapture(){
   const fmt=formatEUR;
+  const sep='━━━━━━━━━━━━━━━━━━━━━━━';
+  const footer=`\n${sep}\n⚡ _Lead cualificado · Contactar hoy_\n_Vía chatbot Gestram · gestram.es_`;
+  const t=(captura.tramite||'').toLowerCase();
+  const isItp=itpData&&itpData.ccaa;
+  const isTransfer=t.includes('transferencia');
+  const isMoves=t.includes('moves')||t.includes('eléctrico')||t.includes('electrico');
+  const isPatinete=t.includes('patinete')||t.includes('vmp');
+  const isTransporte=t.includes('tarjeta')||t.includes('transporte')||t.includes('vtc');
+  const veh=captura.vehiculo||'No indicado';
   let msg;
-  if(itpData&&itpData.ccaa){
-    const veh=captura.vehiculo||'No indicado';
-    msg=`🧮 *CÁLCULO ITP — Gestoría Gestram*\n\n👤 *Nombre:* ${captura.nombre}\n📞 *Tel:* +34${captura.telefono}\n🚗 *Vehículo:* ${veh}\n🗺 *Comunidad:* ${itpData.ccaa}\n📊 *ITP aplicado:* ${itpData.percentLabel}%\n💰 *Valor contrato:* ${fmt(itpData.valor)}\n📋 *ITP estimado:* ${fmt(itpData.itp)}\n💼 *Gestram (tasas incl.):* ${fmt(itpData.honorarios)}\n💵 *Total estimado:* ${fmt(itpData.total)}\n\n⚠ Verificar valor fiscal en tablas BOE/Hacienda para ${veh}\n\n_Vía chatbot Gestram · gestram.es_`;
+
+  if(isItp){
+    msg=`🧮 *CÁLCULO ITP — Gestoría Gestram*\n${sep}\n👤 *Nombre:* ${captura.nombre}\n📞 *Teléfono:* +34${captura.telefono}\n🚙 *Vehículo:* ${veh}\n🗺️ *Comunidad:* ${itpData.ccaa}\n📊 *ITP aplicado:* ${itpData.percentLabel}%\n💰 *Valor contrato:* ${fmt(itpData.valor)}\n📋 *ITP estimado:* ${fmt(itpData.itp)}\n💼 *Gestram (tasas incl.):* ${fmt(itpData.honorarios)}\n💵 *TOTAL ESTIMADO:* ${fmt(itpData.total)}\n${sep}\n⚠️ _Verificar valor fiscal en tablas BOE/Hacienda para ${veh}_${footer}`;
+  }else if(isTransfer){
+    msg=`🚗 *NUEVA TRANSFERENCIA — Gestoría Gestram*\n${sep}\n👤 *Nombre:* ${captura.nombre}\n📞 *Teléfono:* +34${captura.telefono}\n🚙 *Vehículo:* ${veh}\n📋 *Trámite:* Transferencia de vehículo${footer}`;
+  }else if(isMoves){
+    const det=captura.detalle||'';
+    let tipo='No especificado',acha='No',importe='—';
+    if(det.includes('Eléctrico puro'))tipo='Eléctrico puro';
+    else if(det.includes('Híbrido enchufable'))tipo='Híbrido enchufable';
+    else if(det.toLowerCase().includes('asesoramiento'))tipo='Pendiente decidir';
+    if(det.includes('Con achatarramiento'))acha='Sí';
+    else if(det.includes('Sin achatarramiento'))acha='No';
+    if(tipo==='Eléctrico puro')importe=(acha==='Sí')?'7.000':'4.500';
+    else if(tipo==='Híbrido enchufable')importe=(acha==='Sí')?'5.000':'2.500';
+    msg=`♻️ *PLAN MOVES 2025 — Gestoría Gestram*\n${sep}\n👤 *Nombre:* ${captura.nombre}\n📞 *Teléfono:* +34${captura.telefono}\n🔋 *Tipo vehículo:* ${tipo}\n🔄 *Achatarramiento:* ${acha}\n💶 *Ayuda estimada:* ${importe}€${footer}`;
+  }else if(isPatinete){
+    const det=captura.detalle||'No indicado';
+    const marca=captura.vehiculo||'Pendiente confirmar';
+    msg=`🛴 *PATINETE VMP — Gestoría Gestram*\n${sep}\n👤 *Nombre:* ${captura.nombre}\n📞 *Teléfono:* +34${captura.telefono}\n🛴 *Trámite:* ${det}\n🏍️ *Marca patinete:* ${marca}${footer}`;
+  }else if(isTransporte){
+    msg=`🚛 *TRANSPORTE — Gestoría Gestram*\n${sep}\n👤 *Nombre:* ${captura.nombre}\n📞 *Teléfono:* +34${captura.telefono}\n📋 *Servicio:* ${captura.tramite}\n🔍 *Detalle:* ${captura.detalle||'-'}${footer}`;
   }else{
-    const vehLine=captura.vehiculo?`\n*Vehículo:* ${captura.vehiculo}`:'';
-    msg=`*CONSULTA — Gestoría Gestram*\n\n*Nombre:* ${captura.nombre}\n*Tel:* +34${captura.telefono}\n*Trámite:* ${captura.tramite}${vehLine}\n*Detalle:* ${captura.detalle||'-'}\n\n_Vía chatbot WhiteMoon · whitemoon.es_`;
+    msg=`📋 *CONSULTA — Gestoría Gestram*\n${sep}\n👤 *Nombre:* ${captura.nombre}\n📞 *Teléfono:* +34${captura.telefono}\n🔍 *Trámite:* ${captura.tramite}\n📝 *Detalle:* ${captura.detalle||'-'}${footer}`;
   }
   const url='https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(msg);
 
