@@ -2719,30 +2719,15 @@ function showItpCalc(valor){
   setTimeout(()=>{
     addBot('¿Quieres que nuestro gestor te confirme el valor fiscal exacto de Hacienda sin coste y sin compromiso? 📋\n\nVerificamos el ITP real de tu vehículo en menos de 1 hora.',[
       {label:'✓ Sí, quiero la verificación gratuita',action:()=>startCapture('Perfecto, solo necesito un par de datos para que el gestor lo verifique 🚗\n\n¿Me dices tu nombre?')},
-      {label:'→ Pregunta precio mi vehículo',action:()=>showFiscalLink()}
+      {label:'→ No estoy seguro del valor',action:()=>showFiscalLink()}
     ]);
   },1000);
 }
 
 function showFiscalLink(){
-  addBot('Puedes consultar el valor mínimo fiscal de tu vehículo en la web de la Agencia Tributaria de Madrid:');
-  setTimeout(()=>{
-    const link=document.createElement('a');
-    link.href='https://www.comunidad.madrid/servicios/administracion-electronica/consulta-valor-vehiculos';
-    link.target='_blank';
-    link.rel='noopener';
-    link.style.cssText='align-self:stretch;display:flex;align-items:center;justify-content:center;gap:8px;padding:12px 16px;background:transparent;border:2px solid #cc0000;border-radius:10px;color:#cc0000;font-size:13px;font-weight:700;text-decoration:none;font-family:Inter,sans-serif;transition:all .2s;animation:msgIn .3s ease-out;margin-top:4px';
-    link.innerHTML='<svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Consultar valor fiscal oficial →';
-    link.onmouseover=()=>{link.style.background='#cc0000';link.style.color='#fff'};
-    link.onmouseout=()=>{link.style.background='transparent';link.style.color='#cc0000'};
-    body.appendChild(link);
-    body.scrollTop=body.scrollHeight;
-  },800);
-  setTimeout(()=>{
-    addBot('O si prefieres, nuestro gestor lo consulta por ti gratuitamente.',[
-      {label:'✓ Que lo consulte el gestor',action:()=>startCapture('Perfecto, solo necesito un par de datos para que el gestor lo verifique 🚗\n\n¿Me dices tu nombre?')}
-    ]);
-  },1900);
+  addBot('Si tienes dudas sobre el valor fiscal de tu vehículo, nuestro gestor lo consulta por ti gratuitamente en menos de 1 hora.\n\n¿Quieres que te llamemos?',[
+    {label:'✓ Sí, que me llamen',action:()=>startCapture('Perfecto, solo necesito un par de datos para que el gestor lo verifique 🚗\n\n¿Me dices tu nombre?')}
+  ]);
 }
 
 /* ========= KEYWORD ROUTER ========= */
