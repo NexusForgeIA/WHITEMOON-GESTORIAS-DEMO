@@ -2586,7 +2586,7 @@ function handleInput(text){
     const val=parseFloat(text.replace(/[^\d.,]/g,'').replace(',','.'));
     if(!val||val<=0){addBot('Necesito un importe en euros mayor que 0. ¿Puedes indicar el valor del contrato? (ej: 8500)');return;}
     awaitingItp=false;
-    showItpCalc(val);
+    askCcaa(val);
     return;
   }
 
@@ -2610,8 +2610,8 @@ function handleInput(text){
 function finishCapture(){
   const fmt=formatEUR;
   let msg;
-  if(itpData){
-    msg=`🧮 *CÁLCULO ITP — Gestoría Gestram*\n\n👤 *Nombre:* ${captura.nombre}\n📞 *Tel:* +34${captura.telefono}\n💰 *Valor contrato:* ${fmt(itpData.valor)}\n📋 *ITP estimado:* ${fmt(itpData.itp)}\n🏛️ *Tasa DGT:* 55,70€\n💼 *Honorarios:* 80,00€\n💵 *Total estimado:* ${fmt(itpData.total)}\n\n⚠️ *Pendiente verificar valor fiscal real con tablas Hacienda Madrid*\n\n_Vía chatbot Gestram · gestram.es_`;
+  if(itpData&&itpData.ccaa){
+    msg=`🧮 *CÁLCULO ITP — Gestoría Gestram*\n\n👤 *Nombre:* ${captura.nombre}\n📞 *Tel:* +34${captura.telefono}\n🗺 *Comunidad:* ${itpData.ccaa}\n📊 *ITP aplicado:* ${itpData.percentLabel}%\n💰 *Valor contrato:* ${fmt(itpData.valor)}\n📋 *ITP estimado:* ${fmt(itpData.itp)}\n💼 *Gestram (tasas incl.):* ${fmt(itpData.honorarios)}\n💵 *Total estimado:* ${fmt(itpData.total)}\n\n⚠ Pendiente verificar valor fiscal con tablas de Hacienda ${itpData.ccaa}\n\n_Vía chatbot Gestram · gestram.es_`;
   }else{
     msg=`*CONSULTA — Gestoría Gestram*\n\n*Nombre:* ${captura.nombre}\n*Tel:* +34${captura.telefono}\n*Trámite:* ${captura.tramite}\n*Detalle:* ${captura.detalle||'-'}\n\n_Vía chatbot WhiteMoon · whitemoon.es_`;
   }
@@ -2630,8 +2630,8 @@ function finishCapture(){
       '<div style="display:flex;gap:8px"><span style="color:#86efac;min-width:80px;font-size:12px">Teléfono</span><span style="color:#fff;font-weight:600">+34 '+escapeHtml(captura.telefono)+'</span></div>'+
     '</div>'+
     '<div style="background:rgba(34,197,94,.1);border-radius:8px;padding:10px;font-size:13px;color:#86efac;line-height:1.6;text-align:center">'+
-      (itpData
-        ? 'Solicitud recibida.<br><strong style="color:#22c55e">Nuestro gestor verificará el valor fiscal real de su vehículo y le llamará en menos de 1 hora con el ITP exacto y el presupuesto total sin sorpresas.</strong>'
+      (itpData&&itpData.ccaa
+        ? 'Solicitud recibida.<br><strong style="color:#22c55e">Nuestro gestor verificará el valor fiscal real de su vehículo en '+escapeHtml(itpData.ccaa)+' y le llamará en menos de 1 hora con el ITP exacto y el presupuesto total sin sorpresas.</strong>'
         : 'Hemos recibido todos los datos aportados.<br><strong style="color:#22c55e">Un gestor/a se pondrá en contacto<br>para ayudarle con su trámite en menos de 1 hora.</strong>')+
     '</div>';
   body.appendChild(resumeCard);
@@ -2675,6 +2675,27 @@ function resetChat(){
 }
 
 /* ========= CALCULADORA ITP ========= */
+const ITP_CCAA={
+  'Andalucía':0.07,
+  'Aragón':0.08,
+  'Asturias':0.08,
+  'Baleares':0.08,
+  'Canarias':0.065,
+  'Cantabria':0.08,
+  'Castilla-La Mancha':0.09,
+  'Castilla y León':0.08,
+  'Cataluña':0.10,
+  'Extremadura':0.08,
+  'Galicia':0.08,
+  'La Rioja':0.08,
+  'Madrid':0.04,
+  'Murcia':0.08,
+  'Navarra':0.06,
+  'País Vasco':0.04,
+  'Valencia':0.10,
+  'Ceuta/Melilla':0.06
+};
+
 function startItpCalc(){
   awaitingItp=true;
   captura.tramite='Transferencia · Cálculo ITP';
@@ -2685,26 +2706,58 @@ function formatEUR(num){
   return num.toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2})+'€';
 }
 
-function showItpCalc(valor){
-  const itp=valor*0.04;
-  const tasaDGT=55.70;
-  const honorarios=80;
-  const total=itp+tasaDGT+honorarios;
-  itpData={valor,itp,tasaDGT,honorarios,total};
+function askCcaa(valor){
+  itpData={valor,ccaa:'',percent:0,itp:0,honorarios:185,total:0};
+  addBot('¿En qué Comunidad Autónoma se va a hacer la transferencia?\n\nEl ITP varía según la comunidad donde se registre el vehículo.',[
+    {label:'Madrid (4%)',action:()=>showItpCalc('Madrid')},
+    {label:'Cataluña (10%)',action:()=>showItpCalc('Cataluña')},
+    {label:'Valencia (10%)',action:()=>showItpCalc('Valencia')},
+    {label:'Andalucía (7%)',action:()=>showItpCalc('Andalucía')},
+    {label:'Ver más comunidades →',action:()=>askCcaaMore()}
+  ]);
+}
+
+function askCcaaMore(){
+  addBot('Selecciona tu comunidad:',[
+    {label:'Aragón (8%)',action:()=>showItpCalc('Aragón')},
+    {label:'Asturias (8%)',action:()=>showItpCalc('Asturias')},
+    {label:'Baleares (8%)',action:()=>showItpCalc('Baleares')},
+    {label:'Canarias (6,5%)',action:()=>showItpCalc('Canarias')},
+    {label:'Cantabria (8%)',action:()=>showItpCalc('Cantabria')},
+    {label:'Castilla-La Mancha (9%)',action:()=>showItpCalc('Castilla-La Mancha')},
+    {label:'Castilla y León (8%)',action:()=>showItpCalc('Castilla y León')},
+    {label:'Extremadura (8%)',action:()=>showItpCalc('Extremadura')},
+    {label:'Galicia (8%)',action:()=>showItpCalc('Galicia')},
+    {label:'La Rioja (8%)',action:()=>showItpCalc('La Rioja')},
+    {label:'Murcia (8%)',action:()=>showItpCalc('Murcia')},
+    {label:'Navarra (6%)',action:()=>showItpCalc('Navarra')},
+    {label:'País Vasco (4%)',action:()=>showItpCalc('País Vasco')},
+    {label:'Ceuta/Melilla (6%)',action:()=>showItpCalc('Ceuta/Melilla')}
+  ]);
+}
+
+function showItpCalc(ccaa){
+  const valor=itpData.valor;
+  const percent=ITP_CCAA[ccaa];
+  const itp=valor*percent;
+  const honorarios=185;
+  const total=itp+honorarios;
+  const percentLabel=(percent*100).toLocaleString('es-ES',{maximumFractionDigits:1});
+  itpData={valor,ccaa,percent,percentLabel,itp,honorarios,total};
 
   const fmt=formatEUR;
   const card=document.createElement('div');
   card.style.cssText='align-self:stretch;background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.25);border-radius:12px;padding:14px;margin-top:4px;font-family:"Space Mono",ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:var(--texto2);animation:msgIn .3s ease-out';
   card.innerHTML=
-    '<div style="display:flex;align-items:center;gap:7px;margin-bottom:10px;font-family:Inter,sans-serif">'+
+    '<div style="display:flex;align-items:center;gap:7px;margin-bottom:6px;font-family:Inter,sans-serif">'+
       '<svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:#22c55e;fill:none;stroke-width:2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>'+
       '<span style="color:#22c55e;font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase">Estimación Transferencia</span>'+
     '</div>'+
+    '<div style="font-family:Inter,sans-serif;font-size:11.5px;color:#86efac;margin-bottom:10px">Comunidad: <strong style="color:#fff">'+ccaa+'</strong></div>'+
     '<div style="background:rgba(0,0,0,.25);border-radius:8px;padding:10px 12px">'+
       '<div style="display:flex;justify-content:space-between;padding:4px 0"><span>Valor contrato</span><span style="color:#fff;font-weight:700">'+fmt(valor)+'</span></div>'+
-      '<div style="display:flex;justify-content:space-between;padding:4px 0"><span>ITP estimado (4%)</span><span style="color:#fff;font-weight:700">'+fmt(itp)+'</span></div>'+
-      '<div style="display:flex;justify-content:space-between;padding:4px 0"><span>Tasa DGT 2026</span><span style="color:#fff;font-weight:700">'+fmt(tasaDGT)+'</span></div>'+
-      '<div style="display:flex;justify-content:space-between;padding:4px 0"><span>Honorarios Gestram</span><span style="color:#fff;font-weight:700">'+fmt(honorarios)+'</span></div>'+
+      '<div style="display:flex;justify-content:space-between;padding:4px 0"><span>ITP '+ccaa+' ('+percentLabel+'%)</span><span style="color:#fff;font-weight:700">'+fmt(itp)+'</span></div>'+
+      '<div style="display:flex;justify-content:space-between;padding:4px 0"><span>Gestram (tasas incl.)</span><span style="color:#fff;font-weight:700">'+fmt(honorarios)+'</span></div>'+
       '<div style="height:1px;background:rgba(34,197,94,.3);margin:8px 0"></div>'+
       '<div style="display:flex;justify-content:space-between;padding:4px 0"><span style="color:#22c55e;font-weight:700">TOTAL ESTIMADO</span><span style="color:#22c55e;font-weight:700;font-size:14.5px">'+fmt(total)+'</span></div>'+
     '</div>';
@@ -2712,8 +2765,21 @@ function showItpCalc(valor){
 
   const warn=document.createElement('div');
   warn.style.cssText='align-self:stretch;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.25);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:11.5px;color:#f59e0b;line-height:1.55;font-family:Inter,sans-serif;animation:msgIn .3s ease-out';
-  warn.innerHTML='⚠ Cálculo orientativo sobre el valor del contrato. Hacienda Madrid puede aplicar un valor mínimo superior según las tablas de depreciación del vehículo, por lo que el ITP real podría ser mayor.';
+  warn.innerHTML='⚠ Cálculo orientativo basado en el valor del contrato. Hacienda puede aplicar el valor mínimo del vehículo si es superior al precio de compraventa.';
   body.appendChild(warn);
+
+  let nota='';
+  if(ccaa==='Madrid'){
+    nota='Madrid tiene el ITP más bajo de España (4%). Gestram gestiona transferencias en Las Rozas y Madrid Capital.';
+  }else if(ccaa==='Cataluña'||ccaa==='Valencia'){
+    nota='El ITP en '+ccaa+' es del 10%. Lo gestionamos online desde cualquier punto de España.';
+  }
+  if(nota){
+    const note=document.createElement('div');
+    note.style.cssText='align-self:stretch;background:rgba(204,0,0,.06);border:1px solid rgba(204,0,0,.2);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:11.5px;color:#cc0000;line-height:1.55;font-family:Inter,sans-serif;animation:msgIn .3s ease-out';
+    note.textContent=nota;
+    body.appendChild(note);
+  }
   body.scrollTop=body.scrollHeight;
 
   setTimeout(()=>{
