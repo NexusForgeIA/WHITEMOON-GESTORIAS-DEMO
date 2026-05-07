@@ -2416,6 +2416,7 @@ function openChat(){
     setTimeout(()=>{
       addBot('¡Hola! Bienvenido/a a Gestoría Gestram.\n¿Qué trámite de tráfico necesitas gestionar?',[
         {ico:ICO.swap,label:'Transferencia de vehículo',action:()=>flowTransfer()},
+        {label:'🧮 Calcular precio transferencia',action:()=>startItpCalc()},
         {ico:ICO.bolt,label:'Coche eléctrico / Plan Moves',action:()=>flowMoves()},
         {ico:ICO.truck,label:'Tarjeta de transporte',action:()=>flowTransporte()},
         {ico:ICO.scooter,label:'Patinete / VMP',action:()=>flowPatinete()},
@@ -2488,7 +2489,8 @@ function flowTransfer(){
   addBot('La transferencia es uno de nuestros trámites más habituales — somos líderes en transferencias en Madrid.\n\n¿Estás comprando o vendiendo el vehículo?',[
     {label:'Comprando',action:()=>{captura.detalle='Comprando';askDocsTransfer();}},
     {label:'Vendiendo',action:()=>{captura.detalle='Vendiendo';askDocsTransfer();}},
-    {label:'Los dos',action:()=>{captura.detalle='Comprador y vendedor';askDocsTransfer();}}
+    {label:'Los dos',action:()=>{captura.detalle='Comprador y vendedor';askDocsTransfer();}},
+    {label:'🧮 Calcular precio total',action:()=>startItpCalc()}
   ],ICO.swap);
 }
 function askDocsTransfer(){
@@ -2746,13 +2748,14 @@ function showFiscalLink(){
 /* ========= KEYWORD ROUTER ========= */
 function routeKeyword(t){
   const has=arr=>arr.some(k=>t.includes(k));
+  if(has(['precio','cuanto cuesta','cuánto cuesta','cuanto sale','cuánto sale','cuesta','coste','honorarios','itp','impuesto','que vale','qué vale','presupuesto','cuanto cobra','cuánto cobra','tarifa','transferencia precio'])){
+    return startItpCalc();
+  }
   if(has(['transferencia','comprar','vender','vehiculo','vehículo','cambio titular','segunda mano'])) return flowTransfer();
   if(has(['moves','electrico','eléctrico','hibrido','híbrido','subvencion','subvención','ayuda','enchufable','bateria','batería'])) return flowMoves();
   if(has(['tarjeta','transporte','camion','camión','furgoneta','taxi','vtc','visado','renovar','alta'])) return flowTransporte();
   if(has(['patinete','vmp','scooter','movilidad','inscripcion','inscripción','registro','multa'])) return flowPatinete();
-  if(has(['precio','cuanto','cuánto','cuesta','coste','honorarios','cuanto sale','que vale','presupuesto','itp','impuesto','transferencia precio'])){
-    return startItpCalc();
-  }
+  if(has(['cuanto','cuánto'])) return startItpCalc();
   if(has(['urgente','urgencia','plazo','caducado','caducada','multa'])){
     addBot('Entendemos la urgencia.\nAtendemos trámites urgentes con prioridad.\n¿Me facilita su teléfono para llamarle en los próximos minutos?',null,ICO.bolt2);
     captura.tramite='URGENTE - Trámite';
