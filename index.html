@@ -2707,7 +2707,7 @@ function formatEUR(num){
 }
 
 function askCcaa(valor){
-  itpData={valor,ccaa:'',percent:0,itp:0,honorarios:185,total:0};
+  itpData={valor,ccaa:'',percent:0,itp:0,honorarios:140,total:0};
   addBot('¿En qué Comunidad Autónoma se va a hacer la transferencia?\n\nEl ITP varía según la comunidad donde se registre el vehículo.',[
     {label:'Madrid (4%)',action:()=>showItpCalc('Madrid')},
     {label:'Cataluña (10%)',action:()=>showItpCalc('Cataluña')},
@@ -2740,7 +2740,7 @@ function showItpCalc(ccaa){
   const valor=itpData.valor;
   const percent=ITP_CCAA[ccaa];
   const itp=valor*percent;
-  const honorarios=185;
+  const honorarios=140;
   const total=itp+honorarios;
   const percentLabel=(percent*100).toLocaleString('es-ES',{maximumFractionDigits:1});
   itpData={valor,ccaa,percent,percentLabel,itp,honorarios,total};
