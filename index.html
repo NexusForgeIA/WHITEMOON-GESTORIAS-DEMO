@@ -2562,10 +2562,10 @@ function flowOtro(){
 }
 
 /* ========= CAPTURA ========= */
-function startCapture(){
+function startCapture(intro){
   chatStep=1;
   setCaptureMode(true);
-  addBot('Para llamarte y darte presupuesto sin compromiso, ¿me facilitas tu nombre?');
+  addBot(intro||'Para llamarte y darte presupuesto sin compromiso, ¿me facilitas tu nombre?');
 }
 
 function handleInput(text){
@@ -2606,10 +2606,10 @@ function handleInput(text){
 }
 
 function finishCapture(){
-  const fmt=n=>n.toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2})+'€';
+  const fmt=formatEUR;
   let msg;
   if(itpData){
-    msg=`🚗 *TRANSFERENCIA — Gestoría Gestram*\n\n👤 *Nombre:* ${captura.nombre}\n📞 *Tel:* +34${captura.telefono}\n💰 *Valor contrato:* ${fmt(itpData.valor)}\n📋 *ITP estimado:* ${fmt(itpData.itp)}\n🏛️ *Tasa DGT:* ${fmt(itpData.tasaDGT)}\n💼 *Honorarios:* ${fmt(itpData.honorarios)}\n💵 *Total estimado:* ${fmt(itpData.total)}\n\n_Vía chatbot Gestram · gestram.es_`;
+    msg=`🧮 *CÁLCULO ITP — Gestoría Gestram*\n\n👤 *Nombre:* ${captura.nombre}\n📞 *Tel:* +34${captura.telefono}\n💰 *Valor contrato:* ${fmt(itpData.valor)}\n📋 *ITP estimado:* ${fmt(itpData.itp)}\n🏛️ *Tasa DGT:* 55,70€\n💼 *Honorarios:* 80,00€\n💵 *Total estimado:* ${fmt(itpData.total)}\n\n⚠️ *Pendiente verificar valor fiscal real con tablas Hacienda Madrid*\n\n_Vía chatbot Gestram · gestram.es_`;
   }else{
     msg=`*CONSULTA — Gestoría Gestram*\n\n*Nombre:* ${captura.nombre}\n*Tel:* +34${captura.telefono}\n*Trámite:* ${captura.tramite}\n*Detalle:* ${captura.detalle||'-'}\n\n_Vía chatbot WhiteMoon · whitemoon.es_`;
   }
@@ -2628,8 +2628,9 @@ function finishCapture(){
       '<div style="display:flex;gap:8px"><span style="color:#86efac;min-width:80px;font-size:12px">Teléfono</span><span style="color:#fff;font-weight:600">+34 '+escapeHtml(captura.telefono)+'</span></div>'+
     '</div>'+
     '<div style="background:rgba(34,197,94,.1);border-radius:8px;padding:10px;font-size:13px;color:#86efac;line-height:1.6;text-align:center">'+
-      'Hemos recibido todos los datos aportados.<br>'+
-      '<strong style="color:#22c55e">Un gestor/a se pondrá en contacto<br>para ayudarle con su trámite en menos de 1 hora.</strong>'+
+      (itpData
+        ? 'Solicitud recibida.<br><strong style="color:#22c55e">Nuestro gestor verificará el valor fiscal real de su vehículo y le llamará en menos de 1 hora con el ITP exacto y el presupuesto total sin sorpresas.</strong>'
+        : 'Hemos recibido todos los datos aportados.<br><strong style="color:#22c55e">Un gestor/a se pondrá en contacto<br>para ayudarle con su trámite en menos de 1 hora.</strong>')+
     '</div>';
   body.appendChild(resumeCard);
   body.scrollTop=body.scrollHeight;
@@ -2678,6 +2679,10 @@ function startItpCalc(){
   addBot('Te calculo el coste total ahora mismo 🧮\n\n¿Cuál es el precio del contrato de compraventa del vehículo? (en €)');
 }
 
+function formatEUR(num){
+  return num.toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2})+'€';
+}
+
 function showItpCalc(valor){
   const itp=valor*0.04;
   const tasaDGT=55.70;
@@ -2685,32 +2690,57 @@ function showItpCalc(valor){
   const total=itp+tasaDGT+honorarios;
   itpData={valor,itp,tasaDGT,honorarios,total};
 
-  const fmt=n=>n.toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2})+' €';
+  const fmt=formatEUR;
   const card=document.createElement('div');
   card.style.cssText='align-self:stretch;background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.25);border-radius:12px;padding:14px;margin-top:4px;font-family:"Space Mono",ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:var(--texto2);animation:msgIn .3s ease-out';
   card.innerHTML=
     '<div style="display:flex;align-items:center;gap:7px;margin-bottom:10px;font-family:Inter,sans-serif">'+
       '<svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:#22c55e;fill:none;stroke-width:2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>'+
-      '<span style="color:#22c55e;font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase">Cálculo Transferencia</span>'+
+      '<span style="color:#22c55e;font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase">Estimación Transferencia</span>'+
     '</div>'+
     '<div style="background:rgba(0,0,0,.25);border-radius:8px;padding:10px 12px">'+
       '<div style="display:flex;justify-content:space-between;padding:4px 0"><span>Valor contrato</span><span style="color:#fff;font-weight:700">'+fmt(valor)+'</span></div>'+
-      '<div style="display:flex;justify-content:space-between;padding:4px 0"><span>ITP (4% Madrid)</span><span style="color:#fff;font-weight:700">'+fmt(itp)+'</span></div>'+
+      '<div style="display:flex;justify-content:space-between;padding:4px 0"><span>ITP estimado (4%)</span><span style="color:#fff;font-weight:700">'+fmt(itp)+'</span></div>'+
       '<div style="display:flex;justify-content:space-between;padding:4px 0"><span>Tasa DGT 2026</span><span style="color:#fff;font-weight:700">'+fmt(tasaDGT)+'</span></div>'+
       '<div style="display:flex;justify-content:space-between;padding:4px 0"><span>Honorarios Gestram</span><span style="color:#fff;font-weight:700">'+fmt(honorarios)+'</span></div>'+
       '<div style="height:1px;background:rgba(34,197,94,.3);margin:8px 0"></div>'+
       '<div style="display:flex;justify-content:space-between;padding:4px 0"><span style="color:#22c55e;font-weight:700">TOTAL ESTIMADO</span><span style="color:#22c55e;font-weight:700;font-size:14.5px">'+fmt(total)+'</span></div>'+
-    '</div>'+
-    '<div style="margin-top:10px;font-family:Inter,sans-serif;font-size:11px;color:#666;line-height:1.5">El ITP se calcula sobre el valor del contrato de compraventa. Impuesto oficial Comunidad de Madrid 2026.<br><br><em style="color:#555">Cálculo orientativo. El valor fiscal puede diferir del valor de contrato según tablas de Hacienda.</em></div>';
+    '</div>';
   body.appendChild(card);
+
+  const warn=document.createElement('div');
+  warn.style.cssText='align-self:stretch;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.25);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:11.5px;color:#f59e0b;line-height:1.55;font-family:Inter,sans-serif;animation:msgIn .3s ease-out';
+  warn.innerHTML='⚠ Cálculo orientativo sobre el valor del contrato. Hacienda Madrid puede aplicar un valor mínimo superior según las tablas de depreciación del vehículo, por lo que el ITP real podría ser mayor.';
+  body.appendChild(warn);
   body.scrollTop=body.scrollHeight;
 
   setTimeout(()=>{
-    addBot('¿Quiere que gestionemos su transferencia?\nLe contactamos hoy mismo.',[
-      {label:'Sí, me interesa',action:()=>startCapture()},
-      {label:'Tengo más dudas',action:()=>{captura.tramite='Transferencia · Consulta tras cálculo';addBot('Cuénteme su duda y le ayudamos.');awaitingDescription=true;}}
+    addBot('¿Quieres que nuestro gestor te confirme el valor fiscal exacto de Hacienda sin coste y sin compromiso? 📋\n\nVerificamos el ITP real de tu vehículo en menos de 1 hora.',[
+      {label:'✓ Sí, quiero la verificación gratuita',action:()=>startCapture('Perfecto, solo necesito un par de datos para que el gestor lo verifique 🚗\n\n¿Me dices tu nombre?')},
+      {label:'→ Pregunta precio mi vehículo',action:()=>showFiscalLink()}
     ]);
-  },600);
+  },1000);
+}
+
+function showFiscalLink(){
+  addBot('Puedes consultar el valor mínimo fiscal de tu vehículo en la web de la Agencia Tributaria de Madrid:');
+  setTimeout(()=>{
+    const link=document.createElement('a');
+    link.href='https://www.comunidad.madrid/servicios/administracion-electronica/consulta-valor-vehiculos';
+    link.target='_blank';
+    link.rel='noopener';
+    link.style.cssText='align-self:stretch;display:flex;align-items:center;justify-content:center;gap:8px;padding:12px 16px;background:transparent;border:2px solid #cc0000;border-radius:10px;color:#cc0000;font-size:13px;font-weight:700;text-decoration:none;font-family:Inter,sans-serif;transition:all .2s;animation:msgIn .3s ease-out;margin-top:4px';
+    link.innerHTML='<svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Consultar valor fiscal oficial →';
+    link.onmouseover=()=>{link.style.background='#cc0000';link.style.color='#fff'};
+    link.onmouseout=()=>{link.style.background='transparent';link.style.color='#cc0000'};
+    body.appendChild(link);
+    body.scrollTop=body.scrollHeight;
+  },800);
+  setTimeout(()=>{
+    addBot('O si prefieres, nuestro gestor lo consulta por ti gratuitamente.',[
+      {label:'✓ Que lo consulte el gestor',action:()=>startCapture('Perfecto, solo necesito un par de datos para que el gestor lo verifique 🚗\n\n¿Me dices tu nombre?')}
+    ]);
+  },1900);
 }
 
 /* ========= KEYWORD ROUTER ========= */
