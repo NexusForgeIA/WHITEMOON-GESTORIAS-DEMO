@@ -2631,6 +2631,10 @@ function flowOtro(){
 function isDespedida(t){
   return ['gracias','muchas gracias','ok gracias','no era consulta','era solo consulta','era consulta','solo consulta','solo consultaba','de momento no','ahora no','por ahora no','adiós','adios','hasta luego','bye','chao','no gracias','no me interesa','no necesito','ya está','ya esta','es todo','nada más','nada mas'].some(k=>t.includes(k));
 }
+function isNegativaCaptura(t){
+  const n=t.replace(/[¡!¿?.,;:\s]+$/,'');
+  return ['no','no quiero','no quiero nada','no quiero dar mis datos','paso','ni hablar','nada','olvidalo','olvídalo','dejalo','déjalo'].includes(n);
+}
 function flowDespedida(){
   chatStep=0;
   setCaptureMode(false);
@@ -2700,12 +2704,14 @@ function handleInput(text){
 
   if(chatStep===0){routeKeyword(t);return;}
   if(chatStep===1){
+    if(isNegativaCaptura(t)){flowDespedida();return;}
     captura.nombre=text;
     chatStep=2;
     addBot('Gracias '+text.split(' ')[0]+'.\n\n¿Me das un teléfono de contacto? (9 dígitos)');
     return;
   }
   if(chatStep===2){
+    if(isNegativaCaptura(t)){flowDespedida();return;}
     const tel=text.replace(/\D/g,'');
     if(tel.length<9){addBot('El teléfono debe tener 9 dígitos. ¿Puedes revisarlo?');return;}
     captura.telefono=tel;
