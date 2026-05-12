@@ -2624,6 +2624,35 @@ function flowOtro(){
   awaitingDescription=true;
 }
 
+/* ====== DOCUMENTACIÓN NECESARIA (TRANSFERENCIAS) ====== */
+function flowDocumentacion(){
+  captura.tramite='Transferencia';
+  addBot('Para tramitar tu transferencia necesitas esta documentación según el tipo de operación:',[
+    {label:'👤 Entre particulares',action:()=>docsParticulares()},
+    {label:'🏢 De empresa a particular',action:()=>docsEmpresaParticular()},
+    {label:'👤 De particular a empresa',action:()=>docsParticularEmpresa()}
+  ],ICO.doc);
+}
+function docsTransferButtons(){
+  return [
+    {label:'✅ Sí, gestionar',action:()=>{captura.tramite='Transferencia';startCapture();}},
+    {label:'💰 Ver precio',action:()=>startItpCalc()},
+    {label:'❓ Más info',action:()=>flowOtro()}
+  ];
+}
+function docsParticulares(){
+  captura.detalle='Transmisión entre particulares';
+  addBot('📋 Transmisión entre particulares:\n\n✅ Contrato de compraventa firmado\n✅ Mandatos firmados\n✅ DNI del comprador y vendedor (en vigor)\n✅ Ficha técnica del vehículo\n✅ Permiso de circulación\n\n💡 El contrato de compraventa y los mandatos los puedes descargar directamente desde nuestra web.\n\n¿Quieres que te ayudemos con el trámite?',docsTransferButtons(),ICO.doc);
+}
+function docsEmpresaParticular(){
+  captura.detalle='Transmisión de empresa a particular';
+  addBot('📋 Transmisión de empresa a particular:\n\n✅ CIF de la empresa\n✅ DNI del apoderado\n✅ DNI del comprador\n✅ Factura de venta\n✅ Ficha técnica del vehículo\n✅ Permiso de circulación\n✅ Mandatos firmados\n\n¿Quieres que te ayudemos con el trámite?',docsTransferButtons(),ICO.doc);
+}
+function docsParticularEmpresa(){
+  captura.detalle='Transmisión de particular a empresa';
+  addBot('📋 Transmisión de particular a empresa:\n\n✅ CIF de la empresa\n✅ DNI del apoderado\n✅ DNI del vendedor\n✅ Contrato de compraventa firmado\n✅ Ficha técnica del vehículo\n✅ Permiso de circulación\n✅ Mandatos firmados\n\n¿Quieres que te ayudemos con el trámite?',docsTransferButtons(),ICO.doc);
+}
+
 /* ========= CAPTURA ========= */
 function startCapture(intro){
   chatStep=1;
@@ -2910,6 +2939,7 @@ function showFiscalLink(){
 /* ========= KEYWORD ROUTER ========= */
 function routeKeyword(t){
   const has=arr=>arr.some(k=>t.includes(k));
+  if(has(['document','papeles','requisito','qué necesito','que necesito'])) return flowDocumentacion();
   if(has(['precio','cuanto cuesta','cuánto cuesta','cuanto sale','cuánto sale','cuesta','coste','honorarios','itp','impuesto','que vale','qué vale','presupuesto','cuanto cobra','cuánto cobra','tarifa','transferencia precio'])){
     return startItpCalc();
   }
