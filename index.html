@@ -2509,7 +2509,7 @@ function addMsg(text,who,icon){
   body.scrollTop=body.scrollHeight;
 }
 
-function addBot(text,quick,icon){
+function addBot(text,quick,icon,extra){
   const t=document.createElement('div');
   t.className='chat-typing';
   t.innerHTML='<span></span><span></span><span></span>';
@@ -2518,6 +2518,10 @@ function addBot(text,quick,icon){
   setTimeout(()=>{
     t.remove();
     addMsg(text,'bot',icon);
+    if(extra){
+      body.appendChild(typeof extra==='function'?extra():extra);
+      body.scrollTop=body.scrollHeight;
+    }
     if(quick&&quick.length){
       const q=document.createElement('div');
       q.className='chat-quick';
@@ -2640,17 +2644,27 @@ function docsTransferButtons(){
     {label:'❓ Más info',action:()=>flowOtro()}
   ];
 }
+function makeContratoBtn(){
+  const a=document.createElement('a');
+  a.href='/docs/contrato-compraventa.pdf';
+  a.setAttribute('download','contrato-compraventa.pdf');
+  a.textContent='📄 Descargar Contrato de Compraventa';
+  a.style.cssText='display:block;width:100%;text-align:center;margin-top:8px;padding:11px 14px;background:#7c3aed;color:#fff;border-radius:10px;font-size:13.5px;font-weight:700;font-family:inherit;text-decoration:none;box-shadow:0 4px 14px rgba(124,58,237,.3);transition:transform .2s,box-shadow .2s;animation:msgIn .3s ease-out';
+  a.onmouseover=()=>{a.style.transform='translateY(-2px)';a.style.boxShadow='0 8px 20px rgba(124,58,237,.45)';};
+  a.onmouseout=()=>{a.style.transform='';a.style.boxShadow='0 4px 14px rgba(124,58,237,.3)';};
+  return a;
+}
 function docsParticulares(){
   captura.detalle='Transmisión entre particulares';
-  addBot('📋 Transmisión entre particulares:\n\n✅ Contrato de compraventa firmado\n✅ Mandatos firmados\n✅ DNI del comprador y vendedor (en vigor)\n✅ Ficha técnica del vehículo\n✅ Permiso de circulación\n\n💡 El contrato de compraventa y los mandatos los puedes descargar directamente desde nuestra web.\n\n¿Quieres que te ayudemos con el trámite?',docsTransferButtons(),ICO.doc);
+  addBot('📋 Transmisión entre particulares:\n\n✅ Contrato de compraventa firmado\n✅ Mandatos firmados\n✅ DNI del comprador y vendedor (en vigor)\n✅ Ficha técnica del vehículo\n✅ Permiso de circulación\n\n💡 El contrato de compraventa y los mandatos los puedes descargar directamente desde nuestra web.\n\n¿Quieres que te ayudemos con el trámite?',docsTransferButtons(),ICO.doc,makeContratoBtn);
 }
 function docsEmpresaParticular(){
   captura.detalle='Transmisión de empresa a particular';
-  addBot('📋 Transmisión de empresa a particular:\n\n✅ CIF de la empresa\n✅ DNI del apoderado\n✅ DNI del comprador\n✅ Factura de venta\n✅ Ficha técnica del vehículo\n✅ Permiso de circulación\n✅ Mandatos firmados\n\n¿Quieres que te ayudemos con el trámite?',docsTransferButtons(),ICO.doc);
+  addBot('📋 Transmisión de empresa a particular:\n\n✅ CIF de la empresa\n✅ DNI del apoderado\n✅ DNI del comprador\n✅ Factura de venta\n✅ Ficha técnica del vehículo\n✅ Permiso de circulación\n✅ Mandatos firmados\n\n¿Quieres que te ayudemos con el trámite?',docsTransferButtons(),ICO.doc,makeContratoBtn);
 }
 function docsParticularEmpresa(){
   captura.detalle='Transmisión de particular a empresa';
-  addBot('📋 Transmisión de particular a empresa:\n\n✅ CIF de la empresa\n✅ DNI del apoderado\n✅ DNI del vendedor\n✅ Contrato de compraventa firmado\n✅ Ficha técnica del vehículo\n✅ Permiso de circulación\n✅ Mandatos firmados\n\n¿Quieres que te ayudemos con el trámite?',docsTransferButtons(),ICO.doc);
+  addBot('📋 Transmisión de particular a empresa:\n\n✅ CIF de la empresa\n✅ DNI del apoderado\n✅ DNI del vendedor\n✅ Contrato de compraventa firmado\n✅ Ficha técnica del vehículo\n✅ Permiso de circulación\n✅ Mandatos firmados\n\n¿Quieres que te ayudemos con el trámite?',docsTransferButtons(),ICO.doc,makeContratoBtn);
 }
 
 /* ========= CAPTURA ========= */
