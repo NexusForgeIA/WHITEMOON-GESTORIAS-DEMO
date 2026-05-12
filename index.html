@@ -2446,6 +2446,7 @@ let awaitingItp=false;
 let awaitingVehicle=false;
 let vehicleMode='';
 let itpData=null;
+let transferTipo='';
 
 function setCaptureMode(on){
   if(on){fab.style.display='none';closeBtn.style.display='none';}
@@ -2546,30 +2547,29 @@ function addBot(text,quick,icon,extra){
 /* ========= FLUJOS ========= */
 function flowTransfer(){
   captura.tramite='Transferencia de vehículo';
-  addBot('La transferencia es uno de nuestros trámites más habituales — somos líderes en transferencias en Madrid.\n\n¿Estás comprando o vendiendo el vehículo?',[
-    {label:'Comprando',action:()=>{captura.detalle='Comprando';askDocsTransfer();}},
-    {label:'Vendiendo',action:()=>{captura.detalle='Vendiendo';askDocsTransfer();}},
-    {label:'Los dos',action:()=>{captura.detalle='Comprador y vendedor';askDocsTransfer();}},
-    {label:'🧮 Calcular precio total',action:()=>startItpCalc()}
+  addBot('¡Perfecto! Vamos a gestionar tu transferencia 🚗\n¿Qué tipo de operación es?',[
+    {label:'👤 Entre particulares',action:()=>docsParticulares()},
+    {label:'🏢 De empresa a particular',action:()=>docsEmpresaParticular()},
+    {label:'👤 De particular a empresa',action:()=>docsParticularEmpresa()}
   ],ICO.swap);
 }
-function askDocsTransfer(){
-  addBot('¿Tienes toda la documentación preparada?',[
-    {label:'Sí tengo todo',action:()=>askVehicleTransfer()},
-    {label:'Me falta algo',action:()=>showDocsTransfer()},
-    {label:'No sé qué necesito',action:()=>showDocsTransfer()}
-  ]);
+function transferDocsButtons(tipo){
+  return [
+    {label:'🧮 Calcular ITP',action:()=>{transferTipo=tipo;startItpCalc();}},
+    {label:'📞 Gestionar directamente',action:()=>{captura.tramite='Transferencia '+tipo;captura.detalle='Transmisión '+tipo;startCapture('Perfecto, vamos a gestionar tu transferencia 🚗\n\n¿Me facilitas tu nombre?');}}
+  ];
 }
-function showDocsTransfer(){
-  addBot('Para una transferencia necesitas:\n\n• DNI de comprador y vendedor\n• Permiso de circulación original\n• Ficha técnica del vehículo\n• Justificante pago impuesto municipal\n\n¿Tienes estos documentos?',[
-    {label:'Sí, los tengo todos',action:()=>askVehicleTransfer()},
-    {label:'Aún me falta alguno',action:()=>{captura.detalle+=' · Falta documentación';askVehicleTransfer();}}
-  ],ICO.doc);
+function docsParticulares(){
+  captura.detalle='Transmisión entre particulares';
+  addBot('Para una transmisión entre particulares necesitas:\n\n✅ Contrato de compraventa firmado\n✅ Mandatos firmados\n✅ DNI del comprador y vendedor (en vigor)\n✅ Ficha técnica del vehículo\n✅ Permiso de circulación',transferDocsButtons('entre particulares'),ICO.doc,makeContratoBtn);
 }
-function askVehicleTransfer(){
-  awaitingVehicle=true;
-  vehicleMode='transfer';
-  addBot('¿Qué vehículo vas a transferir?\nMarca, modelo y año aproximado.');
+function docsEmpresaParticular(){
+  captura.detalle='Transmisión de empresa a particular';
+  addBot('Para una transmisión de empresa a particular:\n\n✅ CIF de la empresa\n✅ DNI del apoderado\n✅ DNI del comprador\n✅ Factura de venta\n✅ Ficha técnica del vehículo\n✅ Permiso de circulación\n✅ Mandatos firmados',transferDocsButtons('de empresa a particular'),ICO.doc);
+}
+function docsParticularEmpresa(){
+  captura.detalle='Transmisión de particular a empresa';
+  addBot('Para una transmisión de particular a empresa:\n\n✅ CIF de la empresa\n✅ DNI del apoderado\n✅ DNI del vendedor\n✅ Contrato de compraventa firmado\n✅ Ficha técnica del vehículo\n✅ Permiso de circulación\n✅ Mandatos firmados',transferDocsButtons('de particular a empresa'),ICO.doc,makeContratoBtn);
 }
 
 function flowMoves(){
@@ -2630,37 +2630,13 @@ function flowOtro(){
 
 /* ====== DOCUMENTACIÓN NECESARIA (TRANSFERENCIAS) ====== */
 function flowDocumentacion(){
-  captura.tramite='Transferencia';
-  addBot('Para tramitar tu transferencia necesitas esta documentación según el tipo de operación:',[
-    {label:'👤 Entre particulares',action:()=>docsParticulares()},
-    {label:'🏢 De empresa a particular',action:()=>docsEmpresaParticular()},
-    {label:'👤 De particular a empresa',action:()=>docsParticularEmpresa()}
-  ],ICO.doc);
-}
-function docsTransferButtons(){
-  return [
-    {label:'✅ Sí, gestionar',action:()=>{captura.tramite='Transferencia';startCapture();}},
-    {label:'💰 Ver precio',action:()=>startItpCalc()},
-    {label:'❓ Más info',action:()=>flowOtro()}
-  ];
+  flowTransfer();
 }
 function makeContratoBtn(){
   const wrap=document.createElement('div');
   wrap.style.cssText='align-self:stretch;animation:msgIn .3s ease-out';
   wrap.innerHTML='<a href="docs/contrato-compraventa.pdf" download style="display:block; background:#7c3aed; color:white; text-align:center; padding:10px 16px; border-radius:8px; margin:8px 0; font-weight:600; text-decoration:none;">📄 Descargar Contrato de Compraventa</a>';
   return wrap;
-}
-function docsParticulares(){
-  captura.detalle='Transmisión entre particulares';
-  addBot('📋 Transmisión entre particulares:\n\n✅ Contrato de compraventa firmado\n✅ Mandatos firmados\n✅ DNI del comprador y vendedor (en vigor)\n✅ Ficha técnica del vehículo\n✅ Permiso de circulación\n\n💡 El contrato de compraventa y los mandatos los puedes descargar directamente desde nuestra web.\n\n¿Quieres que te ayudemos con el trámite?',docsTransferButtons(),ICO.doc,makeContratoBtn);
-}
-function docsEmpresaParticular(){
-  captura.detalle='Transmisión de empresa a particular';
-  addBot('📋 Transmisión de empresa a particular:\n\n✅ CIF de la empresa\n✅ DNI del apoderado\n✅ DNI del comprador\n✅ Factura de venta\n✅ Ficha técnica del vehículo\n✅ Permiso de circulación\n✅ Mandatos firmados\n\n¿Quieres que te ayudemos con el trámite?',docsTransferButtons(),ICO.doc,makeContratoBtn);
-}
-function docsParticularEmpresa(){
-  captura.detalle='Transmisión de particular a empresa';
-  addBot('📋 Transmisión de particular a empresa:\n\n✅ CIF de la empresa\n✅ DNI del apoderado\n✅ DNI del vendedor\n✅ Contrato de compraventa firmado\n✅ Ficha técnica del vehículo\n✅ Permiso de circulación\n✅ Mandatos firmados\n\n¿Quieres que te ayudemos con el trámite?',docsTransferButtons(),ICO.doc,makeContratoBtn);
 }
 
 /* ========= CAPTURA ========= */
@@ -2817,6 +2793,7 @@ function resetChat(){
   awaitingVehicle=false;
   vehicleMode='';
   itpData=null;
+  transferTipo='';
   setTimeout(()=>modal.classList.remove('open'),300);
 }
 
@@ -2933,10 +2910,18 @@ function showItpCalc(ccaa){
   body.scrollTop=body.scrollHeight;
 
   setTimeout(()=>{
-    addBot('¿Quieres que nuestro gestor te confirme el valor fiscal exacto de Hacienda sin coste y sin compromiso? 📋\n\nVerificamos el ITP real de tu vehículo en menos de 1 hora.',[
-      {label:'✓ Sí, quiero la verificación gratuita',action:()=>startCapture('Perfecto, solo necesito un par de datos para que el gestor lo verifique 🚗\n\n¿Me dices tu nombre?')},
-      {label:'→ No estoy seguro del valor',action:()=>showFiscalLink()}
-    ]);
+    if(transferTipo){
+      const tipo=transferTipo;
+      addBot('¿Quieres que gestionemos el trámite completo?',[
+        {label:'✅ Sí, gestionar',action:()=>{captura.tramite='Transferencia '+tipo;startCapture('Perfecto 🚗 Vamos con tu transferencia.\n\n¿Me facilitas tu nombre?');}},
+        {label:'❓ Tengo dudas',action:()=>{captura.tramite='Transferencia '+tipo;captura.detalle=(captura.detalle?captura.detalle+' · ':'')+'Tiene dudas';startCapture('Sin problema, te llamamos y resolvemos cualquier duda sin compromiso.\n\n¿Me facilitas tu nombre?');}}
+      ]);
+    }else{
+      addBot('¿Quieres que nuestro gestor te confirme el valor fiscal exacto de Hacienda sin coste y sin compromiso? 📋\n\nVerificamos el ITP real de tu vehículo en menos de 1 hora.',[
+        {label:'✓ Sí, quiero la verificación gratuita',action:()=>startCapture('Perfecto, solo necesito un par de datos para que el gestor lo verifique 🚗\n\n¿Me dices tu nombre?')},
+        {label:'→ No estoy seguro del valor',action:()=>showFiscalLink()}
+      ]);
+    }
   },1000);
 }
 
@@ -2953,7 +2938,7 @@ function routeKeyword(t){
   if(has(['precio','cuanto cuesta','cuánto cuesta','cuanto sale','cuánto sale','cuesta','coste','honorarios','itp','impuesto','que vale','qué vale','presupuesto','cuanto cobra','cuánto cobra','tarifa','transferencia precio'])){
     return startItpCalc();
   }
-  if(has(['transferencia','comprar','vender','vehiculo','vehículo','cambio titular','segunda mano'])) return flowTransfer();
+  if(has(['transferencia','transfer','cambio de titular','cambio titular','cambio de nombre','vender coche','comprar coche','comprar','vender','vehiculo','vehículo','segunda mano'])) return flowTransfer();
   if(has(['moves','electrico','eléctrico','hibrido','híbrido','subvencion','subvención','ayuda','enchufable','bateria','batería'])) return flowMoves();
   if(has(['tarjeta','transporte','camion','camión','furgoneta','taxi','vtc','visado','renovar','alta'])) return flowTransporte();
   if(has(['patinete','vmp','scooter','movilidad','inscripcion','inscripción','registro','multa'])) return flowPatinete();
