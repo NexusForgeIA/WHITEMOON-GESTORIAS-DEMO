@@ -2628,11 +2628,16 @@ function flowOtro(){
   awaitingDescription=true;
 }
 
+function isDespedida(t){
+  return ['gracias','muchas gracias','ok gracias','no era consulta','era solo consulta','era consulta','solo consulta','solo consultaba','de momento no','ahora no','por ahora no','adiós','adios','hasta luego','bye','chao','no gracias','no me interesa','no necesito','ya está','ya esta','es todo','nada más','nada mas'].some(k=>t.includes(k));
+}
 function flowDespedida(){
+  chatStep=0;
+  setCaptureMode(false);
   input.disabled=true;
   sendBtn.disabled=true;
   input.placeholder='Conversación finalizada';
-  addBot('¡Muchas gracias por contactar con WhiteMoon Gestoría IA! 🙏\n\nHa sido un placer atenderle. Estaremos encantados de realizar sus trámites en el futuro.\n\nRecuerde que puede contactarnos en cualquier momento:\n📞 643 199 580\n📧 comercial@whitemoon.es\n🌐 whitemoon.es\n\n¡Que tenga un excelente día! 🌟',[
+  addBot('¡Hasta pronto! Ha sido un placer ayudarte. 😊\n\nSi en algún momento necesitas gestionar una transferencia, calcular el ITP u otro trámite, aquí estaremos.\n\n📞 También puedes llamarnos al 643 199 580\n🌐 whitemoon.es\n\n¡Que tengas un excelente día! 🌟',[
     {label:'🔄 Nueva consulta',action:()=>resetChat()}
   ]);
 }
@@ -2658,7 +2663,11 @@ function startCapture(intro){
 function handleInput(text){
   text=text.trim();
   if(!text) return;
+  const t=text.toLowerCase();
   addMsg(text,'user');
+
+  // Despedida: prioridad absoluta, antes de chatStep / awaitingXxx / routeKeyword
+  if(isDespedida(t)){awaitingDescription=false;awaitingItp=false;awaitingVehicle=false;vehicleMode='';flowDespedida();return;}
 
   if(awaitingDescription){
     captura.detalle=text;
@@ -2689,7 +2698,7 @@ function handleInput(text){
     return;
   }
 
-  if(chatStep===0){routeKeyword(text.toLowerCase());return;}
+  if(chatStep===0){routeKeyword(t);return;}
   if(chatStep===1){
     captura.nombre=text;
     chatStep=2;
@@ -2947,7 +2956,7 @@ function showFiscalLink(){
 /* ========= KEYWORD ROUTER ========= */
 function routeKeyword(t){
   const has=arr=>arr.some(k=>t.includes(k));
-  if(has(['gracias','muchas gracias','adiós','adios','hasta luego','hasta pronto','bye','ok gracias','vale gracias','perfecto gracias','nada más','nada mas','ya está','ya esta','eso es todo','fin','terminar'])) return flowDespedida();
+  if(isDespedida(t)) return flowDespedida();
   if(has(['document','papeles','requisito','qué necesito','que necesito'])) return flowDocumentacion();
   if(has(['precio','cuanto cuesta','cuánto cuesta','cuanto sale','cuánto sale','cuesta','coste','honorarios','itp','impuesto','que vale','qué vale','presupuesto','cuanto cobra','cuánto cobra','tarifa','transferencia precio'])){
     return startItpCalc();
