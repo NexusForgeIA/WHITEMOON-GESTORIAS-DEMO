@@ -2628,6 +2628,15 @@ function flowOtro(){
   awaitingDescription=true;
 }
 
+function flowDespedida(){
+  input.disabled=true;
+  sendBtn.disabled=true;
+  input.placeholder='Conversación finalizada';
+  addBot('¡Muchas gracias por contactar con WhiteMoon Gestoría IA! 🙏\n\nHa sido un placer atenderle. Estaremos encantados de realizar sus trámites en el futuro.\n\nRecuerde que puede contactarnos en cualquier momento:\n📞 643 199 580\n📧 comercial@whitemoon.es\n🌐 whitemoon.es\n\n¡Que tenga un excelente día! 🌟',[
+    {label:'🔄 Nueva consulta',action:()=>resetChat()}
+  ]);
+}
+
 /* ====== DOCUMENTACIÓN NECESARIA (TRANSFERENCIAS) ====== */
 function flowDocumentacion(){
   flowTransfer();
@@ -2794,6 +2803,10 @@ function resetChat(){
   vehicleMode='';
   itpData=null;
   transferTipo='';
+  awaitingDescription=false;
+  input.disabled=false;
+  sendBtn.disabled=false;
+  input.placeholder='Escribe tu mensaje...';
   setTimeout(()=>modal.classList.remove('open'),300);
 }
 
@@ -2934,6 +2947,7 @@ function showFiscalLink(){
 /* ========= KEYWORD ROUTER ========= */
 function routeKeyword(t){
   const has=arr=>arr.some(k=>t.includes(k));
+  if(has(['gracias','muchas gracias','adiós','adios','hasta luego','hasta pronto','bye','ok gracias','vale gracias','perfecto gracias','nada más','nada mas','ya está','ya esta','eso es todo','fin','terminar'])) return flowDespedida();
   if(has(['document','papeles','requisito','qué necesito','que necesito'])) return flowDocumentacion();
   if(has(['precio','cuanto cuesta','cuánto cuesta','cuanto sale','cuánto sale','cuesta','coste','honorarios','itp','impuesto','que vale','qué vale','presupuesto','cuanto cobra','cuánto cobra','tarifa','transferencia precio'])){
     return startItpCalc();
