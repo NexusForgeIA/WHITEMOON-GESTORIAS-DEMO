@@ -2780,10 +2780,26 @@ async function handleInput(text) {
 function finishCaptura() {
   if (!captura.nombre || !captura.telefono) return;
 
+  var historial = gHistory.map(function(m) { return m.content; }).join(' ');
+
+  var vehiculo = captura.vehiculo || '';
+  if (!vehiculo) {
+    var matchVeh = historial.match(/\b(seat|volkswagen|vw|ford|renault|peugeot|citroen|opel|bmw|mercedes|audi|toyota|honda|hyundai|kia|nissan|mazda|volvo|fiat|alfa|skoda|dacia)\b[\s\w]+/i);
+    if (matchVeh) vehiculo = matchVeh[0].trim().substring(0, 40);
+  }
+
+  var anioMatch = historial.match(/\b(19|20)\d{2}\b/);
+  var anio = anioMatch ? anioMatch[0] : '';
+
+  var ccaaMatch = historial.match(/\b(madrid|barcelona|catalu|valencia|andaluc|galicia|sevilla|bilbao|pais vasco|aragon|navarra|murcia|cantabria|asturias|extremadura|canarias|baleares|rioja|castilla)\w*/i);
+  var ccaa = ccaaMatch ? ccaaMatch[0] : '';
+
   var msg = '🤖 *Nuevo lead Laura IA — Gestoría ITP*\n\n' +
     '👤 Nombre: ' + captura.nombre + '\n' +
     '📞 Teléfono: ' + captura.telefono + '\n' +
-    '🚗 Vehículo: ' + (captura.vehiculo || 'No indicado') + '\n' +
+    '🚗 Vehículo: ' + (vehiculo || 'No indicado') + '\n' +
+    '📅 Año: ' + (anio || 'No indicado') + '\n' +
+    '📍 CCAA: ' + (ccaa || 'No indicada') + '\n' +
     '📋 Trámite: ' + (captura.tramite || 'Consulta ITP / Transferencia') + '\n' +
     '🤖 Captado por: Laura Agente IA Gestoría';
 
