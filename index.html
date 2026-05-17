@@ -2682,6 +2682,10 @@ function handleInput(text){
 
   if(awaitingVehicle){
     captura.vehiculo=text;
+    // Intentar extraer año del texto (ej: "Golf 2019")
+    var anioMatch = t.match(/\b(19|20)\d{2}\b/);
+    if (anioMatch) itpData = itpData || {};
+    if (anioMatch && itpData) itpData.anio = parseInt(anioMatch[0]);
     awaitingVehicle=false;
     if(vehicleMode==='itp'){
       awaitingItp=true;
@@ -2910,66 +2914,90 @@ function askCcaaMore(){
   ]);
 }
 
-function showItpCalc(ccaa){
-  const valor=itpData.valor;
-  const percent=ITP_CCAA[ccaa];
-  const itp=valor*percent;
-  const honorarios=140;
-  const total=itp+honorarios;
-  const percentLabel=(percent*100).toLocaleString('es-ES',{maximumFractionDigits:1});
-  itpData={valor,ccaa,percent,percentLabel,itp,honorarios,total};
+async function showItpCalc(ccaa) {
+  addBot('⏳ Calculando con tablas oficiales BOE 2026...');
 
-  const fmt=formatEUR;
-  const card=document.createElement('div');
-  card.style.cssText='align-self:stretch;background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.25);border-radius:12px;padding:14px;margin-top:4px;font-family:"Space Mono",ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:var(--texto2);animation:msgIn .3s ease-out';
-  card.innerHTML=
-    '<div style="display:flex;align-items:center;gap:7px;margin-bottom:6px;font-family:Inter,sans-serif">'+
-      '<svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:#22c55e;fill:none;stroke-width:2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>'+
-      '<span style="color:#22c55e;font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase">Estimación Transferencia</span>'+
-    '</div>'+
-    '<div style="font-family:Inter,sans-serif;font-size:11.5px;color:#86efac;margin-bottom:10px">Comunidad: <strong style="color:#fff">'+ccaa+'</strong></div>'+
-    '<div style="background:rgba(0,0,0,.25);border-radius:8px;padding:10px 12px">'+
-      '<div style="display:flex;justify-content:space-between;padding:4px 0"><span>Valor contrato</span><span style="color:#fff;font-weight:700">'+fmt(valor)+'</span></div>'+
-      '<div style="display:flex;justify-content:space-between;padding:4px 0"><span>ITP '+ccaa+' ('+percentLabel+'%)</span><span style="color:#fff;font-weight:700">'+fmt(itp)+'</span></div>'+
-      '<div style="display:flex;justify-content:space-between;padding:4px 0"><span>WhiteMoon (tasas incl.)</span><span style="color:#fff;font-weight:700">'+fmt(honorarios)+'</span></div>'+
-      '<div style="height:1px;background:rgba(34,197,94,.3);margin:8px 0"></div>'+
-      '<div style="display:flex;justify-content:space-between;padding:4px 0"><span style="color:#22c55e;font-weight:700">TOTAL ESTIMADO</span><span style="color:#22c55e;font-weight:700;font-size:14.5px">'+fmt(total)+'</span></div>'+
-    '</div>';
-  body.appendChild(card);
+  try {
+    var res = await fetch(
+      'https://mlaqtniujnvfxcvcourm.supabase.co/functions/v1/gestoria-itp',
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          valor_venta: itpData.valor,
+          anio_matriculacion: itpData.anio || new Date().getFullYear() - 3,
+          ccaa: ccaa,
+          honorarios: itpData.honorarios || 140
+        })
+      }
+    );
+    var data = await res.json();
 
-  const warn=document.createElement('div');
-  warn.style.cssText='align-self:stretch;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.25);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:11.5px;color:#f59e0b;line-height:1.55;font-family:Inter,sans-serif;animation:msgIn .3s ease-out';
-  warn.innerHTML='⚠ Cálculo orientativo basado en el valor del contrato. Hacienda puede aplicar el valor mínimo del vehículo si es superior al precio de compraventa.';
-  body.appendChild(warn);
+    if (data.error) throw new Error(data.error);
 
-  let nota='';
-  if(ccaa==='Madrid'){
-    nota='Madrid tiene el ITP más bajo de España (4%). WhiteMoon gestiona transferencias en Majadahonda y Madrid Capital.';
-  }else if(ccaa==='Cataluña'||ccaa==='Valencia'){
-    nota='El ITP en '+ccaa+' es del 10%. Lo gestionamos online desde cualquier punto de España.';
-  }
-  if(nota){
-    const note=document.createElement('div');
-    note.style.cssText='align-self:stretch;background:rgba(124,58,237,.06);border:1px solid rgba(124,58,237,.2);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:11.5px;color:#7c3aed;line-height:1.55;font-family:Inter,sans-serif;animation:msgIn .3s ease-out';
-    note.textContent=nota;
-    body.appendChild(note);
-  }
-  body.scrollTop=body.scrollHeight;
+    // Actualiza itpData con resultado real
+    itpData = {
+      ...itpData,
+      ccaa: ccaa,
+      percent: parseFloat(data.tipo_itp_pct),
+      percentLabel: data.tipo_itp_pct,
+      itp: data.itp,
+      honorarios: data.honorarios_gestoria,
+      tasa_dgt: data.tasa_dgt,
+      total: data.total_estimado,
+      base_imponible: data.base_imponible,
+      depreciacion: data.depreciacion_boe
+    };
 
-  setTimeout(()=>{
-    if(transferTipo){
-      const tipo=transferTipo;
-      addBot('¿Quieres que gestionemos el trámite completo?',[
-        {label:'✅ Sí, gestionar',action:()=>{captura.tramite='Transferencia '+tipo;startCapture('Perfecto 🚗 Vamos con tu transferencia.\n\n¿Me facilitas tu nombre?');}},
-        {label:'❓ Tengo dudas',action:()=>{captura.tramite='Transferencia '+tipo;captura.detalle=(captura.detalle?captura.detalle+' · ':'')+'Tiene dudas';startCapture('Sin problema, te llamamos y resolvemos cualquier duda sin compromiso.\n\n¿Me facilitas tu nombre?');}}
+    // Card visual resultado
+    var card =
+      '📋 Cálculo ITP oficial 2026\n' +
+      '━━━━━━━━━━━━━━━━━━━━\n' +
+      '🚗 Vehículo: ' + (itpData.vehiculo||'—') + '\n' +
+      '📅 Antigüedad: ' + data.antiguedad_anos + ' años\n' +
+      '📉 Depreciación BOE: ' + data.depreciacion_boe + '\n' +
+      '💰 Base imponible: ' + formatEUR(data.base_imponible) + '\n' +
+      '━━━━━━━━━━━━━━━━━━━━\n' +
+      '🏛️ ITP ' + data.tipo_itp_pct + ' (' + ccaa + '): ' + formatEUR(data.itp) + '\n' +
+      '🚦 Tasa DGT: ' + formatEUR(data.tasa_dgt) + '\n' +
+      '📂 Honorarios gestoría: ' + formatEUR(data.honorarios_gestoria) + '\n' +
+      '━━━━━━━━━━━━━━━━━━━━\n' +
+      '✅ TOTAL ESTIMADO: ' + formatEUR(data.total_estimado) + '\n\n' +
+      '⚠️ Cálculo orientativo BOE HAC/1501/2025. ' +
+      'Hacienda aplica el valor fiscal si supera el precio de compra.';
+
+    addBot(card);
+
+    setTimeout(function() {
+      addBot(
+        '¿Quieres que gestionemos la transferencia completa? ' +
+        'Te verificamos el valor fiscal real sin coste adicional.',
+        [
+          { label: '✅ Sí, gestionar', action: function(){ captura.tramite='Transferencia · ITP calculado · '+ccaa; startCapture(); }},
+          { label: '❓ Tengo dudas', action: function(){ showFiscalLink(); }}
+        ]
+      );
+    }, 1000);
+
+  } catch(e) {
+    // Fallback al cálculo local si falla la Edge Function
+    var percent = ITP_CCAA[ccaa] || 0.06;
+    var itp = Math.round(itpData.valor * percent * 100) / 100;
+    var honorarios = 140;
+    var total = itp + honorarios + 55.70;
+    itpData = { ...itpData, ccaa, percent, itp, honorarios, total };
+    addBot(
+      '📋 ITP ' + (percent*100).toFixed(0) + '% (' + ccaa + '): ' + formatEUR(itp) + '\n' +
+      'Tasa DGT: 55,70€\n' +
+      'Honorarios: ' + formatEUR(honorarios) + '\n' +
+      'TOTAL: ' + formatEUR(total)
+    );
+    setTimeout(function(){
+      addBot('¿Gestionamos la transferencia?',[
+        { label: '✅ Sí', action: function(){ captura.tramite='ITP · fallback'; startCapture(); }},
       ]);
-    }else{
-      addBot('¿Quieres que nuestro gestor te confirme el valor fiscal exacto de Hacienda sin coste y sin compromiso? 📋\n\nVerificamos el ITP real de tu vehículo en menos de 1 hora.',[
-        {label:'✓ Sí, quiero la verificación gratuita',action:()=>startCapture('Perfecto, solo necesito un par de datos para que el gestor lo verifique 🚗\n\n¿Me dices tu nombre?')},
-        {label:'→ No estoy seguro del valor',action:()=>showFiscalLink()}
-      ]);
-    }
-  },1000);
+    }, 800);
+  }
 }
 
 function showFiscalLink(){
