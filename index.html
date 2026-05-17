@@ -2452,8 +2452,83 @@ const GESTORIA_ENDPOINT = 'https://mlaqtniujnvfxcvcourm.supabase.co/functions/v1
 var gHistory = [];
 var lauraActiva = false;
 
+async function calcularITPReal(datos) {
+  try {
+    var res = await fetch(
+      'https://mlaqtniujnvfxcvcourm.supabase.co/functions/v1/gestoria-itp',
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          marca: datos.marca,
+          modelo: datos.modelo,
+          anio_matriculacion: datos.anio,
+          valor_venta: datos.precio,
+          ccaa: datos.ccaa,
+          tipo_vehiculo: datos.tipo || 'turismo',
+          cilindrada: datos.cilindrada || null
+        })
+      }
+    );
+    var data = await res.json();
+    if (data.error) return null;
+    return data;
+  } catch(e) {
+    return null;
+  }
+}
+
+function extraerDatosConversacion() {
+  var historial = gHistory.map(function(m) {
+    return m.role === 'user' ? m.content : '';
+  }).join(' ').toLowerCase();
+
+  var anioMatch = historial.match(/\b(19[5-9]\d|20[0-2]\d)\b/);
+  var anio = anioMatch ? parseInt(anioMatch[0]) : null;
+
+  var precioMatch = historial.match(/\b(\d{1,3}[.,]?\d{3}|\d{4,6})\s*€?/);
+  var precio = precioMatch ? parseFloat(precioMatch[1].replace(/[.,]/g,'')) : null;
+  if (precio && precio < 500) precio = null;
+
+  var ccaaMap = {
+    'madrid': 'Madrid', 'barcelona': 'Cataluña', 'catalu': 'Cataluña',
+    'valencia': 'Valencia', 'sevilla': 'Andalucía', 'andaluc': 'Andalucía',
+    'galicia': 'Galicia', 'bilbao': 'País Vasco', 'vasco': 'País Vasco',
+    'aragon': 'Aragón', 'navarra': 'Navarra', 'murcia': 'Murcia',
+    'cantabria': 'Cantabria', 'asturias': 'Asturias', 'extremadura': 'Extremadura',
+    'canarias': 'Canarias', 'baleares': 'Baleares', 'rioja': 'La Rioja',
+    'castilla la mancha': 'Castilla-La Mancha', 'castilla y leon': 'Castilla y León'
+  };
+  var ccaa = null;
+  Object.keys(ccaaMap).forEach(function(key) {
+    if (historial.includes(key)) ccaa = ccaaMap[key];
+  });
+
+  var todoHistorial = gHistory.map(function(m) { return m.content; }).join(' ');
+  var marcasComunes = ['volkswagen','golf','seat','ibiza','leon','renault','clio',
+    'megane','peugeot','citroen','ford','focus','opel','bmw','mercedes','audi',
+    'toyota','honda','hyundai','kia','nissan','mazda','volvo','fiat','skoda',
+    'dacia','alfa romeo','mini','porsche','tesla','suzuki'];
+  var marca = null, modelo = null;
+  marcasComunes.forEach(function(m) {
+    if (todoHistorial.toLowerCase().includes(m)) {
+      if (!marca) marca = m;
+    }
+  });
+
+  return {
+    anio: anio,
+    precio: precio,
+    ccaa: ccaa,
+    marca: marca,
+    modelo: modelo,
+    tieneTodo: anio && precio && ccaa && marca
+  };
+}
+
 async function askLaura(userMsg) {
-  gHistory.push({ role: 'user', content: userMsg });
+  var msgLimpio = userMsg.split('\n\n[DATOS BOE REALES')[0];
+  gHistory.push({ role: 'user', content: msgLimpio });
   try {
     var res = await fetch(GESTORIA_ENDPOINT, {
       method: 'POST',
@@ -2725,7 +2800,23 @@ async function handleInput(text) {
       captura.nombre = t.trim();
     }
 
-    var reply = await askLaura(t);
+    var datosConv = extraerDatosConversacion();
+    var contextoITP = '';
+    if (datosConv.tieneTodo) {
+      var resultITP = await calcularITPReal(datosConv);
+      if (resultITP) {
+        contextoITP = '\n\n[DATOS BOE REALES CALCULADOS — USA ESTOS EN TU RESPUESTA]:\n' +
+          'Modelo encontrado BOE: ' + (resultITP.modelo_encontrado_boe || 'no encontrado') + '\n' +
+          'Valor fiscal BOE nuevo: ' + (resultITP.valor_hacienda_nuevo || 'no disponible') + '€\n' +
+          'Depreciación ' + resultITP.antiguedad_anos + ' años: ' + resultITP.depreciacion_boe + '\n' +
+          'Base imponible: ' + resultITP.valor_fiscal + '€\n' +
+          'ITP ' + resultITP.tipo_itp_pct + ' (' + datosConv.ccaa + '): ' + resultITP.itp + '€\n' +
+          'Tasa DGT: ' + resultITP.tasa_dgt + '€\n' +
+          '[FIN DATOS BOE — presenta este desglose al cliente]';
+      }
+    }
+
+    var reply = await askLaura(t + contextoITP);
     input.disabled = false;
     sendBtn.disabled = false;
 
