@@ -2778,14 +2778,17 @@ async function handleInput(text) {
 }
 
 function finishCaptura() {
-  var msg = '🤖 *Lead IA Gestoría*\n' +
-    '👤 Nombre: ' + (captura.nombre || 'No indicado') + '\n' +
-    '📞 Teléfono: ' + (captura.telefono || 'No indicado') + '\n' +
-    '📋 Trámite: ' + (captura.tramite || 'Consulta ITP/Transferencia') + '\n' +
-    '🤖 Captado por: Laura Agente IA';
-  var url = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg);
-  console.log('Lead Laura capturado:', captura.nombre, captura.telefono);
-  // Notificación silenciosa — no interrumpe conversación
+  if (!captura.nombre || !captura.telefono) return;
+
+  var msg = '🤖 *Nuevo lead Laura IA — Gestoría ITP*\n\n' +
+    '👤 Nombre: ' + captura.nombre + '\n' +
+    '📞 Teléfono: ' + captura.telefono + '\n' +
+    '🚗 Vehículo: ' + (captura.vehiculo || 'No indicado') + '\n' +
+    '📋 Trámite: ' + (captura.tramite || 'Consulta ITP / Transferencia') + '\n' +
+    '🤖 Captado por: Laura Agente IA Gestoría';
+
+  var url = 'https://wa.me/34643199580?text=' + encodeURIComponent(msg);
+  window.open(url, '_blank');
 }
 
 function finishCapture(){
