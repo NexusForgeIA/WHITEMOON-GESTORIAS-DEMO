@@ -2448,26 +2448,54 @@ let vehicleMode='';
 let itpData=null;
 let transferTipo='';
 
+const GESTORIA_ENDPOINT = 'https://mlaqtniujnvfxcvcourm.supabase.co/functions/v1/gestoria-chat';
+var gHistory = [];
+var lauraActiva = false;
+
+async function askLaura(userMsg) {
+  gHistory.push({ role: 'user', content: userMsg });
+  try {
+    var res = await fetch(GESTORIA_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ messages: gHistory.slice(-12) })
+    });
+    var data = await res.json();
+    var reply = data.text || '';
+    if (reply) gHistory.push({ role: 'assistant', content: reply });
+    return reply;
+  } catch(e) {
+    console.error('Laura error:', e);
+    return null;
+  }
+}
+
 function setCaptureMode(on){
   if(on){fab.style.display='none';closeBtn.style.display='none';}
   else{fab.style.display='flex';closeBtn.style.display='block';}
 }
 
-function openChat(){
+async function openChat() {
+  gHistory = [];
+  lauraActiva = true;
+  chatOpen = true;
   modal.classList.add('open');
-  tip.classList.add('hidden');
-  if(!opened){
-    opened=true;
-    setTimeout(()=>{
-      addBot('¡Hola! Bienvenido/a a WhiteMoon Gestoría IA.\n¿Qué trámite de tráfico necesitas gestionar?',[
-        {ico:ICO.swap,label:'Transferencia de vehículo',action:()=>flowTransfer()},
-        {label:'🧮 Calcular precio transferencia',action:()=>startItpCalc()},
-        {ico:ICO.bolt,label:'Coche eléctrico / Plan Moves',action:()=>flowMoves()},
-        {ico:ICO.truck,label:'Tarjeta de transporte',action:()=>flowTransporte()},
-        {ico:ICO.scooter,label:'Patinete / VMP',action:()=>flowPatinete()},
-        {ico:ICO.doc,label:'Otro trámite DGT',action:()=>flowOtro()}
-      ],ICO.car);
-    },1500);
+  input.disabled = false;
+  sendBtn.disabled = false;
+  input.placeholder = 'Escribe tu consulta...';
+
+  addBot('⏳ Conectando con el agente IA...');
+
+  var bienvenida = await askLaura('El cliente acaba de abrir el chat de la gestoría. Salúdale y ofrece ayuda con transferencias de vehículos e ITP.');
+
+  // Borrar el mensaje de "conectando"
+  var msgs = document.querySelectorAll('.chat-msg.bot');
+  if (msgs.length > 0) msgs[msgs.length - 1].remove();
+
+  if (bienvenida) {
+    addBot(bienvenida);
+  } else {
+    addBot('¡Hola! 👋 Soy Laura, tu agente especializada en transferencias de vehículos e ITP. ¿En qué puedo ayudarte?');
   }
 }
 
@@ -2664,65 +2692,100 @@ function startCapture(intro){
   addBot(intro||'Para llamarte y darte presupuesto sin compromiso, ¿me facilitas tu nombre?');
 }
 
-function handleInput(text){
-  text=text.trim();
-  if(!text) return;
-  const t=text.toLowerCase();
-  addMsg(text,'user');
+async function handleInput(text) {
+  if (!text || !text.trim()) return;
+  var t = text.trim();
 
-  // Despedida: prioridad absoluta, antes de chatStep / awaitingXxx / routeKeyword
-  if(isDespedida(t)){awaitingDescription=false;awaitingItp=false;awaitingVehicle=false;vehicleMode='';flowDespedida();return;}
+  addMsg(t, 'user');
+  input.value = '';
+  input.disabled = true;
+  sendBtn.disabled = true;
 
-  if(awaitingDescription){
-    captura.detalle=text;
-    awaitingDescription=false;
-    startCapture();
-    return;
-  }
+  if (lauraActiva) {
+    // Detectar despedida para cerrar
+    if (isDespedida(t.toLowerCase())) {
+      lauraActiva = false;
+      gHistory = [];
+      var reply = await askLaura(t);
+      if (reply) addBot(reply);
+      setTimeout(function() { flowDespedida(); }, 800);
+      input.disabled = false;
+      sendBtn.disabled = false;
+      return;
+    }
 
-  if(awaitingVehicle){
-    captura.vehiculo=text;
-    // Intentar extraer año del texto (ej: "Golf 2019")
-    var anioMatch = t.match(/\b(19|20)\d{2}\b/);
-    if (anioMatch) itpData = itpData || {};
-    if (anioMatch && itpData) itpData.anio = parseInt(anioMatch[0]);
-    awaitingVehicle=false;
-    if(vehicleMode==='itp'){
-      awaitingItp=true;
-      vehicleMode='';
-      addBot('Perfecto. ¿Cuál es el precio del contrato de compraventa? (escribe solo el número en €)');
-    }else if(vehicleMode==='transfer'){
-      vehicleMode='';
-      startCapture();
+    // Detectar teléfono → capturar lead
+    var phoneMatch = t.match(/(\+34\s?|0034\s?)?[6-9]\d{8}/);
+    if (phoneMatch) {
+      captura.telefono = phoneMatch[0].replace(/[\s\-]/g,'');
+    }
+
+    // Detectar nombre (1-3 palabras, solo letras)
+    if (!captura.nombre && /^[a-záéíóúñA-ZÁÉÍÓÚÑ\s]{2,30}$/.test(t) && t.split(' ').length <= 3) {
+      captura.nombre = t.trim();
+    }
+
+    var reply = await askLaura(t);
+    input.disabled = false;
+    sendBtn.disabled = false;
+
+    if (reply) {
+      addBot(reply);
+      // Si tenemos nombre y teléfono → enviar lead a WhatsApp
+      if (captura.nombre && captura.telefono && !captura.tramite) {
+        captura.tramite = 'Consulta ITP / Transferencia';
+        setTimeout(function() { finishCaptura(); }, 1200);
+      }
+    } else {
+      addBot('Disculpa, ¿puedes repetirlo? Estoy aquí para ayudarte.');
     }
     return;
   }
 
-  if(awaitingItp){
-    const val=parseFloat(text.replace(/[^\d.,]/g,'').replace(',','.'));
-    if(!val||val<=0){addBot('Necesito un importe en euros mayor que 0. ¿Puedes indicar el valor del contrato? (ej: 8500)');return;}
-    awaitingItp=false;
+  // Fallback al flujo original si Laura no activa
+  var lower = t.toLowerCase();
+  if (isDespedida(lower)) { resetChat(); flowDespedida(); return; }
+  if (awaitingDescription) { awaitingDescription=false; captura.detalle=t; startCapture(); return; }
+  if (awaitingVehicle) {
+    captura.vehiculo = t;
+    var anioMatch = t.match(/\b(19|20)\d{2}\b/);
+    if (anioMatch) { itpData = itpData||{}; itpData.anio = parseInt(anioMatch[0]); }
+    awaitingVehicle = false;
+    if (vehicleMode==='itp') { awaitingItp=true; addBot('¿Cuál es el precio acordado de compra? (escribe solo el importe en €)'); }
+    else { startCapture(); }
+    input.disabled = false; sendBtn.disabled = false; return;
+  }
+  if (awaitingItp) {
+    var val = parseFloat(t.replace(/[^\d.,]/g,'').replace(',','.'));
+    if (!val || val<=0) { addBot('Por favor escribe un importe válido, por ejemplo: 8500'); input.disabled=false; sendBtn.disabled=false; return; }
+    awaitingItp = false;
     askCcaa(val);
-    return;
+    input.disabled = false; sendBtn.disabled = false; return;
   }
-
-  if(chatStep===0){routeKeyword(t);return;}
-  if(chatStep===1){
-    if(isNegativaCaptura(t)){flowDespedida();return;}
-    captura.nombre=text;
+  if (chatStep===0) { routeKeyword(lower); }
+  else if (chatStep===1) {
+    captura.nombre = t.split(' ')[0];
     chatStep=2;
-    addBot('Gracias '+text.split(' ')[0]+'.\n\n¿Me das un teléfono de contacto? (9 dígitos)');
-    return;
-  }
-  if(chatStep===2){
-    if(isNegativaCaptura(t)){flowDespedida();return;}
-    const tel=text.replace(/\D/g,'');
-    if(tel.length<9){addBot('El teléfono debe tener 9 dígitos. ¿Puedes revisarlo?');return;}
-    captura.telefono=tel;
-    chatStep=3;
+    addBot('Gracias ' + captura.nombre + ' 😊 ¿Y tu número de teléfono para que te llamemos?');
+  } else if (chatStep===2) {
+    var tel = t.replace(/\D/g,'');
+    if (tel.length < 9) { addBot('Por favor introduce un número válido (9 dígitos).'); input.disabled=false; sendBtn.disabled=false; return; }
+    captura.telefono = tel;
     finishCapture();
-    return;
   }
+  input.disabled = false;
+  sendBtn.disabled = false;
+}
+
+function finishCaptura() {
+  var msg = '🤖 *Lead IA Gestoría*\n' +
+    '👤 Nombre: ' + (captura.nombre || 'No indicado') + '\n' +
+    '📞 Teléfono: ' + (captura.telefono || 'No indicado') + '\n' +
+    '📋 Trámite: ' + (captura.tramite || 'Consulta ITP/Transferencia') + '\n' +
+    '🤖 Captado por: Laura Agente IA';
+  var url = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg);
+  console.log('Lead Laura capturado:', captura.nombre, captura.telefono);
+  // Notificación silenciosa — no interrumpe conversación
 }
 
 function finishCapture(){
@@ -2953,7 +3016,7 @@ async function showItpCalc(ccaa) {
     var card =
       '📋 Cálculo ITP oficial 2026\n' +
       '━━━━━━━━━━━━━━━━━━━━\n' +
-      '🚗 Vehículo: ' + (itpData.vehiculo||'—') + '\n' +
+      '🚗 Vehículo: ' + (captura.vehiculo || itpData.vehiculo || '—') + '\n' +
       '📅 Antigüedad: ' + data.antiguedad_anos + ' años\n' +
       '📉 Depreciación BOE: ' + data.depreciacion_boe + '\n' +
       '💰 Base imponible: ' + formatEUR(data.base_imponible) + '\n' +
