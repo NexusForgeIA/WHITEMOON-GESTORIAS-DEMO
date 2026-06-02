@@ -428,7 +428,7 @@ section{padding:100px 0}
   letter-spacing:normal;
   text-transform:none;
   color:var(--texto2);
-  font-family:'Hanken Grotesk',sans-serif;
+  font-family:"Hanken Grotesk",sans-serif;
   font-weight:400;
   font-size:14px;
 }
@@ -1594,6 +1594,110 @@ footer{background:var(--negro);padding:50px 0 26px;border-top:3px solid var(--ro
   }
   .footer-inner{flex-direction:column;text-align:center}
 }
+
+/* ===== MODAL SERVICIOS ===== */
+.svc-modal-overlay{
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  background:rgba(0,0,0,.72);
+  backdrop-filter:blur(4px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  opacity:0;
+  visibility:hidden;
+  transition:opacity .28s ease;
+}
+.svc-modal-overlay.open{opacity:1;visibility:visible}
+.svc-modal{
+  background:var(--card);
+  border:1px solid var(--orange);
+  border-radius:14px;
+  max-width:600px;
+  width:100%;
+  max-height:90vh;
+  overflow-y:auto;
+  position:relative;
+  box-shadow:0 24px 70px rgba(0,0,0,.6),var(--glow);
+  transform:translateY(18px) scale(.97);
+  transition:transform .28s ease;
+}
+.svc-modal-overlay.open .svc-modal{transform:translateY(0) scale(1)}
+.svc-modal-img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:14px 14px 0 0;
+  display:block;
+}
+.svc-modal-close{
+  position:absolute;
+  top:14px;
+  right:14px;
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  background:rgba(0,0,0,.55);
+  border:1px solid var(--border2);
+  color:#fff;
+  font-size:24px;
+  line-height:1;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:all .2s;
+  z-index:2;
+}
+.svc-modal-close:hover{background:var(--orange);border-color:var(--orange);transform:rotate(90deg)}
+.svc-modal-body{padding:28px 30px 30px}
+.svc-modal-title{
+  font-family:'Sora',sans-serif;
+  font-weight:700;
+  font-size:28px;
+  letter-spacing:.5px;
+  color:var(--texto);
+  margin-bottom:16px;
+}
+.svc-modal-desc p{
+  color:var(--texto2);
+  font-size:15px;
+  line-height:1.7;
+  margin-bottom:12px;
+}
+.svc-modal-bullets{
+  list-style:none;
+  margin:18px 0 26px;
+  display:flex;
+  flex-direction:column;
+  gap:11px;
+}
+.svc-modal-bullets li{
+  position:relative;
+  padding-left:28px;
+  color:var(--texto);
+  font-size:14.5px;
+  line-height:1.5;
+}
+.svc-modal-bullets li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:6px;
+  width:13px;
+  height:13px;
+  border-radius:50%;
+  background:var(--orange-dim);
+  border:2px solid var(--orange);
+}
+.svc-modal-cta{width:100%;font-size:15px;padding:14px}
+@media (max-width:600px){
+  .svc-modal-img{height:170px}
+  .svc-modal-body{padding:22px 20px 24px}
+  .svc-modal-title{font-size:23px}
+}
 </style>
 </head>
 <body>
@@ -1659,98 +1763,98 @@ footer{background:var(--negro);padding:50px 0 26px;border-top:3px solid var(--ro
     </div>
 
     <div class="servicios-grid">
-      <div class="servicio-card tab-btn active" data-tab="transferencias" role="button" tabindex="0">
+      <div class="servicio-card" data-svc="transferencias" role="button" tabindex="0">
         <img class="servicio-img" src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=400&q=80" alt="Transferencias de vehículos" loading="lazy">
         <div class="servicio-body">
           <h3>Transferencias</h3>
           <p>Cambio de titularidad ante la DGT en 24-48h, sin desplazarte. 140€ con tasas incluidas.</p>
         </div>
       </div>
-      <div class="servicio-card tab-btn" data-tab="electricos" role="button" tabindex="0">
+      <div class="servicio-card" data-svc="electricos" role="button" tabindex="0">
         <img class="servicio-img" src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&q=80" alt="Matriculación de vehículos eléctricos" loading="lazy">
         <div class="servicio-body">
           <h3>Matrícula Eléctricos</h3>
           <p>Matriculación de coches eléctricos e híbridos ante la DGT. Compatible con Plan Moves.</p>
         </div>
       </div>
-      <div class="servicio-card tab-btn" data-tab="patinetes" role="button" tabindex="0">
+      <div class="servicio-card" data-svc="patinetes" role="button" tabindex="0">
         <img class="servicio-img" src="https://images.unsplash.com/photo-1576659698370-5bb6e1055990?w=400&q=80" alt="Inscripción de patinetes eléctricos VMP" loading="lazy">
         <div class="servicio-body">
           <h3>Patinetes VMP</h3>
           <p>Inscripción obligatoria en la DGT desde 2024. Evita multas de hasta 500€. Desde 50€.</p>
         </div>
       </div>
-      <div class="servicio-card tab-btn" data-tab="transportes" role="button" tabindex="0">
+      <div class="servicio-card" data-svc="transportes" role="button" tabindex="0">
         <img class="servicio-img" src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=400&q=80" alt="Transporte profesional y tarjetas de transporte" loading="lazy">
         <div class="servicio-body">
           <h3>Transportes</h3>
           <p>Tarjetas de transporte, VTC y autorizaciones para empresas y autónomos en Madrid.</p>
         </div>
       </div>
-      <div class="servicio-card tab-btn" data-tab="moves" role="button" tabindex="0">
+      <div class="servicio-card" data-svc="moves" role="button" tabindex="0">
         <img class="servicio-img" src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=400&q=80" alt="Plan Moves y movilidad sostenible" loading="lazy">
         <div class="servicio-body">
           <h3>Plan Moves</h3>
           <p>Gestionamos la ayuda Plan Moves III. Hasta 7.000€ por tu vehículo eléctrico.</p>
         </div>
       </div>
-      <div class="servicio-card">
+      <div class="servicio-card" data-svc="trafico" role="button" tabindex="0">
         <img class="servicio-img" src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&q=80" alt="Tráfico y transporte urbano" loading="lazy">
         <div class="servicio-body">
           <h3>Tráfico y Transporte</h3>
           <p>Gestión integral de trámites de tráfico, autorizaciones y permisos para particulares y empresas.</p>
         </div>
       </div>
-      <div class="servicio-card">
+      <div class="servicio-card" data-svc="fiscal" role="button" tabindex="0">
         <img class="servicio-img" src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&q=80" alt="Asesoría fiscal y contable" loading="lazy">
         <div class="servicio-body">
           <h3>Asesoría Fiscal</h3>
           <p>Asesoramiento fiscal, contable y laboral para autónomos y empresas. Declaraciones y nóminas al día.</p>
         </div>
       </div>
-      <div class="servicio-card">
+      <div class="servicio-card" data-svc="civil" role="button" tabindex="0">
         <img class="servicio-img" src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=400&q=80" alt="Derecho civil" loading="lazy">
         <div class="servicio-body">
           <h3>Derecho Civil</h3>
           <p>Reclamaciones, contratos y conflictos entre particulares con un trato cercano en cada caso.</p>
         </div>
       </div>
-      <div class="servicio-card">
+      <div class="servicio-card" data-svc="mercantil" role="button" tabindex="0">
         <img class="servicio-img" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&q=80" alt="Derecho mercantil" loading="lazy">
         <div class="servicio-body">
           <h3>Derecho Mercantil</h3>
           <p>Constitución de sociedades, contratos mercantiles y asesoramiento jurídico para empresas.</p>
         </div>
       </div>
-      <div class="servicio-card">
+      <div class="servicio-card" data-svc="inmobiliario" role="button" tabindex="0">
         <img class="servicio-img" src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&q=80" alt="Derecho inmobiliario" loading="lazy">
         <div class="servicio-body">
           <h3>Derecho Inmobiliario</h3>
           <p>Compraventas, arrendamientos y toda la gestión jurídica de la propiedad inmobiliaria.</p>
         </div>
       </div>
-      <div class="servicio-card">
+      <div class="servicio-card" data-svc="herencias" role="button" tabindex="0">
         <img class="servicio-img" src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&q=80" alt="Tramitación de herencias" loading="lazy">
         <div class="servicio-body">
           <h3>Herencias</h3>
           <p>Tramitación de herencias, testamentos y adjudicación de bienes en todo el proceso sucesorio.</p>
         </div>
       </div>
-      <div class="servicio-card">
+      <div class="servicio-card" data-svc="familia" role="button" tabindex="0">
         <img class="servicio-img" src="https://images.unsplash.com/photo-1553915632-175f60dd8e36?w=400&q=80" alt="Derecho de familia" loading="lazy">
         <div class="servicio-body">
           <h3>Derecho de Familia</h3>
           <p>Separaciones, divorcios, custodias y acuerdos familiares con discreción y confidencialidad.</p>
         </div>
       </div>
-      <div class="servicio-card">
+      <div class="servicio-card" data-svc="penal" role="button" tabindex="0">
         <img class="servicio-img" src="https://images.unsplash.com/photo-1589994965851-a8f479c573a9?w=400&q=80" alt="Derecho penal" loading="lazy">
         <div class="servicio-body">
           <h3>Derecho Penal</h3>
           <p>Defensa y asistencia jurídica en procedimientos penales, con seguimiento de principio a fin.</p>
         </div>
       </div>
-      <div class="servicio-card">
+      <div class="servicio-card" data-svc="administrativo" role="button" tabindex="0">
         <img class="servicio-img" src="https://images.unsplash.com/photo-1555848962-6e79363ec58f?w=400&q=80" alt="Derecho administrativo" loading="lazy">
         <div class="servicio-body">
           <h3>Derecho Administrativo</h3>
@@ -1759,274 +1863,23 @@ footer{background:var(--negro);padding:50px 0 26px;border-top:3px solid var(--ro
       </div>
     </div>
 
-    <!-- TAB 1 TRANSFERENCIAS -->
-    <div class="tab-content active" id="tab-transferencias">
-      <div class="servicio-detail">
-        <div class="servicio-detail-main">
-          <div class="subtitle">Líderes en transferencias en Madrid</div>
-          <h3>Transferencia de Vehículos</h3>
-          <p class="lead">Gestionamos el cambio de titularidad de tu vehículo ante la DGT sin que tengas que desplazarte. Más de 5.000 transferencias realizadas.</p>
-
-          <div class="block-title">Documentación necesaria</div>
-          <ul class="check-list">
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>DNI/NIE comprador y vendedor</li>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Contrato de compraventa del vehículo</li>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Permiso de circulación original</li>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Ficha técnica del vehículo</li>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Justificante pago impuesto municipal (IVTM)</li>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Último recibo del seguro (opcional)</li>
-          </ul>
-
-          <div class="block-title">Proceso en 4 pasos</div>
-          <div class="process-steps steps-4">
-            <div class="process-step tab-step">
-              <div class="step-ico"><svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
-              <div class="step-num-sm">PASO 1</div>
-              <p>Hablas con nuestro agente IA</p>
-            </div>
-            <div class="process-step tab-step">
-              <div class="step-ico"><svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
-              <div class="step-num-sm">PASO 2</div>
-              <p>Revisamos y cerramos presupuesto</p>
-            </div>
-            <div class="process-step tab-step">
-              <div class="step-ico"><svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-              <div class="step-num-sm">PASO 3</div>
-              <p>Envías docs a comercial@whitemoon.es</p>
-            </div>
-            <div class="process-step tab-step">
-              <div class="step-ico"><svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 11 17 15 13"/></svg></div>
-              <div class="step-num-sm">PASO 4</div>
-              <p>Vehículo transferido</p>
-            </div>
-          </div>
-        </div>
-        <div class="servicio-detail-side">
-          <div class="block-title">Información clave</div>
-          <div class="alert-box">
-            <svg viewBox="0 0 24 24"><polyline points="8 21 12 17 16 21"/><path d="M9 7H5a2 2 0 00-2 2v1a4 4 0 004 4h1m6-7h4a2 2 0 012 2v1a4 4 0 01-4 4h-1"/><path d="M12 17V7M9 7h6"/></svg>
-            <div><strong>Líderes en Madrid</strong><p>+5.000 transferencias gestionadas con éxito.</p></div>
-          </div>
-          <div class="info-box">
-            <div class="info-row"><span>Plazo</span><strong>24-48 horas</strong></div>
-            <div class="info-row"><span>Precio WhiteMoon</span><strong>140€</strong></div>
-            <div class="info-row"><span>Tasas DGT</span><span style="color:#fff">incluidas</span></div>
-            <div class="info-row"><span>Modalidad</span><span style="color:#fff">100% online</span></div>
-          </div>
-          <button onclick="abrirChatITP();return false;" class="itp-btn" style="display:inline-flex;align-items:center;gap:8px;padding:11px 20px;background:transparent;border:2px solid #FF6A00;border-radius:10px;color:#FF6A00;font-family:'Sora',sans-serif;font-size:.9rem;font-weight:700;cursor:pointer;transition:all .2s;margin-top:12px;letter-spacing:.04em">
-            <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2">
-              <rect x="4" y="2" width="16" height="20" rx="2"/>
-              <line x1="8" y1="6" x2="16" y2="6"/>
-              <line x1="8" y1="10" x2="16" y2="10"/>
-              <line x1="8" y1="14" x2="12" y2="14"/>
-            </svg>
-            Calcular mi ITP →
-          </button>
-          <div style="font-size:.68rem;color:#666;margin-top:6px">Calcula el ITP de tu transferencia según tu Comunidad Autónoma</div>
-          <div style="font-size:.62rem;color:#555;margin-top:2px;line-height:1.5">Madrid 4% · Cataluña y Valencia 10% · Andalucía 7% · y todas las comunidades</div>
-          <div class="cta-row">
-            <a href="#contacto" class="btn btn-rojo" style="flex:1" onclick="toggleChat();return false;">Solicitar transferencia</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- TAB 2 ELÉCTRICOS -->
-    <div class="tab-content" id="tab-electricos">
-      <div class="servicio-detail">
-        <div class="servicio-detail-main">
-          <div class="subtitle">Especialistas en vehículos de nueva energía</div>
-          <h3>Matriculación Vehículos Eléctricos</h3>
-          <p class="lead">Tramitamos la matriculación de coches eléctricos, híbridos enchufables y de pila de combustible. Gestionamos todo el proceso ante la DGT incluyendo placas y documentación.</p>
-
-          <div class="block-title">Tipos de vehículos</div>
-          <ul class="arrow-list">
-            <li><strong>Coches 100% eléctricos</strong> (BEV)</li>
-            <li><strong>Híbridos enchufables</strong> (PHEV)</li>
-            <li><strong>Híbridos</strong> (HEV)</li>
-            <li><strong>Pila de combustible</strong> (FCEV)</li>
-            <li>Motocicletas eléctricas</li>
-            <li>Furgonetas y vehículos comerciales eléctricos</li>
-          </ul>
-
-          <div class="block-title">Documentación necesaria</div>
-          <ul class="check-list">
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Factura de compra del vehículo</li>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Certificado de conformidad (CoC)</li>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>DNI/NIE del comprador</li>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Justificante del seguro</li>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Ficha de homologación técnica</li>
-          </ul>
-        </div>
-        <div class="servicio-detail-side">
-          <div class="block-title">Ventajas adicionales</div>
-          <ul class="arrow-list">
-            <li>Compatibilidad con <strong>Plan Moves 2025</strong></li>
-            <li>Exención de impuesto de matriculación</li>
-            <li>Descuentos en impuesto de circulación</li>
-            <li>Acceso a zonas de bajas emisiones</li>
-          </ul>
-          <div class="info-box">
-            <div class="info-row"><span>Plazo</span><strong>3-7 días laborables</strong></div>
-            <div class="info-row"><span>Precio orientativo</span><strong>desde 150€</strong></div>
-            <div class="info-row"><span>Tasas DGT</span><span style="color:#fff">aparte</span></div>
-          </div>
-          <div class="cta-row">
-            <a href="#contacto" class="btn btn-rojo" style="flex:1" onclick="toggleChat();return false;">Matricular eléctrico</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- TAB 3 PATINETES -->
-    <div class="tab-content" id="tab-patinetes">
-      <div class="servicio-detail">
-        <div class="servicio-detail-main">
-          <div class="subtitle">Obligatorio desde enero 2024</div>
-          <h3>Inscripción Patinetes y VMP en la DGT</h3>
-
-          <div class="alert-box">
-            <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-            <div><strong>Atención: multas de hasta 500€</strong><p>Circular sin inscripción puede suponer sanciones graves.</p></div>
-          </div>
-
-          <p class="lead">La inscripción de Vehículos de Movilidad Personal (VMP) en el Registro de la DGT es obligatoria desde el 22 de enero de 2024. Gestionamos todo el proceso de forma rápida y sencilla.</p>
-
-          <div class="block-title">Trámites disponibles</div>
-          <ul class="arrow-list">
-            <li><strong>Inscripción inicial</strong> — Alta en el registro VMP</li>
-            <li><strong>Cambio de titular</strong> — Por compraventa</li>
-            <li><strong>Baja definitiva</strong> — Por robo, pérdida o desuso</li>
-            <li><strong>Duplicado documentación</strong> — Por extravío</li>
-          </ul>
-
-          <div class="block-title">Marcas más frecuentes</div>
-          <div class="brand-chips">
-            <span class="brand-chip">Xiaomi</span>
-            <span class="brand-chip">Cecotec</span>
-            <span class="brand-chip">Segway</span>
-            <span class="brand-chip">Ninebot</span>
-            <span class="brand-chip">Pure Electric</span>
-            <span class="brand-chip">Hiboy</span>
-            <span class="brand-chip">Ducati</span>
-            <span class="brand-chip">Isinwheel</span>
-            <span class="brand-chip">Kaiku</span>
-            <span class="brand-chip">y cualquier marca</span>
-          </div>
-
-          <div class="block-title">Documentación necesaria</div>
-          <ul class="check-list">
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>DNI/NIE del propietario</li>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Factura de compra o contrato compraventa</li>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Certificado de conformidad del fabricante</li>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Manual técnico del vehículo</li>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Fotografías del patinete (3 vistas)</li>
-          </ul>
-        </div>
-        <div class="servicio-detail-side">
-          <div class="block-title">Precios</div>
-          <div class="price-grid">
-            <div class="price-row"><span>Inscripción nueva</span><strong>desde 50€</strong></div>
-            <div class="price-row"><span>Cambio de titular</span><strong>desde 40€</strong></div>
-            <div class="price-row"><span>Baja</span><strong>desde 30€</strong></div>
-            <div class="price-row"><span>Duplicado</span><strong>desde 25€</strong></div>
-          </div>
-          <div class="info-box">
-            <div class="info-row"><span>Plazo</span><strong>24-48 horas</strong></div>
-            <div class="info-row"><span>Modalidad</span><span style="color:#fff">100% online</span></div>
-          </div>
-          <div class="cta-row">
-            <a href="#contacto" class="btn btn-rojo" style="flex:1" onclick="toggleChat();return false;">Inscribir mi patinete</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- TAB 4 TRANSPORTES -->
-    <div class="tab-content" id="tab-transportes">
-      <div class="servicio-detail">
-        <div class="servicio-detail-main">
-          <div class="subtitle">Profesionales del sector</div>
-          <h3>Gestión de Transporte Profesional</h3>
-          <p class="lead">Gestionamos todos los trámites de transporte para empresas, autónomos y profesionales del sector en Madrid y Comunidad de Madrid.</p>
-
-          <div class="block-title">Servicios</div>
-          <ul class="arrow-list">
-            <li><strong>Tarjetas de transporte</strong> — alta, visado, renovación</li>
-            <li>Autorizaciones de transporte de viajeros</li>
-            <li>Autorizaciones de transporte de mercancías</li>
-            <li><strong>Permiso de conductor VTC</strong></li>
-            <li>Licencias de taxi y VTC</li>
-            <li>Concesiones y habilitaciones</li>
-          </ul>
-
-          <div class="block-title">Tarjetas de transporte en detalle</div>
-          <p class="lead" style="margin-bottom:14px">Gestionamos el alta, visado y renovación de tarjetas de transporte para camiones, furgonetas y vehículos de gran tonelaje. Conocemos todos los plazos y requisitos de la Comunidad de Madrid.</p>
-        </div>
-        <div class="servicio-detail-side">
-          <div class="block-title">¿Tarjeta caducada?</div>
-          <div class="alert-box">
-            <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-            <div><strong>Visados urgentes</strong><p>Atendemos visados con prioridad. Consulta tu fecha de caducidad.</p></div>
-          </div>
-          <div class="info-box">
-            <div class="info-row"><span>Plazo visado</span><span style="color:#fff">según caducidad</span></div>
-            <div class="info-row"><span>Cobertura</span><strong>Comunidad de Madrid</strong></div>
-            <div class="info-row"><span>Modalidad</span><span style="color:#fff">empresas y autónomos</span></div>
-          </div>
-          <div class="cta-row">
-            <a href="#contacto" class="btn btn-rojo" style="flex:1" onclick="toggleChat();return false;">Consultar urgente</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- TAB 5 PLAN MOVES -->
-    <div class="tab-content" id="tab-moves">
-      <div class="servicio-detail">
-        <div class="servicio-detail-main">
-          <div class="subtitle">Gestionamos tu subvención completa</div>
-          <h3>Plan Moves III — Hasta 7.000€</h3>
-          <p class="lead">Gestionamos la solicitud completa de la ayuda Plan Moves III ante la Comunidad de Madrid para la compra de vehículos eléctricos e híbridos enchufables.</p>
-
-          <div class="block-title">Importes por categoría</div>
-          <div class="amount-grid">
-            <div class="amount-row"><span>Turismo eléctrico <strong style="color:#fff">con achatarramiento</strong></span><strong>7.000€</strong></div>
-            <div class="amount-row"><span>Turismo eléctrico <strong style="color:#fff">sin achatarramiento</strong></span><strong>4.500€</strong></div>
-            <div class="amount-row"><span>Moto eléctrica <strong style="color:#fff">con achatarramiento</strong></span><strong>1.100€</strong></div>
-            <div class="amount-row"><span>Moto eléctrica <strong style="color:#fff">sin achatarramiento</strong></span><strong>750€</strong></div>
-            <div class="amount-row"><span>Cuadriciclo eléctrico</span><strong>hasta 4.000€</strong></div>
-          </div>
-
-          <div class="block-title">Requisitos principales</div>
-          <ul class="check-list">
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Vehículo eléctrico puro o PHEV</li>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Precio máximo según categoría</li>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Solicitud ANTES de la entrega del vehículo</li>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Domicilio en España</li>
-          </ul>
-        </div>
-        <div class="servicio-detail-side">
-          <div class="block-title">Nuestro proceso</div>
-          <div class="process-steps" style="grid-template-columns:1fr;gap:10px">
-            <div class="process-step" style="text-align:left;display:flex;gap:12px;align-items:center;padding:12px 16px"><div class="step-num" style="margin:0">1</div><p style="text-align:left">Verificamos si tu vehículo es elegible</p></div>
-            <div class="process-step" style="text-align:left;display:flex;gap:12px;align-items:center;padding:12px 16px"><div class="step-num" style="margin:0">2</div><p style="text-align:left">Preparamos toda la documentación</p></div>
-            <div class="process-step" style="text-align:left;display:flex;gap:12px;align-items:center;padding:12px 16px"><div class="step-num" style="margin:0">3</div><p style="text-align:left">Presentamos la solicitud</p></div>
-            <div class="process-step" style="text-align:left;display:flex;gap:12px;align-items:center;padding:12px 16px"><div class="step-num" style="margin:0">4</div><p style="text-align:left">Seguimiento hasta el cobro</p></div>
-          </div>
-          <div class="alert-box">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-            <div><p style="margin:0"><strong style="display:inline">Importante:</strong> muchos concesionarios ya lo tramitan. Si el tuyo no lo hace, nosotros lo gestionamos por ti.</p></div>
-          </div>
-          <div class="cta-row">
-            <a href="#contacto" class="btn btn-rojo" style="flex:1" onclick="toggleChat();return false;">Solicitar Plan Moves</a>
-          </div>
-        </div>
-      </div>
-    </div>
 
   </div>
 </section>
+
+<!-- MODAL SERVICIOS -->
+<div class="svc-modal-overlay" id="svcModal" aria-hidden="true">
+  <div class="svc-modal" role="dialog" aria-modal="true" aria-labelledby="svcModalTitle">
+    <button class="svc-modal-close" id="svcModalClose" aria-label="Cerrar">&times;</button>
+    <img class="svc-modal-img" id="svcModalImg" src="" alt="">
+    <div class="svc-modal-body">
+      <h3 class="svc-modal-title" id="svcModalTitle"></h3>
+      <div class="svc-modal-desc" id="svcModalDesc"></div>
+      <ul class="svc-modal-bullets" id="svcModalBullets"></ul>
+      <button class="btn btn-rojo svc-modal-cta" id="svcModalCta">Consultar con Laura IA &rarr;</button>
+    </div>
+  </div>
+</div>
 
 <!-- VALORES -->
 <section class="valores" id="nosotros">
@@ -2506,16 +2359,93 @@ document.querySelectorAll('.faq-question').forEach(btn=>{
   });
 });
 
-/* ========= TABS ========= */
-document.querySelectorAll('.tab-btn').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    const tab=btn.dataset.tab;
-    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
-    document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
-    btn.classList.add('active');
-    document.getElementById('tab-'+tab).classList.add('active');
-  });
+/* ========= MODAL SERVICIOS ========= */
+const SERVICIOS_INFO={
+  transferencias:{itp:true,desc:[
+    'Gestionamos el cambio de titularidad de tu vehículo ante la DGT de forma 100% online, sin que tengas que desplazarte. Más de 5.000 transferencias tramitadas con éxito.',
+    'Honorarios cerrados de 140€ con las tasas DGT incluidas, sin sorpresas. Solo se añade el ITP según tu Comunidad Autónoma. Obtienes el justificante provisional el mismo día.'],
+    bullets:['Precio: 140€ — tasas DGT incluidas','Plazo de resolución: 24-48h hábiles','Documentación: DNI/NIE de ambas partes, contrato de compraventa, permiso de circulación y ficha técnica','Tramitación 100% online en toda España']},
+  electricos:{desc:[
+    'Tramitamos la matriculación de coches eléctricos, híbridos enchufables y de pila de combustible ante la DGT, incluyendo placas y documentación.',
+    'Compatible con las ayudas del Plan Moves III. Te asesoramos para que aproveches todas las ventajas fiscales del vehículo eléctrico.'],
+    bullets:['Desde 80€ (tasas aparte)','Compatible con el Plan Moves III','BEV, PHEV, HEV y FCEV','Exención del impuesto de matriculación y bonificaciones']},
+  patinetes:{desc:[
+    'La inscripción de Vehículos de Movilidad Personal (VMP) en el registro de la DGT es obligatoria desde el 22 de enero de 2024. Circular sin inscribir puede suponer multas de hasta 500€.',
+    'Gestionamos el alta, cambio de titular, baja y duplicados de cualquier marca de patinete eléctrico de forma rápida y sencilla.'],
+    bullets:['Desde 50€','Obligatorio desde enero de 2024','Evita multas de hasta 500€','Cualquier marca: Xiaomi, Segway, Ninebot…']},
+  transportes:{desc:[
+    'Gestión integral de trámites de transporte para empresas, autónomos y profesionales del sector en Madrid y la Comunidad de Madrid.',
+    'Tramitamos tarjetas de transporte, autorizaciones y permisos VTC, conociendo todos los plazos y requisitos de cada procedimiento.'],
+    bullets:['Tarjetas de transporte: alta, visado y renovación','Permiso y licencias VTC','Autorizaciones de mercancías y viajeros','Para empresas y autónomos']},
+  moves:{desc:[
+    'Gestionamos la solicitud completa de la ayuda Plan Moves III ante la Comunidad de Madrid para la compra de vehículos eléctricos e híbridos enchufables.',
+    'Nos encargamos de toda la tramitación y del seguimiento hasta el cobro de la subvención, que puede alcanzar los 7.000€.'],
+    bullets:['Hasta 7.000€ de subvención','Turismos eléctricos e híbridos enchufables','Solicitud antes de la entrega del vehículo','Gestión y seguimiento hasta el cobro']},
+  trafico:{desc:[
+    'Cubrimos cualquier trámite de tráfico ante la DGT para particulares y empresas: autorizaciones, permisos, duplicados y notificaciones.',
+    'Te ahorramos colas y desplazamientos gestionando todo el proceso por ti, con asesoramiento personalizado.'],
+    bullets:['Trámites DGT de todo tipo','Autorizaciones y permisos','Duplicados de documentación','Gestión de notificaciones y sanciones']},
+  fiscal:{desc:[
+    'Asesoramiento fiscal, contable y laboral para autónomos y empresas. Mantenemos tus obligaciones con Hacienda y la Seguridad Social al día.',
+    'Te acompañamos en declaraciones trimestrales, IRPF, IVA, nóminas y contabilidad, optimizando tu carga fiscal de forma legal.'],
+    bullets:['Autónomos y empresas','Declaraciones de IVA e IRPF','Nóminas y Seguros Sociales','Contabilidad y asesoramiento continuo']},
+  civil:{desc:[
+    'Asesoramiento y representación en asuntos de derecho civil: contratos, reclamaciones de cantidad y conflictos entre particulares.',
+    'Defendemos tus intereses con un trato cercano, buscando siempre la vía más rápida y eficaz para resolver tu caso.'],
+    bullets:['Contratos civiles','Reclamaciones de cantidad','Arrendamientos y desahucios','Responsabilidad civil']},
+  mercantil:{desc:[
+    'Asesoramiento jurídico-mercantil integral para empresas y emprendedores: constitución de sociedades, pactos y contratos mercantiles.',
+    'Acompañamos a tu negocio en cada fase, desde la creación hasta la operativa diaria, con plena seguridad jurídica.'],
+    bullets:['Constitución de sociedades','Contratos mercantiles','Pactos de socios','Asesoramiento societario continuado']},
+  inmobiliario:{desc:[
+    'Gestión jurídica completa de operaciones inmobiliarias: compraventas, arrendamientos y toda la documentación asociada a la propiedad.',
+    'Revisamos contratos, condiciones y cargas para que compres, vendas o alquiles con total tranquilidad.'],
+    bullets:['Compraventas de inmuebles','Contratos de arrendamiento','Revisión de cargas y notas simples','Asesoramiento durante toda la operación']},
+  herencias:{desc:[
+    'Tramitamos herencias y testamentos de principio a fin: declaración de herederos, adjudicación y reparto de bienes.',
+    'Te acompañamos en un momento delicado encargándonos de toda la gestión documental y fiscal de la sucesión.'],
+    bullets:['Testamentos y últimas voluntades','Declaración de herederos','Adjudicación y reparto de bienes','Liquidación del Impuesto de Sucesiones']},
+  familia:{desc:[
+    'Asesoramiento y representación en derecho de familia con discreción y cercanía: divorcios, custodias y pensiones.',
+    'Buscamos siempre el acuerdo y el mejor interés de los menores, defendiendo tus derechos en cada paso del proceso.'],
+    bullets:['Divorcios y separaciones','Custodia y régimen de visitas','Pensiones de alimentos','Modificación de medidas']},
+  penal:{desc:[
+    'Defensa y asistencia jurídica en procedimientos penales, con atención personalizada y seguimiento de principio a fin.',
+    'Con experiencia específica en delitos económicos. Actuamos con rigor y confidencialidad para proteger tus intereses.'],
+    bullets:['Defensa penal','Delitos económicos','Asistencia al detenido','Acusación particular']},
+  administrativo:{desc:[
+    'Defendemos tus intereses frente a las administraciones públicas: recursos, alegaciones y reclamaciones administrativas.',
+    'Tramitamos sanciones, licencias y autorizaciones, conociendo los plazos y procedimientos de cada organismo.'],
+    bullets:['Recursos y alegaciones','Sanciones administrativas','Licencias y autorizaciones','Reclamaciones patrimoniales']}
+};
+const svcModal=document.getElementById('svcModal');
+function abrirModalServicio(card){
+  const info=SERVICIOS_INFO[card.getAttribute('data-svc')];
+  if(!info||!svcModal) return;
+  const cardImg=card.querySelector('.servicio-img');
+  const mImg=document.getElementById('svcModalImg');
+  mImg.src=cardImg?cardImg.src:''; mImg.alt=cardImg?cardImg.alt:'';
+  document.getElementById('svcModalTitle').textContent=card.querySelector('h3').textContent;
+  const descEl=document.getElementById('svcModalDesc'); descEl.innerHTML='';
+  info.desc.forEach(t=>{const p=document.createElement('p');p.textContent=t;descEl.appendChild(p);});
+  const ul=document.getElementById('svcModalBullets'); ul.innerHTML='';
+  info.bullets.forEach(t=>{const li=document.createElement('li');li.textContent=t;ul.appendChild(li);});
+  const cta=document.getElementById('svcModalCta');
+  cta.onclick=function(){cerrarModalServicio(); if(info.itp&&window.abrirChatITP){window.abrirChatITP();} else if(window.toggleChat){window.toggleChat();}};
+  svcModal.classList.add('open'); svcModal.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+}
+function cerrarModalServicio(){ if(!svcModal) return; svcModal.classList.remove('open'); svcModal.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+window.abrirModalServicio=abrirModalServicio; window.cerrarModalServicio=cerrarModalServicio;
+document.querySelectorAll('.servicios-grid .servicio-card').forEach(card=>{
+  card.addEventListener('click',()=>abrirModalServicio(card));
+  card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();abrirModalServicio(card);}});
 });
+if(svcModal){
+  document.getElementById('svcModalClose').addEventListener('click',cerrarModalServicio);
+  svcModal.addEventListener('click',e=>{if(e.target===svcModal)cerrarModalServicio();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&svcModal.classList.contains('open'))cerrarModalServicio();});
+}
 
 /* ========= NAV ========= */
 document.querySelectorAll('#navLinks a').forEach(a=>{
@@ -2523,8 +2453,8 @@ document.querySelectorAll('#navLinks a').forEach(a=>{
     document.getElementById('navLinks').classList.remove('open');
     const goTab=a.dataset.goTab;
     if(goTab){
-      const btn=document.querySelector('.tab-btn[data-tab="'+goTab+'"]');
-      if(btn) btn.click();
+      const card=document.querySelector('.servicios-grid [data-svc="'+goTab+'"]');
+      if(card) window.abrirModalServicio(card);
     }
   });
 });
@@ -3107,7 +3037,7 @@ function finishCapture(){
   const url='https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(msg);
 
   const resumeCard=document.createElement('div');
-  resumeCard.style.cssText='align-self:stretch;background:rgba(0,229,192,.08);border:1px solid rgba(0,229,192,.3);border-radius:14px;padding:14px;margin-top:4px;font-size:13px;font-family:'Hanken Grotesk',sans-serif;animation:msgIn .3s ease-out';
+  resumeCard.style.cssText='align-self:stretch;background:rgba(0,229,192,.08);border:1px solid rgba(0,229,192,.3);border-radius:14px;padding:14px;margin-top:4px;font-size:13px;font-family:"Hanken Grotesk",sans-serif;animation:msgIn .3s ease-out';
   resumeCard.innerHTML=
     '<div style="display:flex;align-items:center;gap:7px;margin-bottom:10px">'+
       '<svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:#22c55e;fill:none;stroke-width:2.5;flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>'+
@@ -3134,7 +3064,7 @@ function finishCapture(){
     body.appendChild(hint);
 
     const waBtn=document.createElement('button');
-    waBtn.style.cssText='display:flex;align-items:center;justify-content:center;gap:8px;margin-top:4px;padding:12px 16px;background:linear-gradient(135deg,#25d366,#128c7e);border:none;border-radius:10px;color:#fff;font-size:14px;font-weight:700;cursor:pointer;font-family:'Hanken Grotesk',sans-serif;align-self:stretch;box-shadow:0 4px 14px rgba(37,211,102,.3);transition:transform .2s,box-shadow .2s;animation:msgIn .3s ease-out';
+    waBtn.style.cssText='display:flex;align-items:center;justify-content:center;gap:8px;margin-top:4px;padding:12px 16px;background:linear-gradient(135deg,#25d366,#128c7e);border:none;border-radius:10px;color:#fff;font-size:14px;font-weight:700;cursor:pointer;font-family:"Hanken Grotesk",sans-serif;align-self:stretch;box-shadow:0 4px 14px rgba(37,211,102,.3);transition:transform .2s,box-shadow .2s;animation:msgIn .3s ease-out';
     waBtn.innerHTML='<svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.123.556 4.112 1.528 5.837L.057 23.215c-.073.266.173.512.44.44l5.42-1.463A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.368l-.36-.214-3.716 1.003 1.02-3.617-.235-.373A9.818 9.818 0 0112 2.182c5.426 0 9.818 4.392 9.818 9.818 0 5.427-4.392 9.818-9.818 9.818z"/></svg>Enviar solicitud por WhatsApp →';
     waBtn.onmouseover=()=>{waBtn.style.transform='translateY(-2px)';waBtn.style.boxShadow='0 10px 22px rgba(37,211,102,.45)'};
     waBtn.onmouseout=()=>{waBtn.style.transform='';waBtn.style.boxShadow='0 4px 14px rgba(37,211,102,.3)'};
