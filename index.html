@@ -889,36 +889,25 @@ function chatSend() {
 }
 
 async function chatAI(msg) {
-  var sys = 'Eres Laura, asistente de Gestoria Sara, S.L. en Majadahonda. Eres cercana, profesional y resuelves dudas con precision.'
-          + ' DATOS DE CONTACTO: Tel 662 23 81 74 | Email saraaparicio@gestoriasara.com | Calle Mieses n1, 3a planta of.303, Majadahonda 28220 | WhatsApp disponible.'
-          + ' HORARIO: Lunes a Viernes 09:00-14:00 y 15:00-18:00. Navidad: 24/12 y 31/12 hasta las 15:00h. Cerrado: 14/09, 12/10, 02/11, 25/11, 07/12, 08/12 de 2026.'
-          + ' SERVICIOS: (1) Fiscal y Contabilidad: renta, IVA, IRPF, contabilidad para autonomos y empresas. (2) Autonomos y Empresa: alta de autonomos, creacion de SL y SA, nominas, seguros sociales. (3) Extranjeria y Visados: residencia, renovaciones, nacionalidad, reagrupacion familiar. (4) Herencias y Patrimonio: herencias, donaciones, tramites notariales, intermediacion inmobiliaria. Plazo fiscal herencias: 6 meses desde fallecimiento. (5) Segunda Oportunidad: cancelacion de deudas para particulares y autonomos, concurso de acreedores. (6) Ayudas y Subvenciones: subvenciones para empresas, ayudas a la contratacion, proyectos e inversion.'
-          + ' IMPULSO: liquidez urgente en 48-72h para frenar embargos y subastas. Estudio gratuito. Para particulares con propiedades.'
-          + ' PROYECCION: estudio de viabilidad, desarrollo de proyecto de negocio, captacion de inversion privada y capital privado. Dossiers descargables disponibles en la web.'
-          + ' SIMPLIFICA: externalizacion administrativa, control de facturacion, nominas, tesoreria y cumplimiento fiscal para empresas.'
-          + ' CAMPANA RENTA 2025: plazo de presentacion desde 08/04/2026 hasta 30/06/2026.'
-          + ' EQUIPO: Sara Aparicio Grande (Gerente), Jose Guinea Garcia (Contabilidad), Luna Pedraza (Laboral y Coordinacion), Vanessa Martinez (Apoyo Administrativo), Catherine Denisse Idrovo (Extranjeria), Maria Paloma Gonzalez (Juridico).'
-          + ' PRECIOS: primera consulta siempre gratuita y sin compromiso. Los honorarios se informan en la consulta, nunca los des tu.'
-          + ' NORMAS: responde en maximo 3 frases claras. Si la pregunta es urgente (embargo, fuga, deuda), prioriza el telefono. Nunca inventes datos fiscales ni legales. Siempre ofrece la consulta gratuita al final.';
+  // Llamamos a la edge function de Supabase para evitar CORS con Anthropic
   try {
-    var resp = await fetch('https://api.anthropic.com/v1/messages', {
+    var resp = await fetch(SB_URL + '/functions/v1/gestoria-demo-chat', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model: 'claude-haiku-4-5-20251001',
-        max_tokens: 200,
-        system: sys,
-        messages: chatHistory.slice(-6)
-      })
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': SB_KEY,
+        'Authorization': 'Bearer ' + SB_KEY
+      },
+      body: JSON.stringify({ messages: chatHistory.slice(-6) })
     });
     var data = await resp.json();
-    var reply = (data && data.content && data.content[0] && data.content[0].text)
-              ? data.content[0].text
-              : 'Llama al 662 23 81 74.';
+    var reply = (data && data.reply) ? data.reply : null;
+    if (!reply) { throw new Error('no reply'); }
     chatHistory.push({ role: 'assistant', content: reply });
     chatAddMsg(reply, 'b');
   } catch (err) {
-    chatAddMsg('Contacta al 662 23 81 74 o por WhatsApp.', 'b');
+    // Fallback: respuesta directa sin API
+    chatAddMsg('Gracias por tu consulta. Puedes llamarnos al 662 23 81 74 o escribirnos por WhatsApp y te atendemos sin compromiso.', 'b');
   }
 }
 
