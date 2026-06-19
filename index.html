@@ -1,3327 +1,919 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>WhiteMoon Gestoría IA · Demo · Majadahonda, Madrid</title>
-<meta name="description" content="Demo de Gestoría IA con calculadora ITP integrada. WhiteMoon Agencia IA.">
-<meta name="keywords" content="gestoría IA Madrid, gestoría Majadahonda, calculadora ITP, transferencia vehículo, trámites DGT online, Plan Moves 2025, patinete VMP, WhiteMoon Agencia IA">
-<meta name="robots" content="index, follow">
-<meta name="author" content="WhiteMoon Gestoría IA">
-<meta name="geo.region" content="ES-MD">
-<meta name="geo.placename" content="Majadahonda, Madrid, España">
-<meta name="geo.position" content="40.4934;-3.8780">
-<meta name="ICBM" content="40.4934, -3.8780">
-<link rel="canonical" href="https://whitemoon.es/">
-<meta property="og:title" content="WhiteMoon Gestoría IA · Demo · Majadahonda, Madrid">
-<meta property="og:description" content="Demo de Gestoría IA con calculadora ITP integrada. WhiteMoon Agencia IA.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://whitemoon.es/">
-<meta property="og:image" content="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80">
-<meta property="og:locale" content="es_ES">
-<meta property="og:site_name" content="WhiteMoon Gestoría IA">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="WhiteMoon Gestoría IA · Demo">
-<meta name="twitter:description" content="Demo de Gestoría IA con calculadora ITP integrada. WhiteMoon Agencia IA.">
-<meta name="twitter:image" content="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "LocalBusiness",
-      "@id": "https://whitemoon.es/#business",
-      "name": "WhiteMoon Gestoría IA",
-      "alternateName": "WhiteMoon Agencia IA",
-      "description": "Gestoría especializada en trámites de tráfico y transportes en Majadahonda y Madrid. Transferencias de vehículos, patinetes VMP, Plan Moves y tarjetas de transporte.",
-      "url": "https://whitemoon.es",
-      "telephone": "+34643199580",
-      "email": "comercial@whitemoon.es",
-      "image": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80",
-      "priceRange": "€€",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Calle Madrid 9",
-        "addressLocality": "Majadahonda",
-        "postalCode": "28220",
-        "addressRegion": "Madrid",
-        "addressCountry": "ES"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "40.4934",
-        "longitude": "-3.8780"
-      },
-      "hasMap": "https://maps.google.com/?q=Calle+Madrid+9,+28220+Majadahonda,+Madrid",
-      "serviceArea": {
-        "@type": "GeoCircle",
-        "geoMidpoint": {
-          "@type": "GeoCoordinates",
-          "latitude": "40.4934",
-          "longitude": "-3.8780"
-        },
-        "geoRadius": "30000"
-      },
-      "openingHoursSpecification": [
-        {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"14:00"},
-        {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"16:00","closes":"19:00"}
-      ],
-      "areaServed": [
-        {"@type":"City","name":"Majadahonda","sameAs":"https://www.wikidata.org/wiki/Q492816"},
-        {"@type":"City","name":"Madrid","sameAs":"https://www.wikidata.org/wiki/Q2807"},
-        {"@type":"City","name":"Majadahonda","sameAs":"https://www.wikidata.org/wiki/Q493529"},
-        {"@type":"City","name":"Pozuelo de Alarcón","sameAs":"https://www.wikidata.org/wiki/Q492591"},
-        {"@type":"City","name":"Boadilla del Monte","sameAs":"https://www.wikidata.org/wiki/Q493041"},
-        {"@type":"City","name":"Villanueva de la Cañada"},
-        {"@type":"City","name":"Galapagar"},
-        {"@type":"City","name":"Torrelodones"}
-      ],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Servicios de Gestoría de Tráfico",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Transferencia de vehículos",
-              "description": "Cambio de titularidad de vehículos ante la DGT. Online en 24-48h.",
-              "provider": {"@id": "https://whitemoon.es/#business"}
-            },
-            "priceSpecification": {
-              "@type": "PriceSpecification",
-              "price": "140",
-              "priceCurrency": "EUR",
-              "description": "140€ tasas DGT incluidas"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Inscripción patinetes VMP en DGT",
-              "description": "Inscripción obligatoria de vehículos de movilidad personal en el registro DGT.",
-              "provider": {"@id": "https://whitemoon.es/#business"}
-            },
-            "priceSpecification": {
-              "@type": "PriceSpecification",
-              "price": "50",
-              "priceCurrency": "EUR",
-              "description": "desde"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Plan Moves 2025",
-              "description": "Gestión de ayudas Plan Moves III para vehículos eléctricos. Hasta 7.000€.",
-              "provider": {"@id": "https://whitemoon.es/#business"}
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Matriculación vehículos eléctricos",
-              "description": "Matriculación de coches eléctricos e híbridos ante la DGT.",
-              "provider": {"@id": "https://whitemoon.es/#business"}
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Tarjetas de transporte",
-              "description": "Alta, visado y renovación de tarjetas de transporte en Madrid.",
-              "provider": {"@id": "https://whitemoon.es/#business"}
-            }
-          }
-        ]
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.6",
-        "reviewCount": "44",
-        "bestRating": "5"
-      },
-      "sameAs": ["https://whitemoon.es"]
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {"@type":"Question","name":"¿Cuánto tiempo tarda una transferencia de vehículo?","acceptedAnswer":{"@type":"Answer","text":"En WhiteMoon gestionamos las transferencias en 24-72 horas hábiles desde que recibimos toda la documentación. El justificante provisional lo obtienes el mismo día."}},
-        {"@type":"Question","name":"¿Puedo hacer la transferencia sin ir a la DGT?","acceptedAnswer":{"@type":"Answer","text":"Sí, gestionamos todos los trámites de forma 100% online. Solo tienes que enviarnos la documentación por email o WhatsApp y nosotros nos encargamos de todo."}},
-        {"@type":"Question","name":"¿Es obligatorio inscribir mi patinete en la DGT?","acceptedAnswer":{"@type":"Answer","text":"Sí, desde el 22 de enero de 2024 es obligatorio inscribir todos los vehículos de movilidad personal (VMP) en el registro de la DGT. Circular sin inscripción puede suponer multas de hasta 500€."}},
-        {"@type":"Question","name":"¿Cuánta ayuda da el Plan Moves 2025?","acceptedAnswer":{"@type":"Answer","text":"El Plan Moves III ofrece hasta 7.000€ para la compra de vehículos eléctricos con achatarramiento. Sin achatarramiento, hasta 4.500€ para turismos. Gestionamos toda la tramitación."}},
-        {"@type":"Question","name":"¿Qué documentos necesito para una transferencia de coche?","acceptedAnswer":{"@type":"Answer","text":"Necesitas: DNI/NIE de comprador y vendedor, contrato de compraventa, permiso de circulación original, ficha técnica del vehículo y justificante del impuesto municipal (IVTM). Nosotros revisamos la documentación sin coste."}},
-        {"@type":"Question","name":"¿Cuánto cuesta una transferencia de vehículo en WhiteMoon?","acceptedAnswer":{"@type":"Answer","text":"Nuestros honorarios de gestoría para transferencias son 140€ con las tasas DGT incluidas, sin sorpresas. A esta cantidad solo hay que añadir el ITP (4% del valor del vehículo en Madrid). Consulta gratuita sin compromiso."}},
-        {"@type":"Question","name":"¿Dónde está WhiteMoon Gestoría IA?","acceptedAnswer":{"@type":"Answer","text":"Nuestra oficina está en Calle Madrid 9, 28220 Majadahonda, Madrid. También atendemos 100% online sin necesidad de desplazarse."}},
-        {"@type":"Question","name":"¿Atienden a clientes de toda España?","acceptedAnswer":{"@type":"Answer","text":"Sí, al trabajar de forma online podemos gestionar trámites de tráfico para clientes de toda España, aunque estamos especializados en Majadahonda y Madrid."}}
-      ]
-    }
-  ]
-}
-</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Gestoría Sara, S.L. — Majadahonda, Madrid</title>
+<meta name="description" content="Gestoría Sara, S.L. — Más de 20 años gestionando trámites en Majadahonda. Fiscal, laboral, extranjería, herencias y empresa. Primera consulta gratuita."/>
+<meta name="geo.region" content="ES-MD"/>
+<meta name="geo.placename" content="Majadahonda, Madrid, España"/>
+<meta name="geo.position" content="40.4733;-3.8719"/>
+<meta name="ICBM" content="40.4733, -3.8719"/>
+<meta property="og:title" content="Gestoría Sara, S.L. — Majadahonda"/>
+<meta property="og:description" content="Más de 20 años gestionando trámites en Majadahonda. Primera consulta gratuita."/>
+<meta property="og:image" content="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1440,h=756,fit=crop,f=jpeg/YD0po5wXMOFv1vj6/imagen-de-whatsapp-2024-06-05-a-las-11.16.12_265fcc35-Yg2lZnV1X1H5ZaOR.jpg"/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="canonical" href="https://nexusforgeia.github.io/WHITEMOON-GESTORIAS-DEMO/"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Gestoría Sara, S.L.","url":"https://www.gestoriasara.com/","telephone":"+34662238174","email":"saraaparicio@gestoriasara.com","address":{"@type":"PostalAddress","streetAddress":"Calle Mieses nº 1, 3ª planta oficina 303","addressLocality":"Majadahonda","addressRegion":"Madrid","postalCode":"28220","addressCountry":"ES"},"geo":{"@type":"GeoCoordinates","latitude":40.4733,"longitude":-3.8719},"openingHours":"Mo-Fr 09:00-18:00"}</script>
 <style>
+*{margin:0;padding:0;box-sizing:border-box;}
 :root{
-  /* Paleta WhiteMoon Gestoría — naranja fosforito + teal sobre dark */
-  /* Naranja fosforito (principal) */
-  --orange:#FF6A00;
-  --orange-bright:#FF8C33;
-  --orange-deep:#C24E00;
-  --orange-dim:rgba(255,106,0,.08);
-  --glow:0 0 28px rgba(255,106,0,.35);
-  /* Teal eléctrico (acento frío, uso moderado) */
-  --teal:#00E5C0;
-  --teal-deep:#00B89B;
-  /* Alias de compatibilidad (todo el CSS los referencia) */
-  --principal:#FF6A00;
-  --principal2:#C24E00;
-  --principal-dark:#C24E00;
-  --rojo:#FF6A00;
-  --rojo2:#FF8C33;
-  --rojo-dark:#C24E00;
-  --rojo-dim:rgba(255,106,0,.08);
-  /* Neutros (web oscura) */
-  --negro:#0A0A0B;
-  --negro2:#111113;
-  --card:#18181B;
-  --texto:#F5F5F3;
-  --texto2:#A3A3A0;
-  --muted:#6B6B68;
-  --border:rgba(255,106,0,.18);
-  --border2:rgba(255,255,255,.07);
+  --w:#FFFFFF;
+  --hueso:#F7F5F3;
+  --negro:#0A0A0A;
+  --rojo:#C8213F;
+  --rojo-dark:#A01830;
+  --gris:#6E6E6E;
+  --gris-light:#D8D5D2;
+  --borde:#E5E2DE;
 }
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  font-family:'Hanken Grotesk',system-ui,sans-serif;
-  background:var(--negro);
-  color:var(--texto);
-  line-height:1.6;
-  overflow-x:hidden;
-}
-h1,h2,h3,h4{font-family:'Sora',sans-serif;line-height:1.1;letter-spacing:.5px}
-a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.container{max-width:1280px;margin:0 auto;padding:0 24px}
-.ico{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;vertical-align:middle}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--w);color:var(--negro);line-height:1.6;-webkit-font-smoothing:antialiased;}
 
-/* TOPBAR */
-.topbar{
-  background:var(--rojo);
-  color:#fff;
-  font-size:13px;
-  padding:8px 0;
-  position:relative;
-  z-index:100;
+/* ─── NAV ─── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  background:rgba(255,255,255,0.97);
+  border-bottom:1px solid var(--borde);
+  padding:0 5%;display:flex;align-items:center;height:64px;gap:48px;
 }
-.topbar-inner{
-  display:grid;
-  grid-template-columns:1fr auto 1fr;
-  align-items:center;
-  gap:16px;
+.nav-logo{
+  font-family:'DM Serif Display',serif;
+  font-size:17px;color:var(--negro);text-decoration:none;white-space:nowrap;
+  letter-spacing:0.2px;
 }
-.topbar-inner > *{display:flex;align-items:center;gap:8px}
-.topbar-inner > *:nth-child(2){justify-self:center}
-.topbar-inner > *:nth-child(3){justify-self:end}
-.topbar a{color:#fff}
-.topbar a:hover{text-decoration:underline}
-
-/* NAV */
-.nav{
-  position:sticky;
-  top:0;
-  z-index:99;
-  background:#ffffff;
-  color:#0a0a0a;
-  box-shadow:0 2px 8px rgba(0,0,0,.1);
-}
-.nav-inner{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:18px 24px;
-  max-width:1280px;
-  margin:0 auto;
-}
-.logo{display:flex;align-items:baseline;gap:8px}
-.logo-main{
-  font-family:'Sora',sans-serif;
-  font-weight:900;
-  font-size:32px;
-  color:var(--rojo);
-  letter-spacing:1px;
-}
-.logo-sub{
-  font-family:'Sora',sans-serif;
-  font-weight:700;
-  font-size:13px;
-  color:#666;
-  letter-spacing:3px;
-}
-.nav-links{display:flex;gap:36px;align-items:center;list-style:none}
+.nav-logo span{color:var(--rojo);}
+.nav-links{display:flex;gap:32px;list-style:none;margin-left:auto;}
 .nav-links a{
-  color:#0a0a0a;
-  font-weight:500;
-  font-size:14px;
-  transition:color .2s;
+  font-size:13px;color:var(--gris);text-decoration:none;
+  font-weight:400;letter-spacing:0.3px;transition:color .15s;
 }
-.nav-links a:hover{color:var(--rojo)}
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  padding:12px 24px;
-  border-radius:4px;
-  font-weight:600;
-  font-size:14px;
-  cursor:pointer;
-  border:none;
-  transition:all .25s;
-  text-align:center;
-  font-family:inherit;
+.nav-links a:hover{color:var(--negro);}
+.nav-tel{
+  font-size:13px;font-weight:500;color:var(--negro);
+  letter-spacing:0.3px;white-space:nowrap;
 }
-.btn-rojo{background:linear-gradient(135deg,var(--orange),var(--orange-deep));color:#fff;box-shadow:0 4px 14px rgba(255,106,0,.25)}
-.btn-rojo:hover{background:linear-gradient(135deg,var(--orange-bright),var(--orange));transform:translateY(-2px);box-shadow:var(--glow)}
-.btn-outline{background:transparent;color:#fff;border:1.5px solid #fff}
-.btn-outline:hover{background:#fff;color:var(--negro)}
-.nav-links a.btn-rojo,.nav-links a.btn-rojo:hover{color:#fff}
-.nav-toggle{
-  display:none;
-  background:none;
-  border:none;
-  color:#0a0a0a;
-  font-size:26px;
-  cursor:pointer;
+.nav-cta{
+  background:var(--negro);color:#fff;
+  font-size:12px;font-weight:500;letter-spacing:0.5px;
+  padding:10px 22px;border-radius:0;text-decoration:none;
+  transition:background .15s;white-space:nowrap;
+}
+.nav-cta:hover{background:var(--rojo);}
+
+/* ─── HERO ─── */
+.hero{
+  display:grid;grid-template-columns:55% 45%;
+  min-height:100vh;padding-top:64px;
+}
+.hero-img{
+  position:relative;overflow:hidden;
+  background:#E8E4E0;
+}
+.hero-img img{
+  width:100%;height:100%;object-fit:cover;
+  display:block;
+  /* imagen real de Sara */
+}
+.hero-caption{
+  position:absolute;bottom:32px;left:32px;
+  background:#fff;
+  padding:16px 20px;
+  border-left:3px solid var(--rojo);
+}
+.hero-caption-name{
+  font-family:'DM Serif Display',serif;
+  font-size:15px;color:var(--negro);line-height:1.3;
+}
+.hero-caption-role{
+  font-size:11px;color:var(--gris);margin-top:2px;
+  letter-spacing:0.5px;text-transform:uppercase;font-weight:500;
+}
+.hero-stars{
+  font-size:11px;color:var(--rojo);margin-top:6px;letter-spacing:2px;
 }
 
-/* HERO */
-.hero{
-  position:relative;
-  min-height:calc(100vh - 100px);
-  display:flex;
-  align-items:center;
-  background-image:linear-gradient(135deg,rgba(10,10,10,.9),rgba(10,10,10,.7)),url('torres-madrid.jpg');
-  background-size:cover;
-  background-position:center;
-  padding:80px 0;
+.hero-right{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:80px 6% 80px 7%;
+  border-left:1px solid var(--borde);
 }
-.hero-content{max-width:820px}
-.badge{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  padding:10px 18px;
-  background:rgba(255,106,0,.15);
-  border:1px solid var(--border);
-  border-radius:50px;
-  font-size:13px;
-  color:#fff;
+.hero-label{
+  font-size:11px;font-weight:500;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--rojo);
   margin-bottom:28px;
-  font-weight:500;
 }
 .hero h1{
-  font-size:clamp(44px,7vw,84px);
-  font-weight:900;
-  margin-bottom:24px;
-  text-transform:uppercase;
+  font-family:'DM Serif Display',serif;
+  font-size:clamp(36px,4vw,52px);
+  line-height:1.1;color:var(--negro);
+  margin-bottom:28px;
 }
-.hero h1 .rojo{color:var(--rojo)}
-.hero p.sub{
-  font-size:18px;
-  color:var(--texto2);
-  margin-bottom:36px;
-  max-width:620px;
+.hero h1 i{font-style:italic;color:var(--rojo);}
+.hero-body{
+  font-size:15px;color:var(--gris);line-height:1.8;
+  margin-bottom:40px;font-weight:300;max-width:380px;
 }
-.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px}
-.stats{
-  display:flex;
-  gap:36px;
-  flex-wrap:wrap;
-  padding-top:32px;
-  border-top:1px solid var(--border2);
+.hero-actions{display:flex;flex-direction:column;gap:12px;max-width:280px;}
+.btn-primary{
+  background:var(--rojo);color:#fff;
+  font-size:13px;font-weight:500;letter-spacing:0.4px;
+  padding:15px 28px;text-decoration:none;
+  transition:background .15s;text-align:center;
 }
-.stat-item{
-  font-family:'Sora',sans-serif;
-  font-weight:700;
-  font-size:18px;
-  color:#fff;
-  display:flex;
-  align-items:center;
-  gap:8px;
+.btn-primary:hover{background:var(--rojo-dark);}
+.btn-secondary{
+  background:transparent;
+  border:1px solid var(--negro);color:var(--negro);
+  font-size:13px;font-weight:500;letter-spacing:0.4px;
+  padding:15px 28px;text-decoration:none;
+  transition:all .15s;text-align:center;
 }
-.stat-item span{color:var(--rojo);font-weight:900}
+.btn-secondary:hover{background:var(--negro);color:#fff;}
+.hero-metrics{
+  display:flex;gap:0;margin-top:52px;
+  border-top:1px solid var(--borde);padding-top:28px;
+}
+.metric{flex:1;padding-right:24px;}
+.metric:not(:last-child){
+  border-right:1px solid var(--borde);margin-right:24px;
+}
+.metric-num{
+  font-family:'DM Serif Display',serif;
+  font-size:30px;color:var(--negro);line-height:1;
+}
+.metric-lbl{font-size:11px;color:var(--gris);margin-top:4px;letter-spacing:0.3px;}
 
-/* SECCIÓN */
-section{padding:100px 0}
-.section-head{text-align:center;margin-bottom:60px}
-.section-tag{
-  color:var(--rojo);
-  font-weight:700;
-  letter-spacing:3px;
-  text-transform:uppercase;
-  font-size:13px;
-  margin-bottom:14px;
-  font-family:'Sora',sans-serif;
-}
-.section-title{
-  font-size:clamp(36px,4.5vw,52px);
-  font-weight:900;
-  text-transform:uppercase;
+/* ─── SECCIONES BASE ─── */
+.section{padding:96px 5%;}
+.section-alt{background:var(--hueso);}
+.label{
+  font-size:11px;font-weight:500;letter-spacing:2px;
+  text-transform:uppercase;color:var(--gris);
   margin-bottom:16px;
+  display:flex;align-items:center;gap:12px;
 }
-.section-sub{
-  font-size:17px;
-  color:var(--texto2);
-  max-width:680px;
-  margin:0 auto;
+.label::before{content:'';display:block;width:24px;height:1px;background:var(--rojo);}
+h2{
+  font-family:'DM Serif Display',serif;
+  font-size:clamp(30px,3.5vw,46px);
+  line-height:1.12;color:var(--negro);
+  margin-bottom:0;
+}
+h2 i{font-style:italic;color:var(--rojo);}
+.section-intro{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:48px;align-items:end;margin-bottom:64px;
+}
+.section-intro p{
+  font-size:15px;color:var(--gris);line-height:1.8;
+  align-self:end;font-weight:300;
 }
 
-/* SERVICIOS TABS */
-.servicios{background:var(--negro2)}
-.tab-btn{
-  padding:14px 28px;
-  background:var(--card);
-  border:1px solid var(--border2);
-  color:var(--texto2);
-  border-radius:4px;
-  font-family:'Sora',sans-serif;
-  font-weight:700;
-  font-size:16px;
-  letter-spacing:1.5px;
-  text-transform:uppercase;
-  cursor:pointer;
-  transition:all .25s;
-  white-space:nowrap;
-}
-.tab-btn.active{background:var(--rojo);border-color:var(--rojo);color:#fff}
-.tab-btn:hover:not(.active){border-color:var(--rojo);color:#fff}
-.tab-content{display:none}
-.tab-content.active{display:block;animation:fadeTab .4s ease-out}
-@keyframes fadeTab{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-
-/* SERVICIOS GRID (tarjetas — formato GESSTAR) */
+/* ─── SERVICIOS ─── */
 .servicios-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
-  margin-bottom:50px;
-}
-.servicios-grid .servicio-card{
-  display:flex;
-  flex-direction:column;
-  text-align:left;
-  padding:0;
-  overflow:hidden;
-  background:var(--card);
-  border:1px solid var(--border2);
-  border-radius:12px;
-  cursor:pointer;
-  transition:all .25s;
-  white-space:normal;
-  letter-spacing:normal;
-  text-transform:none;
-  color:var(--texto2);
-  font-family:"Hanken Grotesk",sans-serif;
-  font-weight:400;
-  font-size:14px;
-}
-.servicios-grid .servicio-img{
-  width:100%;
-  height:140px;
-  object-fit:cover;
-  border-radius:8px 8px 0 0;
-  margin-bottom:12px;
-  transition:filter .25s;
-}
-.servicios-grid .servicio-body{
-  display:flex;
-  flex-direction:column;
-  gap:6px;
-  padding:0 22px 24px;
-}
-.servicios-grid .servicio-card h3{
-  font-family:'Sora',sans-serif;
-  font-weight:800;
-  font-size:21px;
-  letter-spacing:.5px;
-  text-transform:uppercase;
-  color:var(--texto);
-}
-.servicios-grid .servicio-card p{
-  color:var(--texto2);
-  font-size:13.5px;
-  line-height:1.5;
-}
-.servicios-grid .servicio-card:hover{
-  border-color:var(--rojo);
-  transform:translateY(-4px);
-  box-shadow:0 16px 40px rgba(0,0,0,.4);
-}
-.servicios-grid .servicio-card:hover .servicio-img{
-  filter:brightness(1.08);
-}
-.servicios-grid .servicio-card.active{
-  border-color:var(--rojo);
-  background:linear-gradient(180deg,rgba(255,106,0,.10),var(--card));
-  box-shadow:0 8px 24px rgba(255,106,0,.18);
-}
-.servicios-grid .servicio-card.active .servicio-img{
-  border-bottom:2px solid var(--rojo);
-}
-
-/* SERVICIO DETALLE */
-.servicio-detail{
-  display:grid;
-  grid-template-columns:1.3fr 1fr;
-  gap:32px;
-  background:var(--card);
-  border:1px solid var(--border2);
-  border-radius:12px;
-  overflow:hidden;
-}
-.servicio-detail-main{padding:42px 38px;border-right:1px solid var(--border2)}
-.servicio-detail-side{
-  padding:38px 32px;
-  background:linear-gradient(180deg,rgba(255,106,0,.06),transparent);
-  display:flex;
-  flex-direction:column;
-  gap:22px;
-}
-.servicio-detail h3{
-  font-size:34px;
-  font-weight:900;
-  text-transform:uppercase;
-  margin-bottom:8px;
-  letter-spacing:.5px;
-}
-.servicio-detail .subtitle{
-  color:var(--rojo);
-  font-family:'Sora',sans-serif;
-  font-weight:700;
-  font-size:15px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  margin-bottom:18px;
-}
-.servicio-detail .lead{color:var(--texto2);font-size:16px;margin-bottom:24px;line-height:1.7}
-.block-title{
-  font-family:'Sora',sans-serif;
-  font-weight:800;
-  font-size:18px;
-  color:#fff;
-  text-transform:uppercase;
-  letter-spacing:1.5px;
-  margin-bottom:14px;
-  display:flex;
-  align-items:center;
-  gap:8px;
-}
-.block-title::before{
-  content:'';
-  width:24px;
-  height:2px;
-  background:var(--rojo);
-}
-.check-list{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:22px}
-.check-list li{
-  display:flex;
-  gap:10px;
-  color:var(--texto2);
-  font-size:14.5px;
-  align-items:flex-start;
-  line-height:1.5;
-}
-.check-list li svg{
-  width:16px;
-  height:16px;
-  stroke:#34a853;
-  fill:none;
-  stroke-width:3;
-  flex-shrink:0;
-  margin-top:3px;
-}
-.arrow-list{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:22px}
-.arrow-list li{
-  padding:8px 0 8px 20px;
-  position:relative;
-  color:var(--texto2);
-  font-size:14.5px;
-  border-bottom:1px solid var(--border2);
-}
-.arrow-list li:last-child{border-bottom:none}
-.arrow-list li::before{
-  content:'→';
-  position:absolute;
-  left:0;
-  color:var(--rojo);
-  font-weight:700;
-}
-.arrow-list li strong{color:#fff;display:inline}
-.process-steps{
-  display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:14px;
-  margin-bottom:22px;
+  gap:1px;
+  background:var(--borde);
 }
-.process-steps.steps-4{grid-template-columns:repeat(4,1fr)}
-.process-step{
-  background:rgba(0,0,0,.3);
-  border:1px solid var(--border2);
-  border-radius:8px;
-  padding:18px 14px;
-  text-align:center;
-  position:relative;
+.serv{
+  background:var(--w);
+  position:relative;overflow:hidden;
+  aspect-ratio:4/5;
+  cursor:default;
 }
-.process-step.tab-step{
-  background:rgba(255,106,0,.06);
-  border:1px solid rgba(255,106,0,.2);
+.serv-foto{
+  width:100%;height:100%;object-fit:cover;
+  display:block;
+  transition:transform .5s ease;
 }
-.process-step.tab-step .step-ico{
-  width:38px;
-  height:38px;
-  margin:0 auto 10px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#FF6A00;
+.serv:hover .serv-foto{transform:scale(1.04);}
+.serv-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top, rgba(10,10,10,.82) 40%, rgba(10,10,10,.05) 100%);
 }
-.process-step.tab-step .step-num-sm{
-  font-family:'Sora',sans-serif;
-  font-weight:900;
-  color:#FF6A00;
-  font-size:14px;
-  letter-spacing:1px;
-  margin-bottom:6px;
+.serv-content{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:28px 24px;
 }
-.process-step .step-num{
-  width:32px;
-  height:32px;
-  margin:0 auto 10px;
-  background:var(--rojo);
-  border-radius:50%;
-  font-family:'Sora',sans-serif;
-  font-weight:900;
-  color:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:16px;
+.serv-tag{
+  font-size:10px;letter-spacing:1.5px;text-transform:uppercase;
+  color:rgba(255,255,255,0.55);font-weight:500;margin-bottom:8px;
 }
-.process-step p{font-size:13px;color:var(--texto2);line-height:1.5;margin:0}
-.alert-box{
-  display:flex;
-  gap:12px;
-  align-items:flex-start;
-  background:rgba(255,106,0,.12);
-  border-left:4px solid var(--rojo);
-  padding:14px 16px;
-  border-radius:0 6px 6px 0;
-  margin-bottom:22px;
+.serv-title{
+  font-family:'DM Serif Display',serif;
+  font-size:20px;color:#fff;line-height:1.2;margin-bottom:10px;
 }
-.alert-box svg{width:22px;height:22px;stroke:var(--rojo);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
-.alert-box strong{color:#fff;display:block;font-size:14px;margin-bottom:2px;text-transform:uppercase;letter-spacing:1px}
-.alert-box p{color:var(--texto2);font-size:14px;margin:0}
-.price-grid{display:flex;flex-direction:column;gap:8px}
-.price-row{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:11px 14px;
-  background:rgba(0,0,0,.3);
-  border:1px solid var(--border2);
-  border-radius:6px;
-  font-size:14px;
+.serv-items{list-style:none;}
+.serv-items li{
+  font-size:12px;color:rgba(255,255,255,0.65);
+  padding:3px 0;letter-spacing:0.2px;
+  border-top:1px solid rgba(255,255,255,0.1);
 }
-.price-row span:first-child{color:var(--texto2)}
-.price-row strong{color:var(--rojo);font-family:'Sora',sans-serif;font-size:18px;letter-spacing:1px}
-.brand-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:22px}
-.brand-chip{
-  background:rgba(255,255,255,.04);
-  border:1px solid var(--border2);
-  color:#fff;
-  padding:5px 10px;
-  border-radius:4px;
-  font-size:12.5px;
-  font-weight:500;
-}
-.info-box{
-  background:rgba(255,106,0,.06);
-  border:1px solid var(--border);
-  border-radius:8px;
-  padding:18px 20px;
-  margin-top:auto;
-}
-.info-box .info-row{
-  display:flex;
-  justify-content:space-between;
-  padding:8px 0;
-  border-bottom:1px dashed var(--border2);
-  font-size:14px;
-}
-.info-box .info-row:last-child{border-bottom:none}
-.info-box .info-row span{color:var(--texto2)}
-.info-box .info-row strong{color:#fff;font-family:'Sora',sans-serif;font-size:17px;letter-spacing:1px}
-.cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
-.itp-btn:hover{background:#FF6A00 !important;color:#fff !important}
-.itp-btn:hover svg{stroke:#fff !important}
-.amount-grid{display:flex;flex-direction:column;gap:10px;margin-bottom:22px}
-.amount-row{
-  display:grid;
-  grid-template-columns:1fr auto;
-  gap:14px;
-  align-items:center;
-  padding:14px 18px;
-  background:rgba(0,0,0,.3);
-  border:1px solid var(--border2);
-  border-radius:8px;
-  border-left:3px solid var(--rojo);
-}
-.amount-row span{color:var(--texto2);font-size:14px}
-.amount-row strong{
-  color:var(--rojo);
-  font-family:'Sora',sans-serif;
-  font-weight:900;
-  font-size:24px;
-  letter-spacing:1px;
-}
+.serv-items li:first-child{border-top:none;}
 
-/* SECCIÓN MOCKUP iPHONE */
-.intro-iphone{background:var(--negro2)}
-.intro-grid{
-  display:grid;
-  grid-template-columns:60% 40%;
-  gap:60px;
-  align-items:center;
+/* ─── EQUIPO ─── */
+.equipo-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:0;
 }
-.intro-text h2{
-  font-size:clamp(34px,4.5vw,52px);
-  font-weight:900;
-  text-transform:uppercase;
-  margin-bottom:18px;
+.equipo-fotos{
+  display:grid;grid-template-columns:1fr 1fr;
+  grid-template-rows:auto auto;
+  gap:1px;background:var(--borde);
 }
-.intro-text .lead{
-  font-size:17px;
-  color:var(--texto2);
-  margin-bottom:28px;
-  max-width:520px;
+.foto-main{grid-column:1/-1;}
+.foto-main img,.foto-sm img{
+  width:100%;display:block;object-fit:cover;
 }
-.intro-bullets{list-style:none;display:flex;flex-direction:column;gap:16px;margin-bottom:32px}
-.intro-bullets li{
-  display:flex;
-  gap:14px;
-  align-items:flex-start;
+.foto-main img{height:420px;}
+.foto-sm img{height:220px;}
+.equipo-texto{
+  padding:72px 8%;
+  border-left:1px solid var(--borde);
+  display:flex;flex-direction:column;justify-content:center;
 }
-.intro-bullets .bullet-ico{
-  width:38px;
-  height:38px;
-  background:var(--rojo-dim);
-  border:1px solid var(--border);
-  border-radius:50%;
-  flex-shrink:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+.persona{margin-bottom:36px;}
+.persona:not(:last-of-type){
+  padding-bottom:36px;
+  border-bottom:1px solid var(--borde);
 }
-.intro-bullets .bullet-ico svg{width:16px;height:16px;stroke:var(--rojo);fill:none;stroke-width:2.4}
-.intro-bullets strong{display:block;color:#fff;margin-bottom:2px;font-family:'Sora',sans-serif;font-size:18px;letter-spacing:1px;text-transform:uppercase}
-.intro-bullets p{color:var(--texto2);font-size:14.5px;margin:0;line-height:1.5}
+.persona-nombre{
+  font-family:'DM Serif Display',serif;
+  font-size:20px;color:var(--negro);margin-bottom:3px;
+}
+.persona-rol{
+  font-size:11px;letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--rojo);font-weight:500;margin-bottom:10px;
+}
+.persona-bio{
+  font-size:14px;color:var(--gris);line-height:1.75;font-weight:300;
+}
+.valores{margin-top:40px;border-top:1px solid var(--borde);padding-top:32px;}
+.valor{
+  display:flex;gap:16px;align-items:flex-start;
+  padding:12px 0;border-bottom:1px solid var(--borde);
+}
+.valor:last-child{border-bottom:none;}
+.valor-num{
+  font-family:'Inter',monospace;font-size:11px;
+  color:var(--rojo);font-weight:500;width:20px;flex-shrink:0;margin-top:1px;
+}
+.valor-text{font-size:13px;color:var(--gris);line-height:1.65;font-weight:300;}
+.valor-text strong{color:var(--negro);font-weight:500;}
 
-/* IPHONE MOCKUP */
-.iphone-wrap{display:flex;justify-content:center}
-.iphone-body{
-  width:300px;
-  height:610px;
-  background:#1a1a1a;
-  border-radius:48px;
-  padding:14px;
-  box-shadow:0 30px 80px rgba(0,0,0,.6),inset 0 0 0 2px #2a2a2a;
-  position:relative;
-}
-.iphone-body::before{
-  content:'';
-  position:absolute;
-  top:24px;
-  left:50%;
-  transform:translateX(-50%);
-  width:100px;
-  height:28px;
-  background:#000;
-  border-radius:20px;
-  z-index:3;
-}
-.iphone-screen{
-  width:100%;
-  height:100%;
-  background:#0a0a0a;
-  border-radius:36px;
-  overflow:hidden;
-  position:relative;
-  display:flex;
-  flex-direction:column;
-}
-.iphone-chat-header{
-  background:linear-gradient(135deg,#C24E00,#FF6A00);
-  padding:50px 16px 14px;
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-.chat-avatar{
-  width:36px;
-  height:36px;
-  border-radius:50%;
-  background:linear-gradient(135deg,#FF6A00,#C24E00);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-family:'Sora',sans-serif;
-  font-weight:900;
-  color:#fff;
-  font-size:16px;
-  border:2px solid rgba(255,255,255,.3);
-}
-.chat-info-name{font-size:13px;font-weight:700;color:#fff}
-.chat-info-status{font-size:10px;color:rgba(255,255,255,.8);display:flex;align-items:center;gap:4px}
-.chat-info-status::before{content:'';width:6px;height:6px;background:#0f0;border-radius:50%}
-.iphone-msgs{
-  flex:1;
-  padding:14px 12px;
-  overflow:hidden;
-  display:flex;
-  flex-direction:column;
-  gap:8px;
-}
-.imsg{
-  max-width:80%;
-  padding:9px 12px;
-  border-radius:14px;
-  font-size:12px;
-  line-height:1.4;
-  animation:imsgIn .4s ease-out;
-}
-@keyframes imsgIn{from{opacity:0;transform:translateY(8px) scale(.95)}to{opacity:1;transform:translateY(0) scale(1)}}
-.imsg.bot{
-  background:#1e1e1e;
-  border:1px solid rgba(255,106,0,.2);
-  color:#fff;
-  align-self:flex-start;
-  border-bottom-left-radius:4px;
-}
-.imsg.user{
-  background:linear-gradient(135deg,#FF6A00,#C24E00);
-  color:#fff;
-  align-self:flex-end;
-  border-bottom-right-radius:4px;
-}
-.imsg.typing{
-  background:#1e1e1e;
-  border:1px solid rgba(255,106,0,.2);
-  align-self:flex-start;
-  display:inline-flex;
-  gap:4px;
-  padding:11px 13px;
-}
-.imsg.typing span{
-  width:6px;
-  height:6px;
-  background:var(--rojo);
-  border-radius:50%;
-  animation:bounce 1.2s infinite;
-}
-.imsg.typing span:nth-child(2){animation-delay:.2s}
-.imsg.typing span:nth-child(3){animation-delay:.4s}
-.iphone-input{
-  padding:10px 12px;
-  background:#0e0e0e;
-  display:flex;
-  gap:8px;
-  align-items:center;
-  border-top:1px solid rgba(255,255,255,.05);
-}
-.iphone-input-fake{
-  flex:1;
-  background:#1e1e1e;
-  border-radius:18px;
-  padding:7px 12px;
-  font-size:11px;
-  color:#666;
-}
-.send-btn{
-  width:30px;
-  height:30px;
-  border-radius:50%;
-  background:linear-gradient(135deg,#FF6A00,#C24E00);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.send-btn svg{width:14px;height:14px;fill:#fff}
-.home-bar{
-  position:absolute;
-  bottom:6px;
-  left:50%;
-  transform:translateX(-50%);
-  width:110px;
-  height:4px;
-  background:rgba(255,255,255,.2);
-  border-radius:3px;
-}
-.servicio-card{
-  background:var(--card);
-  border:1px solid var(--border2);
-  border-radius:8px;
-  overflow:hidden;
-  transition:all .3s;
-}
-.servicio-card:hover{
-  border-color:var(--rojo);
-  transform:translateY(-4px);
-  box-shadow:0 16px 40px rgba(0,0,0,.4);
-}
-.servicio-img{
-  width:100%;
-  height:180px;
-  object-fit:cover;
-  filter:brightness(.7);
-}
-.servicio-body{padding:28px}
-.servicio-icon{
-  width:54px;
-  height:54px;
-  background:var(--rojo-dim);
-  border:1px solid var(--border);
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin-bottom:14px;
-  color:var(--rojo);
-}
-.servicio-icon svg{width:26px;height:26px}
-.servicio-card h3{
-  font-size:24px;
-  font-weight:800;
-  margin-bottom:14px;
-  text-transform:uppercase;
-}
-.servicio-card p{color:var(--texto2);font-size:15px;margin-bottom:14px}
-.servicio-card.featured{border-color:var(--rojo)}
-.servicio-tag-lider{
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  background:var(--rojo);
-  color:#fff;
-  padding:5px 12px;
-  border-radius:4px;
-  font-family:'Sora',sans-serif;
-  font-weight:700;
-  font-size:12px;
-  letter-spacing:1.5px;
-  text-transform:uppercase;
-  margin-bottom:14px;
-}
-.servicio-docs{
-  background:var(--rojo-dim);
-  border-left:3px solid var(--rojo);
-  padding:14px 16px;
-  border-radius:0 4px 4px 0;
-  font-size:14px;
-  color:var(--texto2);
-  margin-top:16px;
-}
-.servicio-docs strong{color:#fff;display:block;margin-bottom:6px;font-size:13px;letter-spacing:1px;text-transform:uppercase}
-.servicio-list{list-style:none;margin-top:8px}
-.servicio-list li{
-  padding:6px 0 6px 22px;
-  position:relative;
-  color:var(--texto2);
-  font-size:14px;
-}
-.servicio-list li::before{
-  content:'→';
-  position:absolute;
-  left:0;
-  color:var(--rojo);
-  font-weight:700;
-}
-.servicio-meta{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-  margin-top:14px;
-}
-.meta-chip{
-  background:rgba(255,255,255,.04);
-  border:1px solid var(--border2);
-  color:var(--texto2);
-  font-size:12px;
-  padding:6px 12px;
-  border-radius:4px;
-  font-weight:500;
-}
-.meta-chip strong{color:var(--rojo);font-weight:700;margin-right:4px}
-
-/* VALORES */
-.valores{background:var(--negro)}
-.valores-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:26px;
-}
-.valor-card{
-  text-align:center;
-  padding:42px 26px;
-  background:var(--card);
-  border:1px solid var(--border2);
-  border-radius:8px;
-  transition:all .3s;
-}
-.valor-card:hover{border-color:var(--rojo);transform:translateY(-6px)}
-.valor-card.featured{border-color:var(--rojo);background:linear-gradient(180deg,rgba(255,106,0,.05),var(--card))}
-.valor-icon{
-  width:72px;
-  height:72px;
-  margin:0 auto 22px;
-  background:var(--rojo-dim);
-  border:2px solid var(--rojo);
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.valor-icon svg{width:34px;height:34px;stroke:var(--rojo);fill:none;stroke-width:2}
-.valor-card h3{
-  font-size:22px;
-  font-weight:800;
-  margin-bottom:14px;
-  text-transform:uppercase;
-}
-.valor-card p{color:var(--texto2);font-size:15px}
-
-/* PROCESO */
-.proceso{background:var(--negro2)}
-.pasos{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:24px;
+/* ─── PROCESO ─── */
+.proceso-lista{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:1px solid var(--borde);
+  margin-top:56px;
 }
 .paso{
-  text-align:center;
-  padding:32px 24px;
-  background:var(--card);
-  border:1px solid var(--border2);
-  border-radius:8px;
+  padding:40px 32px 40px 0;
+  border-right:1px solid var(--borde);
 }
+.paso:last-child{border-right:none;padding-right:0;}
 .paso-num{
-  font-family:'Sora',sans-serif;
-  font-size:64px;
-  font-weight:900;
-  color:var(--rojo);
-  line-height:1;
-  margin-bottom:14px;
+  font-family:'Inter',monospace;
+  font-size:11px;color:var(--rojo);font-weight:500;
+  letter-spacing:1px;margin-bottom:20px;
 }
-.paso h3{font-size:19px;font-weight:700;text-transform:uppercase;margin-bottom:10px}
-.paso p{color:var(--texto2);font-size:14px;line-height:1.55}
+.paso-title{
+  font-family:'DM Serif Display',serif;
+  font-size:18px;color:var(--negro);margin-bottom:10px;line-height:1.2;
+}
+.paso-desc{font-size:13px;color:var(--gris);line-height:1.7;font-weight:300;}
 
-/* FAQ */
-.faq-section{background:var(--negro)}
-.faq-list{max-width:880px;margin:40px auto 0;display:flex;flex-direction:column;gap:12px}
-.faq-item{
-  background:var(--card);
-  border:1px solid var(--border2);
-  border-radius:10px;
-  overflow:hidden;
-  transition:all .25s;
-}
-.faq-item.open{border-left:3px solid var(--rojo);border-color:var(--rojo)}
-.faq-question{
-  width:100%;
-  background:none;
-  border:none;
-  color:#fff;
-  text-align:left;
-  padding:18px 22px;
-  font-family:'Sora',sans-serif;
-  font-size:18px;
-  font-weight:700;
-  letter-spacing:.5px;
-  cursor:pointer;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:16px;
-}
-.faq-question:hover{color:var(--rojo2)}
-.faq-chevron{
-  width:20px;
-  height:20px;
-  flex-shrink:0;
-  transition:transform .3s;
-  stroke:var(--rojo);
-  fill:none;
-  stroke-width:2.5;
-}
-.faq-item.open .faq-chevron{transform:rotate(180deg)}
-.faq-answer{
-  max-height:0;
-  overflow:hidden;
-  transition:max-height .35s ease;
-}
-.faq-item.open .faq-answer{max-height:400px}
-.faq-answer-inner{
-  padding:0 22px 20px;
-  color:var(--texto2);
-  font-size:14.5px;
-  line-height:1.7;
-}
-
-/* SEO CIUDADES */
-.seo-cities{
-  padding:40px 24px;
-  background:#0a0a0a;
-  border-top:1px solid rgba(255,106,0,.1);
-}
-.seo-cities-inner{max-width:900px;margin:0 auto}
-.seo-cities h2{
-  font-family:'Sora',sans-serif;
-  font-size:1.3rem;
-  font-weight:700;
-  color:#fff;
-  margin-bottom:10px;
-  text-transform:none;
-  letter-spacing:0;
-}
-.seo-cities p{
-  font-size:.78rem;
-  color:#666;
-  line-height:1.8;
-  margin-bottom:16px;
-}
-.seo-cities p strong{color:#999;font-weight:600}
-.seo-cities-tags{display:flex;flex-wrap:wrap;gap:8px}
-.seo-city-chip{
-  padding:4px 12px;
-  background:rgba(255,106,0,.08);
-  border:1px solid rgba(255,106,0,.2);
-  border-radius:20px;
-  font-size:.68rem;
-  color:#999;
-}
-
-/* SECCIÓN IA */
-.ia-section{
-  background:#111111;
-  border-top:2px solid var(--rojo);
-  border-bottom:2px solid var(--rojo);
-}
-.ia-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:26px;
-  margin-top:50px;
-}
-.ia-card{
-  background:linear-gradient(180deg,rgba(255,106,0,.05),transparent);
-  border:1px solid var(--border2);
-  border-radius:10px;
-  padding:36px 28px;
-  position:relative;
-  overflow:hidden;
-  transition:all .3s;
-}
-.ia-card::before{
-  content:'';
-  position:absolute;
-  top:0;
-  left:0;
-  right:0;
-  height:2px;
-  background:linear-gradient(90deg,transparent,var(--rojo),transparent);
-}
-.ia-card:hover{transform:translateY(-6px);border-color:var(--rojo)}
-.ia-icon{
-  width:62px;
-  height:62px;
-  background:var(--rojo-dim);
-  border:1.5px solid var(--rojo);
-  border-radius:14px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin-bottom:22px;
-}
-.ia-icon svg{width:30px;height:30px;stroke:var(--rojo);fill:none;stroke-width:1.6}
-.ia-card h3{
-  font-size:23px;
-  font-weight:800;
-  margin-bottom:14px;
-  text-transform:uppercase;
-  letter-spacing:.5px;
-}
-.ia-card p{color:var(--texto2);font-size:14.5px;line-height:1.7}
-.footer-tagline{
-  color:var(--texto2);
-  font-size:13.5px;
-  margin-top:6px;
-  max-width:340px;
-}
-.footer-tagline strong{color:var(--rojo)}
-
-/* TESTIMONIOS */
-.testimonios{background:var(--negro)}
-.rating-summary{
-  display:inline-flex;
-  align-items:center;
-  gap:14px;
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:50px;
-  padding:14px 24px;
-  margin:24px auto 0;
-}
-.rating-score{
-  font-family:'Sora',sans-serif;
-  font-weight:900;
-  font-size:32px;
-  color:var(--rojo);
-  line-height:1;
-}
-.rating-meta{display:flex;flex-direction:column;gap:4px;text-align:left}
-.rating-stars{display:flex;gap:2px}
-.rating-text{font-size:12px;color:var(--texto2);letter-spacing:.5px}
-.tests-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
-}
-.test-card{
-  background:var(--card);
-  border:1px solid var(--border2);
-  border-top:2px solid var(--rojo);
-  padding:30px 26px;
-  border-radius:8px;
-  transition:all .3s;
-  display:flex;
-  flex-direction:column;
-}
-.test-card:hover{border-color:var(--rojo);transform:translateY(-4px)}
-.test-card:hover{border-top-color:var(--rojo)}
-.stars{display:flex;gap:3px;margin-bottom:14px}
-.test-card p{
-  color:#fff;
-  margin-bottom:18px;
-  font-size:15px;
-  line-height:1.6;
-  flex:1;
-}
-.test-card p::before{content:'"';color:var(--rojo);font-size:20px;font-weight:700;margin-right:2px}
-.test-card p::after{content:'"';color:var(--rojo);font-size:20px;font-weight:700;margin-left:2px}
-.test-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:auto;padding-top:16px;border-top:1px solid var(--border2)}
-.test-verified{
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  background:rgba(52,168,83,.1);
-  border:1px solid rgba(52,168,83,.4);
-  color:#34a853;
-  padding:5px 10px;
-  border-radius:4px;
-  font-size:11.5px;
-  font-weight:600;
-  letter-spacing:.3px;
-}
-.test-verified svg{width:12px;height:12px;stroke:#34a853;fill:none;stroke-width:3}
-.test-author{
-  font-family:'Sora',sans-serif;
-  font-weight:700;
-  font-size:15px;
-  color:var(--rojo);
-  letter-spacing:1px;
-  text-transform:uppercase;
-}
-
-/* CONTACTO */
-.contacto{background:var(--negro2)}
+/* ─── CONTACTO ─── */
 .contacto-grid{
-  display:grid;
-  grid-template-columns:1fr 1.1fr;
-  gap:48px;
-  align-items:start;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:64px;margin-top:64px;
 }
-.contacto-info h3{
-  font-size:28px;
-  font-weight:800;
-  margin-bottom:24px;
-  text-transform:uppercase;
+.contact-dato{
+  padding:20px 0;
+  border-bottom:1px solid var(--borde);
 }
-.contacto-item{
-  display:flex;
-  align-items:flex-start;
-  gap:16px;
-  padding:18px 0;
-  border-bottom:1px solid var(--border2);
+.contact-dato:first-child{border-top:1px solid var(--borde);}
+.contact-key{
+  font-size:10px;letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--gris);font-weight:500;margin-bottom:4px;
 }
-.contacto-item:last-child{border-bottom:none}
-.contacto-item-icon{
-  width:44px;
-  height:44px;
-  background:var(--rojo-dim);
-  border:1px solid var(--border);
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-shrink:0;
-  color:var(--rojo);
+.contact-val{
+  font-size:15px;font-weight:400;color:var(--negro);
 }
-.contacto-item-icon svg{width:18px;height:18px}
-.contacto-item-text strong{
-  display:block;
-  font-family:'Sora',sans-serif;
-  font-weight:700;
-  font-size:14px;
-  color:var(--rojo);
-  letter-spacing:1.5px;
-  text-transform:uppercase;
-  margin-bottom:4px;
+.contact-val a{color:var(--negro);text-decoration:none;}
+.contact-val a:hover{color:var(--rojo);}
+.wa-link{
+  display:block;margin-top:32px;
+  background:var(--negro);color:#fff;
+  font-size:13px;font-weight:500;letter-spacing:0.4px;
+  padding:18px 28px;text-decoration:none;text-align:center;
+  transition:background .15s;
 }
-.contacto-item-text span,.contacto-item-text a{color:var(--texto2);font-size:15px;line-height:1.5}
-.contacto-item-text a:hover{color:var(--rojo2)}
-.mapa{
-  width:100%;
-  height:480px;
-  border:none;
-  border-radius:8px;
-  filter:invert(90%) hue-rotate(180deg);
-}
+.wa-link:hover{background:var(--rojo);}
+.mapa{height:400px;background:var(--hueso);}
+.mapa iframe{width:100%;height:100%;border:none;display:block;}
 
-/* FOOTER */
-footer{background:var(--negro);padding:50px 0 26px;border-top:3px solid var(--rojo)}
-.footer-inner{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:20px;
-  padding-bottom:26px;
-  border-bottom:1px solid var(--border2);
-  margin-bottom:20px;
+/* ─── FOOTER ─── */
+footer{
+  background:var(--negro);color:rgba(255,255,255,0.45);
+  padding:40px 5%;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:20px;
 }
 .footer-logo{
-  font-family:'Sora',sans-serif;
-  font-weight:900;
-  font-size:26px;
-  color:var(--rojo);
-  letter-spacing:1px;
+  font-family:'DM Serif Display',serif;
+  font-size:16px;color:#fff;
 }
-.footer-links{display:flex;gap:26px;flex-wrap:wrap;list-style:none}
-.footer-links a{color:var(--texto2);font-size:14px;transition:color .2s}
-.footer-links a:hover{color:var(--rojo2)}
-.footer-bottom{text-align:center;color:var(--muted);font-size:13px}
-.footer-bottom a{color:var(--rojo2)}
+.footer-logo span{color:var(--rojo);}
+.footer-info{font-size:12px;color:rgba(255,255,255,0.3);margin-top:3px;}
+.footer-rrss{display:flex;gap:8px;}
+.footer-rrss a{
+  width:36px;height:36px;
+  border:1px solid rgba(255,255,255,0.12);
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;color:rgba(255,255,255,0.4);text-decoration:none;
+  font-family:'Inter',sans-serif;font-weight:500;
+  transition:all .15s;
+}
+.footer-rrss a:hover{border-color:var(--rojo);color:#fff;}
+.footer-credit{
+  background:var(--negro);border-top:1px solid rgba(255,255,255,0.06);
+  text-align:center;padding:12px;
+  font-size:11px;color:rgba(255,255,255,0.2);
+}
+.footer-credit a{color:rgba(255,255,255,0.35);text-decoration:none;}
+.footer-credit a:hover{color:var(--rojo);}
 
-/* CHATBOT */
-.chat-fab{
-  position:fixed;
-  bottom:30px;
-  right:30px;
-  width:64px;
-  height:64px;
-  background:var(--rojo);
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  cursor:pointer;
-  box-shadow:0 8px 24px rgba(255,106,0,.4);
-  z-index:998;
-  border:none;
-  transition:transform .25s;
-  animation:pulse 2s infinite;
+/* ─── CHATBOT ─── */
+#chat-fab{
+  position:fixed;bottom:28px;right:28px;z-index:300;
+  width:52px;height:52px;background:var(--rojo);
+  border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 20px rgba(200,33,63,0.35);
+  transition:background .15s;
 }
-.chat-fab:hover{transform:scale(1.08)}
-.chat-fab svg{width:30px;height:30px;fill:#fff}
-@keyframes pulse{
-  0%,100%{box-shadow:0 8px 24px rgba(255,106,0,.4),0 0 0 0 rgba(255,106,0,.4)}
-  50%{box-shadow:0 8px 24px rgba(255,106,0,.4),0 0 0 18px rgba(255,106,0,0)}
+#chat-fab:hover{background:var(--rojo-dark);}
+#chat-fab svg{width:22px;height:22px;fill:#fff;}
+
+#chat-win{
+  position:fixed;bottom:92px;right:28px;z-index:300;
+  width:348px;max-height:520px;
+  background:#fff;border:1px solid var(--borde);
+  display:none;flex-direction:column;
+  box-shadow:0 16px 48px rgba(0,0,0,0.14);
 }
-.chat-tooltip{
-  position:fixed;
-  bottom:38px;
-  right:106px;
-  background:var(--card);
-  color:#fff;
-  padding:12px 18px;
-  border-radius:6px;
-  border:1px solid var(--border);
-  font-size:14px;
-  white-space:nowrap;
-  z-index:997;
-  box-shadow:0 6px 20px rgba(0,0,0,.4);
-  animation:tipFade 6s ease-out;
-  display:flex;
-  align-items:center;
-  gap:8px;
-}
-@keyframes tipFade{
-  0%,80%{opacity:1;transform:translateX(0)}
-  100%{opacity:0;transform:translateX(20px);visibility:hidden}
-}
-.chat-tooltip.hidden{display:none}
-.chat-modal{
-  position:fixed;
-  bottom:110px;
-  right:30px;
-  width:360px;
-  max-height:560px;
-  background:var(--negro2);
-  border:1px solid var(--border);
-  border-radius:12px;
-  box-shadow:0 24px 60px rgba(0,0,0,.6);
-  display:none;
-  flex-direction:column;
-  z-index:999;
-  overflow:hidden;
-}
-.chat-modal.open{display:flex;animation:slideUp .3s ease-out}
-@keyframes slideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-.chat-header{
+#chat-win.open{display:flex;}
+.ch-head{
   background:var(--negro);
-  color:#fff;
-  padding:18px 20px;
-  border-bottom:3px solid var(--rojo);
+  padding:14px 16px;display:flex;align-items:center;gap:12px;
 }
-.chat-header-row{display:flex;justify-content:space-between;align-items:center}
-.chat-header h4{
-  font-family:'Sora',sans-serif;
-  font-weight:800;
-  font-size:18px;
-  letter-spacing:1px;
-  text-transform:uppercase;
+.ch-av{
+  width:36px;height:36px;background:rgba(255,255,255,0.1);
+  border:1px solid rgba(255,255,255,0.2);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'DM Serif Display',serif;font-size:14px;color:#fff;
 }
-.chat-status{
-  display:flex;
-  align-items:center;
-  gap:6px;
-  font-size:12px;
-  color:var(--texto2);
-  margin-top:4px;
+.ch-name{
+  font-family:'DM Serif Display',serif;
+  font-size:14px;color:#fff;
 }
-.chat-dot{
-  width:8px;
-  height:8px;
-  border-radius:50%;
-  background:var(--rojo);
-  animation:dot 1.5s infinite;
+.ch-sub{font-size:11px;color:rgba(255,255,255,0.5);letter-spacing:0.3px;}
+.ch-close{
+  margin-left:auto;background:none;border:none;
+  color:rgba(255,255,255,0.5);cursor:pointer;font-size:16px;
+  line-height:1;padding:4px;
 }
-@keyframes dot{0%,100%{opacity:1}50%{opacity:.3}}
-.chat-close{
-  background:none;
-  border:none;
-  color:#fff;
-  font-size:22px;
-  cursor:pointer;
+.ch-close:hover{color:#fff;}
+.ch-msgs{
+  flex:1;overflow-y:auto;padding:16px;
+  display:flex;flex-direction:column;gap:8px;
 }
-.chat-body{
-  flex:1;
-  overflow-y:auto;
-  padding:18px;
-  display:flex;
-  flex-direction:column;
-  gap:12px;
+.msg{
+  max-width:88%;font-size:13px;line-height:1.55;padding:10px 13px;
 }
-.chat-msg{
-  max-width:88%;
-  padding:12px 14px;
-  border-radius:10px;
-  font-size:14px;
-  line-height:1.5;
-  white-space:pre-wrap;
-  animation:msgIn .3s ease-out;
-  display:flex;
-  gap:8px;
-  align-items:flex-start;
+.msg.bot{
+  background:var(--hueso);border:1px solid var(--borde);
+  align-self:flex-start;color:var(--negro);
 }
-@keyframes msgIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-.chat-msg.bot{
-  background:var(--card);
-  border:1px solid var(--border);
-  align-self:flex-start;
-  border-bottom-left-radius:2px;
+.msg.user{
+  background:var(--rojo);color:#fff;align-self:flex-end;
 }
-.chat-msg.user{
-  background:var(--rojo);
-  color:#fff;
-  align-self:flex-end;
-  border-bottom-right-radius:2px;
+.msg-opts{display:flex;flex-direction:column;gap:5px;margin-top:4px;}
+.msg-opt{
+  background:#fff;border:1px solid var(--borde);
+  color:var(--negro);font-size:12px;font-weight:400;
+  padding:9px 13px;cursor:pointer;
+  text-align:left;transition:all .12s;
+  font-family:'DM Sans',sans-serif;
 }
-.chat-msg .ico{flex-shrink:0;margin-top:2px;color:var(--rojo)}
-.chat-msg.user .ico{color:#fff}
-.chat-msg-text{flex:1}
-.chat-quick{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
-.chat-quick button{
-  background:transparent;
-  border:1px solid var(--rojo);
-  color:var(--rojo2);
-  padding:8px 12px;
-  border-radius:18px;
-  font-size:12.5px;
-  cursor:pointer;
-  font-family:inherit;
-  transition:all .2s;
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
+.msg-opt:hover{border-color:var(--rojo);color:var(--rojo);}
+.ch-input-row{
+  padding:10px 12px;border-top:1px solid var(--borde);
+  display:flex;gap:8px;background:#fff;
 }
-.chat-quick button:hover{background:var(--rojo);color:#fff}
-.chat-input-row{
-  display:flex;
-  gap:8px;
-  padding:14px;
-  border-top:1px solid var(--border2);
-  background:var(--negro);
+.ch-input-row input{
+  flex:1;background:var(--hueso);border:1px solid var(--borde);
+  padding:9px 12px;color:var(--negro);font-size:13px;
+  font-family:'DM Sans',sans-serif;outline:none;
 }
-.chat-input-row input{
-  flex:1;
-  background:var(--card);
-  border:1px solid var(--border2);
-  color:#fff;
-  padding:11px 14px;
-  border-radius:6px;
-  font-family:inherit;
-  font-size:14px;
-  outline:none;
+.ch-input-row input:focus{border-color:var(--rojo);}
+.ch-send{
+  width:38px;height:38px;background:var(--rojo);
+  border:none;cursor:pointer;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  transition:background .15s;
 }
-.chat-input-row input:focus{border-color:var(--rojo)}
-.chat-send{
-  background:var(--rojo);
-  border:none;
-  color:#fff;
-  width:42px;
-  height:42px;
-  border-radius:6px;
-  cursor:pointer;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.chat-send:hover{background:var(--rojo2)}
-.chat-typing{
-  display:inline-flex;
-  gap:4px;
-  align-self:flex-start;
-  background:var(--card);
-  border:1px solid var(--border);
-  padding:12px 14px;
-  border-radius:10px;
-}
-.chat-typing span{
-  width:7px;
-  height:7px;
-  background:var(--rojo);
-  border-radius:50%;
-  animation:bounce 1.2s infinite;
-}
-.chat-typing span:nth-child(2){animation-delay:.2s}
-.chat-typing span:nth-child(3){animation-delay:.4s}
-@keyframes bounce{0%,60%,100%{opacity:.3;transform:translateY(0)}30%{opacity:1;transform:translateY(-5px)}}
+.ch-send:hover{background:var(--rojo-dark);}
+.ch-send svg{width:15px;height:15px;fill:#fff;}
 
-/* RESPONSIVE */
-@media (max-width:900px){
-  .nav-toggle{display:block}
-  .nav-links{
-    display:none;
-    position:absolute;
-    top:100%;
-    left:0;
-    right:0;
-    background:#ffffff;
-    flex-direction:column;
-    padding:24px;
-    gap:16px;
-    box-shadow:0 8px 16px rgba(0,0,0,.1);
-  }
-  .nav-links.open{display:flex}
-  .nav-links a,.nav-links .btn{width:100%}
-  .topbar-inner{grid-template-columns:1fr;text-align:center;font-size:12px;gap:6px}
-  .topbar-inner > *{justify-self:center !important}
-  .contacto-grid{grid-template-columns:1fr}
-  .mapa{height:340px}
-  section{padding:70px 0}
-  .hero{min-height:auto;padding:60px 0}
-  .stats{gap:18px}
-  .stat-item{font-size:15px}
-  .tests-grid{grid-template-columns:repeat(2,1fr)}
-  .servicio-detail{grid-template-columns:1fr}
-  .servicio-detail-main{border-right:none;border-bottom:1px solid var(--border2)}
-  .intro-grid{grid-template-columns:1fr;gap:30px}
-  .iphone-wrap{display:none}
-  .process-steps{grid-template-columns:1fr}
-  .process-steps.steps-4{grid-template-columns:repeat(2,1fr)}
-  .ia-grid{grid-template-columns:1fr;gap:20px;margin-top:40px}
+/* ─── RESPONSIVE ─── */
+@media(max-width:1024px){
+  .hero{grid-template-columns:50% 50%;}
+  .servicios-grid{grid-template-columns:1fr 1fr;}
+  .equipo-grid{grid-template-columns:1fr;}
+  .proceso-lista{grid-template-columns:1fr 1fr;gap:0;}
+  .paso{padding:32px 24px 32px 0;border-bottom:1px solid var(--borde);}
 }
-@media (max-width:600px){
-  .tests-grid{grid-template-columns:1fr}
-  .servicio-detail-main,.servicio-detail-side{padding:30px 24px}
-  .servicio-detail h3{font-size:28px}
-  .process-steps.steps-4{grid-template-columns:1fr}
-  .topbar{display:none}
-  .container{padding:0 18px}
-  .nav-inner{padding:14px 18px}
-  .logo-main{font-size:26px}
-  .logo-sub{font-size:11px;letter-spacing:2px}
-  .hero h1{font-size:42px}
-  .hero p.sub{font-size:16px}
-  .section-title{font-size:32px}
-  .tab-content.active{grid-template-columns:1fr}
-  .chat-fab{bottom:20px;right:20px;width:58px;height:58px}
-  .chat-tooltip{display:none}
-  .chat-modal{
-    bottom:0;
-    right:0;
-    left:0;
-    width:100vw;
-    max-height:90vh;
-    border-radius:12px 12px 0 0;
-  }
-  .footer-inner{flex-direction:column;text-align:center}
-}
-
-/* ===== MODAL SERVICIOS ===== */
-.svc-modal-overlay{
-  position:fixed;
-  inset:0;
-  z-index:1000;
-  background:rgba(0,0,0,.72);
-  backdrop-filter:blur(4px);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:24px;
-  opacity:0;
-  visibility:hidden;
-  transition:opacity .28s ease;
-}
-.svc-modal-overlay.open{opacity:1;visibility:visible}
-.svc-modal{
-  background:var(--card);
-  border:1px solid var(--orange);
-  border-radius:14px;
-  max-width:600px;
-  width:100%;
-  max-height:90vh;
-  overflow-y:auto;
-  position:relative;
-  box-shadow:0 24px 70px rgba(0,0,0,.6),var(--glow);
-  transform:translateY(18px) scale(.97);
-  transition:transform .28s ease;
-}
-.svc-modal-overlay.open .svc-modal{transform:translateY(0) scale(1)}
-.svc-modal-img{
-  width:100%;
-  height:220px;
-  object-fit:cover;
-  border-radius:14px 14px 0 0;
-  display:block;
-}
-.svc-modal-close{
-  position:absolute;
-  top:14px;
-  right:14px;
-  width:38px;
-  height:38px;
-  border-radius:50%;
-  background:rgba(0,0,0,.55);
-  border:1px solid var(--border2);
-  color:#fff;
-  font-size:24px;
-  line-height:1;
-  cursor:pointer;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  transition:all .2s;
-  z-index:2;
-}
-.svc-modal-close:hover{background:var(--orange);border-color:var(--orange);transform:rotate(90deg)}
-.svc-modal-body{padding:28px 30px 30px}
-.svc-modal-title{
-  font-family:'Sora',sans-serif;
-  font-weight:700;
-  font-size:28px;
-  letter-spacing:.5px;
-  color:var(--texto);
-  margin-bottom:16px;
-}
-.svc-modal-desc p{
-  color:var(--texto2);
-  font-size:15px;
-  line-height:1.7;
-  margin-bottom:12px;
-}
-.svc-modal-bullets{
-  list-style:none;
-  margin:18px 0 26px;
-  display:flex;
-  flex-direction:column;
-  gap:11px;
-}
-.svc-modal-bullets li{
-  position:relative;
-  padding-left:28px;
-  color:var(--texto);
-  font-size:14.5px;
-  line-height:1.5;
-}
-.svc-modal-bullets li::before{
-  content:"";
-  position:absolute;
-  left:0;
-  top:6px;
-  width:13px;
-  height:13px;
-  border-radius:50%;
-  background:var(--orange-dim);
-  border:2px solid var(--orange);
-}
-.svc-modal-cta{width:100%;font-size:15px;padding:14px}
-@media (max-width:600px){
-  .svc-modal-img{height:170px}
-  .svc-modal-body{padding:22px 20px 24px}
-  .svc-modal-title{font-size:23px}
+@media(max-width:768px){
+  .hero{grid-template-columns:1fr;}
+  .hero-img{height:60vw;min-height:280px;}
+  .hero-right{padding:48px 5%;}
+  .servicios-grid,.equipo-fotos{grid-template-columns:1fr;}
+  .serv{aspect-ratio:3/2;}
+  .foto-main{grid-column:auto;}
+  .section-intro{grid-template-columns:1fr;}
+  .contacto-grid{grid-template-columns:1fr;gap:40px;}
+  .proceso-lista{grid-template-columns:1fr;}
+  .nav-links{display:none;}
+  #chat-win{width:calc(100vw - 32px);right:16px;}
 }
 </style>
 </head>
 <body>
 
-<!-- TOPBAR -->
-<div class="topbar">
-  <div class="container topbar-inner">
-    <span><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Calle Madrid 9, Majadahonda</span>
-    <span><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.4 1.17 2 2 0 012.37 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg> <a href="tel:+34643199580">643 199 580</a></span>
-    <span><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> <a href="mailto:comercial@whitemoon.es">comercial@whitemoon.es</a></span>
-  </div>
-</div>
-
 <!-- NAV -->
-<nav class="nav">
-  <div class="nav-inner">
-    <a href="#inicio" class="logo" style="display:flex;align-items:center;gap:12px;text-decoration:none">
-      <span style="font-family:'Sora',sans-serif;font-weight:700;font-size:22px;letter-spacing:2px;color:#0a0a0a">White<span style="color:var(--orange)">Moon</span></span>
-      <span aria-hidden="true" style="width:1px;height:22px;background:var(--orange);opacity:.55;display:block"></span>
-      <span style="font-family:'Sora',sans-serif;font-weight:300;font-size:11px;text-transform:uppercase;letter-spacing:4px;color:var(--texto2)">GESTORÍA IA</span>
-    </a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#inicio">Inicio</a></li>
-      <li><a href="#servicios">Servicios</a></li>
-      <li><a href="#nosotros">Nosotros</a></li>
-      <li><a href="#servicios" data-go-tab="moves">Plan Moves</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-      <li><a href="#contacto" class="btn btn-rojo" onclick="toggleChat();return false;">Consulta gratuita</a></li>
-    </ul>
-    <button class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
-  </div>
+<nav>
+  <a class="nav-logo" href="#inicio">Gestoría <span>Sara</span></a>
+  <ul class="nav-links">
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#equipo">Nosotros</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+  <span class="nav-tel">662 23 81 74</span>
+  <a class="nav-cta" href="https://wa.link/9fo0et" target="_blank">Primera consulta</a>
 </nav>
 
 <!-- HERO -->
-<header class="hero" id="inicio">
-  <div class="container hero-content">
-    <div class="badge">
-      <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--rojo);fill:none;stroke-width:1.8"><polyline points="8 21 12 17 16 21"/><path d="M9 7H5a2 2 0 00-2 2v1a4 4 0 004 4h1m6-7h4a2 2 0 012 2v1a4 4 0 01-4 4h-1"/><path d="M12 17V7M9 7h6"/></svg>
-      Gestoría IA · Majadahonda, Madrid
-    </div>
-    <h1>GESTORÍA IA<br><span class="rojo">INTELIGENTE</span></h1>
-    <p class="sub">Gestión profesional con inteligencia artificial. Calcula tu ITP, tramita transferencias y gestiona todos tus trámites DGT online.</p>
-    <div class="hero-cta">
-      <a href="#contacto" class="btn btn-rojo" onclick="toggleChat();return false;">Consulta gratuita</a>
-      <a href="#servicios" class="btn btn-outline">Ver servicios</a>
-    </div>
-    <div class="stats">
-      <div class="stat-item"><span>IA</span> 24/7</div>
-      <div class="stat-item"><span>+100</span> gestorías</div>
-      <div class="stat-item"><span>5-7 días</span> resolución media</div>
-      <div class="stat-item"><span>100%</span> online</div>
+<section class="hero" id="inicio">
+  <div class="hero-img">
+    <img
+      src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,fit=crop/YD0po5wXMOFv1vj6/imagen-de-whatsapp-2025-11-13-a-las-12.51.10_2aaf019c-S467QZuvtGxrU7iy.jpg"
+      alt="Sara Aparicio Grande — Gerente y fundadora de Gestoría Sara, Majadahonda"
+    />
+    <div class="hero-caption">
+      <div class="hero-caption-name">Sara Aparicio Grande</div>
+      <div class="hero-caption-role">Gerente · Fundadora</div>
+      <div class="hero-stars">4.7 — 90 resenas Google</div>
     </div>
   </div>
-</header>
+  <div class="hero-right">
+    <div class="hero-label">Gestoría integral — Majadahonda, Madrid</div>
+    <h1>Tu gestoría<br/>de confianza.<br/><i>Desde 2004.</i></h1>
+    <p class="hero-body">
+      Gestionamos todos tus tramites con atención personalizada y transparencia real.
+      Fiscal, laboral, extranjerías, herencias, empresas y mucho mas.
+      Primera consulta gratuita, sin compromiso.
+    </p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="https://wa.link/9fo0et" target="_blank">Consulta gratuita por WhatsApp</a>
+      <a class="btn-secondary" href="#servicios">Ver todos los servicios</a>
+    </div>
+    <div class="hero-metrics">
+      <div class="metric">
+        <div class="metric-num">+20</div>
+        <div class="metric-lbl">anos de experiencia</div>
+      </div>
+      <div class="metric">
+        <div class="metric-num">4.7</div>
+        <div class="metric-lbl">nota en Google</div>
+      </div>
+      <div class="metric">
+        <div class="metric-num">100%</div>
+        <div class="metric-lbl">atencion personal</div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- SERVICIOS -->
-<section class="servicios" id="servicios">
-  <div class="container">
-    <div class="section-head">
-      <div class="section-tag">Nuestros servicios</div>
-      <h2 class="section-title">Especialistas en trámites DGT</h2>
-      <p class="section-sub">Gestionamos trámites de tráfico, transportes y subvenciones para particulares y empresas con inteligencia artificial.</p>
+<section class="section" id="servicios">
+  <div class="section-intro">
+    <div>
+      <div class="label">Nuestros servicios</div>
+      <h2>Todo lo que necesitas,<br/><i>en un solo lugar.</i></h2>
     </div>
-
-    <div class="servicios-grid">
-      <div class="servicio-card" data-svc="transferencias" role="button" tabindex="0">
-        <img class="servicio-img" src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=400&q=80" alt="Transferencias de vehículos" loading="lazy">
-        <div class="servicio-body">
-          <h3>Transferencias</h3>
-          <p>Cambio de titularidad ante la DGT en 24-48h, sin desplazarte. 140€ con tasas incluidas.</p>
-        </div>
-      </div>
-      <div class="servicio-card" data-svc="electricos" role="button" tabindex="0">
-        <img class="servicio-img" src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&q=80" alt="Matriculación de vehículos eléctricos" loading="lazy">
-        <div class="servicio-body">
-          <h3>Matrícula Eléctricos</h3>
-          <p>Matriculación de coches eléctricos e híbridos ante la DGT. Compatible con Plan Moves.</p>
-        </div>
-      </div>
-      <div class="servicio-card" data-svc="patinetes" role="button" tabindex="0">
-        <img class="servicio-img" src="https://images.unsplash.com/photo-1576659698370-5bb6e1055990?w=400&q=80" alt="Inscripción de patinetes eléctricos VMP" loading="lazy">
-        <div class="servicio-body">
-          <h3>Patinetes VMP</h3>
-          <p>Inscripción obligatoria en la DGT desde 2024. Evita multas de hasta 500€. Desde 50€.</p>
-        </div>
-      </div>
-      <div class="servicio-card" data-svc="transportes" role="button" tabindex="0">
-        <img class="servicio-img" src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=400&q=80" alt="Transporte profesional y tarjetas de transporte" loading="lazy">
-        <div class="servicio-body">
-          <h3>Transportes</h3>
-          <p>Tarjetas de transporte, VTC y autorizaciones para empresas y autónomos en Madrid.</p>
-        </div>
-      </div>
-      <div class="servicio-card" data-svc="moves" role="button" tabindex="0">
-        <img class="servicio-img" src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=400&q=80" alt="Plan Moves y movilidad sostenible" loading="lazy">
-        <div class="servicio-body">
-          <h3>Plan Moves</h3>
-          <p>Gestionamos la ayuda Plan Moves III. Hasta 7.000€ por tu vehículo eléctrico.</p>
-        </div>
-      </div>
-      <div class="servicio-card" data-svc="trafico" role="button" tabindex="0">
-        <img class="servicio-img" src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&q=80" alt="Tráfico y transporte urbano" loading="lazy">
-        <div class="servicio-body">
-          <h3>Tráfico y Transporte</h3>
-          <p>Gestión integral de trámites de tráfico, autorizaciones y permisos para particulares y empresas.</p>
-        </div>
-      </div>
-      <div class="servicio-card" data-svc="fiscal" role="button" tabindex="0">
-        <img class="servicio-img" src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&q=80" alt="Asesoría fiscal y contable" loading="lazy">
-        <div class="servicio-body">
-          <h3>Asesoría Fiscal</h3>
-          <p>Asesoramiento fiscal, contable y laboral para autónomos y empresas. Declaraciones y nóminas al día.</p>
-        </div>
-      </div>
-      <div class="servicio-card" data-svc="civil" role="button" tabindex="0">
-        <img class="servicio-img" src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=400&q=80" alt="Derecho civil" loading="lazy">
-        <div class="servicio-body">
-          <h3>Derecho Civil</h3>
-          <p>Reclamaciones, contratos y conflictos entre particulares con un trato cercano en cada caso.</p>
-        </div>
-      </div>
-      <div class="servicio-card" data-svc="mercantil" role="button" tabindex="0">
-        <img class="servicio-img" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&q=80" alt="Derecho mercantil" loading="lazy">
-        <div class="servicio-body">
-          <h3>Derecho Mercantil</h3>
-          <p>Constitución de sociedades, contratos mercantiles y asesoramiento jurídico para empresas.</p>
-        </div>
-      </div>
-      <div class="servicio-card" data-svc="inmobiliario" role="button" tabindex="0">
-        <img class="servicio-img" src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&q=80" alt="Derecho inmobiliario" loading="lazy">
-        <div class="servicio-body">
-          <h3>Derecho Inmobiliario</h3>
-          <p>Compraventas, arrendamientos y toda la gestión jurídica de la propiedad inmobiliaria.</p>
-        </div>
-      </div>
-      <div class="servicio-card" data-svc="herencias" role="button" tabindex="0">
-        <img class="servicio-img" src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&q=80" alt="Tramitación de herencias" loading="lazy">
-        <div class="servicio-body">
-          <h3>Herencias</h3>
-          <p>Tramitación de herencias, testamentos y adjudicación de bienes en todo el proceso sucesorio.</p>
-        </div>
-      </div>
-      <div class="servicio-card" data-svc="familia" role="button" tabindex="0">
-        <img class="servicio-img" src="https://images.unsplash.com/photo-1553915632-175f60dd8e36?w=400&q=80" alt="Derecho de familia" loading="lazy">
-        <div class="servicio-body">
-          <h3>Derecho de Familia</h3>
-          <p>Separaciones, divorcios, custodias y acuerdos familiares con discreción y confidencialidad.</p>
-        </div>
-      </div>
-      <div class="servicio-card" data-svc="penal" role="button" tabindex="0">
-        <img class="servicio-img" src="https://images.unsplash.com/photo-1589994965851-a8f479c573a9?w=400&q=80" alt="Derecho penal" loading="lazy">
-        <div class="servicio-body">
-          <h3>Derecho Penal</h3>
-          <p>Defensa y asistencia jurídica en procedimientos penales, con seguimiento de principio a fin.</p>
-        </div>
-      </div>
-      <div class="servicio-card" data-svc="administrativo" role="button" tabindex="0">
-        <img class="servicio-img" src="https://images.unsplash.com/photo-1555848962-6e79363ec58f?w=400&q=80" alt="Derecho administrativo" loading="lazy">
-        <div class="servicio-body">
-          <h3>Derecho Administrativo</h3>
-          <p>Recursos, sanciones y trámites frente a las administraciones públicas con rigor.</p>
-        </div>
-      </div>
-    </div>
-
-
+    <p>Soluciones claras para particulares, autonomos y empresas en Majadahonda y toda la Comunidad de Madrid. Sin tecnicismos, con resultados.</p>
   </div>
-</section>
+  <div class="servicios-grid">
 
-<!-- MODAL SERVICIOS -->
-<div class="svc-modal-overlay" id="svcModal" aria-hidden="true">
-  <div class="svc-modal" role="dialog" aria-modal="true" aria-labelledby="svcModalTitle">
-    <button class="svc-modal-close" id="svcModalClose" aria-label="Cerrar">&times;</button>
-    <img class="svc-modal-img" id="svcModalImg" src="" alt="">
-    <div class="svc-modal-body">
-      <h3 class="svc-modal-title" id="svcModalTitle"></h3>
-      <div class="svc-modal-desc" id="svcModalDesc"></div>
-      <ul class="svc-modal-bullets" id="svcModalBullets"></ul>
-      <button class="btn btn-rojo svc-modal-cta" id="svcModalCta">Consultar con Laura IA &rarr;</button>
-    </div>
-  </div>
-</div>
-
-<!-- VALORES -->
-<section class="valores" id="nosotros">
-  <div class="container">
-    <div class="section-head">
-      <div class="section-tag">¿Por qué WhiteMoon?</div>
-      <h2 class="section-title">Profesionales de confianza</h2>
-      <p class="section-sub">Hacemos lo complicado fácil para nuestros clientes con inteligencia artificial.</p>
-    </div>
-    <div class="valores-grid">
-      <div class="valor-card featured">
-        <div class="valor-icon">
-          <svg viewBox="0 0 24 24"><polyline points="8 21 12 17 16 21"/><path d="M9 7H5a2 2 0 00-2 2v1a4 4 0 004 4h1m6-7h4a2 2 0 012 2v1a4 4 0 01-4 4h-1"/><path d="M12 17V7M9 7h6"/></svg>
-        </div>
-        <h3>Líderes en transferencias en Madrid</h3>
-        <p>Somos la gestoría líder en transferencias de vehículos en Madrid. Más de 5.000 transferencias gestionadas con éxito. Nuestro equipo gestiona cada transferencia de forma personalizada, resolviendo cualquier incidencia con la DGT de forma ágil y eficaz.</p>
-      </div>
-      <div class="valor-card featured">
-        <div class="valor-icon">
-          <svg viewBox="0 0 24 24"><path d="M9 2h6a2 2 0 012 2v1a4 4 0 014 4v3a4 4 0 01-2 3.46V18a3 3 0 01-3 3h-6a3 3 0 01-3-3v-2.54A4 4 0 013 12V9a4 4 0 014-4V4a2 2 0 012-2z"/><circle cx="9" cy="10" r="1"/><circle cx="15" cy="10" r="1"/><path d="M9 15h6"/></svg>
-        </div>
-        <h3>Gestoría con IA integrada</h3>
-        <p>Incorporamos IA para mejorar la atención al cliente. Nuestro asistente virtual cualifica tu consulta al instante y la deriva al gestor especializado, sin esperas y sin formularios.</p>
-      </div>
-      <div class="valor-card">
-        <div class="valor-icon">
-          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="1"/><line x1="8" y1="20" x2="16" y2="20"/><line x1="12" y1="17" x2="12" y2="20"/></svg>
-        </div>
-        <h3>100% Online</h3>
-        <p>Envíanos la documentación por email o WhatsApp y nuestro equipo lo gestiona todo. Sin desplazamientos, sin colas, sin esperas.</p>
-      </div>
-      <div class="valor-card">
-        <div class="valor-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 2 L4 6 v6 c0 5 3.5 9 8 10 4.5-1 8-5 8-10 V6 Z"/></svg>
-        </div>
-        <h3>Gestoría oficial</h3>
-        <p>Gestionamos trámites de tráfico y transporte en Majadahonda y Madrid. Colegiados, asegurados y con responsabilidad civil. La tecnología del futuro al servicio de tus trámites.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROCESO -->
-<section class="proceso">
-  <div class="container">
-    <div class="section-head">
-      <div class="section-tag">Cómo trabajamos</div>
-      <h2 class="section-title">Proceso en 4 pasos</h2>
-      <p class="section-sub">Sencillo, rápido y sin que tengas que moverte de tu casa u oficina.</p>
-    </div>
-    <div class="pasos">
-      <div class="paso"><div class="paso-num">01</div><h3>Hablas con nuestro agente IA</h3><p>Nuestro chatbot te orienta al instante, recoge los datos de tu trámite y los envía directamente al equipo gestor.</p></div>
-      <div class="paso"><div class="paso-num">02</div><h3>Revisamos y cerramos</h3><p>Un gestor especializado revisa tu caso, confirma el presupuesto final y cierra los detalles contigo en menos de 1 hora.</p></div>
-      <div class="paso"><div class="paso-num">03</div><h3>Envías la documentación por email</h3><p>Nos envías los documentos escaneados a comercial@whitemoon.es y nuestro gestor lo tramita todo ante la DGT sin que tengas que moverte.</p></div>
-      <div class="paso"><div class="paso-num">04</div><h3>Vehículo transferido</h3><p>Recibes la documentación oficial. Tu vehículo ya está a tu nombre en el registro de la DGT.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- INTRO IPHONE MOCKUP -->
-<section class="intro-iphone" id="asi-de-facil">
-  <div class="container">
-    <div class="intro-grid">
-      <div class="intro-text">
-        <div class="section-tag">Así de fácil</div>
-        <h2>Inicia tu trámite en segundos</h2>
-        <p class="lead">Sin colas, sin esperas, sin desplazamientos. Solo escríbenos y nosotros lo gestionamos todo.</p>
-        <ul class="intro-bullets">
-          <li>
-            <span class="bullet-ico"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
-            <div><strong>Sin burocracia</strong><p>Nuestro asistente con IA te guía paso a paso. Solo dinos qué necesitas y nosotros nos encargamos de todo.</p></div>
-          </li>
-          <li>
-            <span class="bullet-ico"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
-            <div><strong>Documentación online</strong><p>Envíanos tus documentos por WhatsApp o email. Nuestro chat te orienta al instante y conecta con el gestor adecuado. Sin citas, sin desplazamientos, sin esperas en ventanilla.</p></div>
-          </li>
-          <li>
-            <span class="bullet-ico"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
-            <div><strong>Atención personalizada</strong><p>Nuestros gestores te informan personalmente del avance de tu trámite hasta la entrega final.</p></div>
-          </li>
+    <div class="serv">
+      <img class="serv-foto"
+        src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=431,fit=crop/YD0po5wXMOFv1vj6/imagen-de-whatsapp-2025-11-13-a-las-12.47.05_4ed223f8-qXKOvzbscgRSnlqk.jpg"
+        alt="Asesoria fiscal Majadahonda"/>
+      <div class="serv-overlay"></div>
+      <div class="serv-content">
+        <div class="serv-tag">Particulares y autonomos</div>
+        <div class="serv-title">Fiscal y Contabilidad</div>
+        <ul class="serv-items">
+          <li>Declaracion de la renta</li>
+          <li>IVA e IRPF</li>
+          <li>Contabilidad para autonomos y empresas</li>
         </ul>
-        <div class="cta-row">
-          <a href="#contacto" class="btn btn-rojo" onclick="toggleChat();return false;">Empezar ahora</a>
-          <a href="https://wa.me/34643199580" target="_blank" rel="noopener" class="btn btn-outline">WhatsApp</a>
-        </div>
       </div>
+    </div>
 
-      <div class="iphone-wrap">
-        <div class="iphone-body">
-          <div class="iphone-screen">
-            <div class="iphone-chat-header">
-              <div class="chat-avatar">W</div>
-              <div>
-                <div class="chat-info-name">WhiteMoon · Asistente IA</div>
-                <div class="chat-info-status">En línea</div>
-              </div>
-            </div>
-            <div class="iphone-msgs" id="iphoneMsgs"></div>
-            <div class="iphone-input">
-              <div class="iphone-input-fake">Escribe un mensaje...</div>
-              <div class="send-btn"><svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg></div>
-            </div>
-            <div class="home-bar"></div>
-          </div>
+    <div class="serv">
+      <img class="serv-foto"
+        src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=512,fit=crop/YD0po5wXMOFv1vj6/gestion-AQEJWGaE2NT8WE9V.jpg"
+        alt="Creacion de empresas autonomos Majadahonda"/>
+      <div class="serv-overlay"></div>
+      <div class="serv-content">
+        <div class="serv-tag">Empresas</div>
+        <div class="serv-title">Autonomos y Empresa</div>
+        <ul class="serv-items">
+          <li>Alta de autonomos</li>
+          <li>Creacion de SL y SA</li>
+          <li>Nominas y seguros sociales</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="serv">
+      <img class="serv-foto"
+        src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=781,fit=crop/YD0po5wXMOFv1vj6/cercania-AQEJWGoOMEfvn5kR.jpg"
+        alt="Extranjeria visados Majadahonda"/>
+      <div class="serv-overlay"></div>
+      <div class="serv-content">
+        <div class="serv-tag">Extranjeria</div>
+        <div class="serv-title">Extranjeria y Visados</div>
+        <ul class="serv-items">
+          <li>Permisos de residencia</li>
+          <li>Nacionalidad espanola</li>
+          <li>Visados y renovaciones</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="serv">
+      <img class="serv-foto"
+        src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=832,fit=crop/YD0po5wXMOFv1vj6/imagen-de-whatsapp-2025-11-05-a-las-15.57.57_5e47c6f5-cX9Iep50exXXplR7.jpg"
+        alt="Herencias testamentos Majadahonda"/>
+      <div class="serv-overlay"></div>
+      <div class="serv-content">
+        <div class="serv-tag">Patrimonio</div>
+        <div class="serv-title">Herencias y Patrimonio</div>
+        <ul class="serv-items">
+          <li>Tramitacion de herencias</li>
+          <li>Donaciones y legados</li>
+          <li>Intermediacion inmobiliaria</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="serv">
+      <img class="serv-foto"
+        src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=684,fit=crop/YD0po5wXMOFv1vj6/imagen-de-whatsapp-2025-06-04-a-las-08.33.09_d7cff509-YrDJkJ7vRvUBKVR9.jpg"
+        alt="Ley segunda oportunidad deudas"/>
+      <div class="serv-overlay"></div>
+      <div class="serv-content">
+        <div class="serv-tag">Segunda Oportunidad</div>
+        <div class="serv-title">Ley de Segunda Oportunidad</div>
+        <ul class="serv-items">
+          <li>Cancelacion de deudas</li>
+          <li>Concurso de acreedores</li>
+          <li>Negociacion con acreedores</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="serv">
+      <img class="serv-foto"
+        src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,h=394,fit=crop/YD0po5wXMOFv1vj6/imagen-de-whatsapp-2025-06-04-a-las-08.35.14_a2cbb774-dWxOqO8nolU035X1.jpg"
+        alt="Ayudas subvenciones financiacion"/>
+      <div class="serv-overlay"></div>
+      <div class="serv-content">
+        <div class="serv-tag">Financiacion</div>
+        <div class="serv-title">Ayudas y Subvenciones</div>
+        <ul class="serv-items">
+          <li>Subvenciones para empresas</li>
+          <li>Proyectos e inversion privada</li>
+          <li>Capital privado y gestion integral</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EQUIPO -->
+<section class="section section-alt" id="equipo">
+  <div class="section-intro">
+    <div>
+      <div class="label">Quienes somos</div>
+      <h2>No somos<br/>una gestoria<br/><i>cualquiera.</i></h2>
+    </div>
+    <p>En Gestoria Sara llevamos mas de 20 anos ayudando a personas y empresas de Majadahonda. Conocemos cada tramite, cada plazo, cada situacion especial.</p>
+  </div>
+  <div class="equipo-grid">
+    <div class="equipo-fotos">
+      <div class="foto-main">
+        <img
+          src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=684,fit=crop/YD0po5wXMOFv1vj6/imagen-de-whatsapp-2025-06-04-a-las-08.33.09_d7cff509-YrDJkJ7vRvUBKVR9.jpg"
+          alt="Sara Aparicio Grande — Gerente Gestoria Sara Majadahonda"/>
+      </div>
+      <div class="foto-sm">
+        <img
+          src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,h=394,fit=crop/YD0po5wXMOFv1vj6/imagen-de-whatsapp-2025-06-04-a-las-08.35.14_a2cbb774-dWxOqO8nolU035X1.jpg"
+          alt="Equipo Gestoria Sara"/>
+      </div>
+      <div class="foto-sm">
+        <img
+          src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=512,fit=crop/YD0po5wXMOFv1vj6/gestion-AQEJWGaE2NT8WE9V.jpg"
+          alt="Oficina Gestoria Sara Majadahonda"/>
+      </div>
+    </div>
+    <div class="equipo-texto">
+      <div class="persona">
+        <div class="persona-nombre">Sara Aparicio Grande</div>
+        <div class="persona-rol">Gerente · Fundadora</div>
+        <div class="persona-bio">Fundadora y directora de Gestoria Sara. Mas de 20 anos liderando un equipo con vision clara y trato cercano. Tu exito es su prioridad.</div>
+      </div>
+      <div class="persona">
+        <div class="persona-nombre">Luna Pedraza Aparicio</div>
+        <div class="persona-rol">Area Laboral · Coordinacion</div>
+        <div class="persona-bio">Especializada en constitucion de empresas y gestion integral de tramites para autonomos y empresas. Responsable de la coordinacion de todos los procesos.</div>
+      </div>
+      <div class="valores">
+        <div class="valor">
+          <div class="valor-num">01</div>
+          <div class="valor-text"><strong>Transparencia.</strong> Te explicamos todo sin tecnicismos. Sabes exactamente que gestionamos y por que.</div>
+        </div>
+        <div class="valor">
+          <div class="valor-num">02</div>
+          <div class="valor-text"><strong>Agilidad.</strong> Gestionamos cada tramite con la maxima rapidez. Tu tiempo es valioso.</div>
+        </div>
+        <div class="valor">
+          <div class="valor-num">03</div>
+          <div class="valor-text"><strong>Primera consulta gratuita.</strong> Cuentanos tu caso sin compromiso. Te orientamos desde el primer momento.</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SECCIÓN IA -->
-<section class="ia-section" id="whitemoon-ia">
-  <div class="container">
-    <div class="section-head">
-      <div class="section-tag">WhiteMoon + IA</div>
-      <h2 class="section-title">La primera gestoría de tráfico con IA en Madrid</h2>
-      <p class="section-sub">Tecnología al servicio de tus trámites.</p>
+<!-- COMO TRABAJAMOS -->
+<section class="section">
+  <div class="section-intro" style="margin-bottom:0;">
+    <div>
+      <div class="label">Como trabajamos</div>
+      <h2>Sencillo, claro<br/>y <i>sin sorpresas.</i></h2>
     </div>
-    <div class="ia-grid">
-      <div class="ia-card">
-        <div class="ia-icon">
-          <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/><path d="M9 11V8a3 3 0 016 0v3"/></svg>
-        </div>
-        <h3>Asistente virtual 24/7</h3>
-        <p>Nuestro chatbot con IA atiende consultas a cualquier hora. Entiende qué trámite necesitas, resuelve tus dudas al instante y conecta con nuestro equipo de gestores en el momento oportuno. Sin esperas, sin horarios.</p>
-      </div>
-      <div class="ia-card">
-        <div class="ia-icon">
-          <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-        </div>
-        <h3>Consulta instantánea</h3>
-        <p>Pregunta lo que necesites sobre transferencias, patinetes, Plan Moves o tarjetas de transporte. El asistente te informa, te orienta y solicita tus datos para que un gestor te contacte cuanto antes.</p>
-      </div>
-      <div class="ia-card">
-        <div class="ia-icon">
-          <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 11l-3 3-2-2"/></svg>
-        </div>
-        <h3>Siempre con un experto</h3>
-        <p>El chatbot cualifica tu consulta y la pasa directamente al gestor especializado. Tú no pierdes tiempo explicando lo mismo dos veces — el gestor ya sabe qué necesitas cuando te llama.</p>
-      </div>
-    </div>
+    <p>Un proceso diseñado para que no tengas que preocuparte por nada. Nos encargamos de todo desde el primer contacto hasta la resolucion.</p>
   </div>
-</section>
-
-<!-- TESTIMONIOS -->
-<section class="testimonios">
-  <div class="container">
-    <div class="section-head">
-      <div class="section-tag">Reseñas verificadas</div>
-      <h2 class="section-title">Lo que dicen de nosotros</h2>
-      <p class="section-sub">Reseñas reales de clientes verificadas en Google.</p>
-      <div class="rating-summary">
-        <div class="rating-score">4.6</div>
-        <div class="rating-meta">
-          <div class="rating-stars">
-            <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#FF6A00"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#FF6A00"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#FF6A00"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#FF6A00"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#FF6A00"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          </div>
-          <div class="rating-text">4.6 / 5 · Basado en reseñas de Google</div>
-        </div>
-      </div>
+  <div class="proceso-lista">
+    <div class="paso">
+      <div class="paso-num">01</div>
+      <div class="paso-title">Consulta gratuita</div>
+      <div class="paso-desc">Cuentanos tu caso por WhatsApp o en nuestra oficina de Majadahonda. Sin coste, sin compromiso.</div>
     </div>
-    <div class="tests-grid">
-
-      <div class="test-card">
-        <div class="stars">
-          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#FF6A00"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#FF6A00"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#FF6A00"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#FF6A00"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#FF6A00"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <p>Rápidos, eficaces y amables. Fui a hacer el cambio de nombre de un vehículo y el cambio fue instantáneo en la DGT.</p>
-        <div class="test-foot">
-          <span class="test-author">Cliente de WhiteMoon</span>
-          <span class="test-verified"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Verificado por Google</span>
-        </div>
-      </div>
-
-      <div class="test-card">
-        <div class="stars">
-          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#FF6A00"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#FF6A00"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#FF6A00"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#FF6A00"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#FF6A00"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <p>Muy profesionales, amables y rápidos. Sin duda, muy recomendable.</p>
-        <div class="test-foot">
-          <span class="test-author">Cliente de WhiteMoon</span>
-          <span class="test-verified"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Verificado por Google</span>
-        </div>
-      </div>
-
-      <div class="test-card">
-        <div class="stars">
-          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#FF6A00"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#FF6A00"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#FF6A00"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#FF6A00"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#FF6A00"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <p>Muy buenos profesionales, te facilitan todos los trámites y gestiones. Realmente rápidos, repetiré.</p>
-        <div class="test-foot">
-          <span class="test-author">Cliente de WhiteMoon</span>
-          <span class="test-verified"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Verificado por Google</span>
-        </div>
-      </div>
-
-      <div class="test-card">
-        <div class="stars">
-          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#FF6A00"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#FF6A00"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#FF6A00"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#FF6A00"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#FF6A00"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <p>Unos cracks! Resumo: vendo moto el lunes, llamo a las 9:30am, presupuesto en el acto y para el mediodía ya tenía todo resuelto. Muchas gracias, seguiré haciendo todos mis trámites con vosotros.</p>
-        <div class="test-foot">
-          <span class="test-author">Cliente de WhiteMoon</span>
-          <span class="test-verified"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Verificado por Google</span>
-        </div>
-      </div>
-
-      <div class="test-card">
-        <div class="stars">
-          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#FF6A00"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#FF6A00"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#FF6A00"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#FF6A00"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#FF6A00"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <p>Muy profesionales y rápidos en las gestiones.</p>
-        <div class="test-foot">
-          <span class="test-author">Cliente de WhiteMoon</span>
-          <span class="test-verified"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Verificado por Google</span>
-        </div>
-      </div>
-
-      <div class="test-card">
-        <div class="stars">
-          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#FF6A00"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#FF6A00"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#FF6A00"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#FF6A00"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#FF6A00"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <p>Amables, profesionales y rápidos. Excelente atención. Recomendables.</p>
-        <div class="test-foot">
-          <span class="test-author">Cliente de WhiteMoon</span>
-          <span class="test-verified"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Verificado por Google</span>
-        </div>
-      </div>
-
+    <div class="paso">
+      <div class="paso-num">02</div>
+      <div class="paso-title">Analisis personalizado</div>
+      <div class="paso-desc">Estudiamos tu situacion concreta y te explicamos exactamente que necesitas y como lo hacemos.</div>
+    </div>
+    <div class="paso">
+      <div class="paso-num">03</div>
+      <div class="paso-title">Gestion completa</div>
+      <div class="paso-desc">Nos encargamos de todos los tramites. Tu no tienes que preocuparte por plazos ni documentacion.</div>
+    </div>
+    <div class="paso">
+      <div class="paso-num">04</div>
+      <div class="paso-title">Resolucion y seguimiento</div>
+      <div class="paso-desc">Te informamos en cada paso y resolvemos cualquier incidencia que surja durante el proceso.</div>
     </div>
   </div>
 </section>
 
 <!-- CONTACTO -->
-<section class="contacto" id="contacto">
-  <div class="container">
-    <div class="section-head">
-      <div class="section-tag">Contacto</div>
-      <h2 class="section-title">Hablemos de tu trámite</h2>
-      <p class="section-sub">Consulta gratuita sin compromiso. Atendemos online y presencial.</p>
+<section class="section section-alt" id="contacto">
+  <div class="label">Contacto</div>
+  <h2>Primera consulta<br/><i>gratuita y sin compromiso.</i></h2>
+  <div class="contacto-grid">
+    <div>
+      <div class="contact-dato">
+        <div class="contact-key">Direccion</div>
+        <div class="contact-val">Calle Mieses no 1, 3a planta oficina 303<br/>Majadahonda, Madrid 28220</div>
+      </div>
+      <div class="contact-dato">
+        <div class="contact-key">Telefono</div>
+        <div class="contact-val"><a href="tel:+34662238174">662 23 81 74</a></div>
+      </div>
+      <div class="contact-dato">
+        <div class="contact-key">Email</div>
+        <div class="contact-val"><a href="mailto:saraaparicio@gestoriasara.com">saraaparicio@gestoriasara.com</a></div>
+      </div>
+      <div class="contact-dato">
+        <div class="contact-key">Horario</div>
+        <div class="contact-val">Lunes a Viernes, 9:00 a 18:00</div>
+      </div>
+      <a class="wa-link" href="https://wa.link/9fo0et" target="_blank">
+        Escribir por WhatsApp — Respuesta inmediata
+      </a>
     </div>
-    <div class="contacto-grid">
-      <div class="contacto-info">
-        <h3>Datos de contacto</h3>
-        <div class="contacto-item">
-          <div class="contacto-item-icon"><svg viewBox="0 0 24 24" style="stroke:currentColor;fill:none;stroke-width:1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-          <div class="contacto-item-text">
-            <strong>Dirección</strong>
-            <span>Calle Madrid 9<br>28220 Majadahonda, Madrid</span>
-          </div>
-        </div>
-        <div class="contacto-item">
-          <div class="contacto-item-icon"><svg viewBox="0 0 24 24" style="stroke:currentColor;fill:none;stroke-width:1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.4 1.17 2 2 0 012.37 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg></div>
-          <div class="contacto-item-text">
-            <strong>Teléfonos</strong>
-            <a href="tel:+34643199580">643 199 580</a>
-          </div>
-        </div>
-        <div class="contacto-item">
-          <div class="contacto-item-icon"><svg viewBox="0 0 24 24" style="stroke:currentColor;fill:none;stroke-width:1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-          <div class="contacto-item-text">
-            <strong>Email</strong>
-            <a href="mailto:comercial@whitemoon.es">comercial@whitemoon.es</a>
-          </div>
-        </div>
-        <div class="contacto-item">
-          <div class="contacto-item-icon"><svg viewBox="0 0 24 24" style="stroke:currentColor;fill:none;stroke-width:1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-          <div class="contacto-item-text">
-            <strong>Horario</strong>
-            <span>Lun-Vie 9:00-14:00<br>Lun-Vie 16:00-19:00</span>
-          </div>
-        </div>
-      </div>
-      <iframe class="mapa" src="https://www.google.com/maps?q=Calle+Madrid+9,+28220+Majadahonda,+Madrid&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="faq-section" id="faq">
-  <div class="container">
-    <div class="section-head">
-      <div class="section-tag">FAQ</div>
-      <h2 class="section-title">Preguntas frecuentes</h2>
-      <p class="section-sub">Todo lo que necesitas saber sobre nuestros trámites.</p>
-    </div>
-    <div class="faq-list">
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span>¿Cuánto tiempo tarda una transferencia de vehículo?</span>
-          <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">En WhiteMoon gestionamos las transferencias en 24-72 horas hábiles desde que recibimos toda la documentación. El justificante provisional lo obtienes el mismo día.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span>¿Puedo hacer la transferencia sin ir a la DGT?</span>
-          <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">Sí, gestionamos todos los trámites de forma 100% online. Solo tienes que enviarnos la documentación por email o WhatsApp y nosotros nos encargamos de todo.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span>¿Es obligatorio inscribir mi patinete en la DGT?</span>
-          <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">Sí, desde el 22 de enero de 2024 es obligatorio inscribir todos los vehículos de movilidad personal (VMP) en el registro de la DGT. Circular sin inscripción puede suponer multas de hasta 500€.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span>¿Cuánta ayuda da el Plan Moves 2025?</span>
-          <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">El Plan Moves III ofrece hasta 7.000€ para la compra de vehículos eléctricos con achatarramiento. Sin achatarramiento, hasta 4.500€ para turismos. Gestionamos toda la tramitación.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span>¿Qué documentos necesito para una transferencia de coche?</span>
-          <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">Necesitas: DNI/NIE de comprador y vendedor, contrato de compraventa, permiso de circulación original, ficha técnica del vehículo y justificante del impuesto municipal (IVTM). Nosotros revisamos la documentación sin coste.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span>¿Cuánto cuesta una transferencia de vehículo en WhiteMoon?</span>
-          <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">Nuestros honorarios de gestoría para transferencias son 140€ con las tasas DGT incluidas, sin sorpresas. A esta cantidad solo hay que añadir el ITP (4% del valor del vehículo en Madrid). Consulta gratuita sin compromiso.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span>¿Dónde está WhiteMoon Gestoría IA?</span>
-          <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">Nuestra oficina está en Calle Madrid 9, 28220 Majadahonda, Madrid. También atendemos 100% online sin necesidad de desplazarse.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span>¿Atienden a clientes de toda España?</span>
-          <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">Sí, al trabajar de forma online podemos gestionar trámites de tráfico para clientes de toda España, aunque estamos especializados en Majadahonda y Madrid.</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SEO CIUDADES -->
-<section class="seo-cities">
-  <div class="seo-cities-inner">
-    <h2>Gestoría de Tráfico en Madrid y alrededores</h2>
-    <p>WhiteMoon ofrece servicios de gestoría de tráfico online para toda la Comunidad de Madrid. Gestionamos transferencias de vehículos, inscripción de patinetes VMP, Plan Moves 2025 y tarjetas de transporte para clientes en <strong>Majadahonda</strong>, <strong>Madrid capital</strong>, <strong>Majadahonda</strong>, <strong>Pozuelo de Alarcón</strong>, <strong>Boadilla del Monte</strong>, <strong>Villanueva de la Cañada</strong>, <strong>Galapagar</strong>, <strong>Torrelodones</strong> y cualquier municipio de Madrid.</p>
-    <div class="seo-cities-tags">
-      <span class="seo-city-chip">Las Rozas</span>
-      <span class="seo-city-chip">Madrid Capital</span>
-      <span class="seo-city-chip">Majadahonda</span>
-      <span class="seo-city-chip">Pozuelo de Alarcón</span>
-      <span class="seo-city-chip">Boadilla del Monte</span>
-      <span class="seo-city-chip">Villanueva de la Cañada</span>
-      <span class="seo-city-chip">Galapagar</span>
-      <span class="seo-city-chip">Torrelodones</span>
-      <span class="seo-city-chip">Alcobendas</span>
-      <span class="seo-city-chip">Tres Cantos</span>
-      <span class="seo-city-chip">Collado Villalba</span>
-      <span class="seo-city-chip">Alpedrete</span>
+    <div class="mapa">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3034!2d-3.875!3d40.473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd418951513e1219%3A0x98e2916f6c7e80f!2sC.%20de%20las%20Mieses%2C%201%2C%20Majadahonda%2C%20Madrid!5e0!3m2!1ses!2ses!4v1718000000000"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="container">
-    <div class="footer-inner">
-      <div>
-        <div class="footer-logo">WHITEMOON · GESTORÍA IA</div>
-        <p class="footer-tagline">La gestoría de tráfico más moderna de Madrid.<br><strong>Experiencia + Tecnología + IA</strong></p>
-      </div>
-      <ul class="footer-links">
-        <li><a href="#">Política de privacidad</a></li>
-        <li><a href="#">Aviso legal</a></li>
-        <li><a href="#">Cookies</a></li>
-      </ul>
-    </div>
-    <div class="footer-bottom">
-      <span style="display:inline-flex;align-items:center;gap:8px;justify-content:center">
-        <svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:var(--rojo);fill:none;stroke-width:1.8"><rect x="4" y="6" width="16" height="14" rx="2"/><circle cx="9" cy="13" r="1"/><circle cx="15" cy="13" r="1"/><path d="M12 6V3"/><path d="M9 17h6"/></svg>
-        © 2026 WhiteMoon Agencia IA · Majadahonda
-      </span>
-    </div>
+  <div>
+    <div class="footer-logo">Gestoria <span>Sara</span>, S.L.</div>
+    <div class="footer-info">Calle Mieses no 1, 3a planta of. 303 — Majadahonda, Madrid</div>
+  </div>
+  <div class="footer-rrss">
+    <a href="https://www.facebook.com/sara.aparicio80" target="_blank">Fb</a>
+    <a href="https://www.instagram.com/gestoria_sara" target="_blank">Ig</a>
+    <a href="https://www.linkedin.com/company/103870527/" target="_blank">Li</a>
+    <a href="https://www.tiktok.com/@gestoriasara" target="_blank">Tk</a>
   </div>
 </footer>
+<div class="footer-credit">
+  Asistente IA integrado por <a href="https://whitemoon.es" target="_blank">WhiteMoon Agencia IA</a>
+</div>
 
 <!-- CHATBOT -->
-<div class="chat-tooltip" id="chatTip">
-  <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--rojo);fill:none;stroke-width:1.6"><path d="M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v9a2 2 0 01-2 2h-2"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
-  ¿Necesitas ayuda con un trámite?
-</div>
-<button class="chat-fab" id="chatFab" aria-label="Abrir chat">
-  <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
+<button id="chat-fab" onclick="toggleChat()" aria-label="Consultar con asistente IA">
+  <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
 </button>
 
-<div class="chat-modal" id="chatModal">
-  <div class="chat-header">
-    <div class="chat-header-row">
-      <div>
-        <h4>WhiteMoon · Asistente IA</h4>
-        <div class="chat-status"><span class="chat-dot"></span>En línea</div>
-      </div>
-      <button class="chat-close" id="chatClose" aria-label="Cerrar">×</button>
+<div id="chat-win">
+  <div class="ch-head">
+    <div class="ch-av">L</div>
+    <div>
+      <div class="ch-name">Laura — Gestoria Sara</div>
+      <div class="ch-sub">Asistente disponible ahora</div>
     </div>
+    <button class="ch-close" onclick="toggleChat()">x</button>
   </div>
-  <div class="chat-body" id="chatBody"></div>
-  <div class="chat-input-row">
-    <input type="text" id="chatInput" placeholder="Escribe tu mensaje..." autocomplete="off">
-    <button class="chat-send" id="chatSend" aria-label="Enviar">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg>
+  <div class="ch-msgs" id="ch-msgs"></div>
+  <div class="ch-input-row">
+    <input type="text" id="ch-input" placeholder="Escribe tu consulta..." onkeydown="if(event.key==='Enter')sendMsg()"/>
+    <button class="ch-send" onclick="sendMsg()">
+      <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
     </button>
   </div>
 </div>
 
 <script>
-/* ========= SVG ICON LIBRARY ========= */
-const ICO = {
-  car:'<svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.6"><path d="M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v9a2 2 0 01-2 2h-2"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>',
-  bolt:'<svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.6"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>',
-  scooter:'<svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.6"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M15 6h2a2 2 0 012 2v9.5M8.5 17.5h6M15 6l-3 11.5"/></svg>',
-  truck:'<svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.6"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>',
-  taxi:'<svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.6"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>',
-  recycle:'<svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.6"><polyline points="1 4 1 10 7 10"/><polyline points="23 20 23 14 17 14"/><path d="M20.49 9A9 9 0 005.64 5.64L1 10M23 14l-4.64 4.36A9 9 0 013.51 15"/></svg>',
-  doc:'<svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.6"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>',
-  trophy:'<svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.6"><polyline points="8 21 12 17 16 21"/><path d="M9 7H5a2 2 0 00-2 2v1a4 4 0 004 4h1m6-7h4a2 2 0 012 2v1a4 4 0 01-4 4h-1"/><path d="M12 17V7M9 7h6"/></svg>',
-  swap:'<svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.6"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 014-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>',
-  bolt2:'<svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>'
-};
+const SB_URL='https://mlaqtniujnvfxcvcourm.supabase.co';
+const SB_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1sYXF0bml1am52ZnhjdmNvdXJtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc4MzUyMzIsImV4cCI6MjA5MzQxMTIzMn0.Neh7VUS8ADsxf0DPab0JoJyGXOAXnLIaXzXbKzj2BGs';
+let open=false,hist=[],lead={n:null,t:null},step='init';
 
-/* ========= FAQ ACCORDION ========= */
-document.querySelectorAll('.faq-question').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    const item=btn.closest('.faq-item');
-    const isOpen=item.classList.contains('open');
-    document.querySelectorAll('.faq-item.open').forEach(i=>{
-      i.classList.remove('open');
-      i.querySelector('.faq-question').setAttribute('aria-expanded','false');
-    });
-    if(!isOpen){
-      item.classList.add('open');
-      btn.setAttribute('aria-expanded','true');
-    }
-  });
-});
-
-/* ========= MODAL SERVICIOS ========= */
-const SERVICIOS_INFO={
-  transferencias:{itp:true,desc:[
-    'Gestionamos el cambio de titularidad de tu vehículo ante la DGT de forma 100% online, sin que tengas que desplazarte. Más de 5.000 transferencias tramitadas con éxito.',
-    'Honorarios cerrados de 140€ con las tasas DGT incluidas, sin sorpresas. Solo se añade el ITP según tu Comunidad Autónoma. Obtienes el justificante provisional el mismo día.'],
-    bullets:['Precio: 140€ — tasas DGT incluidas','Plazo de resolución: 24-48h hábiles','Documentación: DNI/NIE de ambas partes, contrato de compraventa, permiso de circulación y ficha técnica','Tramitación 100% online en toda España']},
-  electricos:{desc:[
-    'Tramitamos la matriculación de coches eléctricos, híbridos enchufables y de pila de combustible ante la DGT, incluyendo placas y documentación.',
-    'Compatible con las ayudas del Plan Moves III. Te asesoramos para que aproveches todas las ventajas fiscales del vehículo eléctrico.'],
-    bullets:['Desde 80€ (tasas aparte)','Compatible con el Plan Moves III','BEV, PHEV, HEV y FCEV','Exención del impuesto de matriculación y bonificaciones']},
-  patinetes:{desc:[
-    'La inscripción de Vehículos de Movilidad Personal (VMP) en el registro de la DGT es obligatoria desde el 22 de enero de 2024. Circular sin inscribir puede suponer multas de hasta 500€.',
-    'Gestionamos el alta, cambio de titular, baja y duplicados de cualquier marca de patinete eléctrico de forma rápida y sencilla.'],
-    bullets:['Desde 50€','Obligatorio desde enero de 2024','Evita multas de hasta 500€','Cualquier marca: Xiaomi, Segway, Ninebot…']},
-  transportes:{desc:[
-    'Gestión integral de trámites de transporte para empresas, autónomos y profesionales del sector en Madrid y la Comunidad de Madrid.',
-    'Tramitamos tarjetas de transporte, autorizaciones y permisos VTC, conociendo todos los plazos y requisitos de cada procedimiento.'],
-    bullets:['Tarjetas de transporte: alta, visado y renovación','Permiso y licencias VTC','Autorizaciones de mercancías y viajeros','Para empresas y autónomos']},
-  moves:{desc:[
-    'Gestionamos la solicitud completa de la ayuda Plan Moves III ante la Comunidad de Madrid para la compra de vehículos eléctricos e híbridos enchufables.',
-    'Nos encargamos de toda la tramitación y del seguimiento hasta el cobro de la subvención, que puede alcanzar los 7.000€.'],
-    bullets:['Hasta 7.000€ de subvención','Turismos eléctricos e híbridos enchufables','Solicitud antes de la entrega del vehículo','Gestión y seguimiento hasta el cobro']},
-  trafico:{desc:[
-    'Cubrimos cualquier trámite de tráfico ante la DGT para particulares y empresas: autorizaciones, permisos, duplicados y notificaciones.',
-    'Te ahorramos colas y desplazamientos gestionando todo el proceso por ti, con asesoramiento personalizado.'],
-    bullets:['Trámites DGT de todo tipo','Autorizaciones y permisos','Duplicados de documentación','Gestión de notificaciones y sanciones']},
-  fiscal:{desc:[
-    'Asesoramiento fiscal, contable y laboral para autónomos y empresas. Mantenemos tus obligaciones con Hacienda y la Seguridad Social al día.',
-    'Te acompañamos en declaraciones trimestrales, IRPF, IVA, nóminas y contabilidad, optimizando tu carga fiscal de forma legal.'],
-    bullets:['Autónomos y empresas','Declaraciones de IVA e IRPF','Nóminas y Seguros Sociales','Contabilidad y asesoramiento continuo']},
-  civil:{desc:[
-    'Asesoramiento y representación en asuntos de derecho civil: contratos, reclamaciones de cantidad y conflictos entre particulares.',
-    'Defendemos tus intereses con un trato cercano, buscando siempre la vía más rápida y eficaz para resolver tu caso.'],
-    bullets:['Contratos civiles','Reclamaciones de cantidad','Arrendamientos y desahucios','Responsabilidad civil']},
-  mercantil:{desc:[
-    'Asesoramiento jurídico-mercantil integral para empresas y emprendedores: constitución de sociedades, pactos y contratos mercantiles.',
-    'Acompañamos a tu negocio en cada fase, desde la creación hasta la operativa diaria, con plena seguridad jurídica.'],
-    bullets:['Constitución de sociedades','Contratos mercantiles','Pactos de socios','Asesoramiento societario continuado']},
-  inmobiliario:{desc:[
-    'Gestión jurídica completa de operaciones inmobiliarias: compraventas, arrendamientos y toda la documentación asociada a la propiedad.',
-    'Revisamos contratos, condiciones y cargas para que compres, vendas o alquiles con total tranquilidad.'],
-    bullets:['Compraventas de inmuebles','Contratos de arrendamiento','Revisión de cargas y notas simples','Asesoramiento durante toda la operación']},
-  herencias:{desc:[
-    'Tramitamos herencias y testamentos de principio a fin: declaración de herederos, adjudicación y reparto de bienes.',
-    'Te acompañamos en un momento delicado encargándonos de toda la gestión documental y fiscal de la sucesión.'],
-    bullets:['Testamentos y últimas voluntades','Declaración de herederos','Adjudicación y reparto de bienes','Liquidación del Impuesto de Sucesiones']},
-  familia:{desc:[
-    'Asesoramiento y representación en derecho de familia con discreción y cercanía: divorcios, custodias y pensiones.',
-    'Buscamos siempre el acuerdo y el mejor interés de los menores, defendiendo tus derechos en cada paso del proceso.'],
-    bullets:['Divorcios y separaciones','Custodia y régimen de visitas','Pensiones de alimentos','Modificación de medidas']},
-  penal:{desc:[
-    'Defensa y asistencia jurídica en procedimientos penales, con atención personalizada y seguimiento de principio a fin.',
-    'Con experiencia específica en delitos económicos. Actuamos con rigor y confidencialidad para proteger tus intereses.'],
-    bullets:['Defensa penal','Delitos económicos','Asistencia al detenido','Acusación particular']},
-  administrativo:{desc:[
-    'Defendemos tus intereses frente a las administraciones públicas: recursos, alegaciones y reclamaciones administrativas.',
-    'Tramitamos sanciones, licencias y autorizaciones, conociendo los plazos y procedimientos de cada organismo.'],
-    bullets:['Recursos y alegaciones','Sanciones administrativas','Licencias y autorizaciones','Reclamaciones patrimoniales']}
-};
-const svcModal=document.getElementById('svcModal');
-function abrirModalServicio(card){
-  const info=SERVICIOS_INFO[card.getAttribute('data-svc')];
-  if(!info||!svcModal) return;
-  const cardImg=card.querySelector('.servicio-img');
-  const mImg=document.getElementById('svcModalImg');
-  mImg.src=cardImg?cardImg.src:''; mImg.alt=cardImg?cardImg.alt:'';
-  document.getElementById('svcModalTitle').textContent=card.querySelector('h3').textContent;
-  const descEl=document.getElementById('svcModalDesc'); descEl.innerHTML='';
-  info.desc.forEach(t=>{const p=document.createElement('p');p.textContent=t;descEl.appendChild(p);});
-  const ul=document.getElementById('svcModalBullets'); ul.innerHTML='';
-  info.bullets.forEach(t=>{const li=document.createElement('li');li.textContent=t;ul.appendChild(li);});
-  const cta=document.getElementById('svcModalCta');
-  cta.onclick=function(){cerrarModalServicio(); if(info.itp&&window.abrirChatITP){window.abrirChatITP();} else if(window.toggleChat){window.toggleChat();}};
-  svcModal.classList.add('open'); svcModal.setAttribute('aria-hidden','false');
-  document.body.style.overflow='hidden';
+function toggleChat(){
+  open=!open;
+  document.getElementById('chat-win').classList.toggle('open',open);
+  if(open&&hist.length===0)init();
 }
-function cerrarModalServicio(){ if(!svcModal) return; svcModal.classList.remove('open'); svcModal.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
-window.abrirModalServicio=abrirModalServicio; window.cerrarModalServicio=cerrarModalServicio;
-document.querySelectorAll('.servicios-grid .servicio-card').forEach(card=>{
-  card.addEventListener('click',()=>abrirModalServicio(card));
-  card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();abrirModalServicio(card);}});
-});
-if(svcModal){
-  document.getElementById('svcModalClose').addEventListener('click',cerrarModalServicio);
-  svcModal.addEventListener('click',e=>{if(e.target===svcModal)cerrarModalServicio();});
-  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&svcModal.classList.contains('open'))cerrarModalServicio();});
-}
-
-/* ========= NAV ========= */
-document.querySelectorAll('#navLinks a').forEach(a=>{
-  a.addEventListener('click',()=>{
-    document.getElementById('navLinks').classList.remove('open');
-    const goTab=a.dataset.goTab;
-    if(goTab){
-      const card=document.querySelector('.servicios-grid [data-svc="'+goTab+'"]');
-      if(card) window.abrirModalServicio(card);
-    }
-  });
-});
-
-/* ========= IPHONE MOCKUP ========= */
-const iphoneMsgs=document.getElementById('iphoneMsgs');
-const conversation=[
-  {type:'bot',text:'¡Hola! Soy el asistente de WhiteMoon. ¿Qué trámite necesitas?',delay:500},
-  {type:'user',text:'Quiero hacer una transferencia de coche',delay:1800},
-  {type:'typing',delay:2600},
-  {type:'bot',text:'Perfecto. ¿Me indicas marca, modelo y año del vehículo?',delay:3400},
-  {type:'user',text:'Toyota Corolla 2020',delay:4800},
-  {type:'typing',delay:5600},
-  {type:'bot',text:'¿Cuál es el precio del contrato de compraventa?',delay:6400},
-  {type:'user',text:'12.000€',delay:7800},
-  {type:'typing',delay:8600},
-  {type:'bot',text:'¿En qué Comunidad Autónoma se transfiere?',delay:9400},
-  {type:'user',text:'Madrid',delay:10600},
-  {type:'typing',delay:11400},
-  {type:'bot',text:'ITP Madrid (4%): 480€ + WhiteMoon 140€ = Total 620€ ✓ ¿Le gestionamos?',delay:12200},
-  {type:'user',text:'Sí, me interesa',delay:13600},
-  {type:'typing',delay:14400},
-  {type:'bot',text:'Perfecto. ¿Me dices tu nombre y teléfono?',delay:15200}
-];
-let iphoneTimeouts=[];
-let iphoneRunning=false;
-
-function clearIphone(){
-  iphoneTimeouts.forEach(t=>clearTimeout(t));
-  iphoneTimeouts=[];
-  if(iphoneMsgs) iphoneMsgs.innerHTML='';
-}
-
-function runIphone(){
-  if(!iphoneMsgs||iphoneRunning) return;
-  iphoneRunning=true;
-  clearIphone();
-  let lastTyping=null;
-  conversation.forEach(step=>{
-    const t=setTimeout(()=>{
-      if(lastTyping&&step.type!=='typing'){lastTyping.remove();lastTyping=null;}
-      const el=document.createElement('div');
-      el.className='imsg '+step.type;
-      if(step.type==='typing'){
-        el.innerHTML='<span></span><span></span><span></span>';
-        lastTyping=el;
-      }else{
-        el.textContent=step.text;
-      }
-      iphoneMsgs.appendChild(el);
-      iphoneMsgs.scrollTop=iphoneMsgs.scrollHeight;
-    },step.delay);
-    iphoneTimeouts.push(t);
-  });
-  const tEnd=setTimeout(()=>{
-    iphoneRunning=false;
-    runIphone();
-  },20000);
-  iphoneTimeouts.push(tEnd);
-}
-
-if(iphoneMsgs){
-  const io=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){runIphone();}
-      else{clearIphone();iphoneRunning=false;}
-    });
-  },{threshold:.3});
-  io.observe(iphoneMsgs);
-}
-
-/* ========= CHATBOT ========= */
-const fab=document.getElementById('chatFab');
-const modal=document.getElementById('chatModal');
-const closeBtn=document.getElementById('chatClose');
-const body=document.getElementById('chatBody');
-const input=document.getElementById('chatInput');
-const sendBtn=document.getElementById('chatSend');
-const tip=document.getElementById('chatTip');
-setTimeout(()=>tip.classList.add('hidden'),6000);
-
-const WA_NUMBER='34643199580';
-let chatStep=0;
-let captura={nombre:'',telefono:'',tramite:'',detalle:'',vehiculo:''};
-let opened=false;
-let awaitingDescription=false;
-let awaitingItp=false;
-let awaitingVehicle=false;
-let vehicleMode='';
-let itpData=null;
-let transferTipo='';
-
-const GESTORIA_ENDPOINT = 'https://mlaqtniujnvfxcvcourm.supabase.co/functions/v1/gestoria-chat';
-var gHistory = [];
-var lauraActiva = false;
-
-async function calcularITPReal(datos) {
-  try {
-    var res = await fetch(
-      'https://mlaqtniujnvfxcvcourm.supabase.co/functions/v1/gestoria-itp',
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          marca: datos.marca,
-          modelo: datos.modelo,
-          anio_matriculacion: datos.anio,
-          valor_venta: datos.precio,
-          ccaa: datos.ccaa,
-          tipo_vehiculo: datos.tipo || 'turismo',
-          cilindrada: datos.cilindrada || null
-        })
-      }
-    );
-    var data = await res.json();
-    if (data.error) return null;
-    return data;
-  } catch(e) {
-    return null;
-  }
-}
-
-function extraerDatosConversacion() {
-  var historial = gHistory.map(function(m) {
-    return m.role === 'user' ? m.content : '';
-  }).join(' ').toLowerCase();
-
-  var anioMatch = historial.match(/\b(19[5-9]\d|20[0-2]\d)\b/);
-  var anio = anioMatch ? parseInt(anioMatch[0]) : null;
-
-  var precioMatch = historial.match(/\b(\d{1,3}[.,]?\d{3}|\d{4,6})\s*€?/);
-  var precio = precioMatch ? parseFloat(precioMatch[1].replace(/[.,]/g,'')) : null;
-  if (precio && precio < 500) precio = null;
-
-  var ccaaMap = {
-    'madrid': 'Madrid', 'barcelona': 'Cataluña', 'catalu': 'Cataluña',
-    'valencia': 'Valencia', 'sevilla': 'Andalucía', 'andaluc': 'Andalucía',
-    'galicia': 'Galicia', 'bilbao': 'País Vasco', 'vasco': 'País Vasco',
-    'aragon': 'Aragón', 'navarra': 'Navarra', 'murcia': 'Murcia',
-    'cantabria': 'Cantabria', 'asturias': 'Asturias', 'extremadura': 'Extremadura',
-    'canarias': 'Canarias', 'baleares': 'Baleares', 'rioja': 'La Rioja',
-    'castilla la mancha': 'Castilla-La Mancha', 'castilla y leon': 'Castilla y León'
-  };
-  var ccaa = null;
-  Object.keys(ccaaMap).forEach(function(key) {
-    if (historial.includes(key)) ccaa = ccaaMap[key];
-  });
-
-  var todoHistorial = gHistory.map(function(m) { return m.content; }).join(' ');
-  var marcasComunes = ['volkswagen','golf','seat','ibiza','leon','renault','clio',
-    'megane','peugeot','citroen','ford','focus','opel','bmw','mercedes','audi',
-    'toyota','honda','hyundai','kia','nissan','mazda','volvo','fiat','skoda',
-    'dacia','alfa romeo','mini','porsche','tesla','suzuki'];
-  var marca = null, modelo = null;
-  marcasComunes.forEach(function(m) {
-    if (todoHistorial.toLowerCase().includes(m)) {
-      if (!marca) marca = m;
-    }
-  });
-
-  return {
-    anio: anio,
-    precio: precio,
-    ccaa: ccaa,
-    marca: marca,
-    modelo: modelo,
-    tieneTodo: anio && precio && ccaa && marca
-  };
-}
-
-async function askLaura(userMsg) {
-  var msgLimpio = userMsg.split('\n\n[DATOS BOE REALES')[0];
-  gHistory.push({ role: 'user', content: msgLimpio });
-  try {
-    var res = await fetch(GESTORIA_ENDPOINT, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ messages: gHistory.slice(-12) })
-    });
-    var data = await res.json();
-    var reply = data.text || '';
-    if (reply) gHistory.push({ role: 'assistant', content: reply });
-    return reply;
-  } catch(e) {
-    console.error('Laura error:', e);
-    return null;
-  }
-}
-
-function setCaptureMode(on){
-  if(on){fab.style.display='none';closeBtn.style.display='none';}
-  else{fab.style.display='flex';closeBtn.style.display='block';}
-}
-
-async function openChat() {
-  gHistory = [];
-  lauraActiva = true;
-  chatOpen = true;
-  modal.classList.add('open');
-  input.disabled = false;
-  sendBtn.disabled = false;
-  input.placeholder = 'Escribe tu consulta...';
-
-  addBot('⏳ Conectando con el agente IA...');
-
-  var bienvenida = await askLaura('El cliente acaba de abrir el chat de la gestoría. Salúdale y ofrece ayuda con transferencias de vehículos e ITP.');
-
-  // Borrar el mensaje de "conectando"
-  var msgs = document.querySelectorAll('.chat-msg.bot');
-  if (msgs.length > 0) msgs[msgs.length - 1].remove();
-
-  if (bienvenida) {
-    addBot(bienvenida);
-  } else {
-    addBot('¡Hola! 👋 Soy Laura, tu agente especializada en transferencias de vehículos e ITP. ¿En qué puedo ayudarte?');
-  }
-}
-
-function closeChat(){
-  if(chatStep>=1) return;
-  modal.classList.remove('open');
-}
-
-fab.addEventListener('click',openChat);
-closeBtn.addEventListener('click',closeChat);
-
-window.toggleChat=function(){
-  openChat();
-  if(window.matchMedia('(max-width:600px)').matches){
-    setTimeout(()=>{
-      modal.scrollIntoView({behavior:'smooth',block:'end'});
-    },50);
-  }
-};
-
-window.abrirChatITP=function(){
-  modal.classList.add('open');
-  tip.classList.add('hidden');
-  opened=true;
-  startItpCalc();
-  if(window.matchMedia('(max-width:600px)').matches){
-    setTimeout(()=>{
-      modal.scrollIntoView({behavior:'smooth',block:'end'});
-    },50);
-  }
-};
-
-function addMsg(text,who,icon){
+function addMsg(txt,type,opts){
+  const c=document.getElementById('ch-msgs');
   const d=document.createElement('div');
-  d.className='chat-msg '+who;
-  const iconHtml=icon?`<span class="ico">${icon}</span>`:'';
-  d.innerHTML=iconHtml+'<span class="chat-msg-text"></span>';
-  d.querySelector('.chat-msg-text').textContent=text;
-  body.appendChild(d);
-  body.scrollTop=body.scrollHeight;
+  d.className='msg '+type;
+  d.innerHTML=txt.replace(/\n/g,'<br/>');
+  c.appendChild(d);
+  if(opts&&opts.length){
+    const o=document.createElement('div');
+    o.className='msg-opts';
+    opts.forEach(x=>{
+      const b=document.createElement('button');
+      b.className='msg-opt';b.textContent=x.l;
+      b.onclick=()=>pick(x.v,x.l);
+      o.appendChild(b);
+    });
+    c.appendChild(o);
+  }
+  c.scrollTop=c.scrollHeight;
 }
-
-function addBot(text,quick,icon,extra){
-  const t=document.createElement('div');
-  t.className='chat-typing';
-  t.innerHTML='<span></span><span></span><span></span>';
-  body.appendChild(t);
-  body.scrollTop=body.scrollHeight;
-  setTimeout(()=>{
-    t.remove();
-    addMsg(text,'bot',icon);
-    if(extra){
-      body.appendChild(typeof extra==='function'?extra():extra);
-      body.scrollTop=body.scrollHeight;
-    }
-    if(quick&&quick.length){
-      const q=document.createElement('div');
-      q.className='chat-quick';
-      quick.forEach(opt=>{
-        const b=document.createElement('button');
-        const ic=opt.ico?`<span class="ico" style="color:inherit">${opt.ico}</span>`:'';
-        b.innerHTML=ic+'<span></span>';
-        b.querySelector('span:last-child').textContent=opt.label;
-        b.onclick=()=>{
-          addMsg(opt.label,'user',opt.ico);
-          q.remove();
-          setTimeout(opt.action,400);
-        };
-        q.appendChild(b);
-      });
-      body.appendChild(q);
-      body.scrollTop=body.scrollHeight;
-    }
-  },800);
-}
-
-/* ========= FLUJOS ========= */
-function flowTransfer(){
-  captura.tramite='Transferencia de vehículo';
-  addBot('¡Perfecto! Vamos a gestionar tu transferencia 🚗\n¿Qué tipo de operación es?',[
-    {label:'👤 Entre particulares',action:()=>docsParticulares()},
-    {label:'🏢 De empresa a particular',action:()=>docsEmpresaParticular()},
-    {label:'👤 De particular a empresa',action:()=>docsParticularEmpresa()}
-  ],ICO.swap);
-}
-function transferDocsButtons(tipo){
-  return [
-    {label:'🧮 Calcular ITP',action:()=>{transferTipo=tipo;startItpCalc();}},
-    {label:'📞 Gestionar directamente',action:()=>{captura.tramite='Transferencia '+tipo;captura.detalle='Transmisión '+tipo;startCapture('Perfecto, vamos a gestionar tu transferencia 🚗\n\n¿Me facilitas tu nombre?');}}
-  ];
-}
-function docsParticulares(){
-  captura.detalle='Transmisión entre particulares';
-  addBot('Para una transmisión entre particulares necesitas:\n\n✅ Contrato de compraventa firmado\n✅ Mandatos firmados\n✅ DNI del comprador y vendedor (en vigor)\n✅ Ficha técnica del vehículo\n✅ Permiso de circulación',transferDocsButtons('entre particulares'),ICO.doc,makeContratoBtn);
-}
-function docsEmpresaParticular(){
-  captura.detalle='Transmisión de empresa a particular';
-  addBot('Para una transmisión de empresa a particular:\n\n✅ CIF de la empresa\n✅ DNI del apoderado\n✅ DNI del comprador\n✅ Factura de venta\n✅ Ficha técnica del vehículo\n✅ Permiso de circulación\n✅ Mandatos firmados',transferDocsButtons('de empresa a particular'),ICO.doc);
-}
-function docsParticularEmpresa(){
-  captura.detalle='Transmisión de particular a empresa';
-  addBot('Para una transmisión de particular a empresa:\n\n✅ CIF de la empresa\n✅ DNI del apoderado\n✅ DNI del vendedor\n✅ Contrato de compraventa firmado\n✅ Ficha técnica del vehículo\n✅ Permiso de circulación\n✅ Mandatos firmados',transferDocsButtons('de particular a empresa'),ICO.doc,makeContratoBtn);
-}
-
-function flowMoves(){
-  captura.tramite='Plan Moves / Coche eléctrico';
-  addBot('El Plan Moves 2025 ofrece hasta 7.000€ de ayuda.\n\n¿Ya compraste el vehículo o estás pensando en comprarlo?',[
-    {label:'Ya lo compré',action:()=>movesType()},
-    {label:'Pensando en comprar',action:()=>{captura.detalle='Asesoramiento previo a compra';askMovesContact();}}
-  ],ICO.recycle);
-}
-function movesType(){
-  addBot('Perfecto, podemos tramitar la ayuda.\n¿El vehículo es eléctrico puro o híbrido enchufable?',[
-    {label:'Eléctrico puro',action:()=>{captura.detalle='Eléctrico puro';movesAcha();}},
-    {label:'Híbrido enchufable',action:()=>{captura.detalle='Híbrido enchufable';movesAcha();}}
-  ],ICO.bolt);
-}
-function movesAcha(){
-  addBot('¿Vas a achatarrar un vehículo antiguo?',[
-    {label:'Sí',action:()=>{captura.detalle+=' · Con achatarramiento';addBot('Con achatarramiento la ayuda es mayor.\n¿Me facilitas tu nombre y teléfono para darte el presupuesto exacto?');startCapture();}},
-    {label:'No',action:()=>{captura.detalle+=' · Sin achatarramiento';startCapture();}}
+function init(){
+  hist=[];step='init';
+  addMsg('Hola, soy Laura, asistente de Gestoria Sara.\n\n¿En que puedo orientarte?','bot',[
+    {l:'Declaracion de la renta',v:'renta'},
+    {l:'Autonomo o crear empresa',v:'empresa'},
+    {l:'Extranjeria o visados',v:'extran'},
+    {l:'Herencia o patrimonio',v:'herencia'},
+    {l:'Deudas o segunda oportunidad',v:'deudas'},
+    {l:'Otra consulta',v:'otro'},
   ]);
 }
-function askMovesContact(){
-  addBot('Te asesoramos sobre los vehículos elegibles y la documentación necesaria.\n¿Me dices tu nombre y teléfono?');
-  startCapture();
-}
-
-function flowTransporte(){
-  captura.tramite='Tarjeta de transporte';
-  addBot('Gestionamos todo tipo de tarjetas de transporte.\n\n¿Qué necesitas?',[
-    {label:'Alta nueva tarjeta',action:()=>{captura.detalle='Alta nueva tarjeta';startCapture();}},
-    {label:'Visado / Renovación',action:()=>{captura.detalle='Visado / Renovación';askVisadoFecha();}},
-    {label:'Autorización especial',action:()=>{captura.detalle='Autorización especial';startCapture();}},
-    {label:'Permiso conductor VTC',action:()=>{captura.detalle='Permiso VTC';startCapture();}},
-    {label:'No sé exactamente',action:()=>{captura.detalle='Consulta general transporte';startCapture();}}
-  ],ICO.truck);
-}
-function askVisadoFecha(){
-  addBot('¿Cuándo caduca tu tarjeta? Si está próxima o ya caducada le damos prioridad.',[
-    {label:'Ya caducada',action:()=>{captura.detalle+=' · URGENTE caducada';startCapture();}},
-    {label:'Caduca este mes',action:()=>{captura.detalle+=' · Urgente este mes';startCapture();}},
-    {label:'Más de 1 mes',action:()=>{captura.detalle+=' · Sin urgencia';startCapture();}}
-  ]);
-}
-
-function flowPatinete(){
-  captura.tramite='Inscripción patinete VMP';
-  addBot('La inscripción de patinetes en la DGT es OBLIGATORIA desde 2024.\n\nSin inscripción puedes recibir multas de hasta 500€.\n¿Ya tienes el patinete o estás pensando en comprarlo?',[
-    {label:'Ya tengo patinete',action:()=>{captura.detalle='Patinete adquirido';startCapture();}},
-    {label:'Pensando comprar',action:()=>{captura.detalle='Asesoramiento patinete';startCapture();}}
-  ],ICO.scooter);
-}
-
-function flowOtro(){
-  captura.tramite='Otro trámite DGT';
-  addBot('Cuéntame qué trámite necesitas y te ayudamos.\nDescribe brevemente lo que necesitas:');
-  awaitingDescription=true;
-}
-
-function isDespedida(t){
-  return ['gracias','muchas gracias','ok gracias','no era consulta','era solo consulta','era consulta','solo consulta','solo consultaba','de momento no','ahora no','por ahora no','adiós','adios','hasta luego','bye','chao','no gracias','no me interesa','no necesito','ya está','ya esta','es todo','nada más','nada mas'].some(k=>t.includes(k));
-}
-function isNegativaCaptura(t){
-  const n=t.replace(/[¡!¿?.,;:\s]+$/,'');
-  return ['no','no quiero','no quiero nada','no quiero dar mis datos','paso','ni hablar','nada','olvidalo','olvídalo','dejalo','déjalo'].includes(n);
-}
-function flowDespedida(){
-  chatStep=0;
-  setCaptureMode(false);
-  input.disabled=true;
-  sendBtn.disabled=true;
-  input.placeholder='Conversación finalizada';
-  addBot('¡Hasta pronto! Ha sido un placer ayudarte. 😊\n\nSi en algún momento necesitas gestionar una transferencia, calcular el ITP u otro trámite, aquí estaremos.\n\n📞 También puedes llamarnos al 643 199 580\n🌐 whitemoon.es\n\n¡Que tengas un excelente día! 🌟',[
-    {label:'🔄 Nueva consulta',action:()=>resetChat()}
-  ]);
-}
-
-/* ====== DOCUMENTACIÓN NECESARIA (TRANSFERENCIAS) ====== */
-function flowDocumentacion(){
-  flowTransfer();
-}
-function makeContratoBtn(){
-  const wrap=document.createElement('div');
-  wrap.style.cssText='align-self:stretch;animation:msgIn .3s ease-out';
-  wrap.innerHTML='<a href="docs/contrato-compraventa.pdf" download style="display:block; background:#FF6A00; color:white; text-align:center; padding:10px 16px; border-radius:8px; margin:8px 0; font-weight:600; text-decoration:none;">📄 Descargar Contrato de Compraventa</a>';
-  return wrap;
-}
-
-/* ========= CAPTURA ========= */
-function startCapture(intro){
-  chatStep=1;
-  setCaptureMode(true);
-  addBot(intro||'Para llamarte y darte presupuesto sin compromiso, ¿me facilitas tu nombre?');
-}
-
-async function handleInput(text) {
-  if (!text || !text.trim()) return;
-  var t = text.trim();
-
-  addMsg(t, 'user');
-  input.value = '';
-  input.disabled = true;
-  sendBtn.disabled = true;
-
-  if (lauraActiva) {
-    // Detectar despedida para cerrar
-    if (isDespedida(t.toLowerCase())) {
-      lauraActiva = false;
-      gHistory = [];
-      var reply = await askLaura(t);
-      if (reply) addBot(reply);
-      setTimeout(function() { flowDespedida(); }, 800);
-      input.disabled = false;
-      sendBtn.disabled = false;
-      return;
-    }
-
-    // Detectar teléfono → capturar lead
-    var phoneMatch = t.match(/(\+34\s?|0034\s?)?[6-9]\d{8}/);
-    if (phoneMatch) {
-      captura.telefono = phoneMatch[0].replace(/[\s\-]/g,'');
-    }
-
-    // Detectar nombre (1-3 palabras, solo letras)
-    if (!captura.nombre && /^[a-záéíóúñA-ZÁÉÍÓÚÑ\s]{2,30}$/.test(t) && t.split(' ').length <= 3) {
-      captura.nombre = t.trim();
-    }
-
-    var datosConv = extraerDatosConversacion();
-    var contextoITP = '';
-    if (datosConv.tieneTodo) {
-      var resultITP = await calcularITPReal(datosConv);
-      if (resultITP) {
-        contextoITP = '\n\n[DATOS BOE REALES CALCULADOS — USA ESTOS EN TU RESPUESTA]:\n' +
-          'Modelo encontrado BOE: ' + (resultITP.modelo_encontrado_boe || 'no encontrado') + '\n' +
-          'Valor fiscal BOE nuevo: ' + (resultITP.valor_hacienda_nuevo || 'no disponible') + '€\n' +
-          'Depreciación ' + resultITP.antiguedad_anos + ' años: ' + resultITP.depreciacion_boe + '\n' +
-          'Base imponible: ' + resultITP.valor_fiscal + '€\n' +
-          'ITP ' + resultITP.tipo_itp_pct + ' (' + datosConv.ccaa + '): ' + resultITP.itp + '€\n' +
-          'Tasa DGT: ' + resultITP.tasa_dgt + '€\n' +
-          '[FIN DATOS BOE — presenta este desglose al cliente]';
-      }
-    }
-
-    var reply = await askLaura(t + contextoITP);
-    input.disabled = false;
-    sendBtn.disabled = false;
-
-    if (reply) {
-      addBot(reply);
-      // Si tenemos nombre y teléfono → enviar lead a WhatsApp
-      if (captura.nombre && captura.telefono && !captura.tramite) {
-        captura.tramite = 'Consulta ITP / Transferencia';
-        setTimeout(function() { finishCaptura(); }, 1200);
-      }
-    } else {
-      addBot('Disculpa, ¿puedes repetirlo? Estoy aquí para ayudarte.');
-    }
-    return;
-  }
-
-  // Fallback al flujo original si Laura no activa
-  var lower = t.toLowerCase();
-  if (isDespedida(lower)) { resetChat(); flowDespedida(); return; }
-  if (awaitingDescription) { awaitingDescription=false; captura.detalle=t; startCapture(); return; }
-  if (awaitingVehicle) {
-    captura.vehiculo = t;
-    var anioMatch = t.match(/\b(19|20)\d{2}\b/);
-    if (anioMatch) { itpData = itpData||{}; itpData.anio = parseInt(anioMatch[0]); }
-    awaitingVehicle = false;
-    if (vehicleMode==='itp') { awaitingItp=true; addBot('¿Cuál es el precio acordado de compra? (escribe solo el importe en €)'); }
-    else { startCapture(); }
-    input.disabled = false; sendBtn.disabled = false; return;
-  }
-  if (awaitingItp) {
-    var val = parseFloat(t.replace(/[^\d.,]/g,'').replace(',','.'));
-    if (!val || val<=0) { addBot('Por favor escribe un importe válido, por ejemplo: 8500'); input.disabled=false; sendBtn.disabled=false; return; }
-    awaitingItp = false;
-    askCcaa(val);
-    input.disabled = false; sendBtn.disabled = false; return;
-  }
-  if (chatStep===0) { routeKeyword(lower); }
-  else if (chatStep===1) {
-    captura.nombre = t.split(' ')[0];
-    chatStep=2;
-    addBot('Gracias ' + captura.nombre + ' 😊 ¿Y tu número de teléfono para que te llamemos?');
-  } else if (chatStep===2) {
-    var tel = t.replace(/\D/g,'');
-    if (tel.length < 9) { addBot('Por favor introduce un número válido (9 dígitos).'); input.disabled=false; sendBtn.disabled=false; return; }
-    captura.telefono = tel;
-    finishCapture();
-  }
-  input.disabled = false;
-  sendBtn.disabled = false;
-}
-
-function finishCaptura() {
-  if (!captura.nombre || !captura.telefono) return;
-
-  var historial = gHistory.map(function(m) { return m.content; }).join(' ');
-
-  var vehiculo = captura.vehiculo || '';
-  if (!vehiculo) {
-    var matchVeh = historial.match(/\b(seat|volkswagen|vw|ford|renault|peugeot|citroen|opel|bmw|mercedes|audi|toyota|honda|hyundai|kia|nissan|mazda|volvo|fiat|alfa|skoda|dacia)\b[\s\w]+/i);
-    if (matchVeh) vehiculo = matchVeh[0].trim().substring(0, 40);
-  }
-
-  var anioMatch = historial.match(/\b(19|20)\d{2}\b/);
-  var anio = anioMatch ? anioMatch[0] : '';
-
-  var ccaaMatch = historial.match(/\b(madrid|barcelona|catalu|valencia|andaluc|galicia|sevilla|bilbao|pais vasco|aragon|navarra|murcia|cantabria|asturias|extremadura|canarias|baleares|rioja|castilla)\w*/i);
-  var ccaa = ccaaMatch ? ccaaMatch[0] : '';
-
-  var msg = '🤖 *Nuevo lead Laura IA — Gestoría ITP*\n\n' +
-    '👤 Nombre: ' + captura.nombre + '\n' +
-    '📞 Teléfono: ' + captura.telefono + '\n' +
-    '🚗 Vehículo: ' + (vehiculo || 'No indicado') + '\n' +
-    '📅 Año: ' + (anio || 'No indicado') + '\n' +
-    '📍 CCAA: ' + (ccaa || 'No indicada') + '\n' +
-    '📋 Trámite: ' + (captura.tramite || 'Consulta ITP / Transferencia') + '\n' +
-    '🤖 Captado por: Laura Agente IA Gestoría';
-
-  var url = 'https://wa.me/34643199580?text=' + encodeURIComponent(msg);
-  window.open(url, '_blank');
-}
-
-function finishCapture(){
-  const fmt=formatEUR;
-  const sep='━━━━━━━━━━━━━━━━━━━━━━━';
-  const footer=`\n${sep}\n⚡ _Lead cualificado · Contactar hoy_\n_Vía chatbot WhiteMoon · whitemoon.es_`;
-  const t=(captura.tramite||'').toLowerCase();
-  const isItp=itpData&&itpData.ccaa;
-  const isTransfer=t.includes('transferencia');
-  const isMoves=t.includes('moves')||t.includes('eléctrico')||t.includes('electrico');
-  const isPatinete=t.includes('patinete')||t.includes('vmp');
-  const isTransporte=t.includes('tarjeta')||t.includes('transporte')||t.includes('vtc');
-  const veh=captura.vehiculo||'No indicado';
-  let msg;
-
-  if(isItp){
-    msg=`🧮 *CÁLCULO ITP — WhiteMoon Gestoría IA*\n${sep}\n👤 *Nombre:* ${captura.nombre}\n📞 *Teléfono:* +34${captura.telefono}\n🚙 *Vehículo:* ${veh}\n🗺️ *Comunidad:* ${itpData.ccaa}\n📊 *ITP aplicado:* ${itpData.percentLabel}%\n💰 *Valor contrato:* ${fmt(itpData.valor)}\n📋 *ITP estimado:* ${fmt(itpData.itp)}\n💼 *WhiteMoon (tasas incl.):* ${fmt(itpData.honorarios)}\n💵 *TOTAL ESTIMADO:* ${fmt(itpData.total)}\n${sep}\n⚠️ _Verificar valor fiscal en tablas BOE/Hacienda para ${veh}_${footer}`;
-  }else if(isTransfer){
-    msg=`🚗 *NUEVA TRANSFERENCIA — WhiteMoon Gestoría IA*\n${sep}\n👤 *Nombre:* ${captura.nombre}\n📞 *Teléfono:* +34${captura.telefono}\n🚙 *Vehículo:* ${veh}\n📋 *Trámite:* Transferencia de vehículo${footer}`;
-  }else if(isMoves){
-    const det=captura.detalle||'';
-    let tipo='No especificado',acha='No',importe='—';
-    if(det.includes('Eléctrico puro'))tipo='Eléctrico puro';
-    else if(det.includes('Híbrido enchufable'))tipo='Híbrido enchufable';
-    else if(det.toLowerCase().includes('asesoramiento'))tipo='Pendiente decidir';
-    if(det.includes('Con achatarramiento'))acha='Sí';
-    else if(det.includes('Sin achatarramiento'))acha='No';
-    if(tipo==='Eléctrico puro')importe=(acha==='Sí')?'7.000':'4.500';
-    else if(tipo==='Híbrido enchufable')importe=(acha==='Sí')?'5.000':'2.500';
-    msg=`♻️ *PLAN MOVES 2025 — WhiteMoon Gestoría IA*\n${sep}\n👤 *Nombre:* ${captura.nombre}\n📞 *Teléfono:* +34${captura.telefono}\n🔋 *Tipo vehículo:* ${tipo}\n🔄 *Achatarramiento:* ${acha}\n💶 *Ayuda estimada:* ${importe}€${footer}`;
-  }else if(isPatinete){
-    const det=captura.detalle||'No indicado';
-    const marca=captura.vehiculo||'Pendiente confirmar';
-    msg=`🛴 *PATINETE VMP — WhiteMoon Gestoría IA*\n${sep}\n👤 *Nombre:* ${captura.nombre}\n📞 *Teléfono:* +34${captura.telefono}\n🛴 *Trámite:* ${det}\n🏍️ *Marca patinete:* ${marca}${footer}`;
-  }else if(isTransporte){
-    msg=`🚛 *TRANSPORTE — WhiteMoon Gestoría IA*\n${sep}\n👤 *Nombre:* ${captura.nombre}\n📞 *Teléfono:* +34${captura.telefono}\n📋 *Servicio:* ${captura.tramite}\n🔍 *Detalle:* ${captura.detalle||'-'}${footer}`;
-  }else{
-    msg=`📋 *CONSULTA — WhiteMoon Gestoría IA*\n${sep}\n👤 *Nombre:* ${captura.nombre}\n📞 *Teléfono:* +34${captura.telefono}\n🔍 *Trámite:* ${captura.tramite}\n📝 *Detalle:* ${captura.detalle||'-'}${footer}`;
-  }
-  const url='https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(msg);
-
-  const resumeCard=document.createElement('div');
-  resumeCard.style.cssText='align-self:stretch;background:rgba(0,229,192,.08);border:1px solid rgba(0,229,192,.3);border-radius:14px;padding:14px;margin-top:4px;font-size:13px;font-family:"Hanken Grotesk",sans-serif;animation:msgIn .3s ease-out';
-  resumeCard.innerHTML=
-    '<div style="display:flex;align-items:center;gap:7px;margin-bottom:10px">'+
-      '<svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:#22c55e;fill:none;stroke-width:2.5;flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>'+
-      '<span style="color:#22c55e;font-weight:700;font-size:14px">Datos recibidos correctamente</span>'+
-    '</div>'+
-    '<div style="display:flex;flex-direction:column;gap:6px;padding:10px;background:rgba(0,0,0,.2);border-radius:9px;margin-bottom:10px">'+
-      '<div style="display:flex;gap:8px"><span style="color:#5eead4;min-width:80px;font-size:12px">Trámite</span><span style="color:#fff;font-weight:600">'+escapeHtml(captura.tramite)+'</span></div>'+
-      '<div style="display:flex;gap:8px"><span style="color:#5eead4;min-width:80px;font-size:12px">Nombre</span><span style="color:#fff;font-weight:600">'+escapeHtml(captura.nombre)+'</span></div>'+
-      '<div style="display:flex;gap:8px"><span style="color:#5eead4;min-width:80px;font-size:12px">Teléfono</span><span style="color:#fff;font-weight:600">+34 '+escapeHtml(captura.telefono)+'</span></div>'+
-      (captura.vehiculo?'<div style="display:flex;gap:8px"><span style="color:#5eead4;min-width:80px;font-size:12px">Vehículo</span><span style="color:#fff;font-weight:600">'+escapeHtml(captura.vehiculo)+'</span></div>':'')+
-    '</div>'+
-    '<div style="background:rgba(0,229,192,.1);border-radius:8px;padding:10px;font-size:13px;color:#5eead4;line-height:1.6;text-align:center">'+
-      (itpData&&itpData.ccaa
-        ? 'Solicitud recibida.<br><strong style="color:#22c55e">Nuestro gestor verificará el valor fiscal real de su vehículo en '+escapeHtml(itpData.ccaa)+' y le llamará en menos de 1 hora con el ITP exacto y el presupuesto total sin sorpresas.</strong>'
-        : 'Hemos recibido todos los datos aportados.<br><strong style="color:#22c55e">Un gestor/a se pondrá en contacto<br>para ayudarle con su trámite en menos de 1 hora.</strong>')+
-    '</div>';
-  body.appendChild(resumeCard);
-  body.scrollTop=body.scrollHeight;
-
-  setTimeout(()=>{
-    const hint=document.createElement('div');
-    hint.style.cssText='align-self:stretch;font-size:12px;color:#9090b0;text-align:center;margin:10px 0 6px;line-height:1.5;animation:msgIn .3s ease-out';
-    hint.textContent='Para confirmar su solicitud pulse el botón:';
-    body.appendChild(hint);
-
-    const waBtn=document.createElement('button');
-    waBtn.style.cssText='display:flex;align-items:center;justify-content:center;gap:8px;margin-top:4px;padding:12px 16px;background:linear-gradient(135deg,#25d366,#128c7e);border:none;border-radius:10px;color:#fff;font-size:14px;font-weight:700;cursor:pointer;font-family:"Hanken Grotesk",sans-serif;align-self:stretch;box-shadow:0 4px 14px rgba(37,211,102,.3);transition:transform .2s,box-shadow .2s;animation:msgIn .3s ease-out';
-    waBtn.innerHTML='<svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.123.556 4.112 1.528 5.837L.057 23.215c-.073.266.173.512.44.44l5.42-1.463A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.368l-.36-.214-3.716 1.003 1.02-3.617-.235-.373A9.818 9.818 0 0112 2.182c5.426 0 9.818 4.392 9.818 9.818 0 5.427-4.392 9.818-9.818 9.818z"/></svg>Enviar solicitud por WhatsApp →';
-    waBtn.onmouseover=()=>{waBtn.style.transform='translateY(-2px)';waBtn.style.boxShadow='0 10px 22px rgba(37,211,102,.45)'};
-    waBtn.onmouseout=()=>{waBtn.style.transform='';waBtn.style.boxShadow='0 4px 14px rgba(37,211,102,.3)'};
-    waBtn.onclick=()=>{
-      window.open(url,'_blank');
-      waBtn.disabled=true;
-      waBtn.style.opacity='.6';
-      waBtn.style.cursor='default';
-      hint.style.display='none';
-      closeBtnLink.style.display='none';
-      cierreLeadCompletado();
-    };
-    body.appendChild(waBtn);
-
-    const closeBtnLink=document.createElement('button');
-    closeBtnLink.style.cssText='background:none;border:none;color:var(--muted);font-size:12px;text-decoration:underline;cursor:pointer;padding:6px;margin-top:4px;align-self:center;font-family:inherit';
-    closeBtnLink.textContent='Cerrar chat';
-    closeBtnLink.onclick=resetChat;
-    body.appendChild(closeBtnLink);
-
-    body.scrollTop=body.scrollHeight;
-  },700);
-}
-
-function cierreLeadCompletado(){
-  chatStep=0;
-  setCaptureMode(false);
-  input.disabled=true;
-  sendBtn.disabled=true;
-  input.placeholder='Conversación finalizada';
-  addBot('¡Muchas gracias por ponerse en contacto con nosotros! 🙏\n\nHemos recibido sus datos y nos pondremos en contacto con usted a la mayor brevedad posible.\n\nRecuerde que también puede contactarnos directamente:\n📞 643 199 580\n📧 comercial@whitemoon.es\n🌐 whitemoon.es\n\n¡Que tenga un excelente día! 🌟',[
-    {label:'🔄 Nueva consulta',action:()=>resetChat()}
-  ]);
-}
-
-function escapeHtml(s){
-  return String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-}
-
-function resetChat(){
-  setCaptureMode(false);
-  chatStep=0;
-  captura={nombre:'',telefono:'',tramite:'',detalle:'',vehiculo:''};
-  awaitingItp=false;
-  awaitingVehicle=false;
-  vehicleMode='';
-  itpData=null;
-  transferTipo='';
-  awaitingDescription=false;
-  input.disabled=false;
-  sendBtn.disabled=false;
-  input.placeholder='Escribe tu mensaje...';
-  setTimeout(()=>modal.classList.remove('open'),300);
-}
-
-/* ========= CALCULADORA ITP ========= */
-const ITP_CCAA={
-  'Andalucía':0.07,
-  'Aragón':0.08,
-  'Asturias':0.08,
-  'Baleares':0.08,
-  'Canarias':0.065,
-  'Cantabria':0.08,
-  'Castilla-La Mancha':0.09,
-  'Castilla y León':0.08,
-  'Cataluña':0.10,
-  'Extremadura':0.08,
-  'Galicia':0.08,
-  'La Rioja':0.08,
-  'Madrid':0.04,
-  'Murcia':0.08,
-  'Navarra':0.06,
-  'País Vasco':0.04,
-  'Valencia':0.10,
-  'Ceuta/Melilla':0.06
-};
-
-function startItpCalc(){
-  captura.tramite='Transferencia · Cálculo ITP';
-  awaitingVehicle=true;
-  vehicleMode='itp';
-  addBot('Te calculo el coste total de la transferencia 🧮');
-  setTimeout(()=>{
-    addBot('Para que el gestor pueda verificar el valor fiscal exacto en las tablas oficiales, ¿me indicas la marca, modelo y año del vehículo?\n\nEjemplo: Toyota Corolla 2019 o Ford Focus 2020.');
-  },800);
-}
-
-function formatEUR(num){
-  return num.toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2})+'€';
-}
-
-function askCcaa(valor){
-  itpData={valor,ccaa:'',percent:0,itp:0,honorarios:140,total:0};
-  addBot('¿En qué Comunidad Autónoma se va a hacer la transferencia?\n\nEl ITP varía según la comunidad donde se registre el vehículo.',[
-    {label:'Madrid (4%)',action:()=>showItpCalc('Madrid')},
-    {label:'Cataluña (10%)',action:()=>showItpCalc('Cataluña')},
-    {label:'Valencia (10%)',action:()=>showItpCalc('Valencia')},
-    {label:'Andalucía (7%)',action:()=>showItpCalc('Andalucía')},
-    {label:'Ver más comunidades →',action:()=>askCcaaMore()}
-  ]);
-}
-
-function askCcaaMore(){
-  addBot('Selecciona tu comunidad:',[
-    {label:'Aragón (8%)',action:()=>showItpCalc('Aragón')},
-    {label:'Asturias (8%)',action:()=>showItpCalc('Asturias')},
-    {label:'Baleares (8%)',action:()=>showItpCalc('Baleares')},
-    {label:'Canarias (6,5%)',action:()=>showItpCalc('Canarias')},
-    {label:'Cantabria (8%)',action:()=>showItpCalc('Cantabria')},
-    {label:'Castilla-La Mancha (9%)',action:()=>showItpCalc('Castilla-La Mancha')},
-    {label:'Castilla y León (8%)',action:()=>showItpCalc('Castilla y León')},
-    {label:'Extremadura (8%)',action:()=>showItpCalc('Extremadura')},
-    {label:'Galicia (8%)',action:()=>showItpCalc('Galicia')},
-    {label:'La Rioja (8%)',action:()=>showItpCalc('La Rioja')},
-    {label:'Murcia (8%)',action:()=>showItpCalc('Murcia')},
-    {label:'Navarra (6%)',action:()=>showItpCalc('Navarra')},
-    {label:'País Vasco (4%)',action:()=>showItpCalc('País Vasco')},
-    {label:'Ceuta/Melilla (6%)',action:()=>showItpCalc('Ceuta/Melilla')}
-  ]);
-}
-
-async function showItpCalc(ccaa) {
-  addBot('⏳ Calculando con tablas oficiales BOE 2026...');
-
-  try {
-    var res = await fetch(
-      'https://mlaqtniujnvfxcvcourm.supabase.co/functions/v1/gestoria-itp',
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          valor_venta: itpData.valor,
-          anio_matriculacion: itpData.anio || new Date().getFullYear() - 3,
-          ccaa: ccaa,
-          honorarios: itpData.honorarios || 140
-        })
-      }
-    );
-    var data = await res.json();
-
-    if (data.error) throw new Error(data.error);
-
-    // Actualiza itpData con resultado real
-    itpData = {
-      ...itpData,
-      ccaa: ccaa,
-      percent: parseFloat(data.tipo_itp_pct),
-      percentLabel: data.tipo_itp_pct,
-      itp: data.itp,
-      honorarios: data.honorarios_gestoria,
-      tasa_dgt: data.tasa_dgt,
-      total: data.total_estimado,
-      base_imponible: data.base_imponible,
-      depreciacion: data.depreciacion_boe
-    };
-
-    // Card visual resultado
-    var card =
-      '📋 Cálculo ITP oficial 2026\n' +
-      '━━━━━━━━━━━━━━━━━━━━\n' +
-      '🚗 Vehículo: ' + (captura.vehiculo || itpData.vehiculo || '—') + '\n' +
-      '📅 Antigüedad: ' + data.antiguedad_anos + ' años\n' +
-      '📉 Depreciación BOE: ' + data.depreciacion_boe + '\n' +
-      '💰 Base imponible: ' + formatEUR(data.base_imponible) + '\n' +
-      '━━━━━━━━━━━━━━━━━━━━\n' +
-      '🏛️ ITP ' + data.tipo_itp_pct + ' (' + ccaa + '): ' + formatEUR(data.itp) + '\n' +
-      '🚦 Tasa DGT: ' + formatEUR(data.tasa_dgt) + '\n' +
-      '📂 Honorarios gestoría: ' + formatEUR(data.honorarios_gestoria) + '\n' +
-      '━━━━━━━━━━━━━━━━━━━━\n' +
-      '✅ TOTAL ESTIMADO: ' + formatEUR(data.total_estimado) + '\n\n' +
-      '⚠️ Cálculo orientativo BOE HAC/1501/2025. ' +
-      'Hacienda aplica el valor fiscal si supera el precio de compra.';
-
-    addBot(card);
-
-    setTimeout(function() {
-      addBot(
-        '¿Quieres que gestionemos la transferencia completa? ' +
-        'Te verificamos el valor fiscal real sin coste adicional.',
-        [
-          { label: '✅ Sí, gestionar', action: function(){ captura.tramite='Transferencia · ITP calculado · '+ccaa; startCapture(); }},
-          { label: '❓ Tengo dudas', action: function(){ showFiscalLink(); }}
-        ]
-      );
-    }, 1000);
-
-  } catch(e) {
-    // Fallback al cálculo local si falla la Edge Function
-    var percent = ITP_CCAA[ccaa] || 0.06;
-    var itp = Math.round(itpData.valor * percent * 100) / 100;
-    var honorarios = 140;
-    var total = itp + honorarios + 55.70;
-    itpData = { ...itpData, ccaa, percent, itp, honorarios, total };
-    addBot(
-      '📋 ITP ' + (percent*100).toFixed(0) + '% (' + ccaa + '): ' + formatEUR(itp) + '\n' +
-      'Tasa DGT: 55,70€\n' +
-      'Honorarios: ' + formatEUR(honorarios) + '\n' +
-      'TOTAL: ' + formatEUR(total)
-    );
-    setTimeout(function(){
-      addBot('¿Gestionamos la transferencia?',[
-        { label: '✅ Sí', action: function(){ captura.tramite='ITP · fallback'; startCapture(); }},
-      ]);
-    }, 800);
+function pick(v,l){
+  if(v==='wa'){addMsg(l,'user');window.open('https://wa.link/9fo0et','_blank');return;}
+  addMsg(l,'user');step=v;
+  const flows={
+    renta:{m:'Cuando necesitas presentar la declaracion?',o:[
+      {l:'Lo antes posible',v:'c'},
+      {l:'Quiero asesoramiento previo',v:'c'},
+      {l:'Situacion especial — venta inmueble, herencia...',v:'c'},
+    ]},
+    empresa:{m:'Que necesitas exactamente?',o:[
+      {l:'Alta de autonomo',v:'c'},
+      {l:'Crear una sociedad',v:'c'},
+      {l:'Asesoria fiscal o contabilidad',v:'c'},
+      {l:'Nominas y gestion laboral',v:'c'},
+    ]},
+    extran:{m:'Que tramite de extranjeria necesitas?',o:[
+      {l:'Permiso de residencia',v:'c'},
+      {l:'Renovacion de documentacion',v:'c'},
+      {l:'Nacionalidad espanola',v:'c'},
+      {l:'Visado de trabajo o estudio',v:'c'},
+    ]},
+    herencia:{m:'Que tipo de gestion necesitas?',o:[
+      {l:'Tramitar una herencia',v:'c'},
+      {l:'Donacion de bienes',v:'c'},
+      {l:'Compraventa de inmueble',v:'c'},
+      {l:'Tramites notariales',v:'c'},
+    ]},
+    deudas:{m:'Cual es tu situacion?',o:[
+      {l:'Soy particular con deudas',v:'c'},
+      {l:'Soy autonomo con problemas de liquidez',v:'c'},
+      {l:'Mi empresa necesita concurso',v:'c'},
+    ]},
+    otro:{m:'Cuentame que necesitas.',o:[
+      {l:'Lo explico aqui',v:'libre'},
+      {l:'Prefiero que me llamen',v:'c'},
+    ]},
+  };
+  if(flows[v]){
+    setTimeout(()=>addMsg(flows[v].m,'bot',flows[v].o),400);
+  } else if(v==='c'){
+    setTimeout(()=>{addMsg('Como te llamas?','bot');step='nombre';},400);
+  } else if(v==='libre'){
+    step='libre';
   }
 }
-
-function showFiscalLink(){
-  addBot('Si tienes dudas sobre el valor fiscal de tu vehículo, nuestro gestor lo consulta por ti gratuitamente en menos de 1 hora.\n\n¿Quieres que te llamemos?',[
-    {label:'✓ Sí, que me llamen',action:()=>startCapture('Perfecto, solo necesito un par de datos para que el gestor lo verifique 🚗\n\n¿Me dices tu nombre?')}
-  ]);
+function sendMsg(){
+  const i=document.getElementById('ch-input');
+  const t=i.value.trim();if(!t)return;
+  i.value='';addMsg(t,'user');
+  if(step==='nombre'){
+    lead.n=t;step='tel';
+    setTimeout(()=>addMsg('Encantada, '+t+'. Cual es tu numero de telefono?\nUn gestor te llamara en menos de 24 horas.','bot'),400);
+  } else if(step==='tel'){
+    lead.t=t;step='done';guardar();
+    setTimeout(()=>addMsg('Perfecto, '+(lead.n||'')+'. Hemos recibido tu consulta.\nUn gestor de Gestoria Sara te llamara al '+t+' antes de 24 horas.\nSi prefieres escribirnos ahora:','bot',[{l:'Abrir WhatsApp',v:'wa'}]),500);
+  } else if(step==='done'){
+    addMsg('Para cualquier otra consulta, llamanos al 662 23 81 74 o escribe por WhatsApp.','bot',[{l:'Abrir WhatsApp',v:'wa'}]);
+  } else {
+    hist.push({role:'user',content:t});ia(t);
+  }
 }
-
-/* ========= KEYWORD ROUTER ========= */
-function routeKeyword(t){
-  const has=arr=>arr.some(k=>t.includes(k));
-  if(isDespedida(t)) return flowDespedida();
-  if(has(['document','papeles','requisito','qué necesito','que necesito'])) return flowDocumentacion();
-  if(has(['precio','cuanto cuesta','cuánto cuesta','cuanto sale','cuánto sale','cuesta','coste','honorarios','itp','impuesto','que vale','qué vale','presupuesto','cuanto cobra','cuánto cobra','tarifa','transferencia precio'])){
-    return startItpCalc();
-  }
-  if(has(['transferencia','transfer','cambio de titular','cambio titular','cambio de nombre','vender coche','comprar coche','comprar','vender','vehiculo','vehículo','segunda mano'])) return flowTransfer();
-  if(has(['moves','electrico','eléctrico','hibrido','híbrido','subvencion','subvención','ayuda','enchufable','bateria','batería'])) return flowMoves();
-  if(has(['tarjeta','transporte','camion','camión','furgoneta','taxi','vtc','visado','renovar','alta'])) return flowTransporte();
-  if(has(['patinete','vmp','scooter','movilidad','inscripcion','inscripción','registro','multa'])) return flowPatinete();
-  if(has(['cuanto','cuánto'])) return startItpCalc();
-  if(has(['urgente','urgencia','plazo','caducado','caducada','multa'])){
-    addBot('Entendemos la urgencia.\nAtendemos trámites urgentes con prioridad.\n¿Me facilita su teléfono para llamarle en los próximos minutos?',null,ICO.bolt2);
-    captura.tramite='URGENTE - Trámite';
-    captura.detalle='Solicitud urgente';
-    startCapture();
-    return;
-  }
-  if(has(['online','distancia','enviar','email','whatsapp'])){
-    addBot('Trabajamos 100% online.\n\nPuedes enviarnos toda la documentación por email o WhatsApp y nosotros lo gestionamos todo sin que te muevas.',[
-      {label:'Quiero contactar',action:()=>{captura.tramite='Consulta online';startCapture();}}
-    ]);
-    return;
-  }
-  if(has(['donde','dónde','ubicacion','ubicación','oficina','direccion','dirección'])){
-    addBot('Nuestra oficina está en:\nCalle Madrid 9\n28220 Majadahonda, Madrid\n\nTambién atendemos online por email y WhatsApp.',[
-      {label:'Quiero hacer una consulta',action:()=>flowOtro()}
-    ]);
-    return;
-  }
-  addBot('Puedo ayudarte con cualquier trámite de tráfico o transporte.\n¿Qué necesitas gestionar?',[
-    {ico:ICO.swap,label:'Transferencia',action:()=>flowTransfer()},
-    {ico:ICO.bolt,label:'Plan Moves',action:()=>flowMoves()},
-    {ico:ICO.truck,label:'Tarjeta transporte',action:()=>flowTransporte()},
-    {ico:ICO.scooter,label:'Patinete VMP',action:()=>flowPatinete()},
-    {ico:ICO.doc,label:'Otro trámite',action:()=>flowOtro()}
-  ]);
+async function ia(msg){
+  const sys=`Eres Laura, asistente de Gestoria Sara, S.L. Majadahonda, Madrid.
+Servicios: fiscal, autonomos, empresas, extranjeria, herencias, segunda oportunidad.
+Tel: 662 23 81 74. Email: saraaparicio@gestoriasara.com. Primera consulta gratuita.
+Responde en 2 frases maximas. Tono profesional y cercano. Nunca des precios exactos.`;
+  try{
+    const r=await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({model:'claude-haiku-4-5-20251001',max_tokens:250,system:sys,messages:hist.slice(-6)})
+    });
+    const d=await r.json();
+    const rep=d?.content?.[0]?.text||'Llama al 662 23 81 74 o escribe por WhatsApp.';
+    hist.push({role:'assistant',content:rep});
+    addMsg(rep,'bot');
+  }catch(e){addMsg('Contacta al 662 23 81 74 o por WhatsApp.','bot');}
 }
-
-sendBtn.addEventListener('click',()=>{const v=input.value;input.value='';handleInput(v);});
-input.addEventListener('keydown',e=>{if(e.key==='Enter'){const v=input.value;input.value='';handleInput(v);}});
+async function guardar(){
+  const msg=`NUEVO LEAD - Gestoria Sara IA\nNombre: ${lead.n}\nTelefono: ${lead.t}\nFuente: Demo WhiteMoon\nFecha: ${new Date().toLocaleString('es-ES')}`;
+  try{
+    await fetch(SB_URL+'/rest/v1/leads_web',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY,'Prefer':'return=minimal'},
+      body:JSON.stringify({nombre:lead.n,telefono:lead.t,sector:'gestoria',origen:'demo-gestoria-sara-ia',mensaje:'Demo IA Gestoria Sara',fecha:new Date().toISOString().split('T')[0]})
+    });
+    await fetch('https://api.callmebot.com/whatsapp.php?phone=34662238174&text='+encodeURIComponent(msg)+'&apikey=PENDING');
+  }catch(e){console.log(lead);}
+}
 </script>
-
 </body>
 </html>
