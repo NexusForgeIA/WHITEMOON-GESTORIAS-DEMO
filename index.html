@@ -267,6 +267,50 @@ h2 i{font-style:italic;color:var(--rojo);}
 .valor-text{font-size:13px;color:var(--gris);line-height:1.65;font-weight:300;}
 .valor-text strong{color:var(--negro);font-weight:500;}
 
+/* ─── EQUIPO · CONOCE AL EQUIPO ─── */
+.equipo-cta-wrap{margin-top:56px;text-align:center;}
+.equipo-toggle{
+  display:inline-flex;align-items:center;gap:12px;
+  font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;
+  letter-spacing:1.5px;text-transform:uppercase;
+  padding:15px 34px;cursor:pointer;
+  background:var(--negro);color:#fff;border:none;
+  transition:background .25s ease;
+}
+.equipo-toggle:hover{background:var(--rojo);}
+.equipo-toggle .ico{
+  font-style:normal;font-size:18px;line-height:1;
+  transition:transform .35s ease;
+}
+.equipo-toggle[aria-expanded="true"] .ico{transform:rotate(45deg);}
+.equipo-team-wrap{
+  max-height:0;overflow:hidden;
+  transition:max-height .6s cubic-bezier(.4,0,.2,1);
+}
+.equipo-team-wrap.open{max-height:5000px;}
+.equipo-team-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--borde);
+  margin-top:48px;border:1px solid var(--borde);
+}
+.miembro{background:var(--w);padding-bottom:30px;}
+.miembro-foto{
+  width:100%;aspect-ratio:1/1;object-fit:cover;display:block;
+  margin-bottom:24px;background:var(--hueso);
+}
+.miembro-info{padding:0 30px;}
+.miembro-nombre{
+  font-family:'DM Serif Display',serif;
+  font-size:21px;color:var(--negro);line-height:1.15;margin-bottom:7px;
+}
+.miembro-cargo{
+  font-size:11px;letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--rojo);font-weight:500;margin-bottom:14px;
+}
+.miembro-desc{
+  font-size:14px;color:var(--gris);line-height:1.7;font-weight:300;
+}
+
 /* ─── PROCESO ─── */
 .proceso-lista{
   display:grid;grid-template-columns:repeat(4,1fr);
@@ -438,6 +482,7 @@ footer{
   .hero{grid-template-columns:50% 50%;}
   .servicios-grid{grid-template-columns:1fr 1fr;}
   .equipo-grid{grid-template-columns:1fr;}
+  .equipo-team-grid{grid-template-columns:1fr 1fr;}
   .proceso-lista{grid-template-columns:1fr 1fr;gap:0;}
   .paso{padding:32px 24px 32px 0;border-bottom:1px solid var(--borde);}
 }
@@ -445,7 +490,7 @@ footer{
   .hero{grid-template-columns:1fr;}
   .hero-img{height:60vw;min-height:280px;}
   .hero-right{padding:48px 5%;}
-  .servicios-grid,.equipo-fotos{grid-template-columns:1fr;}
+  .servicios-grid,.equipo-fotos,.equipo-team-grid{grid-template-columns:1fr;}
   .serv{aspect-ratio:3/2;}
   .foto-main{grid-column:auto;}
   .section-intro{grid-template-columns:1fr;}
@@ -676,6 +721,64 @@ footer{
       </div>
     </div>
   </div>
+
+  <div class="equipo-cta-wrap">
+    <button class="equipo-toggle" type="button" aria-expanded="false" aria-controls="equipo-team" onclick="toggleEquipo(this)">
+      <span class="txt">Conoce al equipo</span><i class="ico" aria-hidden="true">+</i>
+    </button>
+  </div>
+  <div class="equipo-team-wrap" id="equipo-team">
+    <div class="equipo-team-grid">
+      <article class="miembro">
+        <img class="miembro-foto" src="sara%20aparicio.avif" width="400" height="400" loading="lazy" alt="Sara Aparicio Grande"/>
+        <div class="miembro-info">
+          <h3 class="miembro-nombre">Sara Aparicio Grande</h3>
+          <div class="miembro-cargo">Gerente Fundadora</div>
+          <p class="miembro-desc">Nuestra directora, fundadora y administradora, con una vision clara y liderazgo inspirador que guia a nuestro equipo hacia la excelencia en cada tarea.</p>
+        </div>
+      </article>
+      <article class="miembro">
+        <img class="miembro-foto" src="jose%20guinea.avif" width="400" height="400" loading="lazy" alt="Jose Guinea Garcia"/>
+        <div class="miembro-info">
+          <h3 class="miembro-nombre">Jose Guinea Garcia</h3>
+          <div class="miembro-cargo">Responsable de Contabilidad</div>
+          <p class="miembro-desc">Apoyando a todos los departamentos y asegurando la continuidad y eficiencia de los procesos en la organizacion.</p>
+        </div>
+      </article>
+      <article class="miembro">
+        <img class="miembro-foto" src="luna%20pedraza.avif" width="400" height="400" loading="lazy" alt="Luna Pedraza Aparicio"/>
+        <div class="miembro-info">
+          <h3 class="miembro-nombre">Luna Pedraza Aparicio</h3>
+          <div class="miembro-cargo">Area Laboral y Coordinacion</div>
+          <p class="miembro-desc">Responsable del area laboral y de coordinacion de procesos, especializada en constitucion de empresas y gestion integral de tramites para empresas y autonomos.</p>
+        </div>
+      </article>
+      <article class="miembro">
+        <img class="miembro-foto" src="vanesa%20martinez.avif" width="400" height="400" loading="lazy" alt="Vanessa Martinez Alonso"/>
+        <div class="miembro-info">
+          <h3 class="miembro-nombre">Vanessa Martinez Alonso</h3>
+          <div class="miembro-cargo">Apoyo Administrativo</div>
+          <p class="miembro-desc">Soporte en tareas administrativas, contables y laborales, gestionando documentacion y tramites para el buen funcionamiento de la empresa.</p>
+        </div>
+      </article>
+      <article class="miembro">
+        <img class="miembro-foto" src="catherine%20denise.avif" width="400" height="400" loading="lazy" alt="Catherine Denisse Idrovo"/>
+        <div class="miembro-info">
+          <h3 class="miembro-nombre">Catherine Denisse Idrovo</h3>
+          <div class="miembro-cargo">Extranjeria</div>
+          <p class="miembro-desc">Especialista en el departamento de extranjeria. Gestion de permisos, renovaciones, nacionalidad y visados.</p>
+        </div>
+      </article>
+      <article class="miembro">
+        <img class="miembro-foto" src="maria%20paloma.avif" width="400" height="400" loading="lazy" alt="Maria Paloma Gonzalez"/>
+        <div class="miembro-info">
+          <h3 class="miembro-nombre">Maria Paloma Gonzalez</h3>
+          <div class="miembro-cargo">Departamento Juridico</div>
+          <p class="miembro-desc">Responsable del area juridica. Asesoramiento legal y gestion de procedimientos judiciales y administrativos.</p>
+        </div>
+      </article>
+    </div>
+  </div>
 </section>
 
 <!-- COMO TRABAJAMOS -->
@@ -795,6 +898,13 @@ function toggleChat(){
   open=!open;
   document.getElementById('chat-win').classList.toggle('open',open);
   if(open&&hist.length===0)init();
+}
+function toggleEquipo(btn){
+  const wrap=document.getElementById('equipo-team');
+  const expanded=btn.getAttribute('aria-expanded')==='true';
+  btn.setAttribute('aria-expanded',String(!expanded));
+  wrap.classList.toggle('open',!expanded);
+  btn.querySelector('.txt').textContent=expanded?'Conoce al equipo':'Ocultar equipo';
 }
 function addMsg(txt,type,opts){
   const c=document.getElementById('ch-msgs');
