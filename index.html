@@ -110,10 +110,10 @@ i,em{font-style:italic;}
   transition:background .4s var(--ease),box-shadow .4s var(--ease),padding .4s var(--ease);
 }
 .nav.solid{background:rgba(255,255,255,0.92);backdrop-filter:saturate(160%) blur(14px);box-shadow:0 1px 0 var(--borde);padding-block:0.7rem;}
-.nav-logo{font-family:var(--serif);font-size:1.45rem;letter-spacing:-0.01em;}
-.nav-logo span{color:var(--rojo);font-style:italic;}
-.nav-links{display:flex;align-items:center;gap:2.2rem;}
-.nav-links a{font-size:0.86rem;font-weight:500;color:var(--negro);position:relative;padding-block:0.3rem;}
+.nav-logo{display:inline-flex;align-items:center;line-height:0;flex-shrink:0;}
+.nav-logo img{height:clamp(36px,4.4vw,46px);width:auto;display:block;}
+.nav-links{display:flex;align-items:center;gap:1.7rem;}
+.nav-links a{font-size:0.84rem;font-weight:500;color:var(--negro);position:relative;padding-block:0.3rem;white-space:nowrap;}
 .nav-links a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--rojo);transition:width .3s var(--ease);}
 .nav-links a:hover::after{width:100%;}
 .nav-tel{
@@ -172,6 +172,40 @@ i,em{font-style:italic;}
 .serv:hover .serv-n{color:var(--rojo);}
 .serv-name{font-family:var(--serif);font-size:var(--fs-h3);line-height:1.1;margin-bottom:0.5rem;}
 .serv-desc{font-size:0.94rem;color:var(--gris);line-height:1.6;}
+
+/* cabecera de seccion a dos columnas (titulo izq / texto+cta der) */
+.head2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,5vw,4rem);align-items:end;margin-bottom:clamp(2.4rem,5vw,3.8rem);}
+.head2 h2{font-size:var(--fs-h2);max-width:15ch;margin-top:1rem;}
+.head2 .lead{margin-top:0;}
+.head2-cta{margin-top:1.6rem;}
+
+/* ════════════ IMPULSO (urgencia · alto contraste) ════════════ */
+.impulso{background:var(--negro);color:#fff;position:relative;overflow:hidden;}
+.impulso-watermark{position:absolute;left:var(--pad-x);bottom:-3rem;font-family:var(--serif);font-size:clamp(7rem,18vw,16rem);line-height:0.8;color:#fff;opacity:0.04;pointer-events:none;}
+.impulso-grid{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.2rem,6vw,5rem);align-items:center;}
+.impulso .eyebrow{color:#fff;}
+.impulso h2{font-size:var(--fs-h2);color:#fff;margin:1.1rem 0 1.1rem;}
+.impulso h2 .acc{color:var(--rojo);}
+.impulso-sub{font-size:var(--fs-lead);color:rgba(255,255,255,0.72);max-width:24ch;margin-bottom:2rem;}
+.imp-blocks{display:flex;flex-direction:column;gap:1.6rem;}
+.imp-block{border-left:2px solid var(--rojo);padding-left:1.4rem;}
+.imp-block h3{font-family:var(--serif);font-size:1.45rem;color:#fff;margin-bottom:0.5rem;line-height:1.15;}
+.imp-block p{color:rgba(255,255,255,0.68);font-size:0.95rem;line-height:1.6;}
+
+/* ════════════ PROYECCION (asesoramiento empresarial) ════════════ */
+.proy-list{border-top:1px solid var(--borde);}
+.proy-item{display:grid;grid-template-columns:auto minmax(180px,0.85fr) 1.5fr;gap:clamp(1rem,3vw,2.4rem);align-items:baseline;padding:1.9rem 0;border-bottom:1px solid var(--borde);transition:padding-left .35s var(--ease);}
+.proy-item:hover{padding-left:0.6rem;}
+.proy-n{font-family:var(--serif);font-size:1.6rem;color:var(--rojo);line-height:1;}
+.proy-name{font-family:var(--serif);font-size:var(--fs-h3);line-height:1.12;}
+.proy-desc{font-size:0.96rem;color:var(--gris);line-height:1.65;}
+
+/* ════════════ SIMPLIFICA (gestion administrativa externa) ════════════ */
+.simpl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(232px,1fr));gap:1px;background:var(--borde);border:1px solid var(--borde);}
+.simpl-block{background:var(--w);padding:2.1rem 1.7rem 2.3rem;position:relative;}
+.simpl-block::before{content:'';position:absolute;top:0;left:0;width:36px;height:3px;background:var(--rojo);}
+.simpl-name{font-family:var(--serif);font-size:1.28rem;line-height:1.15;margin:0.4rem 0 0.7rem;}
+.simpl-desc{font-size:0.9rem;color:var(--gris);line-height:1.6;}
 
 /* ════════════ SOBRE / TRAYECTORIA ════════════ */
 .sobre{position:relative;overflow:hidden;}
@@ -307,7 +341,7 @@ footer{background:var(--negro);color:rgba(255,255,255,0.7);}
   .contacto-grid{grid-template-columns:1fr;}
   .equipo-grid{grid-template-columns:repeat(2,1fr);}
 }
-@media(max-width:760px){
+@media(max-width:960px){
   .nav-links{
     position:fixed;inset:0 0 0 auto;width:min(78vw,320px);height:100vh;
     background:var(--w);flex-direction:column;align-items:flex-start;justify-content:center;
@@ -320,6 +354,13 @@ footer{background:var(--negro);color:rgba(255,255,255,0.7);}
   .nav.menu-open .nav-burger span:nth-child(1){transform:translateY(7px) rotate(45deg);}
   .nav.menu-open .nav-burger span:nth-child(2){opacity:0;}
   .nav.menu-open .nav-burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .head2{grid-template-columns:1fr;align-items:start;gap:1.2rem;}
+  .head2 h2{max-width:20ch;}
+  .impulso-grid{grid-template-columns:1fr;gap:2.4rem;}
+  .proy-item{grid-template-columns:auto 1fr;column-gap:1.2rem;row-gap:0.5rem;}
+  .proy-name,.proy-desc{grid-column:2;}
+}
+@media(max-width:760px){
   .serv-grid{grid-template-columns:1fr;}
   .serv,.serv:nth-child(odd),.serv:nth-child(even){padding:1.8rem 0;border-right:none;}
   .proceso-grid{grid-template-columns:1fr 1fr;}
@@ -342,9 +383,14 @@ footer{background:var(--negro);color:rgba(255,255,255,0.7);}
 
 <!-- ════════════ NAV ════════════ -->
 <nav class="nav" id="nav">
-  <a href="#inicio" class="nav-logo">Gestoría <span>Sara</span></a>
+  <a href="#inicio" class="nav-logo" aria-label="Gestoría Sara — inicio">
+    <img src="logo%20gestoria%20sara.avif" alt="Gestoría Sara" width="170" height="46"/>
+  </a>
   <div class="nav-links" id="navLinks">
     <a href="#servicios">Servicios</a>
+    <a href="#impulso">Impulso</a>
+    <a href="#proyeccion">Proyección</a>
+    <a href="#simplifica">Simplifica</a>
     <a href="#equipo">Equipo</a>
     <a href="#proceso">Proceso</a>
     <a href="#contacto">Contacto</a>
@@ -442,6 +488,96 @@ footer{background:var(--negro);color:rgba(255,255,255,0.7);}
           <p class="serv-desc">Identificamos y tramitamos las ayudas y subvenciones a las que tu negocio realmente puede acceder.</p>
         </div>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ IMPULSO (soluciones urgentes) ════════════ -->
+<section class="section impulso" id="impulso">
+  <div class="impulso-watermark num" aria-hidden="true">48h</div>
+  <div class="wrap impulso-grid">
+    <div class="reveal">
+      <div class="eyebrow">Soluciones urgentes</div>
+      <h2>Evita embargos <span class="acc">y subastas.</span></h2>
+      <p class="impulso-sub">Consigue liquidez en 48-72 horas.</p>
+      <a class="wa-link" href="https://wa.link/9fo0et" target="_blank" rel="noopener">Hablar ahora por WhatsApp <span class="arr">→</span></a>
+    </div>
+    <div class="imp-blocks reveal" data-d="1">
+      <div class="imp-block">
+        <h3>Liquidez rápida</h3>
+        <p>Si tienes una propiedad, tienes una solución. Obtén la liquidez que necesitas sin perder tu patrimonio.</p>
+      </div>
+      <div class="imp-block">
+        <h3>Estudio gratuito</h3>
+        <p>Analizamos tu caso sin compromiso para ofrecerte la mejor solución legal a tu situación.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ PROYECCIÓN (asesoramiento empresarial) ════════════ -->
+<section class="section proyeccion" id="proyeccion">
+  <div class="wrap">
+    <div class="head2 reveal">
+      <div>
+        <div class="eyebrow">Asesoramiento empresarial</div>
+        <h2>Asesoramiento integral para <span class="acc">empresas e inversores.</span></h2>
+      </div>
+      <div>
+        <p class="lead">Analizamos, desarrollamos y ejecutamos proyectos empresariales adaptados al mercado actual.</p>
+        <a class="wa-link head2-cta" href="https://wa.link/9fo0et" target="_blank" rel="noopener">Solicitar asesoramiento <span class="arr">→</span></a>
+      </div>
+    </div>
+    <div class="proy-list">
+      <div class="proy-item reveal">
+        <div class="proy-n num">01</div>
+        <h3 class="proy-name">Estudio de viabilidad y mercado</h3>
+        <p class="proy-desc">Analizamos la viabilidad y el entorno competitivo para tomar decisiones con base real.</p>
+      </div>
+      <div class="proy-item reveal" data-d="1">
+        <div class="proy-n num">02</div>
+        <h3 class="proy-name">Desarrollo de proyecto de negocio</h3>
+        <p class="proy-desc">Diseñamos la estructura completa del proyecto, desde la idea hasta su ejecución.</p>
+      </div>
+      <div class="proy-item reveal" data-d="2">
+        <div class="proy-n num">03</div>
+        <h3 class="proy-name">Captación de inversión privada</h3>
+        <p class="proy-desc">Conectamos proyectos con inversores adaptados al perfil y necesidades de cada negocio.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ SIMPLIFICA (gestión administrativa externa) ════════════ -->
+<section class="section section-alt simplifica" id="simplifica">
+  <div class="wrap">
+    <div class="head2 reveal">
+      <div>
+        <div class="eyebrow">Gestión administrativa externa</div>
+        <h2>Externaliza tu administración. <span class="acc">Céntrate en crecer.</span></h2>
+      </div>
+      <div>
+        <p class="lead">Controlamos tu facturación, nóminas y tesorería para que tu empresa funcione sin fricciones.</p>
+        <a class="wa-link head2-cta" href="https://wa.link/9fo0et" target="_blank" rel="noopener">Escribir por WhatsApp <span class="arr">→</span></a>
+      </div>
+    </div>
+    <div class="simpl-grid">
+      <div class="simpl-block reveal">
+        <h3 class="simpl-name">Control de facturación</h3>
+        <p class="simpl-desc">Emisión, seguimiento y archivo de facturas.</p>
+      </div>
+      <div class="simpl-block reveal" data-d="1">
+        <h3 class="simpl-name">Gestión de nóminas</h3>
+        <p class="simpl-desc">Altas, bajas, variaciones y seguros sociales.</p>
+      </div>
+      <div class="simpl-block reveal" data-d="2">
+        <h3 class="simpl-name">Control de tesorería</h3>
+        <p class="simpl-desc">Previsión de pagos y cobros para evitar tensiones de liquidez.</p>
+      </div>
+      <div class="simpl-block reveal" data-d="3">
+        <h3 class="simpl-name">Cumplimiento fiscal</h3>
+        <p class="simpl-desc">Presentación puntual de impuestos y declaraciones.</p>
+      </div>
     </div>
   </div>
 </section>
