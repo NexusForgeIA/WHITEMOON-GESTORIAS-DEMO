@@ -4,851 +4,612 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Gestoría Sara, S.L. — Majadahonda, Madrid</title>
-<meta name="description" content="Gestoría Sara, S.L. — Más de 20 años gestionando trámites en Majadahonda. Fiscal, laboral, extranjería, herencias y empresa. Primera consulta gratuita."/>
+<meta name="description" content="Gestoría Sara, S.L. — Más de 20 años gestionando trámites en Majadahonda. Fiscal, autónomos y empresa, extranjería, herencias, segunda oportunidad y ayudas. Primera consulta gratuita."/>
 <meta name="geo.region" content="ES-MD"/>
 <meta name="geo.placename" content="Majadahonda, Madrid, España"/>
 <meta name="geo.position" content="40.4733;-3.8719"/>
 <meta name="ICBM" content="40.4733, -3.8719"/>
 <meta property="og:title" content="Gestoría Sara, S.L. — Majadahonda"/>
 <meta property="og:description" content="Más de 20 años gestionando trámites en Majadahonda. Primera consulta gratuita."/>
-<meta property="og:image" content="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1440,h=756,fit=crop,f=jpeg/YD0po5wXMOFv1vj6/imagen-de-whatsapp-2024-06-05-a-las-11.16.12_265fcc35-Yg2lZnV1X1H5ZaOR.jpg"/>
+<meta property="og:image" content="https://nexusforgeia.github.io/WHITEMOON-GESTORIAS-DEMO/sara%20aparicio.avif"/>
 <meta property="og:type" content="website"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <link rel="canonical" href="https://nexusforgeia.github.io/WHITEMOON-GESTORIAS-DEMO/"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Gestoría Sara, S.L.","url":"https://www.gestoriasara.com/","telephone":"+34662238174","email":"saraaparicio@gestoriasara.com","address":{"@type":"PostalAddress","streetAddress":"Calle Mieses nº 1, 3ª planta oficina 303","addressLocality":"Majadahonda","addressRegion":"Madrid","postalCode":"28220","addressCountry":"ES"},"geo":{"@type":"GeoCoordinates","latitude":40.4733,"longitude":-3.8719},"openingHours":"Mo-Fr 09:00-18:00"}</script>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
+/* ════════════ TOKENS ════════════ */
 :root{
   --w:#FFFFFF;
   --hueso:#F7F5F3;
   --negro:#0A0A0A;
-  --rojo:#C8213F;
+  --rojo:#C8213F;          /* único acento — 5.6:1 sobre blanco (AA) */
   --rojo-dark:#A01830;
-  --gris:#6E6E6E;
-  --gris-light:#D8D5D2;
+  --gris:#6E6E6E;          /* texto secundario — 5.1:1 sobre blanco (AA) */
   --borde:#E5E2DE;
-}
-html{scroll-behavior:smooth;}
-body{font-family:'DM Sans',sans-serif;background:var(--w);color:var(--negro);line-height:1.6;-webkit-font-smoothing:antialiased;}
+  --borde-fuerte:#D8D5D2;
+  --ink-80:rgba(10,10,10,0.78);
 
-/* ─── NAV ─── */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:200;
-  background:rgba(255,255,255,0.97);
-  border-bottom:1px solid var(--borde);
-  padding:0 5%;display:flex;align-items:center;height:64px;gap:48px;
-}
-.nav-logo{
-  font-family:'DM Serif Display',serif;
-  font-size:17px;color:var(--negro);text-decoration:none;white-space:nowrap;
-  letter-spacing:0.2px;
-}
-.nav-logo span{color:var(--rojo);}
-.nav-links{display:flex;gap:32px;list-style:none;margin-left:auto;}
-.nav-links a{
-  font-size:13px;color:var(--gris);text-decoration:none;
-  font-weight:400;letter-spacing:0.3px;transition:color .15s;
-}
-.nav-links a:hover{color:var(--negro);}
-.nav-tel{
-  font-size:13px;font-weight:500;color:var(--negro);
-  letter-spacing:0.3px;white-space:nowrap;
-}
-.nav-cta{
-  background:var(--negro);color:#fff;
-  font-size:12px;font-weight:500;letter-spacing:0.5px;
-  padding:10px 22px;border-radius:0;text-decoration:none;
-  transition:background .15s;white-space:nowrap;
-}
-.nav-cta:hover{background:var(--rojo);}
+  --serif:'DM Serif Display',Georgia,'Times New Roman',serif;
+  --sans:'DM Sans',-apple-system,BlinkMacSystemFont,sans-serif;
 
-/* ─── HERO ─── */
-.hero{
-  display:grid;grid-template-columns:55% 45%;
-  min-height:100vh;padding-top:64px;
-}
-.hero-img{
-  position:relative;overflow:hidden;
-  background:#E8E4E0;
-}
-.hero-img img{
-  width:100%;height:100%;object-fit:cover;
-  display:block;
-  /* imagen real de Sara */
-}
-.hero-caption{
-  position:absolute;bottom:32px;left:32px;
-  background:#fff;
-  padding:16px 20px;
-  border-left:3px solid var(--rojo);
-}
-.hero-caption-name{
-  font-family:'DM Serif Display',serif;
-  font-size:15px;color:var(--negro);line-height:1.3;
-}
-.hero-caption-role{
-  font-size:11px;color:var(--gris);margin-top:2px;
-  letter-spacing:0.5px;text-transform:uppercase;font-weight:500;
-}
-.hero-stars{
-  font-size:11px;color:var(--rojo);margin-top:6px;letter-spacing:2px;
+  /* escala fluida */
+  --fs-eyebrow:0.72rem;
+  --fs-body:clamp(1rem,0.96rem + 0.2vw,1.08rem);
+  --fs-lead:clamp(1.12rem,1rem + 0.6vw,1.4rem);
+  --fs-h3:clamp(1.3rem,1.05rem + 1vw,1.7rem);
+  --fs-h2:clamp(2.1rem,1.4rem + 3vw,3.6rem);
+  --fs-hero:clamp(2.6rem,1.4rem + 5.6vw,5.4rem);
+  --fs-numeral:clamp(3rem,2rem + 6vw,7rem);
+
+  --ease:cubic-bezier(0.16,1,0.3,1);
+  --maxw:1240px;
+  --pad-x:clamp(1.25rem,5vw,5rem);
+  --sec-y:clamp(4.5rem,9vw,9rem);
 }
 
-.hero-right{
-  display:flex;flex-direction:column;justify-content:center;
-  padding:80px 6% 80px 7%;
-  border-left:1px solid var(--borde);
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{
+  font-family:var(--sans);background:var(--w);color:var(--negro);
+  font-size:var(--fs-body);line-height:1.65;font-weight:400;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  overflow-x:hidden;
 }
-.hero-label{
-  font-size:11px;font-weight:500;letter-spacing:2.5px;
-  text-transform:uppercase;color:var(--rojo);
-  margin-bottom:28px;
-}
-.hero h1{
-  font-family:'DM Serif Display',serif;
-  font-size:clamp(36px,4vw,52px);
-  line-height:1.1;color:var(--negro);
-  margin-bottom:28px;
-}
-.hero h1 i{font-style:italic;color:var(--rojo);}
-.hero-body{
-  font-size:15px;color:var(--gris);line-height:1.8;
-  margin-bottom:40px;font-weight:300;max-width:380px;
-}
-.hero-actions{display:flex;flex-direction:column;gap:12px;max-width:280px;}
-.btn-primary{
-  background:var(--rojo);color:#fff;
-  font-size:13px;font-weight:500;letter-spacing:0.4px;
-  padding:15px 28px;text-decoration:none;
-  transition:background .15s;text-align:center;
-}
-.btn-primary:hover{background:var(--rojo-dark);}
-.btn-secondary{
-  background:transparent;
-  border:1px solid var(--negro);color:var(--negro);
-  font-size:13px;font-weight:500;letter-spacing:0.4px;
-  padding:15px 28px;text-decoration:none;
-  transition:all .15s;text-align:center;
-}
-.btn-secondary:hover{background:var(--negro);color:#fff;}
-.hero-metrics{
-  display:flex;gap:0;margin-top:52px;
-  border-top:1px solid var(--borde);padding-top:28px;
-}
-.metric{flex:1;padding-right:24px;}
-.metric:not(:last-child){
-  border-right:1px solid var(--borde);margin-right:24px;
-}
-.metric-num{
-  font-family:'DM Serif Display',serif;
-  font-size:30px;color:var(--negro);line-height:1;
-}
-.metric-lbl{font-size:11px;color:var(--gris);margin-top:4px;letter-spacing:0.3px;}
+img{display:block;max-width:100%;}
+a{color:inherit;text-decoration:none;}
+::selection{background:var(--rojo);color:#fff;}
 
-/* ─── SECCIONES BASE ─── */
-.section{padding:96px 5%;}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.08;letter-spacing:-0.01em;text-wrap:balance;}
+i,em{font-style:italic;}
+.acc{color:var(--rojo);font-style:italic;}
+.num{font-variant-numeric:tabular-nums;}
+
+/* ════════════ LAYOUT HELPERS ════════════ */
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--pad-x);}
+.section{padding-block:var(--sec-y);}
 .section-alt{background:var(--hueso);}
-.label{
-  font-size:11px;font-weight:500;letter-spacing:2px;
-  text-transform:uppercase;color:var(--gris);
-  margin-bottom:16px;
-  display:flex;align-items:center;gap:12px;
+.eyebrow{
+  font-size:var(--fs-eyebrow);font-weight:600;letter-spacing:0.22em;
+  text-transform:uppercase;color:var(--rojo);
+  display:inline-flex;align-items:center;gap:0.7em;
 }
-.label::before{content:'';display:block;width:24px;height:1px;background:var(--rojo);}
-h2{
-  font-family:'DM Serif Display',serif;
-  font-size:clamp(30px,3.5vw,46px);
-  line-height:1.12;color:var(--negro);
-  margin-bottom:0;
-}
-h2 i{font-style:italic;color:var(--rojo);}
-.section-intro{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:48px;align-items:end;margin-bottom:64px;
-}
-.section-intro p{
-  font-size:15px;color:var(--gris);line-height:1.8;
-  align-self:end;font-weight:300;
-}
+.eyebrow::before{content:'';width:28px;height:1px;background:var(--rojo);display:inline-block;}
+.lead{font-size:var(--fs-lead);line-height:1.5;color:var(--ink-80);max-width:46ch;}
 
-/* ─── SERVICIOS ─── */
-.servicios-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:1px;
-  background:var(--borde);
+/* botones */
+.btn{
+  display:inline-flex;align-items:center;gap:0.6em;cursor:pointer;
+  font-family:var(--sans);font-size:0.92rem;font-weight:500;letter-spacing:0.01em;
+  padding:0.95em 1.7em;border:1px solid transparent;border-radius:3px;
+  transition:background .3s var(--ease),color .3s var(--ease),border-color .3s var(--ease),transform .3s var(--ease);
 }
-.serv{
-  background:var(--w);
-  position:relative;overflow:hidden;
-  aspect-ratio:4/5;
-  cursor:default;
-}
-.serv-foto{
-  width:100%;height:100%;object-fit:cover;
-  display:block;
-  transition:transform .5s ease;
-}
-.serv:hover .serv-foto{transform:scale(1.04);}
-.serv-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(to top, rgba(10,10,10,.82) 40%, rgba(10,10,10,.05) 100%);
-}
-.serv-content{
-  position:absolute;bottom:0;left:0;right:0;
-  padding:28px 24px;
-}
-.serv-tag{
-  font-size:10px;letter-spacing:1.5px;text-transform:uppercase;
-  color:rgba(255,255,255,0.55);font-weight:500;margin-bottom:8px;
-}
-.serv-title{
-  font-family:'DM Serif Display',serif;
-  font-size:20px;color:#fff;line-height:1.2;margin-bottom:10px;
-}
-.serv-items{list-style:none;}
-.serv-items li{
-  font-size:12px;color:rgba(255,255,255,0.65);
-  padding:3px 0;letter-spacing:0.2px;
-  border-top:1px solid rgba(255,255,255,0.1);
-}
-.serv-items li:first-child{border-top:none;}
+.btn-primary{background:var(--negro);color:#fff;}
+.btn-primary:hover{background:var(--rojo);transform:translateY(-2px);}
+.btn-ghost{background:transparent;color:var(--negro);border-color:var(--borde-fuerte);}
+.btn-ghost:hover{border-color:var(--negro);transform:translateY(-2px);}
+.btn .arr{transition:transform .3s var(--ease);}
+.btn:hover .arr{transform:translateX(4px);}
 
-/* ─── EQUIPO ─── */
-.equipo-grid{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:0;
-}
-.equipo-fotos{
-  display:grid;grid-template-columns:1fr 1fr;
-  grid-template-rows:auto auto;
-  gap:1px;background:var(--borde);
-}
-.foto-main{grid-column:1/-1;}
-.foto-main img,.foto-sm img{
-  width:100%;display:block;object-fit:cover;
-}
-.foto-main img{height:420px;}
-.foto-sm img{height:220px;}
-.equipo-texto{
-  padding:72px 8% 72px 0;
-  display:flex;flex-direction:column;justify-content:center;
-}
-.persona{margin-bottom:36px;}
-.persona:not(:last-of-type){
-  padding-bottom:36px;
-  border-bottom:1px solid var(--borde);
-}
-.persona-nombre{
-  font-family:'DM Serif Display',serif;
-  font-size:20px;color:var(--negro);margin-bottom:3px;
-}
-.persona-rol{
-  font-size:11px;letter-spacing:1.5px;text-transform:uppercase;
-  color:var(--rojo);font-weight:500;margin-bottom:10px;
-}
-.persona-bio{
-  font-size:14px;color:var(--gris);line-height:1.75;font-weight:300;
-}
-.valores{margin-top:40px;border-top:1px solid var(--borde);padding-top:32px;}
-.valor{
-  display:flex;gap:16px;align-items:flex-start;
-  padding:12px 0;border-bottom:1px solid var(--borde);
-}
-.valor:last-child{border-bottom:none;}
-.valor-num{
-  font-family:'Inter',monospace;font-size:11px;
-  color:var(--rojo);font-weight:500;width:20px;flex-shrink:0;margin-top:1px;
-}
-.valor-text{font-size:13px;color:var(--gris);line-height:1.65;font-weight:300;}
-.valor-text strong{color:var(--negro);font-weight:500;}
+/* reveal on scroll */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease);}
+.reveal.in{opacity:1;transform:none;}
+[data-d="1"]{transition-delay:.08s;}
+[data-d="2"]{transition-delay:.16s;}
+[data-d="3"]{transition-delay:.24s;}
+[data-d="4"]{transition-delay:.32s;}
+[data-d="5"]{transition-delay:.40s;}
 
-/* ─── EQUIPO · CONOCE AL EQUIPO ─── */
-.equipo-cta-wrap{margin-top:56px;text-align:center;}
-.equipo-toggle{
-  display:inline-flex;align-items:center;gap:12px;
-  font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;
-  letter-spacing:1.5px;text-transform:uppercase;
-  padding:15px 34px;cursor:pointer;
-  background:var(--negro);color:#fff;border:none;
-  transition:background .25s ease;
-}
-.equipo-toggle:hover{background:var(--rojo);}
-.equipo-toggle .ico{
-  font-style:normal;font-size:18px;line-height:1;
-  transition:transform .35s ease;
-}
-.equipo-toggle[aria-expanded="true"] .ico{transform:rotate(45deg);}
-.equipo-team-wrap{
-  max-height:0;overflow:hidden;
-  transition:max-height .6s cubic-bezier(.4,0,.2,1);
-}
-.equipo-team-wrap.open{max-height:5000px;}
-.equipo-team-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:1px;background:var(--borde);
-  margin-top:48px;border:1px solid var(--borde);
-}
-.miembro{background:var(--w);padding-bottom:30px;}
-.miembro-foto{
-  width:100%;aspect-ratio:1/1;object-fit:cover;display:block;
-  margin-bottom:24px;background:var(--hueso);
-}
-.miembro-info{padding:0 30px;}
-.miembro-nombre{
-  font-family:'DM Serif Display',serif;
-  font-size:21px;color:var(--negro);line-height:1.15;margin-bottom:7px;
-}
-.miembro-cargo{
-  font-size:11px;letter-spacing:1.5px;text-transform:uppercase;
-  color:var(--rojo);font-weight:500;margin-bottom:14px;
-}
-.miembro-desc{
-  font-size:14px;color:var(--gris);line-height:1.7;font-weight:300;
-}
-
-/* ─── PROCESO ─── */
-.proceso-lista{
-  display:grid;grid-template-columns:repeat(4,1fr);
-  border-top:1px solid var(--borde);
-  margin-top:56px;
-}
-.paso{
-  padding:40px 32px 40px 0;
-  border-right:1px solid var(--borde);
-}
-.paso:last-child{border-right:none;padding-right:0;}
-.paso-num{
-  font-family:'Inter',monospace;
-  font-size:11px;color:var(--rojo);font-weight:500;
-  letter-spacing:1px;margin-bottom:20px;
-}
-.paso-title{
-  font-family:'DM Serif Display',serif;
-  font-size:18px;color:var(--negro);margin-bottom:10px;line-height:1.2;
-}
-.paso-desc{font-size:13px;color:var(--gris);line-height:1.7;font-weight:300;}
-
-/* ─── CONTACTO ─── */
-.contacto-grid{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:64px;margin-top:64px;
-}
-.contact-dato{
-  padding:20px 0;
-  border-bottom:1px solid var(--borde);
-}
-.contact-dato:first-child{border-top:1px solid var(--borde);}
-.contact-key{
-  font-size:10px;letter-spacing:1.5px;text-transform:uppercase;
-  color:var(--gris);font-weight:500;margin-bottom:4px;
-}
-.contact-val{
-  font-size:15px;font-weight:400;color:var(--negro);
-}
-.contact-val a{color:var(--negro);text-decoration:none;}
-.contact-val a:hover{color:var(--rojo);}
-.wa-link{
-  display:block;margin-top:32px;
-  background:var(--negro);color:#fff;
-  font-size:13px;font-weight:500;letter-spacing:0.4px;
-  padding:18px 28px;text-decoration:none;text-align:center;
-  transition:background .15s;
-}
-.wa-link:hover{background:var(--rojo);}
-.mapa{height:400px;background:var(--hueso);}
-.mapa iframe{width:100%;height:100%;border:none;display:block;}
-
-/* ─── FOOTER ─── */
-footer{
-  background:var(--negro);color:rgba(255,255,255,0.45);
-  padding:40px 5%;
+/* ════════════ NAV ════════════ */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:90;
   display:flex;align-items:center;justify-content:space-between;
-  flex-wrap:wrap;gap:20px;
+  padding:1.1rem var(--pad-x);
+  transition:background .4s var(--ease),box-shadow .4s var(--ease),padding .4s var(--ease);
 }
-.footer-logo{
-  font-family:'DM Serif Display',serif;
-  font-size:16px;color:#fff;
+.nav.solid{background:rgba(255,255,255,0.92);backdrop-filter:saturate(160%) blur(14px);box-shadow:0 1px 0 var(--borde);padding-block:0.7rem;}
+.nav-logo{font-family:var(--serif);font-size:1.45rem;letter-spacing:-0.01em;}
+.nav-logo span{color:var(--rojo);font-style:italic;}
+.nav-links{display:flex;align-items:center;gap:2.2rem;}
+.nav-links a{font-size:0.86rem;font-weight:500;color:var(--negro);position:relative;padding-block:0.3rem;}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--rojo);transition:width .3s var(--ease);}
+.nav-links a:hover::after{width:100%;}
+.nav-tel{
+  display:inline-flex;align-items:center;gap:0.5em;
+  font-weight:600;font-size:0.86rem;color:#fff;background:var(--rojo);
+  padding:0.6em 1.1em;border-radius:3px;transition:background .3s var(--ease);
 }
-.footer-logo span{color:var(--rojo);}
-.footer-info{font-size:12px;color:rgba(255,255,255,0.3);margin-top:3px;}
-.footer-rrss{display:flex;gap:8px;}
+.nav-tel:hover{background:var(--rojo-dark);}
+.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
+.nav-burger span{width:24px;height:2px;background:var(--negro);transition:transform .3s var(--ease),opacity .3s var(--ease);}
+
+/* ════════════ HERO ════════════ */
+.hero{position:relative;padding-top:clamp(7rem,14vh,10rem);padding-bottom:clamp(3rem,6vw,6rem);overflow:hidden;}
+.hero-band{position:absolute;top:0;right:0;width:42%;height:100%;background:var(--hueso);z-index:0;}
+.hero-band::after{content:'';position:absolute;inset:0;opacity:.5;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");}
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr 0.95fr;gap:clamp(2rem,5vw,5rem);align-items:center;}
+.hero-eyebrow{margin-bottom:1.6rem;}
+.hero h1{font-size:var(--fs-hero);margin-bottom:1.5rem;}
+.hero h1 .l2{display:block;}
+.hero-sub{max-width:42ch;margin-bottom:2.2rem;}
+.hero-cta{display:flex;flex-wrap:wrap;gap:0.9rem;margin-bottom:3rem;}
+.hero-stats{display:flex;gap:clamp(1.5rem,4vw,3.5rem);border-top:1px solid var(--borde);padding-top:1.6rem;}
+.stat-n{font-family:var(--serif);font-size:clamp(1.8rem,1.2rem + 2vw,2.8rem);line-height:1;color:var(--negro);}
+.stat-n b{color:var(--rojo);font-weight:400;}
+.stat-l{font-size:0.78rem;color:var(--gris);letter-spacing:0.04em;margin-top:0.5rem;max-width:14ch;}
+
+.hero-media{position:relative;justify-self:end;width:100%;max-width:430px;}
+.hero-frame{position:relative;aspect-ratio:4/5;border:1px solid var(--borde-fuerte);background:var(--w);padding:10px;}
+.hero-frame img{width:100%;height:100%;object-fit:cover;object-position:center 18%;}
+.hero-tag{
+  position:absolute;left:-2.7rem;top:50%;transform:rotate(-90deg) translateX(50%);transform-origin:left center;
+  font-size:0.68rem;font-weight:600;letter-spacing:0.26em;text-transform:uppercase;color:var(--gris);white-space:nowrap;
+}
+.hero-badge{
+  position:absolute;right:-14px;bottom:28px;background:var(--rojo);color:#fff;
+  font-family:var(--serif);font-size:1.5rem;line-height:0.9;padding:0.85rem 1rem;border-radius:3px;text-align:center;
+}
+.hero-badge small{display:block;font-family:var(--sans);font-size:0.6rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;margin-top:0.35rem;opacity:.9;}
+
+/* ════════════ SECTION HEAD ════════════ */
+.shead{max-width:var(--maxw);margin:0 auto;padding-inline:var(--pad-x);margin-bottom:clamp(2.5rem,5vw,4rem);}
+.shead h2{font-size:var(--fs-h2);margin-top:1rem;max-width:18ch;}
+
+/* ════════════ SERVICIOS ════════════ */
+.serv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--borde);}
+.serv{
+  display:grid;grid-template-columns:auto 1fr;gap:1.4rem;
+  padding:2.2rem 2rem 2.2rem 0;border-bottom:1px solid var(--borde);
+  position:relative;transition:background .35s var(--ease);
+}
+.serv:nth-child(odd){padding-right:clamp(1.5rem,3vw,3rem);border-right:1px solid var(--borde);}
+.serv:nth-child(even){padding-left:clamp(1.5rem,3vw,3rem);}
+.serv::after{content:'';position:absolute;left:0;bottom:-1px;width:0;height:2px;background:var(--rojo);transition:width .4s var(--ease);}
+.serv:hover::after{width:100%;}
+.serv-n{font-family:var(--serif);font-size:1.5rem;color:var(--borde-fuerte);line-height:1;transition:color .35s var(--ease);}
+.serv:hover .serv-n{color:var(--rojo);}
+.serv-name{font-family:var(--serif);font-size:var(--fs-h3);line-height:1.1;margin-bottom:0.5rem;}
+.serv-desc{font-size:0.94rem;color:var(--gris);line-height:1.6;}
+
+/* ════════════ SOBRE / TRAYECTORIA ════════════ */
+.sobre{position:relative;overflow:hidden;}
+.sobre-watermark{
+  position:absolute;right:var(--pad-x);top:50%;transform:translateY(-50%);
+  font-family:var(--serif);font-size:clamp(9rem,22vw,22rem);line-height:0.8;
+  color:var(--rojo);opacity:0.06;pointer-events:none;z-index:0;
+}
+.sobre-grid{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,6rem);align-items:center;}
+.sobre-quote{font-family:var(--serif);font-size:clamp(1.6rem,1rem + 2.4vw,2.6rem);line-height:1.22;}
+.sobre-quote .acc{display:inline;}
+.sobre-body p{color:var(--ink-80);margin-bottom:1.2rem;max-width:48ch;}
+.sobre-body p:last-child{margin-bottom:0;}
+.sobre-sign{margin-top:1.8rem;font-family:var(--serif);font-size:1.3rem;}
+.sobre-sign small{display:block;font-family:var(--sans);font-size:0.78rem;letter-spacing:0.04em;text-transform:uppercase;color:var(--rojo);font-weight:600;margin-top:0.3rem;}
+
+/* ════════════ EQUIPO (bento, caras siempre visibles) ════════════ */
+.equipo-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--borde);border:1px solid var(--borde);
+}
+.miembro{background:var(--w);display:flex;flex-direction:column;position:relative;}
+.miembro--feat::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--rojo);z-index:3;}
+.miembro-ph{position:relative;overflow:hidden;background:var(--hueso);aspect-ratio:1/1;}
+.miembro-ph img{width:100%;height:100%;object-fit:cover;object-position:center 22%;transition:transform .7s var(--ease);}
+.miembro:hover .miembro-ph img{transform:scale(1.04);}
+.miembro-info{padding:1.4rem 1.5rem 1.7rem;border-top:1px solid var(--borde);flex:1;}
+.miembro-name{font-family:var(--serif);font-size:1.28rem;line-height:1.12;margin-bottom:0.45rem;transition:color .3s var(--ease);}
+.miembro:hover .miembro-name{color:var(--rojo);}
+.miembro-rol{font-size:0.7rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--rojo);margin-bottom:0.9rem;}
+.miembro-desc{font-size:0.86rem;color:var(--gris);line-height:1.6;font-weight:300;}
+
+/* ════════════ PROCESO ════════════ */
+.proceso{position:relative;}
+.proceso-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--borde-fuerte);counter-reset:p;}
+.paso{padding:2.2rem clamp(1rem,2vw,2rem) 0 0;position:relative;}
+.paso:not(:last-child){border-right:1px solid var(--borde);}
+.paso::before{content:'';position:absolute;top:-1px;left:0;width:38px;height:3px;background:var(--rojo);}
+.paso-n{font-family:var(--serif);font-size:var(--fs-numeral);line-height:0.85;color:var(--hueso);-webkit-text-stroke:1px var(--borde-fuerte);}
+.paso:nth-child(even){transform:translateY(clamp(0px,2vw,28px));}
+.paso-title{font-family:var(--serif);font-size:1.3rem;margin:1rem 0 0.6rem;}
+.paso-desc{font-size:0.9rem;color:var(--gris);line-height:1.6;max-width:24ch;}
+
+/* ════════════ CONTACTO ════════════ */
+.contacto-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:clamp(2rem,5vw,4.5rem);align-items:stretch;}
+.contact-list{display:flex;flex-direction:column;}
+.cdato{padding:1.25rem 0;border-bottom:1px solid var(--borde);}
+.cdato:first-child{border-top:1px solid var(--borde);}
+.ckey{font-size:0.7rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gris);margin-bottom:0.4rem;font-weight:600;}
+.cval{font-size:1.05rem;}
+.cval a{transition:color .3s var(--ease);}
+.cval a:hover{color:var(--rojo);}
+.wa-link{
+  display:inline-flex;align-items:center;gap:0.7em;margin-top:1.8rem;
+  background:var(--rojo);color:#fff;font-weight:600;font-size:0.95rem;
+  padding:1em 1.6em;border-radius:3px;transition:background .3s var(--ease),transform .3s var(--ease);
+}
+.wa-link:hover{background:var(--rojo-dark);transform:translateY(-2px);}
+.mapa{position:relative;min-height:380px;border:1px solid var(--borde);background:var(--hueso);}
+.mapa iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(0.2) contrast(1.02);}
+
+/* ════════════ FOOTER ════════════ */
+footer{background:var(--negro);color:rgba(255,255,255,0.7);}
+.footer-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2rem;align-items:flex-end;padding-block:clamp(3rem,6vw,5rem);}
+.footer-logo{font-family:var(--serif);font-size:1.6rem;color:#fff;}
+.footer-logo span{color:var(--rojo);font-style:italic;}
+.footer-info{font-size:0.86rem;margin-top:0.6rem;max-width:34ch;}
+.footer-rrss{display:flex;gap:0.6rem;}
 .footer-rrss a{
-  width:36px;height:36px;
-  border:1px solid rgba(255,255,255,0.12);
-  display:flex;align-items:center;justify-content:center;
-  font-size:12px;color:rgba(255,255,255,0.4);text-decoration:none;
-  font-family:'Inter',sans-serif;font-weight:500;
-  transition:all .15s;
+  width:42px;height:42px;display:grid;place-items:center;border:1px solid rgba(255,255,255,0.18);
+  border-radius:3px;font-size:0.78rem;font-weight:600;letter-spacing:0.04em;color:#fff;
+  transition:background .3s var(--ease),border-color .3s var(--ease);
 }
-.footer-rrss a:hover{border-color:var(--rojo);color:#fff;}
-.footer-credit{
-  background:var(--negro);border-top:1px solid rgba(255,255,255,0.06);
-  text-align:center;padding:12px;
-  font-size:11px;color:rgba(255,255,255,0.2);
-}
-.footer-credit a{color:rgba(255,255,255,0.35);text-decoration:none;}
+.footer-rrss a:hover{background:var(--rojo);border-color:var(--rojo);}
+.footer-credit{border-top:1px solid rgba(255,255,255,0.1);padding-block:1.3rem;font-size:0.78rem;color:rgba(255,255,255,0.45);text-align:center;}
+.footer-credit a{color:rgba(255,255,255,0.8);text-decoration:underline;text-underline-offset:2px;}
 .footer-credit a:hover{color:var(--rojo);}
 
-/* ─── CHATBOT ─── */
+/* ════════════ CHATBOT (Laura) — funcional intacto ════════════ */
 #chat-fab{
-  position:fixed;bottom:28px;right:28px;z-index:300;
-  width:52px;height:52px;background:var(--rojo);
-  border:none;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;
-  box-shadow:0 4px 20px rgba(200,33,63,0.35);
-  transition:background .15s;
+  position:fixed;right:22px;bottom:22px;z-index:95;
+  width:56px;height:56px;border:none;cursor:pointer;border-radius:3px;
+  background:var(--rojo);color:#fff;display:grid;place-items:center;
+  box-shadow:0 8px 24px rgba(200,33,63,0.32);transition:background .3s var(--ease),transform .3s var(--ease);
 }
-#chat-fab:hover{background:var(--rojo-dark);}
-#chat-fab svg{width:22px;height:22px;fill:#fff;}
-
+#chat-fab:hover{background:var(--rojo-dark);transform:translateY(-3px);}
+#chat-fab svg{width:26px;height:26px;fill:#fff;}
 #chat-win{
-  position:fixed;bottom:92px;right:28px;z-index:300;
-  width:348px;max-height:520px;
-  background:#fff;border:1px solid var(--borde);
-  display:none;flex-direction:column;
-  box-shadow:0 16px 48px rgba(0,0,0,0.14);
+  position:fixed;right:22px;bottom:90px;z-index:95;
+  width:min(380px,calc(100vw - 44px));height:min(560px,calc(100vh - 130px));
+  background:var(--w);border:1px solid var(--borde);border-radius:4px;
+  display:flex;flex-direction:column;overflow:hidden;
+  box-shadow:0 24px 60px rgba(10,10,10,0.18);
+  opacity:0;visibility:hidden;transform:translateY(16px) scale(0.98);
+  transition:opacity .3s var(--ease),transform .3s var(--ease),visibility .3s;
 }
-#chat-win.open{display:flex;}
-.ch-head{
-  background:var(--negro);
-  padding:14px 16px;display:flex;align-items:center;gap:12px;
-}
-.ch-av{
-  width:36px;height:36px;background:rgba(255,255,255,0.1);
-  border:1px solid rgba(255,255,255,0.2);
-  display:flex;align-items:center;justify-content:center;
-  font-family:'DM Serif Display',serif;font-size:14px;color:#fff;
-}
-.ch-name{
-  font-family:'DM Serif Display',serif;
-  font-size:14px;color:#fff;
-}
-.ch-sub{font-size:11px;color:rgba(255,255,255,0.5);letter-spacing:0.3px;}
-.ch-close{
-  margin-left:auto;background:none;border:none;
-  color:rgba(255,255,255,0.5);cursor:pointer;font-size:16px;
-  line-height:1;padding:4px;
-}
+#chat-win.open{opacity:1;visibility:visible;transform:none;}
+.ch-head{display:flex;align-items:center;gap:0.8rem;padding:1rem 1.1rem;background:var(--negro);color:#fff;}
+.ch-av{width:38px;height:38px;border-radius:3px;background:var(--rojo);display:grid;place-items:center;font-family:var(--serif);font-size:1.1rem;}
+.ch-name{font-family:var(--serif);font-size:1rem;}
+.ch-sub{font-size:0.72rem;color:rgba(255,255,255,0.6);}
+.ch-close{margin-left:auto;background:none;border:none;color:rgba(255,255,255,0.7);font-size:1.2rem;cursor:pointer;line-height:1;}
 .ch-close:hover{color:#fff;}
-.ch-msgs{
-  flex:1;overflow-y:auto;padding:16px;
-  display:flex;flex-direction:column;gap:8px;
-}
-.msg{
-  max-width:88%;font-size:13px;line-height:1.55;padding:10px 13px;
-}
-.msg.bot{
-  background:var(--hueso);border:1px solid var(--borde);
-  align-self:flex-start;color:var(--negro);
-}
-.msg.user{
-  background:var(--rojo);color:#fff;align-self:flex-end;
-}
-.msg-opts{display:flex;flex-direction:column;gap:5px;margin-top:4px;}
+.ch-msgs{flex:1;overflow-y:auto;padding:1.1rem;display:flex;flex-direction:column;gap:0.7rem;background:var(--hueso);}
+.msg{max-width:85%;padding:0.7rem 0.95rem;font-size:0.9rem;line-height:1.5;border-radius:4px;}
+.msg.bot{background:var(--w);border:1px solid var(--borde);align-self:flex-start;}
+.msg.user{background:var(--rojo);color:#fff;align-self:flex-end;}
+.msg-opts{display:flex;flex-direction:column;gap:0.45rem;align-self:flex-start;max-width:90%;}
 .msg-opt{
-  background:#fff;border:1px solid var(--borde);
-  color:var(--negro);font-size:12px;font-weight:400;
-  padding:9px 13px;cursor:pointer;
-  text-align:left;transition:all .12s;
-  font-family:'DM Sans',sans-serif;
+  text-align:left;background:var(--w);border:1px solid var(--borde);color:var(--negro);
+  font-family:var(--sans);font-size:0.84rem;padding:0.6rem 0.9rem;border-radius:3px;cursor:pointer;
+  transition:border-color .25s var(--ease),color .25s var(--ease);
 }
 .msg-opt:hover{border-color:var(--rojo);color:var(--rojo);}
-.ch-input-row{
-  padding:10px 12px;border-top:1px solid var(--borde);
-  display:flex;gap:8px;background:#fff;
-}
+.ch-input-row{display:flex;gap:0.5rem;padding:0.8rem;border-top:1px solid var(--borde);background:var(--w);}
 .ch-input-row input{
-  flex:1;background:var(--hueso);border:1px solid var(--borde);
-  padding:9px 12px;color:var(--negro);font-size:13px;
-  font-family:'DM Sans',sans-serif;outline:none;
+  flex:1;background:var(--hueso);border:1px solid var(--borde);border-radius:3px;
+  padding:0.7rem 0.85rem;font-family:var(--sans);font-size:16px;color:var(--negro);outline:none;
+  transition:border-color .25s var(--ease);
 }
 .ch-input-row input:focus{border-color:var(--rojo);}
-.ch-send{
-  width:38px;height:38px;background:var(--rojo);
-  border:none;cursor:pointer;flex-shrink:0;
-  display:flex;align-items:center;justify-content:center;
-  transition:background .15s;
-}
+.ch-send{width:42px;height:42px;flex-shrink:0;background:var(--rojo);border:none;border-radius:3px;cursor:pointer;display:grid;place-items:center;transition:background .3s var(--ease);}
 .ch-send:hover{background:var(--rojo-dark);}
-.ch-send svg{width:15px;height:15px;fill:#fff;}
+.ch-send svg{width:18px;height:18px;fill:#fff;}
 
-/* ─── RESPONSIVE ─── */
+/* ════════════ RESPONSIVE ════════════ */
 @media(max-width:1024px){
-  .hero{grid-template-columns:50% 50%;}
-  .servicios-grid{grid-template-columns:1fr 1fr;}
-  .equipo-grid{grid-template-columns:1fr;}
-  .equipo-team-grid{grid-template-columns:1fr 1fr;}
-  .proceso-lista{grid-template-columns:1fr 1fr;gap:0;}
-  .paso{padding:32px 24px 32px 0;border-bottom:1px solid var(--borde);}
+  .hero-grid{grid-template-columns:1fr;gap:3rem;}
+  .hero-band{display:none;}
+  .hero-media{justify-self:start;max-width:360px;order:-1;}
+  .hero-tag{display:none;}
+  .sobre-grid{grid-template-columns:1fr;gap:2.5rem;}
+  .contacto-grid{grid-template-columns:1fr;}
+  .equipo-grid{grid-template-columns:repeat(2,1fr);}
 }
-@media(max-width:768px){
-  .hero{grid-template-columns:1fr;}
-  .hero-img{height:60vw;min-height:280px;}
-  .hero-right{padding:48px 5%;}
-  .servicios-grid,.equipo-fotos,.equipo-team-grid{grid-template-columns:1fr;}
-  .serv{aspect-ratio:3/2;}
-  .foto-main{grid-column:auto;}
-  .section-intro{grid-template-columns:1fr;}
-  .contacto-grid{grid-template-columns:1fr;gap:40px;}
-  .proceso-lista{grid-template-columns:1fr;}
-  .nav-links{display:none;}
-  #chat-win{width:calc(100vw - 32px);right:16px;}
+@media(max-width:760px){
+  .nav-links{
+    position:fixed;inset:0 0 0 auto;width:min(78vw,320px);height:100vh;
+    background:var(--w);flex-direction:column;align-items:flex-start;justify-content:center;
+    gap:1.6rem;padding:2rem 2.4rem;transform:translateX(100%);
+    transition:transform .4s var(--ease);box-shadow:-12px 0 40px rgba(10,10,10,0.1);z-index:91;
+  }
+  .nav-links.open{transform:none;}
+  .nav-links a{font-size:1.1rem;}
+  .nav-burger{display:flex;z-index:92;}
+  .nav.menu-open .nav-burger span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav.menu-open .nav-burger span:nth-child(2){opacity:0;}
+  .nav.menu-open .nav-burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .serv-grid{grid-template-columns:1fr;}
+  .serv,.serv:nth-child(odd),.serv:nth-child(even){padding:1.8rem 0;border-right:none;}
+  .proceso-grid{grid-template-columns:1fr 1fr;}
+  .paso{border-right:none !important;padding-right:1rem;padding-bottom:2rem;}
+  .paso:nth-child(even){transform:none;}
+  .equipo-grid{grid-template-columns:1fr;}
+  .hero-stats{flex-wrap:wrap;gap:1.5rem 2rem;}
+}
+@media(max-width:420px){
+  .proceso-grid{grid-template-columns:1fr;}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation:none !important;transition-duration:.01ms !important;scroll-behavior:auto !important;}
+  .reveal{opacity:1;transform:none;}
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <a class="nav-logo" href="#inicio">Gestoría <span>Sara</span></a>
-  <ul class="nav-links">
-    <li><a href="#servicios">Servicios</a></li>
-    <li><a href="#equipo">Nosotros</a></li>
-    <li><a href="#contacto">Contacto</a></li>
-  </ul>
-  <span class="nav-tel">662 23 81 74</span>
-  <a class="nav-cta" href="https://wa.link/9fo0et" target="_blank">Primera consulta</a>
+<!-- ════════════ NAV ════════════ -->
+<nav class="nav" id="nav">
+  <a href="#inicio" class="nav-logo">Gestoría <span>Sara</span></a>
+  <div class="nav-links" id="navLinks">
+    <a href="#servicios">Servicios</a>
+    <a href="#equipo">Equipo</a>
+    <a href="#proceso">Proceso</a>
+    <a href="#contacto">Contacto</a>
+    <a href="tel:+34662238174" class="nav-tel">662 23 81 74</a>
+  </div>
+  <button class="nav-burger" id="burger" aria-label="Abrir menú" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
-<!-- HERO -->
-<section class="hero" id="inicio">
-  <div class="hero-img">
-    <img
-      src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,fit=crop/YD0po5wXMOFv1vj6/imagen-de-whatsapp-2025-11-13-a-las-12.51.10_2aaf019c-S467QZuvtGxrU7iy.jpg"
-      alt="Sara Aparicio Grande — Gerente y fundadora de Gestoría Sara, Majadahonda"
-    />
-    <div class="hero-caption">
-      <div class="hero-caption-name">Sara Aparicio Grande</div>
-      <div class="hero-caption-role">Gerente · Fundadora</div>
-      <div class="hero-stars">4.7 — 90 resenas Google</div>
+<!-- ════════════ HERO ════════════ -->
+<header class="hero" id="inicio">
+  <div class="hero-band" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <div class="hero-eyebrow eyebrow reveal">Gestoría integral · Majadahonda, Madrid</div>
+      <h1 class="reveal" data-d="1">Tus trámites,<br/><span class="l2">en manos que <span class="acc">conocen el oficio.</span></span></h1>
+      <p class="hero-sub lead reveal" data-d="2">Más de 20 años acompañando a particulares, autónomos y empresas de Majadahonda y el noroeste de Madrid. Fiscal, laboral, extranjería y mucho más.</p>
+      <div class="hero-cta reveal" data-d="3">
+        <a href="#contacto" class="btn btn-primary">Primera consulta gratuita <span class="arr">→</span></a>
+        <a href="#servicios" class="btn btn-ghost">Ver servicios</a>
+      </div>
+      <div class="hero-stats reveal" data-d="4">
+        <div>
+          <div class="stat-n num"><b>20</b>+</div>
+          <div class="stat-l">Años de experiencia</div>
+        </div>
+        <div>
+          <div class="stat-n num">6</div>
+          <div class="stat-l">Áreas de especialidad</div>
+        </div>
+        <div>
+          <div class="stat-n num">24<b>h</b></div>
+          <div class="stat-l">Respuesta a tu consulta</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-media reveal" data-d="2">
+      <span class="hero-tag">Gestoría Sara · desde 2004</span>
+      <div class="hero-frame">
+        <img src="sara%20aparicio.avif" width="430" height="538" alt="Sara Aparicio Grande, gerente fundadora de Gestoría Sara"/>
+      </div>
+      <div class="hero-badge"><span class="num">20</span><small>Años</small></div>
     </div>
   </div>
-  <div class="hero-right">
-    <div class="hero-label">Gestoría integral — Majadahonda, Madrid</div>
-    <h1>Tu gestoría<br/>de confianza.<br/><i>Desde 2004.</i></h1>
-    <p class="hero-body">
-      Gestionamos todos tus tramites con atención personalizada y transparencia real.
-      Fiscal, laboral, extranjerías, herencias, empresas y mucho mas.
-      Primera consulta gratuita, sin compromiso.
-    </p>
-    <div class="hero-actions">
-      <a class="btn-primary" href="https://wa.link/9fo0et" target="_blank">Consulta gratuita por WhatsApp</a>
-      <a class="btn-secondary" href="#servicios">Ver todos los servicios</a>
+</header>
+
+<!-- ════════════ SERVICIOS ════════════ -->
+<section class="section section-alt" id="servicios">
+  <div class="shead reveal">
+    <div class="eyebrow">Qué hacemos</div>
+    <h2>Todo lo que tu día a día <span class="acc">necesita resolver.</span></h2>
+  </div>
+  <div class="wrap">
+    <div class="serv-grid">
+      <article class="serv reveal">
+        <div class="serv-n num">01</div>
+        <div>
+          <h3 class="serv-name">Fiscal y tributario</h3>
+          <p class="serv-desc">IRPF, IVA, impuesto de sociedades y planificación fiscal para que pagues lo justo, sin sustos ni recargos.</p>
+        </div>
+      </article>
+      <article class="serv reveal" data-d="1">
+        <div class="serv-n num">02</div>
+        <div>
+          <h3 class="serv-name">Autónomos y empresa</h3>
+          <p class="serv-desc">Altas, constitución de sociedades, contabilidad, nóminas y gestión laboral integral de principio a fin.</p>
+        </div>
+      </article>
+      <article class="serv reveal">
+        <div class="serv-n num">03</div>
+        <div>
+          <h3 class="serv-name">Extranjería</h3>
+          <p class="serv-desc">Permisos de residencia, renovaciones, nacionalidad española y visados de trabajo o estudio.</p>
+        </div>
+      </article>
+      <article class="serv reveal" data-d="1">
+        <div class="serv-n num">04</div>
+        <div>
+          <h3 class="serv-name">Herencias y patrimonio</h3>
+          <p class="serv-desc">Tramitación de herencias, donaciones, compraventas de inmuebles y gestiones notariales.</p>
+        </div>
+      </article>
+      <article class="serv reveal">
+        <div class="serv-n num">05</div>
+        <div>
+          <h3 class="serv-name">Segunda oportunidad</h3>
+          <p class="serv-desc">Soluciones reales para particulares y autónomos con deudas: concurso y Ley de Segunda Oportunidad.</p>
+        </div>
+      </article>
+      <article class="serv reveal" data-d="1">
+        <div class="serv-n num">06</div>
+        <div>
+          <h3 class="serv-name">Ayudas y subvenciones</h3>
+          <p class="serv-desc">Identificamos y tramitamos las ayudas y subvenciones a las que tu negocio realmente puede acceder.</p>
+        </div>
+      </article>
     </div>
-    <div class="hero-metrics">
-      <div class="metric">
-        <div class="metric-num">+20</div>
-        <div class="metric-lbl">anos de experiencia</div>
-      </div>
-      <div class="metric">
-        <div class="metric-num">4.7</div>
-        <div class="metric-lbl">nota en Google</div>
-      </div>
-      <div class="metric">
-        <div class="metric-num">100%</div>
-        <div class="metric-lbl">atencion personal</div>
-      </div>
+  </div>
+</section>
+
+<!-- ════════════ SOBRE / TRAYECTORIA ════════════ -->
+<section class="section sobre" id="sobre">
+  <div class="sobre-watermark num" aria-hidden="true">20</div>
+  <div class="wrap sobre-grid">
+    <div class="reveal">
+      <div class="eyebrow" style="margin-bottom:1.6rem;">No somos una gestoría cualquiera</div>
+      <p class="sobre-quote">Conocemos cada trámite, cada plazo y cada situación especial <span class="acc">porque llevamos dos décadas resolviéndolos.</span></p>
+    </div>
+    <div class="sobre-body reveal" data-d="1">
+      <p>Gestoría Sara nació en Majadahonda con una idea sencilla: que la administración deje de ser un problema para particulares, autónomos y empresas de la zona.</p>
+      <p>Te explicamos todo sin tecnicismos, gestionamos con agilidad y te acompañamos en cada paso. Tu primera consulta es siempre gratuita y sin compromiso.</p>
+      <div class="sobre-sign">Sara Aparicio Grande<small>Gerente fundadora</small></div>
     </div>
   </div>
 </section>
 
-<!-- SERVICIOS -->
-<section class="section" id="servicios">
-  <div class="section-intro">
-    <div>
-      <div class="label">Nuestros servicios</div>
-      <h2>Todo lo que necesitas,<br/><i>en un solo lugar.</i></h2>
-    </div>
-    <p>Soluciones claras para particulares, autonomos y empresas en Majadahonda y toda la Comunidad de Madrid. Sin tecnicismos, con resultados.</p>
-  </div>
-  <div class="servicios-grid">
-
-    <div class="serv">
-      <img class="serv-foto"
-        src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=431,fit=crop/YD0po5wXMOFv1vj6/imagen-de-whatsapp-2025-11-13-a-las-12.47.05_4ed223f8-qXKOvzbscgRSnlqk.jpg"
-        alt="Asesoria fiscal Majadahonda"/>
-      <div class="serv-overlay"></div>
-      <div class="serv-content">
-        <div class="serv-tag">Particulares y autonomos</div>
-        <div class="serv-title">Fiscal y Contabilidad</div>
-        <ul class="serv-items">
-          <li>Declaracion de la renta</li>
-          <li>IVA e IRPF</li>
-          <li>Contabilidad para autonomos y empresas</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="serv">
-      <img class="serv-foto"
-        src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=512,fit=crop/YD0po5wXMOFv1vj6/gestion-AQEJWGaE2NT8WE9V.jpg"
-        alt="Creacion de empresas autonomos Majadahonda"/>
-      <div class="serv-overlay"></div>
-      <div class="serv-content">
-        <div class="serv-tag">Empresas</div>
-        <div class="serv-title">Autonomos y Empresa</div>
-        <ul class="serv-items">
-          <li>Alta de autonomos</li>
-          <li>Creacion de SL y SA</li>
-          <li>Nominas y seguros sociales</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="serv">
-      <img class="serv-foto"
-        src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=781,fit=crop/YD0po5wXMOFv1vj6/cercania-AQEJWGoOMEfvn5kR.jpg"
-        alt="Extranjeria visados Majadahonda"/>
-      <div class="serv-overlay"></div>
-      <div class="serv-content">
-        <div class="serv-tag">Extranjeria</div>
-        <div class="serv-title">Extranjeria y Visados</div>
-        <ul class="serv-items">
-          <li>Permisos de residencia</li>
-          <li>Nacionalidad espanola</li>
-          <li>Visados y renovaciones</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="serv">
-      <img class="serv-foto"
-        src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=832,fit=crop/YD0po5wXMOFv1vj6/imagen-de-whatsapp-2025-11-05-a-las-15.57.57_5e47c6f5-cX9Iep50exXXplR7.jpg"
-        alt="Herencias testamentos Majadahonda"/>
-      <div class="serv-overlay"></div>
-      <div class="serv-content">
-        <div class="serv-tag">Patrimonio</div>
-        <div class="serv-title">Herencias y Patrimonio</div>
-        <ul class="serv-items">
-          <li>Tramitacion de herencias</li>
-          <li>Donaciones y legados</li>
-          <li>Intermediacion inmobiliaria</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="serv">
-      <img class="serv-foto"
-        src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=684,fit=crop/YD0po5wXMOFv1vj6/imagen-de-whatsapp-2025-06-04-a-las-08.33.09_d7cff509-YrDJkJ7vRvUBKVR9.jpg"
-        alt="Ley segunda oportunidad deudas"/>
-      <div class="serv-overlay"></div>
-      <div class="serv-content">
-        <div class="serv-tag">Segunda Oportunidad</div>
-        <div class="serv-title">Ley de Segunda Oportunidad</div>
-        <ul class="serv-items">
-          <li>Cancelacion de deudas</li>
-          <li>Concurso de acreedores</li>
-          <li>Negociacion con acreedores</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="serv">
-      <img class="serv-foto"
-        src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,h=394,fit=crop/YD0po5wXMOFv1vj6/imagen-de-whatsapp-2025-06-04-a-las-08.35.14_a2cbb774-dWxOqO8nolU035X1.jpg"
-        alt="Ayudas subvenciones financiacion"/>
-      <div class="serv-overlay"></div>
-      <div class="serv-content">
-        <div class="serv-tag">Financiacion</div>
-        <div class="serv-title">Ayudas y Subvenciones</div>
-        <ul class="serv-items">
-          <li>Subvenciones para empresas</li>
-          <li>Proyectos e inversion privada</li>
-          <li>Capital privado y gestion integral</li>
-        </ul>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- EQUIPO -->
+<!-- ════════════ EQUIPO ════════════ -->
 <section class="section section-alt" id="equipo">
-  <div class="section-intro">
-    <div>
-      <div class="label">Quienes somos</div>
-      <h2>No somos<br/>una gestoria<br/><i>cualquiera.</i></h2>
-    </div>
-    <p>En Gestoria Sara llevamos mas de 20 anos ayudando a personas y empresas de Majadahonda. Conocemos cada tramite, cada plazo, cada situacion especial.</p>
+  <div class="shead reveal">
+    <div class="eyebrow">Quiénes lo hacen posible</div>
+    <h2>Personas reales detrás de <span class="acc">cada gestión.</span></h2>
   </div>
-  <div class="equipo-grid">
-    <div class="equipo-texto">
-      <div class="persona">
-        <div class="persona-nombre">Sara Aparicio Grande</div>
-        <div class="persona-rol">Gerente · Fundadora</div>
-        <div class="persona-bio">Fundadora y directora de Gestoria Sara. Mas de 20 anos liderando un equipo con vision clara y trato cercano. Tu exito es su prioridad.</div>
-      </div>
-      <div class="persona">
-        <div class="persona-nombre">Luna Pedraza Aparicio</div>
-        <div class="persona-rol">Area Laboral · Coordinacion</div>
-        <div class="persona-bio">Especializada en constitucion de empresas y gestion integral de tramites para autonomos y empresas. Responsable de la coordinacion de todos los procesos.</div>
-      </div>
-      <div class="valores">
-        <div class="valor">
-          <div class="valor-num">01</div>
-          <div class="valor-text"><strong>Transparencia.</strong> Te explicamos todo sin tecnicismos. Sabes exactamente que gestionamos y por que.</div>
-        </div>
-        <div class="valor">
-          <div class="valor-num">02</div>
-          <div class="valor-text"><strong>Agilidad.</strong> Gestionamos cada tramite con la maxima rapidez. Tu tiempo es valioso.</div>
-        </div>
-        <div class="valor">
-          <div class="valor-num">03</div>
-          <div class="valor-text"><strong>Primera consulta gratuita.</strong> Cuentanos tu caso sin compromiso. Te orientamos desde el primer momento.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="equipo-cta-wrap">
-    <button class="equipo-toggle" type="button" aria-expanded="false" aria-controls="equipo-team" onclick="toggleEquipo(this)">
-      <span class="txt">Conoce al equipo</span><i class="ico" aria-hidden="true">+</i>
-    </button>
-  </div>
-  <div class="equipo-team-wrap" id="equipo-team">
-    <div class="equipo-team-grid">
-      <article class="miembro">
-        <img class="miembro-foto" src="sara%20aparicio.avif" width="400" height="400" loading="lazy" alt="Sara Aparicio Grande"/>
+  <div class="wrap">
+    <div class="equipo-grid">
+      <article class="miembro miembro--feat reveal">
+        <div class="miembro-ph"><img src="sara%20aparicio.avif" width="400" height="400" alt="Sara Aparicio Grande"/></div>
         <div class="miembro-info">
-          <h3 class="miembro-nombre">Sara Aparicio Grande</h3>
-          <div class="miembro-cargo">Gerente Fundadora</div>
-          <p class="miembro-desc">Nuestra directora, fundadora y administradora, con una vision clara y liderazgo inspirador que guia a nuestro equipo hacia la excelencia en cada tarea.</p>
+          <h3 class="miembro-name">Sara Aparicio Grande</h3>
+          <div class="miembro-rol">Gerente Fundadora</div>
+          <p class="miembro-desc">Nuestra directora, fundadora y administradora, con una visión clara y liderazgo inspirador que guía a nuestro equipo hacia la excelencia en cada tarea.</p>
         </div>
       </article>
-      <article class="miembro">
-        <img class="miembro-foto" src="jose%20guinea.avif" width="400" height="400" loading="lazy" alt="Jose Guinea Garcia"/>
+      <article class="miembro reveal" data-d="1">
+        <div class="miembro-ph"><img src="jose%20guinea.avif" width="400" height="400" loading="lazy" alt="Jose Guinea Garcia"/></div>
         <div class="miembro-info">
-          <h3 class="miembro-nombre">Jose Guinea Garcia</h3>
-          <div class="miembro-cargo">Responsable de Contabilidad</div>
-          <p class="miembro-desc">Apoyando a todos los departamentos y asegurando la continuidad y eficiencia de los procesos en la organizacion.</p>
+          <h3 class="miembro-name">Jose Guinea Garcia</h3>
+          <div class="miembro-rol">Responsable de Contabilidad</div>
+          <p class="miembro-desc">Apoyando a todos los departamentos y asegurando la continuidad y eficiencia de los procesos en la organización.</p>
         </div>
       </article>
-      <article class="miembro">
-        <img class="miembro-foto" src="luna%20pedraza.avif" width="400" height="400" loading="lazy" alt="Luna Pedraza Aparicio"/>
+      <article class="miembro reveal" data-d="2">
+        <div class="miembro-ph"><img src="luna%20pedraza.avif" width="400" height="400" loading="lazy" alt="Luna Pedraza Aparicio"/></div>
         <div class="miembro-info">
-          <h3 class="miembro-nombre">Luna Pedraza Aparicio</h3>
-          <div class="miembro-cargo">Area Laboral y Coordinacion</div>
-          <p class="miembro-desc">Responsable del area laboral y de coordinacion de procesos, especializada en constitucion de empresas y gestion integral de tramites para empresas y autonomos.</p>
+          <h3 class="miembro-name">Luna Pedraza Aparicio</h3>
+          <div class="miembro-rol">Área Laboral y Coordinación</div>
+          <p class="miembro-desc">Responsable del área laboral y de coordinación de procesos, especializada en constitución de empresas y gestión integral de trámites.</p>
         </div>
       </article>
-      <article class="miembro">
-        <img class="miembro-foto" src="vanesa%20martinez.avif" width="400" height="400" loading="lazy" alt="Vanessa Martinez Alonso"/>
+      <article class="miembro reveal" data-d="1">
+        <div class="miembro-ph"><img src="vanesa%20martinez.avif" width="400" height="400" loading="lazy" alt="Vanessa Martinez Alonso"/></div>
         <div class="miembro-info">
-          <h3 class="miembro-nombre">Vanessa Martinez Alonso</h3>
-          <div class="miembro-cargo">Apoyo Administrativo</div>
-          <p class="miembro-desc">Soporte en tareas administrativas, contables y laborales, gestionando documentacion y tramites para el buen funcionamiento de la empresa.</p>
+          <h3 class="miembro-name">Vanessa Martinez Alonso</h3>
+          <div class="miembro-rol">Apoyo Administrativo</div>
+          <p class="miembro-desc">Soporte en tareas administrativas, contables y laborales, gestionando documentación y trámites para el buen funcionamiento de la empresa.</p>
         </div>
       </article>
-      <article class="miembro">
-        <img class="miembro-foto" src="catherine%20denise.avif" width="400" height="400" loading="lazy" alt="Catherine Denisse Idrovo"/>
+      <article class="miembro reveal" data-d="2">
+        <div class="miembro-ph"><img src="catherine%20denise.avif" width="400" height="400" loading="lazy" alt="Catherine Denisse Idrovo"/></div>
         <div class="miembro-info">
-          <h3 class="miembro-nombre">Catherine Denisse Idrovo</h3>
-          <div class="miembro-cargo">Extranjeria</div>
-          <p class="miembro-desc">Especialista en el departamento de extranjeria. Gestion de permisos, renovaciones, nacionalidad y visados.</p>
+          <h3 class="miembro-name">Catherine Denisse Idrovo</h3>
+          <div class="miembro-rol">Extranjería</div>
+          <p class="miembro-desc">Especialista en el departamento de extranjería. Gestión de permisos, renovaciones, nacionalidad y visados.</p>
         </div>
       </article>
-      <article class="miembro">
-        <img class="miembro-foto" src="maria%20paloma.avif" width="400" height="400" loading="lazy" alt="Maria Paloma Gonzalez"/>
+      <article class="miembro reveal" data-d="3">
+        <div class="miembro-ph"><img src="maria%20paloma.avif" width="400" height="400" loading="lazy" alt="Maria Paloma Gonzalez"/></div>
         <div class="miembro-info">
-          <h3 class="miembro-nombre">Maria Paloma Gonzalez</h3>
-          <div class="miembro-cargo">Departamento Juridico</div>
-          <p class="miembro-desc">Responsable del area juridica. Asesoramiento legal y gestion de procedimientos judiciales y administrativos.</p>
+          <h3 class="miembro-name">Maria Paloma Gonzalez</h3>
+          <div class="miembro-rol">Departamento Jurídico</div>
+          <p class="miembro-desc">Responsable del área jurídica. Asesoramiento legal y gestión de procedimientos judiciales y administrativos.</p>
         </div>
       </article>
     </div>
   </div>
 </section>
 
-<!-- COMO TRABAJAMOS -->
-<section class="section">
-  <div class="section-intro" style="margin-bottom:0;">
-    <div>
-      <div class="label">Como trabajamos</div>
-      <h2>Sencillo, claro<br/>y <i>sin sorpresas.</i></h2>
-    </div>
-    <p>Un proceso diseñado para que no tengas que preocuparte por nada. Nos encargamos de todo desde el primer contacto hasta la resolucion.</p>
+<!-- ════════════ PROCESO ════════════ -->
+<section class="section proceso" id="proceso">
+  <div class="shead reveal">
+    <div class="eyebrow">Cómo trabajamos</div>
+    <h2>Sencillo, claro y <span class="acc">sin sorpresas.</span></h2>
   </div>
-  <div class="proceso-lista">
-    <div class="paso">
-      <div class="paso-num">01</div>
-      <div class="paso-title">Consulta gratuita</div>
-      <div class="paso-desc">Cuentanos tu caso por WhatsApp o en nuestra oficina de Majadahonda. Sin coste, sin compromiso.</div>
-    </div>
-    <div class="paso">
-      <div class="paso-num">02</div>
-      <div class="paso-title">Analisis personalizado</div>
-      <div class="paso-desc">Estudiamos tu situacion concreta y te explicamos exactamente que necesitas y como lo hacemos.</div>
-    </div>
-    <div class="paso">
-      <div class="paso-num">03</div>
-      <div class="paso-title">Gestion completa</div>
-      <div class="paso-desc">Nos encargamos de todos los tramites. Tu no tienes que preocuparte por plazos ni documentacion.</div>
-    </div>
-    <div class="paso">
-      <div class="paso-num">04</div>
-      <div class="paso-title">Resolucion y seguimiento</div>
-      <div class="paso-desc">Te informamos en cada paso y resolvemos cualquier incidencia que surja durante el proceso.</div>
+  <div class="wrap">
+    <div class="proceso-grid">
+      <div class="paso reveal">
+        <div class="paso-n num">01</div>
+        <h3 class="paso-title">Consulta gratuita</h3>
+        <p class="paso-desc">Cuéntanos tu caso por WhatsApp o en nuestra oficina de Majadahonda. Sin coste, sin compromiso.</p>
+      </div>
+      <div class="paso reveal" data-d="1">
+        <div class="paso-n num">02</div>
+        <h3 class="paso-title">Análisis personalizado</h3>
+        <p class="paso-desc">Estudiamos tu situación concreta y te explicamos qué necesitas y cómo lo vamos a hacer.</p>
+      </div>
+      <div class="paso reveal" data-d="2">
+        <div class="paso-n num">03</div>
+        <h3 class="paso-title">Gestión completa</h3>
+        <p class="paso-desc">Nos encargamos de todos los trámites. Tú no tienes que preocuparte por plazos ni documentación.</p>
+      </div>
+      <div class="paso reveal" data-d="3">
+        <div class="paso-n num">04</div>
+        <h3 class="paso-title">Resolución y seguimiento</h3>
+        <p class="paso-desc">Te informamos en cada paso y resolvemos cualquier incidencia que surja durante el proceso.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACTO -->
+<!-- ════════════ CONTACTO ════════════ -->
 <section class="section section-alt" id="contacto">
-  <div class="label">Contacto</div>
-  <h2>Primera consulta<br/><i>gratuita y sin compromiso.</i></h2>
-  <div class="contacto-grid">
-    <div>
-      <div class="contact-dato">
-        <div class="contact-key">Direccion</div>
-        <div class="contact-val">Calle Mieses no 1, 3a planta oficina 303<br/>Majadahonda, Madrid 28220</div>
+  <div class="shead reveal">
+    <div class="eyebrow">Hablemos</div>
+    <h2>Primera consulta <span class="acc">gratuita y sin compromiso.</span></h2>
+  </div>
+  <div class="wrap contacto-grid">
+    <div class="contact-list reveal">
+      <div class="cdato">
+        <div class="ckey">Dirección</div>
+        <div class="cval">Calle Mieses nº 1, 3ª planta of. 303<br/>Majadahonda, Madrid 28220</div>
       </div>
-      <div class="contact-dato">
-        <div class="contact-key">Telefono</div>
-        <div class="contact-val"><a href="tel:+34662238174">662 23 81 74</a></div>
+      <div class="cdato">
+        <div class="ckey">Teléfono</div>
+        <div class="cval"><a href="tel:+34662238174">662 23 81 74</a></div>
       </div>
-      <div class="contact-dato">
-        <div class="contact-key">Email</div>
-        <div class="contact-val"><a href="mailto:saraaparicio@gestoriasara.com">saraaparicio@gestoriasara.com</a></div>
+      <div class="cdato">
+        <div class="ckey">Email</div>
+        <div class="cval"><a href="mailto:saraaparicio@gestoriasara.com">saraaparicio@gestoriasara.com</a></div>
       </div>
-      <div class="contact-dato">
-        <div class="contact-key">Horario</div>
-        <div class="contact-val">Lunes a Viernes, 9:00 a 18:00</div>
+      <div class="cdato">
+        <div class="ckey">Horario</div>
+        <div class="cval">Lunes a Viernes, 9:00 a 18:00</div>
       </div>
-      <a class="wa-link" href="https://wa.link/9fo0et" target="_blank">
-        Escribir por WhatsApp — Respuesta inmediata
-      </a>
+      <a class="wa-link" href="https://wa.link/9fo0et" target="_blank" rel="noopener">Escribir por WhatsApp <span class="arr">→</span></a>
     </div>
-    <div class="mapa">
+    <div class="mapa reveal" data-d="1">
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3034!2d-3.875!3d40.473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd418951513e1219%3A0x98e2916f6c7e80f!2sC.%20de%20las%20Mieses%2C%201%2C%20Majadahonda%2C%20Madrid!5e0!3m2!1ses!2ses!4v1718000000000"
+        title="Ubicación de Gestoría Sara en Majadahonda"
+        src="https://www.google.com/maps?q=Calle%20de%20las%20Mieses%201,%20Majadahonda,%20Madrid&output=embed"
         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
       </iframe>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ════════════ FOOTER ════════════ -->
 <footer>
-  <div>
-    <div class="footer-logo">Gestoria <span>Sara</span>, S.L.</div>
-    <div class="footer-info">Calle Mieses no 1, 3a planta of. 303 — Majadahonda, Madrid</div>
+  <div class="wrap footer-grid">
+    <div>
+      <div class="footer-logo">Gestoría <span>Sara</span>, S.L.</div>
+      <div class="footer-info">Calle Mieses nº 1, 3ª planta of. 303 — Majadahonda, Madrid 28220</div>
+    </div>
+    <div class="footer-rrss">
+      <a href="https://www.facebook.com/sara.aparicio80" target="_blank" rel="noopener" aria-label="Facebook">Fb</a>
+      <a href="https://www.instagram.com/gestoria_sara" target="_blank" rel="noopener" aria-label="Instagram">Ig</a>
+      <a href="https://www.linkedin.com/company/103870527/" target="_blank" rel="noopener" aria-label="LinkedIn">Li</a>
+      <a href="https://www.tiktok.com/@gestoriasara" target="_blank" rel="noopener" aria-label="TikTok">Tk</a>
+    </div>
   </div>
-  <div class="footer-rrss">
-    <a href="https://www.facebook.com/sara.aparicio80" target="_blank">Fb</a>
-    <a href="https://www.instagram.com/gestoria_sara" target="_blank">Ig</a>
-    <a href="https://www.linkedin.com/company/103870527/" target="_blank">Li</a>
-    <a href="https://www.tiktok.com/@gestoriasara" target="_blank">Tk</a>
+  <div class="footer-credit">
+    Asistente IA integrado por <a href="https://whitemoon.es" target="_blank" rel="noopener">WhiteMoon Agencia IA</a>
   </div>
 </footer>
-<div class="footer-credit">
-  Asistente IA integrado por <a href="https://whitemoon.es" target="_blank">WhiteMoon Agencia IA</a>
-</div>
 
-<!-- CHATBOT -->
+<!-- ════════════ CHATBOT (Laura) ════════════ -->
 <button id="chat-fab" onclick="toggleChat()" aria-label="Consultar con asistente IA">
   <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
 </button>
@@ -860,17 +621,47 @@ footer{
       <div class="ch-name">Laura — Gestoria Sara</div>
       <div class="ch-sub">Asistente disponible ahora</div>
     </div>
-    <button class="ch-close" onclick="toggleChat()">x</button>
+    <button class="ch-close" onclick="toggleChat()" aria-label="Cerrar chat">×</button>
   </div>
   <div class="ch-msgs" id="ch-msgs"></div>
   <div class="ch-input-row">
     <input type="text" id="ch-input" placeholder="Escribe tu consulta..." onkeydown="if(event.key==='Enter')sendMsg()"/>
-    <button class="ch-send" onclick="sendMsg()">
+    <button class="ch-send" onclick="sendMsg()" aria-label="Enviar">
       <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
     </button>
   </div>
 </div>
 
+<!-- ════════════ UI SCRIPT (nav + scroll reveal) ════════════ -->
+<script>
+(function(){
+  var nav=document.getElementById('nav');
+  var onScroll=function(){nav.classList.toggle('solid',window.scrollY>40);};
+  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+
+  var burger=document.getElementById('burger'),links=document.getElementById('navLinks');
+  burger.addEventListener('click',function(){
+    var o=links.classList.toggle('open');
+    nav.classList.toggle('menu-open',o);
+    burger.setAttribute('aria-expanded',String(o));
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){links.classList.remove('open');nav.classList.remove('menu-open');burger.setAttribute('aria-expanded','false');});
+  });
+
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    els.forEach(function(e){e.classList.add('in');});
+  }else{
+    var io=new IntersectionObserver(function(ents){
+      ents.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+    },{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(e){io.observe(e);});
+  }
+})();
+</script>
+
+<!-- ════════════ CHATBOT SCRIPT (sin cambios funcionales) ════════════ -->
 <script>
 const SB_URL='https://mlaqtniujnvfxcvcourm.supabase.co';
 const SB_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1sYXF0bml1am52ZnhjdmNvdXJtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc4MzUyMzIsImV4cCI6MjA5MzQxMTIzMn0.Neh7VUS8ADsxf0DPab0JoJyGXOAXnLIaXzXbKzj2BGs';
@@ -880,13 +671,6 @@ function toggleChat(){
   open=!open;
   document.getElementById('chat-win').classList.toggle('open',open);
   if(open&&hist.length===0)init();
-}
-function toggleEquipo(btn){
-  const wrap=document.getElementById('equipo-team');
-  const expanded=btn.getAttribute('aria-expanded')==='true';
-  btn.setAttribute('aria-expanded',String(!expanded));
-  wrap.classList.toggle('open',!expanded);
-  btn.querySelector('.txt').textContent=expanded?'Conoce al equipo':'Ocultar equipo';
 }
 function addMsg(txt,type,opts){
   const c=document.getElementById('ch-msgs');
