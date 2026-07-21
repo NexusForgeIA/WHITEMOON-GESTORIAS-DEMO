@@ -483,7 +483,7 @@ if(typeof gsap!=='undefined'&&!REDUCED){
 
 /* ===================== CHATBOT LAURA (100% local, sin APIs) ===================== */
 var cbmod=document.getElementById('cbmod'),cbfab=document.getElementById('cbfab'),cbtip=document.getElementById('cbtip'),cbbody=document.getElementById('cbbody');
-var cbOpen=false,estado='inicio',leadNombre='',leadTelefono='';
+var cbOpen=false,estado='inicio',leadNombre='',leadTelefono='',leadTema='';
 cbbody.style.cssText+=';display:flex;flex-direction:column';
 (function(){var foot=cbmod.querySelector('.cbfoot');var row=document.createElement('div');row.style.cssText='display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--line);background:var(--ink3)';row.innerHTML='<input id="cbInput" type="text" placeholder="Escriba su mensaje…" autocomplete="off" aria-label="Mensaje" style="flex:1;padding:11px 14px;border:1px solid var(--line);background:var(--ink);color:var(--paper);border-radius:12px;font-family:Archivo,system-ui,sans-serif;font-size:13px;outline:none"><button id="cbSend" type="button" aria-label="Enviar" style="padding:0 16px;border:none;background:var(--brass);color:var(--ink);border-radius:12px;cursor:pointer;font-weight:700;font-size:15px">&#10148;</button>';cbmod.insertBefore(row,foot);})();
 var cbInput=document.getElementById('cbInput'),cbSend=document.getElementById('cbSend');
@@ -494,11 +494,22 @@ function welcome(){bot('¡Hola! Soy <b>LAURA</b>, asesora virtual de Gestoría L
 function openChat(){cbmod.classList.add('open');if(cbfab)cbfab.classList.add('hide');if(cbtip)cbtip.classList.add('hide');if(!cbOpen){cbOpen=true;setTimeout(welcome,420);}setTimeout(function(){cbInput.focus();},460);}
 function closeChat(){cbmod.classList.remove('open');if(cbfab)cbfab.classList.remove('hide');}
 function openChatSrv(){openChat();}
-function enviarWhatsApp(){var txt='Hola, soy '+leadNombre+' (tel: '+leadTelefono+'). Quiero información de Gestoría López Gómez.';window.open('https://wa.me/34643199580?text='+encodeURIComponent(txt),'_blank');}
+/* Aviso de leads: Edge Function pública (guarda en leads_web + avisa por Telegram).
+   Sin claves en el cliente; nunca interrumpe la conversación. */
+var NOTIFY_URL='https://mlaqtniujnvfxcvcourm.supabase.co/functions/v1/gestorias-notify';
+function enviarLead(){
+  try{
+    fetch(NOTIFY_URL,{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({nombre:leadNombre,telefono:leadTelefono,interes:leadTema||'consulta gestoría',mensaje:leadTema?('Consulta sobre: '+leadTema):'Consulta general'})
+    }).catch(function(){});
+  }catch(e){}
+}
 function responder(texto){
   var t=texto.toLowerCase().trim();
   if(estado==='esperando_nombre'){leadNombre=texto.trim();estado='esperando_telefono';bot('Gracias, '+leadNombre+'. ¿Me facilita un teléfono para que un gestor le llame?');return;}
-  if(estado==='esperando_telefono'){leadTelefono=texto.trim();estado='fin';bot('Perfecto, '+leadNombre+'. Un gestor de Gestoría López Gómez le contactará en breve. Le abro WhatsApp para agilizarlo.');setTimeout(enviarWhatsApp,800);return;}
+  if(estado==='esperando_telefono'){leadTelefono=texto.trim();estado='fin';bot('Perfecto, '+leadNombre+'. Un gestor de Gestoría López Gómez le contactará en breve.');enviarLead();return;}
+  /* guardamos el último asunto consultado para adjuntarlo al lead */
+  leadTema=texto.trim();
   if(t.indexOf('fiscal')>-1||t.indexOf('irpf')>-1||t.indexOf('impuesto')>-1||t.indexOf('iva')>-1||t.indexOf('renta')>-1||t.indexOf('contab')>-1){bot('Llevamos IRPF, IVA trimestral, Sociedades y contabilidad de autónomos y empresas. ¿Quiere que un gestor le llame? Escriba "cita".');return;}
   if(t.indexOf('nómina')>-1||t.indexOf('nomina')>-1||t.indexOf('laboral')>-1||t.indexOf('contrato')>-1||t.indexOf('erte')>-1){bot('Gestionamos altas y bajas en Seguridad Social, nóminas, contratos y ERTE. ¿Le interesa una consulta? Escriba "cita".');return;}
   if(t.indexOf('nie')>-1||t.indexOf('extranjer')>-1||t.indexOf('residencia')>-1){bot('Tramitamos NIE, residencia y reagrupación familiar. Primera consulta gratuita. ¿Quiere que le llamemos? Escriba "cita".');return;}
