@@ -1,23 +1,17 @@
 /* =========================================================================
    Gestoría López Gómez — demo WhiteMoon
-   Sistema visual portado de WHITEMOON-YOGA-PILATES: blanco, verde manzana
-   y morado.
+   Sistema visual portado de WHITEMOON-YOGA-PILATES con paleta corporativa
+   blanco / negro / rojo. Mismos nombres de variable que yoga: la familia
+   --g* es el ROJO (acento principal) y la familia --p* es el GRAFITO
+   (acento secundario).
 
-   CONTRASTE (medido sobre los dos fondos que usa la web: #ffffff y #f7f8f5).
-   El verde manzana --g y el morado medio --p NUNCA pintan texto: solo
-   fondos, bordes y detalles. Para texto van siempre las versiones profundas:
-
-     --g-dark  #4e7a29 → 4.64:1 sobre blanco  (texto en color, solo sobre #fff)
-     --g-deep  #3d5f20 → 7.35:1 blanco · 6.89:1 sobre #f7f8f5 · 6.64:1 sobre --g-chip
-     --p-dark  #5b21b6 → 8.99:1 blanco · 8.43:1 sobre #f7f8f5 · 7.91:1 sobre --p-chip
-     --p-deep  #4c1d95 → 11.1:1 blanco
-     --text    #1f2430 → 15.51:1 · --ink-2 #3a4050 → 10.35:1 · --muted #666e80 → 5.11:1
-
-   El botón verde es la excepción deliberada: --g #7cb342 como FONDO con
-   tinta --text encima da 6.19:1. Texto blanco sobre ese verde se queda en
-   2.5:1, así que no se usa en ninguna parte.
-
-   Todo texto en color cumple AA (>=4.5:1) sobre el fondo en el que vive.
+   CONTRASTE (medido sobre #ffffff y #f5f5f6):
+     botón   #fff sobre --g #c1121f → 6.22:1 · hover #a30e19 → 7.97:1
+     --g-dark  #8f0e17 → 9.36:1 blanco · 8.59:1 sobre --bg2
+     --g-deep  #7f0b13 → 9.38:1 sobre --g-chip
+     --p-dark  #14161a → 18.11:1 blanco · 16.02:1 sobre --p-chip
+     --text    #14161a → 18.11:1 · --ink-2 #363a42 → 11.41:1
+     --muted   #6b7280 → 4.83:1 blanco · 4.44:1 sobre --bg2 (por debajo de AA)
    ========================================================================= */
 
 /* Fuentes auto-hospedadas (subset latin + latin-ext). Cero peticiones a
@@ -31,31 +25,31 @@
 :root{
   --white:#ffffff;
   --bg:#ffffff;
-  --bg2:#f7f8f5;             /* sección alterna, blanco cálido */
-  --bg3:#f7f8f5;             /* segunda alterna: misma base, se distingue por el borde */
+  --bg2:#f5f5f6;             /* sección alterna */
+  --bg3:#f5f5f6;             /* segunda alterna: misma base, se distingue por el borde */
   --surface:#ffffff;
 
-  --text:#1f2430;            /* titulares y texto fuerte — 15.51:1 */
-  --ink-2:#3a4050;           /* párrafos — 10.35:1 */
-  --muted:#666e80;           /* secundario — 5.11:1 */
+  --text:#14161a;            /* titulares y texto fuerte, casi negro — 18.11:1 */
+  --ink-2:#363a42;           /* párrafos — 11.41:1 */
+  --muted:#6b7280;           /* secundario — 4.83:1 */
 
-  --g:#7cb342;               /* verde manzana: fondo de botón, borde, detalle */
-  --g-hover:#6ea338;         /* botón verde en hover — tinta --text a 5.14:1 */
-  --g-dark:#4e7a29;          /* texto en verde sobre blanco — 4.64:1 */
-  --g-deep:#3d5f20;          /* texto sobre chip verde y sobre --bg2 — 6.6:1 */
-  --g-chip:#eef6e6;
+  --g:#c1121f;               /* rojo: fondo de botón (texto blanco 6.22:1), borde, detalle */
+  --g-hover:#a30e19;         /* botón rojo en hover — texto blanco 7.97:1 */
+  --g-dark:#8f0e17;          /* texto rojo, uso puntual — 9.36:1 */
+  --g-deep:#7f0b13;          /* texto sobre chip rojo — 9.38:1 */
+  --g-chip:#fdecec;
 
-  --p:#8b5cf6;               /* morado: SOLO fondo / borde / detalle */
-  --p-dark:#5b21b6;          /* texto y botones morados — 8.99:1 */
-  --p-deep:#4c1d95;          /* hover y texto sobre chip — 11.1:1 */
-  --p-chip:#f3eeff;
+  --p:#14161a;               /* grafito: fondo / borde / detalle */
+  --p-dark:#14161a;          /* texto y botón grafito — 18.11:1 */
+  --p-deep:#000000;          /* hover y texto sobre chip gris */
+  --p-chip:#f0f1f2;
 
-  --line:#eceee8;
-  --line-2:#dadfd2;
+  --line:#e6e7e9;
+  --line-2:#d2d4d7;
 
-  --sh-sm:0 1px 2px rgba(31,36,48,.05),0 2px 8px rgba(31,36,48,.04);
-  --sh-md:0 2px 6px rgba(31,36,48,.05),0 12px 28px -12px rgba(31,36,48,.13);
-  --sh-lg:0 4px 12px rgba(31,36,48,.06),0 26px 60px -26px rgba(78,122,41,.30);
+  --sh-sm:0 1px 2px rgba(20,22,26,.05),0 2px 8px rgba(20,22,26,.04);
+  --sh-md:0 2px 6px rgba(20,22,26,.05),0 12px 28px -12px rgba(20,22,26,.13);
+  --sh-lg:0 4px 12px rgba(20,22,26,.06),0 26px 60px -26px rgba(193,18,31,.22);
 
   --display:'Sora',system-ui,-apple-system,'Segoe UI',sans-serif;
   --body:'Sora',system-ui,-apple-system,'Segoe UI',sans-serif;
@@ -94,15 +88,15 @@ h3,h4{font-family:var(--body);font-weight:700;color:var(--text);line-height:1.2;
   display:inline-flex;align-items:center;justify-content:center;gap:9px;
   font-family:var(--body);font-weight:700;font-size:.95rem;letter-spacing:-.01em;
   padding:14px 26px;border-radius:12px;border:1.5px solid transparent;
-  background:var(--g);color:var(--text);cursor:pointer;
+  background:var(--g);color:#fff;cursor:pointer;
   transition:background .25s,transform .2s,box-shadow .3s,border-color .25s;
 }
 .btn svg{width:19px;height:19px;flex-shrink:0}
-.btn:hover{background:var(--g-hover);transform:translateY(-2px);box-shadow:0 14px 30px -12px rgba(78,122,41,.55)}
-.btn--p{background:var(--p-dark)}
-.btn--p:hover{background:var(--p-deep);box-shadow:0 14px 30px -12px rgba(91,33,182,.5)}
-.btn--ghost{background:var(--white);color:var(--g-dark);border-color:var(--line-2)}
-.btn--ghost:hover{background:var(--g-chip);color:var(--g-deep);border-color:var(--g);box-shadow:none}
+.btn:hover{background:var(--g-hover);transform:translateY(-2px);box-shadow:0 14px 30px -12px rgba(193,18,31,.5)}
+.btn--p{background:var(--p-dark);color:#fff}
+.btn--p:hover{background:var(--p-deep);box-shadow:0 14px 30px -12px rgba(20,22,26,.45)}
+.btn--ghost{background:var(--white);color:var(--p-dark);border-color:var(--line-2)}
+.btn--ghost:hover{background:var(--p-chip);color:var(--p-deep);border-color:var(--p);box-shadow:none}
 .btn--sm{padding:11px 20px;font-size:.88rem;border-radius:10px}
 .btn--block{width:100%}
 
@@ -139,20 +133,20 @@ h3,h4{font-family:var(--body);font-weight:700;color:var(--text);line-height:1.2;
 .hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;background:var(--bg2)}
 .hero-bg{position:absolute;inset:0;z-index:0}
 .hero-bg .wash{position:absolute;inset:0;background:
-  radial-gradient(900px 620px at 86% 12%,rgba(124,179,66,.40),transparent 62%),
-  radial-gradient(760px 620px at 96% 88%,rgba(139,92,246,.38),transparent 64%),
-  linear-gradient(180deg,#ffffff 0%,#f7f8f5 100%)}
+  radial-gradient(900px 620px at 86% 12%,rgba(193,18,31,.16),transparent 62%),
+  radial-gradient(760px 620px at 96% 88%,rgba(20,22,26,.12),transparent 64%),
+  linear-gradient(180deg,#ffffff 0%,#f5f5f6 100%)}
 .hero-bg .shot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
 /* El vídeo va atenuado: es ambiente, no protagonista, y el titular manda. */
 .hero-bg video.shot{opacity:.55;filter:grayscale(.35)}
 /* Velo blanco: mantiene el titular legible sobre el vídeo de la oficina */
 .hero-bg .scrim{position:absolute;inset:0;z-index:2;pointer-events:none;background:
-  linear-gradient(100deg,rgba(255,255,255,.985) 0%,rgba(255,255,255,.96) 34%,rgba(251,252,249,.87) 52%,rgba(244,248,238,.56) 74%,rgba(246,242,253,.44) 100%),
-  linear-gradient(180deg,rgba(255,255,255,.86) 0%,rgba(255,255,255,0) 26%,rgba(255,255,255,0) 62%,rgba(247,248,245,.94) 100%)}
-.hero-bg .dots{position:absolute;inset:0;z-index:3;opacity:.5;background-image:radial-gradient(rgba(78,122,41,.16) 1px,transparent 1px);background-size:26px 26px;mask-image:radial-gradient(ellipse 70% 60% at 30% 45%,#000 20%,transparent 76%);-webkit-mask-image:radial-gradient(ellipse 70% 60% at 30% 45%,#000 20%,transparent 76%)}
+  linear-gradient(100deg,rgba(255,255,255,.985) 0%,rgba(255,255,255,.96) 34%,rgba(250,250,251,.87) 52%,rgba(245,245,246,.56) 74%,rgba(245,245,246,.44) 100%),
+  linear-gradient(180deg,rgba(255,255,255,.86) 0%,rgba(255,255,255,0) 26%,rgba(255,255,255,0) 62%,rgba(245,245,246,.94) 100%)}
+.hero-bg .dots{position:absolute;inset:0;z-index:3;opacity:.5;background-image:radial-gradient(rgba(20,22,26,.12) 1px,transparent 1px);background-size:26px 26px;mask-image:radial-gradient(ellipse 70% 60% at 30% 45%,#000 20%,transparent 76%);-webkit-mask-image:radial-gradient(ellipse 70% 60% at 30% 45%,#000 20%,transparent 76%)}
 .hero-content{position:relative;z-index:4;width:100%;padding:calc(var(--nav-h) + 44px) 0 44px}
 .hero h1{font-size:clamp(2.35rem,5.4vw,4.15rem);max-width:15ch}
-.hero h1 .accent{color:var(--p-dark);display:block}
+.hero h1 .accent{color:var(--g);display:block}
 .hero-rot{display:flex;align-items:baseline;gap:.5em;flex-wrap:wrap;margin-top:20px;font-family:var(--body);font-weight:600;font-size:clamp(1rem,2.4vw,1.3rem);color:var(--muted)}
 .hero-rot .rot{color:var(--g-dark);font-weight:700;display:inline-block}
 .hero-rot .rot b{display:inline-block;font-weight:700;transition:opacity .4s,transform .4s}
@@ -215,7 +209,7 @@ section[id]{scroll-margin-top:calc(var(--nav-h) + 12px)}
 .about-media{position:relative}
 .framed{position:relative;border-radius:22px;overflow:hidden;box-shadow:var(--sh-lg);background:var(--white)}
 .framed img{width:100%;height:clamp(320px,42vw,460px);object-fit:cover}
-.framed::after{content:"";position:absolute;inset:0;background:linear-gradient(200deg,rgba(124,179,66,.20),transparent 52%);pointer-events:none}
+.framed::after{content:"";position:absolute;inset:0;background:linear-gradient(200deg,rgba(193,18,31,.12),transparent 52%);pointer-events:none}
 .about-badge{
   position:absolute;left:18px;bottom:-20px;z-index:3;
   background:var(--white);border:1px solid var(--line);border-radius:16px;
@@ -315,7 +309,9 @@ section[id]{scroll-margin-top:calc(var(--nav-h) + 12px)}
 .contact-card h3{font-family:var(--display);font-weight:800;font-size:1.7rem;letter-spacing:-.018em}
 .contact-card > p{color:var(--muted);margin:14px 0 24px;font-size:.98rem}
 .contact-card .btn{margin-bottom:10px}
-.contact-urg{display:flex;align-items:center;gap:10px;justify-content:center;background:var(--p-chip);border:1px solid var(--p);border-radius:12px;padding:12px;color:var(--p-deep);font-family:var(--body);font-weight:700;font-size:.86rem;margin-top:6px;text-align:center}
+/* Se cualifica con .contact-card: si no, `.contact-card > p` le pisa el color
+   y el aviso sale en --muted sobre el chip (4.27:1). */
+.contact-card .contact-urg{display:flex;align-items:center;gap:10px;justify-content:center;background:var(--p-chip);border:1px solid var(--p);border-radius:12px;padding:12px;color:var(--p-deep);font-family:var(--body);font-weight:700;font-size:.86rem;margin-top:6px;text-align:center}
 .contact-urg svg{width:19px;height:19px;flex-shrink:0}
 
 /* ---------- FOOTER ---------- */
@@ -351,15 +347,15 @@ section[id]{scroll-margin-top:calc(var(--nav-h) + 12px)}
    estilos inline que leen --ink, --ink3, --text, --paper, --brass, --line y
    --muted (nombres del tema oscuro anterior). Se redefinen SOLO dentro de
    #cbmod para que tomen la paleta clara sin tocar una línea del JS.
-   Contraste: usuario #fff sobre #5b21b6 = 8.99:1 · bot #3a4050 sobre
-   #f7f8f5 = 9.7:1 · input #1f2430 sobre #fff = 15.51:1. */
-#cbmod{--ink:#ffffff;--ink3:#f7f8f5;--text:#3a4050;--paper:#1f2430;--brass:#5b21b6;--line:#eceee8;--muted:#666e80}
+   Contraste: usuario y enviar #fff sobre #c1121f = 6.22:1 · bot #363a42
+   sobre #f5f5f6 = 10.47:1 · input #14161a sobre #fff = 18.11:1. */
+#cbmod{--ink:#ffffff;--ink3:#f5f5f6;--text:#363a42;--paper:#14161a;--brass:#c1121f;--line:#e6e7e9;--muted:#6b7280}
 .cbfab{
   position:fixed;right:24px;bottom:24px;z-index:950;
   display:inline-flex;align-items:center;gap:10px;
   height:58px;padding:0 22px 0 18px;border-radius:100px;border:0;cursor:pointer;
-  background:var(--g);color:var(--text);font-family:var(--body);font-weight:700;font-size:.95rem;
-  box-shadow:0 16px 38px -12px rgba(78,122,41,.7);transition:transform .28s,background .28s;
+  background:var(--g);color:#fff;font-family:var(--body);font-weight:700;font-size:.95rem;
+  box-shadow:0 16px 38px -12px rgba(193,18,31,.55);transition:transform .28s,background .28s;
 }
 .cbfab:hover{transform:translateY(-3px);background:var(--g-hover)}
 .cbfab svg{width:24px;height:24px;position:relative;z-index:1}
