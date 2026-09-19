@@ -11,7 +11,7 @@
      --g-deep  #7f0b13 → 9.38:1 sobre --g-chip
      --p-dark  #14161a → 18.11:1 blanco · 16.02:1 sobre --p-chip
      --text    #14161a → 18.11:1 · --ink-2 #363a42 → 11.41:1
-     --muted   #6b7280 → 4.83:1 blanco · 4.44:1 sobre --bg2 (por debajo de AA)
+     --muted   #636976 → 5.51:1 blanco · 5.06:1 sobre --bg2 · 4.82:1 sobre --g-chip
    ========================================================================= */
 
 /* Fuentes auto-hospedadas (subset latin + latin-ext). Cero peticiones a
@@ -31,7 +31,7 @@
 
   --text:#14161a;            /* titulares y texto fuerte, casi negro — 18.11:1 */
   --ink-2:#363a42;           /* párrafos — 11.41:1 */
-  --muted:#6b7280;           /* secundario — 4.83:1 */
+  --muted:#636976;           /* secundario — 5.51:1 blanco · 5.06:1 sobre --bg2 */
 
   --g:#c1121f;               /* rojo: fondo de botón (texto blanco 6.22:1), borde, detalle */
   --g-hover:#a30e19;         /* botón rojo en hover — texto blanco 7.97:1 */
@@ -349,7 +349,7 @@ section[id]{scroll-margin-top:calc(var(--nav-h) + 12px)}
    #cbmod para que tomen la paleta clara sin tocar una línea del JS.
    Contraste: usuario y enviar #fff sobre #c1121f = 6.22:1 · bot #363a42
    sobre #f5f5f6 = 10.47:1 · input #14161a sobre #fff = 18.11:1. */
-#cbmod{--ink:#ffffff;--ink3:#f5f5f6;--text:#363a42;--paper:#14161a;--brass:#c1121f;--line:#e6e7e9;--muted:#6b7280}
+#cbmod{--ink:#ffffff;--ink3:#f5f5f6;--text:#363a42;--paper:#14161a;--brass:#c1121f;--line:#e6e7e9;--muted:#636976}
 .cbfab{
   position:fixed;right:24px;bottom:24px;z-index:950;
   display:inline-flex;align-items:center;gap:10px;
